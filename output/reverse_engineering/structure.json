@@ -1,0 +1,127 @@
+{
+    "fichier": "f6c08b08_SOMIDA_DAF_2024.xlsx",
+    "nombre_feuilles": 7,
+    "feuilles": {
+        "Donnees SOMIDA": {
+            "lignes": 16,
+            "colonnes": 4,
+            "formules": 0,
+            "textes": 46,
+            "nombres": 6,
+            "mois_detectes": []
+        },
+        "Employes": {
+            "lignes": 61,
+            "colonnes": 10,
+            "formules": 0,
+            "textes": 370,
+            "nombres": 240,
+            "mois_detectes": []
+        },
+        "Production": {
+            "lignes": 11,
+            "colonnes": 16,
+            "formules": 0,
+            "textes": 46,
+            "nombres": 130,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ]
+        },
+        "Charges": {
+            "lignes": 15,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 73,
+            "nombres": 182,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ]
+        },
+        "Exportations": {
+            "lignes": 54,
+            "colonnes": 19,
+            "formules": 5,
+            "textes": 299,
+            "nombres": 585,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ]
+        },
+        "Frais Export": {
+            "lignes": 19,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 89,
+            "nombres": 234,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ]
+        },
+        "Synthese": {
+            "lignes": 7,
+            "colonnes": 15,
+            "formules": 78,
+            "textes": 27,
+            "nombres": 0,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ]
+        }
+    }
+}

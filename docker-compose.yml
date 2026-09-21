@@ -1,0 +1,81 @@
+# services:
+
+#   postgres:
+#     image: postgres:16
+#     container_name: postgresSimp
+
+#     environment:
+#       POSTGRES_USER: sxmxdx
+#       POSTGRES_PASSWORD: diary
+#       POSTGRES_DB: sxmxdx2
+
+#     ports:
+#       - "5434:5432"
+
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+
+
+#   spark:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+
+#     container_name: sparkSimp
+
+#     working_dir: /app
+
+#     volumes:
+#       - ./:/app
+
+#     depends_on:
+#       - postgres
+
+#     command: tail -f /dev/null
+
+
+# volumes:
+#   postgres_data:
+
+
+
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: postgresSimp
+
+    environment:
+      POSTGRES_USER: sxmxdx
+      POSTGRES_PASSWORD: diary
+      POSTGRES_DB: sxmxdx2
+
+    ports:
+      - "5434:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database:/app/database
+
+
+  spark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: sparkSimp
+
+    working_dir: /app
+
+    volumes:
+      - ./:/app
+
+    depends_on:
+      - postgres
+
+    command: tail -f /dev/null
+
+
+volumes:
+  postgres_data:
