@@ -180,3 +180,16 @@ ON exportation(exercice_id, mois_id);
 
 CREATE INDEX IF NOT EXISTS idx_frais_export_exercice_mois
 ON frais_export(exercice_id, mois_id);
+
+
+ALTER TABLE employe
+ADD COLUMN IF NOT EXISTS statut VARCHAR(50);
+
+ALTER TABLE charge
+ADD COLUMN IF NOT EXISTS site VARCHAR(50);
+
+ALTER TABLE charge
+ADD COLUMN IF NOT EXISTS unite VARCHAR(50);
+
+ALTER TABLE production
+ADD COLUMN IF NOT EXISTS site VARCHAR(100);
