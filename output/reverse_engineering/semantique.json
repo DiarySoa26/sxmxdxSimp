@@ -1,0 +1,467 @@
+{
+    "modele": "SOMIDA_BUDGET",
+    "version": "SOMIDA_BUDGET_V1",
+    "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
+    "source_excel": "/Users/mac/Documents/DIX Y/SOMIDA/SIMP/sxmxdxSimp/data/uploads/f6c08b08_SOMIDA_DAF_2024.xlsx",
+    "source_regles": "output/reverse_engineering/regles_metier.json",
+    "statistiques": {
+        "nombre_regles": 17,
+        "semantique_detectee": 17,
+        "a_valider": 0,
+        "periodicites": {
+            "MENSUELLE": 6,
+            "ANNUELLE": 6,
+            "UNIQUE": 5
+        }
+    },
+    "doublons_semantiques": [],
+    "regles": [
+        {
+            "regle_technique": "RG_EXPORTATIONS_001",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_reference": "A5",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "nombre_occurrences": 1,
+            "formule": "=SUMIF($E$10:$E$54,\"Quantité exportée\",$S$10:$S$54)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "libelle_excel": "VOLUME EXPORTÉ (t)",
+            "identifiant_semantique": "volume_exporte_t",
+            "position_libelle": "HAUT",
+            "distance_libelle": 1,
+            "type_semantique": "MESURE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_002",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_reference": "D5",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "nombre_occurrences": 1,
+            "formule": "=SUMIF($E$10:$E$54,\"Chiffre d'affaires MGA\",$S$10:$S$54)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "libelle_excel": "CA EXPORT (MGA)",
+            "identifiant_semantique": "ca_export_mga",
+            "position_libelle": "HAUT",
+            "distance_libelle": 1,
+            "type_semantique": "MESURE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_003",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_reference": "G5",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "nombre_occurrences": 1,
+            "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Japon\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "libelle_excel": "CA JAPON (MGA)",
+            "identifiant_semantique": "ca_japon_mga",
+            "position_libelle": "HAUT",
+            "distance_libelle": 1,
+            "type_semantique": "MESURE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_004",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_reference": "J5",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "nombre_occurrences": 1,
+            "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Russie\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "libelle_excel": "CA RUSSIE (MGA)",
+            "identifiant_semantique": "ca_russie_mga",
+            "position_libelle": "HAUT",
+            "distance_libelle": 1,
+            "type_semantique": "MESURE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_005",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_reference": "M5",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "nombre_occurrences": 1,
+            "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Chine\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "libelle_excel": "CA CHINE (MGA)",
+            "identifiant_semantique": "ca_chine_mga",
+            "position_libelle": "HAUT",
+            "distance_libelle": 1,
+            "type_semantique": "MESURE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_001",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C2",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E2:E46"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "G2:G46"
+                }
+            ],
+            "libelle_excel": "CA export",
+            "identifiant_semantique": "ca_export",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_002",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O2",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(C2:N2)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2:N2"
+                }
+            ],
+            "libelle_excel": "CA export",
+            "identifiant_semantique": "ca_export",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_003",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C3",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=SUM(Charges!$E$2:$E$15)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E2:E15"
+                }
+            ],
+            "libelle_excel": "Charges exploitation",
+            "identifiant_semantique": "charges_exploitation",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_004",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O3",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(C3:N3)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3:N3"
+                }
+            ],
+            "libelle_excel": "Charges exploitation",
+            "identifiant_semantique": "charges_exploitation",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_005",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C4",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=SUM('Frais Export'!$E$2:$E$19)",
+            "dependances": [
+                {
+                    "feuille": "Frais Export",
+                    "cellule": "E2:E19"
+                }
+            ],
+            "libelle_excel": "Frais export",
+            "identifiant_semantique": "frais_export",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_006",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O4",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(C4:N4)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4:N4"
+                }
+            ],
+            "libelle_excel": "Frais export",
+            "identifiant_semantique": "frais_export",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_007",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C5",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=SUM(Employes!$I$2:$I$61)",
+            "dependances": [
+                {
+                    "feuille": "Employes",
+                    "cellule": "I2:I61"
+                }
+            ],
+            "libelle_excel": "Masse salariale",
+            "identifiant_semantique": "masse_salariale",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_008",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O5",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(C5:N5)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5:N5"
+                }
+            ],
+            "libelle_excel": "Masse salariale",
+            "identifiant_semantique": "masse_salariale",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_009",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C6",
+            "operation": "SOUSTRACTION",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=C2-C3-C4-C5",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5"
+                }
+            ],
+            "libelle_excel": "Résultat opérationnel",
+            "identifiant_semantique": "resultat_operationnel",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_010",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O6",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(C6:N6)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6:N6"
+                }
+            ],
+            "libelle_excel": "Résultat opérationnel",
+            "identifiant_semantique": "resultat_operationnel",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_011",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "C7",
+            "operation": "DIVISION",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "nombre_occurrences": 12,
+            "formule": "=IFERROR(C6/C2,0)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                }
+            ],
+            "libelle_excel": "Marge opérationnelle",
+            "identifiant_semantique": "marge_operationnelle",
+            "position_libelle": "GAUCHE",
+            "distance_libelle": 2,
+            "type_semantique": "MESURE_MENSUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_SYNTHESE_012",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_reference": "O7",
+            "operation": "DIVISION",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=IFERROR(O6/O2,0)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
+                }
+            ],
+            "libelle_excel": "Marge opérationnelle",
+            "identifiant_semantique": "marge_operationnelle",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 14,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        }
+    ]
+}
