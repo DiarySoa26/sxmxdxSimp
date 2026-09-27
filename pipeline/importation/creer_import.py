@@ -77,7 +77,11 @@ def creer_import(fichier_excel, exercice):
         print(f"Import ID    : {import_id}")
         print("Statut       : EN_COURS")
 
-        return import_id
+        # return import_id
+        return {
+            "import_id": import_id,
+            "exercice_id": exercice_id
+        }
 
     except Exception:
 

@@ -63,15 +63,7 @@ def connecter():
 # DERNIER IMPORT PRET POUR GENERATION
 # ============================================================
 
-def recuperer_dernier_import_pret(
-    connexion
-):
-    """
-    Récupère automatiquement le dernier import
-    dont le statut est PRET_GENERATION.
-
-    Aucun import_id n'est codé en dur.
-    """
+def recuperer_dernier_import_pret(connexion):
 
     with connexion.cursor(
         cursor_factory=RealDictCursor
@@ -80,25 +72,32 @@ def recuperer_dernier_import_pret(
         curseur.execute(
             """
             SELECT
-                id,
-                exercice_id,
-                statut
-            FROM import_fichier
-            WHERE statut = 'PRET_GENERATION'
-            ORDER BY id DESC
+                i.id,
+                i.exercice_id,
+                i.statut
+            FROM import_fichier i
+            WHERE i.statut = 'PRET_GENERATION'
+
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM budget b
+                  WHERE b.import_id = i.id
+                    AND b.type_budget = 'GENERE'
+                    AND b.statut = 'GENERE'
+              )
+
+            ORDER BY i.id DESC
             LIMIT 1
             """
         )
 
-        import_fichier = (
-            curseur.fetchone()
-        )
+        import_fichier = curseur.fetchone()
 
     if import_fichier is None:
 
         raise ValueError(
-            "Aucun import avec le statut "
-            "PRET_GENERATION n'a été trouvé."
+            "Aucun nouvel import PRET_GENERATION "
+            "sans budget généré n'a été trouvé."
         )
 
     return import_fichier
