@@ -19,3 +19,5 @@ RUN curl -L \
 WORKDIR /app
 
 CMD ["tail", "-f", "/dev/null"]
+
+RUN pip3 install --no-cache-dir flask
