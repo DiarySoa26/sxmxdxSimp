@@ -74,10 +74,18 @@ services:
     ports:
       - "5001:5000"
 
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: sxmxdx2
+      DB_USER: sxmxdx
+      DB_PASSWORD: diary
+
     depends_on:
       - postgres
 
-    command: tail -f /dev/null
+    command: python3 /app/pipeline/api/import_api.py
+    # command: tail -f /dev/null
 
   
   nextjs:
@@ -118,12 +126,14 @@ services:
       DB_NAME: sxmxdx2
       DB_USER: sxmxdx
       DB_PASSWORD: diary
+      PIPELINE_API_URL: http://spark:5000
 
     volumes:
     - ./data:/data
 
     depends_on:
       - postgres
+      - spark
       
 
 

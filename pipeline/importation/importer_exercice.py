@@ -993,21 +993,86 @@ def chemin_conteneur(
 # EXECUTION SPARK
 # ============================================================
 
+# def executer_spark(
+#     script,
+#     *arguments
+# ):
+
+#     script_conteneur = (
+#         f"{CONTAINER_PROJECT_ROOT}/"
+#         f"{script}"
+#     )
+
+#     commande = [
+#         "docker",
+#         "exec",
+#         SPARK_CONTAINER,
+
+#         SPARK_SUBMIT,
+
+#         "--master",
+#         "local[*]",
+
+#         script_conteneur,
+
+#         *[
+#             str(argument)
+#             for argument in arguments
+#         ]
+#     ]
+
+#     print()
+#     print(
+#         "Commande Spark :"
+#     )
+
+#     print(
+#         " ".join(
+#             commande
+#         )
+#     )
+
+#     print()
+
+#     resultat = subprocess.run(
+#         commande,
+#         cwd=PROJECT_ROOT
+#     )
+
+#     if resultat.returncode != 0:
+
+#         raise RuntimeError(
+#             f"Echec du script Spark : "
+#             f"{script}"
+#         )
+
+
+
 def executer_spark(
     script,
     *arguments
 ):
+
+    # ========================================================
+    # CHEMIN DU SCRIPT DANS LE CONTENEUR
+    # ========================================================
 
     script_conteneur = (
         f"{CONTAINER_PROJECT_ROOT}/"
         f"{script}"
     )
 
-    commande = [
-        "docker",
-        "exec",
-        SPARK_CONTAINER,
+    # ========================================================
+    # IMPORTER_EXERCICE.PY EST DEJA EXECUTE DANS sparkSimp
+    #
+    # Il ne faut donc PAS faire :
+    #
+    # docker exec sparkSimp ...
+    #
+    # On lance directement spark-submit.
+    # ========================================================
 
+    commande = [
         SPARK_SUBMIT,
 
         "--master",
@@ -1027,16 +1092,13 @@ def executer_spark(
     )
 
     print(
-        " ".join(
-            commande
-        )
+        " ".join(commande)
     )
 
     print()
 
     resultat = subprocess.run(
-        commande,
-        cwd=PROJECT_ROOT
+        commande
     )
 
     if resultat.returncode != 0:
