@@ -268,7 +268,7 @@ export default function ExercicesPage() {
                   <TableHead>État de l&apos;import</TableHead>
                   <TableHead>Date import</TableHead>
                   {/* <TableHead>Message</TableHead> */}
-                  <TableHead className="text-right">Action</TableHead>
+                  {/* <TableHead className="text-right">Action</TableHead> */}
                 </TableRow>
               </TableHeader>
 
@@ -361,7 +361,7 @@ export default function ExercicesPage() {
                       </TableCell> */}
 
                       {/* ACTION */}
-                      <TableCell className="text-right">
+                      {/* <TableCell className="text-right">
                         <Button
                           size="sm"
                           onClick={() => genererBudget(exercice)}
@@ -369,7 +369,7 @@ export default function ExercicesPage() {
                           <WalletCards className="mr-2 h-4 w-4" />
                           Générer budget
                         </Button>
-                      </TableCell>
+                      </TableCell> */}
 
                     </TableRow>
                   ))
