@@ -150,3 +150,12 @@ ON budget_mensuel(budget_id);
 
 CREATE INDEX IF NOT EXISTS idx_budget_mensuel_mois
 ON budget_mensuel(mois_id);
+
+
+ALTER TABLE budget
+    ALTER COLUMN import_id DROP NOT NULL;
+
+ALTER TABLE budget
+    ADD COLUMN IF NOT EXISTS annee_reference INTEGER,
+    ADD COLUMN IF NOT EXISTS modele VARCHAR(100),
+    ADD COLUMN IF NOT EXISTS version_modele VARCHAR(30);
