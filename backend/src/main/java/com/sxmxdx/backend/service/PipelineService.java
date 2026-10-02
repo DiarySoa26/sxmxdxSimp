@@ -13,13 +13,21 @@ public class PipelineService {
     private final RestClient restClient;
 
     public PipelineService(
-            @Value("${pipeline.api.url}") String pipelineApiUrl
+            @Value("${pipeline.api.url}")
+            String pipelineApiUrl
     ) {
 
-        this.restClient = RestClient.builder()
-                .baseUrl(pipelineApiUrl)
-                .build();
+        System.out.println(
+                "[PIPELINE] URL Flask : "
+                        + pipelineApiUrl
+        );
+
+        this.restClient =
+                RestClient.builder()
+                        .baseUrl(pipelineApiUrl)
+                        .build();
     }
+
 
     public Map<?, ?> importerExercice(
             String fileName
@@ -28,10 +36,16 @@ public class PipelineService {
         String filePath =
                 "/app/data/" + fileName;
 
-        Map<String, String> request = Map.of(
-                "filePath",
-                filePath
+        System.out.println(
+                "[PIPELINE] Fichier envoyé à Flask : "
+                        + filePath
         );
+
+        Map<String, String> request =
+                Map.of(
+                        "filePath",
+                        filePath
+                );
 
         return restClient
                 .post()
