@@ -5,46 +5,46 @@ ANALYSE BUDGETAIRE PREVISIONNELLE 2026
 
 Les ventes prévisionnelles pour 2026 sont estimées à 3 071.58 unités, soit une régression de 2.83 % par rapport à 2025.
 
-Le chiffre d'affaires à l'exportation prévisionnel est estimé à 18 950 270 227 MGA, soit une régression de 0.39 % par rapport à 2025.
+Le chiffre d'affaires à l'exportation prévisionnel est estimé à 17 358 691 879 MGA, soit une régression de 8.76 % par rapport à 2025.
 
-La production annuelle est estimée à 6 704.93 unités. Les charges d'exploitation atteignent 5 655 326 195 MGA, les frais d'exportation 3 252 237 163 MGA et la masse salariale 3 964 294 160 MGA.
+La production annuelle est estimée à 6 704.93 unités. Les charges d'exploitation atteignent 5 228 583 033 MGA, les frais d'exportation 3 082 706 500 MGA et la masse salariale 3 671 616 796 MGA.
 
-Le résultat opérationnel prévisionnel atteint 6 078 412 709 MGA, pour une marge opérationnelle de 32.08 %.
+Le résultat opérationnel prévisionnel atteint 5 375 785 550 MGA, pour une marge opérationnelle de 30.97 %.
 
 2. Evolution par rapport à 2025
 
 Ventes                  : RÉGRESSION de 2.83 %.
-CA export               : RÉGRESSION de 0.39 %.
+CA export               : RÉGRESSION de 8.76 %.
 Production              : RÉGRESSION de 4.87 %.
-Charges d'exploitation  : ÉVOLUTION de 0.58 %.
-Frais d'exportation     : RÉGRESSION de 0.78 %.
-Masse salariale         : RÉGRESSION de 1.28 %.
+Charges d'exploitation  : RÉGRESSION de 7.01 %.
+Frais d'exportation     : RÉGRESSION de 5.95 %.
+Masse salariale         : RÉGRESSION de 8.57 %.
 
 3. Trajectoire mensuelle
 
-Le chiffre d'affaires à l'exportation mensuel maximal est prévu en Mars, avec 1 633 146 618 MGA.
-Le chiffre d'affaires à l'exportation mensuel minimal est prévu en Août, avec 1 551 378 659 MGA.
+Le chiffre d'affaires à l'exportation mensuel maximal est prévu en Mars, avec 1 506 031 375 MGA.
+Le chiffre d'affaires à l'exportation mensuel minimal est prévu en Décembre, avec 1 389 608 492 MGA.
 
 4. Analyse des dérives de dépenses
 
-L'analyse identifie 51 observation(s) à niveau faible, 8 à niveau modéré, 1 à niveau élevé et 0 à niveau critique.
+L'analyse identifie 53 observation(s) à niveau faible, 7 à niveau modéré, 0 à niveau élevé et 0 à niveau critique.
 
-L'écart statistique maximal concerne la catégorie PRODUCTION en Juillet. La charge prévue est de 358 287 283 MGA, contre 319 781 181 MGA attendus selon le comportement historique associé à la production.
-L'écart atteint 38 506 101 MGA, soit 12.04 %. L'indice de dérive est de 87.52/100, avec un niveau ELEVE.
+L'écart statistique maximal concerne la catégorie LOGISTIQUE en Juin. La charge prévue est de 55 231 905 MGA, contre 61 232 818 MGA attendus selon le comportement historique associé à la production.
+L'écart atteint -6 000 912 MGA, soit -9.80 %. L'indice de dérive est de 77.19/100, avec un niveau MODERE.
 
 5. Analyse par catégorie
 
-- PRODUCTION : indice moyen 61.77/100, indice maximal 87.52/100, écart cumulé 239 113 279 MGA.
-- LOGISTIQUE : indice moyen 34.33/100, indice maximal 73.84/100, écart cumulé -11 333 452 MGA.
-- SECURITE : indice moyen 43.32/100, indice maximal 73.57/100, écart cumulé -8 255 610 MGA.
-- FINANCE : indice moyen 28.26/100, indice maximal 60.66/100, écart cumulé -1 123 181 MGA.
-- FISCAL : indice moyen 36.03/100, indice maximal 59.31/100, écart cumulé -153 888 MGA.
+- LOGISTIQUE : indice moyen 35.49/100, indice maximal 77.19/100, écart cumulé -18 238 988 MGA.
+- SECURITE : indice moyen 44.23/100, indice maximal 74.42/100, écart cumulé -8 810 562 MGA.
+- FISCAL : indice moyen 38.99/100, indice maximal 64.79/100, écart cumulé 503 326 MGA.
+- PRODUCTION : indice moyen 38.10/100, indice maximal 63.79/100, écart cumulé -89 440 409 MGA.
+- FINANCE : indice moyen 32.50/100, indice maximal 60.15/100, écart cumulé -1 129 480 MGA.
 
 6. Conclusion automatique
 
-Les quantités vendues à l'exportation enregistrent une régression de 2.83 %, tandis que le chiffre d'affaires à l'exportation enregistre une régression de 0.39 %.
-Les charges d'exploitation progressent davantage que la production : ÉVOLUTION de 0.58 % pour les charges contre RÉGRESSION de 4.87 % pour la production. Les catégories présentant les indices de dérive les plus élevés sont signalées pour analyse.
-Aucune observation critique n'est détectée ; 1 observation(s) présentent toutefois un niveau élevé.
+Les quantités vendues à l'exportation enregistrent une régression de 2.83 %, tandis que le chiffre d'affaires à l'exportation enregistre une régression de 8.76 %.
+L'évolution des charges d'exploitation (RÉGRESSION de 7.01 %) ne dépasse pas celle de la production (RÉGRESSION de 4.87 %).
+Aucune observation présentant un niveau élevé ou critique n'est détectée.
 
 Note méthodologique
 

@@ -227,7 +227,7 @@ export function AppSidebar({
     <SidebarMenuItem>
       <div className="flex h-20 w-full items-center justify-center overflow-hidden rounded-lg px-2">
         <Image
-          src="/images/logoSomida.png"
+          src="/images/LogoSomida2.png"
           alt="SOMIDA"
           width={600}
           height={200}

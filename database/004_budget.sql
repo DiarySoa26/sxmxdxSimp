@@ -1,24 +1,4 @@
 
-
--- DROP TABLE IF EXISTS budget_charge_mensuelle CASCADE;
--- DROP TABLE IF EXISTS budget_mensuel CASCADE;
--- DROP TABLE IF EXISTS budget CASCADE;
-
-
-
--- ============================================================
--- SXMXDX
--- 004_budget.sql
---
--- Tables utilisées pour enregistrer les budgets générés
--- à partir d'un exercice importé.
--- ============================================================
-
-
--- ============================================================
--- 1. BUDGET
--- ============================================================
-
 CREATE TABLE IF NOT EXISTS budget (
 
     id BIGSERIAL PRIMARY KEY,
@@ -81,10 +61,6 @@ CREATE TABLE IF NOT EXISTS budget (
 );
 
 
--- ============================================================
--- 2. BUDGET MENSUEL
--- ============================================================
-
 CREATE TABLE IF NOT EXISTS budget_mensuel (
 
     id BIGSERIAL PRIMARY KEY,
@@ -128,10 +104,6 @@ CREATE TABLE IF NOT EXISTS budget_mensuel (
 );
 
 
--- ============================================================
--- 3. INDEX
--- ============================================================
-
 CREATE INDEX IF NOT EXISTS idx_budget_exercice
 ON budget(exercice_id);
 
@@ -159,3 +131,44 @@ ALTER TABLE budget
     ADD COLUMN IF NOT EXISTS annee_reference INTEGER,
     ADD COLUMN IF NOT EXISTS modele VARCHAR(100),
     ADD COLUMN IF NOT EXISTS version_modele VARCHAR(30);
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS prediction_evolution (
+    id BIGSERIAL PRIMARY KEY,
+    budget_id BIGINT NOT NULL,
+    indicateur VARCHAR(50) NOT NULL,
+    valeur_reference NUMERIC(20,2),
+    valeur_prediction NUMERIC(20,2),
+    evolution_pct NUMERIC(15,6) NOT NULL,
+    CONSTRAINT fk_prediction_evolution_budget FOREIGN KEY (budget_id) REFERENCES budget(id) ON DELETE CASCADE,
+    CONSTRAINT uq_prediction_evolution UNIQUE (budget_id,indicateur)
+);
+
+CREATE TABLE IF NOT EXISTS prediction_derive (
+    id BIGSERIAL PRIMARY KEY,
+    budget_id BIGINT NOT NULL,
+    mois_id INTEGER NOT NULL,
+    categorie VARCHAR(100) NOT NULL,
+    charge_prevue NUMERIC(20,2) NOT NULL,
+    charge_attendue NUMERIC(20,2) NOT NULL,
+    ecart_mga NUMERIC(20,2) NOT NULL,
+    ecart_pct NUMERIC(15,6),
+    score_derive NUMERIC(15,6),
+    indice_derive NUMERIC(15,6),
+    niveau_risque VARCHAR(20),
+    type_derive VARCHAR(30),
+    CONSTRAINT fk_prediction_derive_budget FOREIGN KEY (budget_id) REFERENCES budget(id) ON DELETE CASCADE,
+    CONSTRAINT chk_prediction_derive_mois CHECK (mois_id BETWEEN 1 AND 12)
+);
+
+CREATE TABLE IF NOT EXISTS prediction_analyse (
+    id BIGSERIAL PRIMARY KEY,
+    budget_id BIGINT NOT NULL UNIQUE,
+    resume TEXT NOT NULL,
+    date_generation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_prediction_analyse_budget FOREIGN KEY (budget_id) REFERENCES budget(id) ON DELETE CASCADE
+);
