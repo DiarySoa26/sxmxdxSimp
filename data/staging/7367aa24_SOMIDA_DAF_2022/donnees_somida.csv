@@ -1,0 +1,16 @@
+DONNEES SOMIDA - PARAMETRES ET REFERENTIELS,,,
+Paramètre,Valeur,Unité / devise,Commentaire
+Exercice,2022,année,Exercice budgétaire
+Inflation annuelle,0.065,%,Hypothèse budgétaire
+Taux USD/MGA,4450,MGA/USD,Hypothèse de change
+Taux JPY/MGA,30.5,MGA/JPY,Hypothèse de change
+Augmentation salariale,0.07,%,Hypothèse RH
+TVA,0.2,%,Paramètre fiscal
+Site principal,FORT DAUPHIN,,Administration / export
+Site production,AMPANDRANDAVA,,Production
+,,,
+MARCHES EXPORT,,,
+Pays,Entité représentatrice,Devise,Observation
+Japon,GOODEIS,JPY,Relation export issue de la correction utilisateur
+Russie,ELINAR,USD,Relation export issue de la correction utilisateur
+Chine,REPRESENTANT CHINE - A VALIDER,USD,Nom exact à confirmer depuis Données SOMIDA
