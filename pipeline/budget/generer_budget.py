@@ -929,7 +929,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from pipeline.budget.moteur_regles import calculer_budget_mensuel, calculer_budget_annuel, verifier_regles_re
 
 DB_CONFIG = {
-    "host": "localhost",
+    "host": "postgres",
     "port": 5432,
     "dbname": "sxmxdx2",
     "user": "sxmxdx",
