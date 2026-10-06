@@ -135,4 +135,34 @@ public class PipelineService {
 
         return resultat;
     }
+
+
+    public Map<?, ?> genererPrediction() {
+
+        System.out.println(
+                "[PIPELINE] Demande de génération de la prédiction..."
+        );
+
+        Map<?, ?> resultat =
+                restClient
+                        .post()
+                        .uri("/api/predictions/generer")
+                        .retrieve()
+                        .body(Map.class);
+
+        if (resultat == null) {
+                throw new RuntimeException(
+                        "Aucune réponse du pipeline de prédiction."
+                );
+        }
+
+        System.out.println(
+                "[PIPELINE] Réponse prédiction reçue."
+        );
+
+        return resultat;
+        }
+
+
+    
 }

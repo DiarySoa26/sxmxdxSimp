@@ -124,6 +124,8 @@ CREATE INDEX IF NOT EXISTS idx_budget_mensuel_mois
 ON budget_mensuel(mois_id);
 
 
+
+
 ALTER TABLE budget
     ALTER COLUMN import_id DROP NOT NULL;
 
@@ -131,10 +133,6 @@ ALTER TABLE budget
     ADD COLUMN IF NOT EXISTS annee_reference INTEGER,
     ADD COLUMN IF NOT EXISTS modele VARCHAR(100),
     ADD COLUMN IF NOT EXISTS version_modele VARCHAR(30);
-
-
-
-
 
 
 CREATE TABLE IF NOT EXISTS prediction_evolution (
@@ -172,3 +170,12 @@ CREATE TABLE IF NOT EXISTS prediction_analyse (
     date_generation TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_prediction_analyse_budget FOREIGN KEY (budget_id) REFERENCES budget(id) ON DELETE CASCADE
 );
+
+
+ALTER TABLE budget_mensuel
+    ADD COLUMN IF NOT EXISTS ventes NUMERIC(20,3)
+        NOT NULL DEFAULT 0,
+
+    ADD COLUMN IF NOT EXISTS production NUMERIC(20,3)
+        NOT NULL DEFAULT 0;
+
