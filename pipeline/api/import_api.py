@@ -228,6 +228,7 @@ for directory in [PREDICTION_DIRECTORY,BUDGET_DIRECTORY]:
 
 from executer_prediction import executer_prediction
 from executer_budget import executer_workflow_budget
+from executer_prediction import executer_prediction
 
 @app.get("/health")
 def health():
@@ -330,6 +331,29 @@ def generer_prediction():
             "message":"La génération de la prévision a échoué.",
             "error":str(e)
         }),500
+
+
+# @app.route("/api/predictions/generer", methods=["POST"])
+# def generer_prediction_previsionnelle():
+#     try:
+#         print("[PREDICTION] Démarrage du pipeline...")
+
+#         resultats = executer_prediction()
+
+#         return jsonify({
+#             "success": True,
+#             "message": "Prédiction générée avec succès.",
+#             "resultats": resultats
+#         }), 200
+
+#     except Exception as e:
+#         print("[PREDICTION] ERREUR")
+#         traceback.print_exc()
+
+#         return jsonify({
+#             "success": False,
+#             "message": str(e)
+#         }), 500
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=5000)

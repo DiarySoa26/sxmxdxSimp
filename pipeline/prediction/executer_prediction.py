@@ -14,8 +14,8 @@ ETAPES=[
     ("Prédiction budgétaire",BASE/"prediction"/"predire_budget.py"),
     ("Prédiction charges par catégorie",BASE/"prediction"/"predire_charges_categories.py"),
     ("Détection des dérives",BASE/"prediction"/"detecter_derives_categories.py"),
-    ("Génération du résumé",BASE/"prediction"/"generer_resume_analyse.py")
-    # ("Enregistrement PostgreSQL",BASE/"prediction"/"enregistrer_prediction.py")
+    ("Génération du résumé",BASE/"prediction"/"generer_resume_analyse.py"),
+    ("Enregistrement PostgreSQL",BASE/"enregistrer_prediction.py")
 ]
 
 def executer_etape(numero,nom,script):

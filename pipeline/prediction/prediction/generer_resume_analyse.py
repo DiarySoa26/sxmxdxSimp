@@ -180,7 +180,7 @@ categories = derives.groupby("categorie").agg(
 
 lignes = [
     f"ANALYSE BUDGETAIRE PREVISIONNELLE {ANNEE}",
-    "="*70,"",
+    # "="*70,"",
     "1. Synthèse budgétaire","",
     f"Les ventes prévisionnelles pour {ANNEE} sont estimées à {nombre(budget['ventes'])} unités, soit {variation(budget['evolution_ventes_pct'])} par rapport à {ANNEE_REFERENCE}.","",
     f"Le chiffre d'affaires à l'exportation prévisionnel est estimé à {mga(budget['ca_export'])}, soit {variation(budget['evolution_ca_pct'])} par rapport à {ANNEE_REFERENCE}.","",
