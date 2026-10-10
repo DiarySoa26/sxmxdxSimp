@@ -1,6 +1,6 @@
-package com.sxmxdx.backend.controller;
+package com.sxmxdx.backend.controller.budget;
 
-import com.sxmxdx.backend.service.BudgetService;
+import com.sxmxdx.backend.service.budget.BudgetService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
