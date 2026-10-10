@@ -179,3 +179,50 @@ ALTER TABLE budget_mensuel
     ADD COLUMN IF NOT EXISTS production NUMERIC(20,3)
         NOT NULL DEFAULT 0;
 
+
+
+
+CREATE TABLE IF NOT EXISTS campagne_budgetaire (
+    id BIGSERIAL PRIMARY KEY,
+    nom VARCHAR(150) NOT NULL,
+    exercice_id BIGINT NOT NULL
+        REFERENCES exercice(id),
+    date_debut DATE NOT NULL,
+    date_fin DATE NOT NULL,
+    statut VARCHAR(20) NOT NULL DEFAULT 'PLANIFIEE',
+    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CHECK (date_fin >= date_debut),
+    CHECK (statut IN (
+        'PLANIFIEE',
+        'EN_COURS',
+        'TERMINEE',
+        'ANNULEE'
+    ))
+);
+
+
+
+CREATE TABLE IF NOT EXISTS jalon_budgetaire (
+    id BIGSERIAL PRIMARY KEY,
+    campagne_id BIGINT NOT NULL
+        REFERENCES campagne_budgetaire(id)
+        ON DELETE CASCADE,
+    nom VARCHAR(100) NOT NULL,
+    code VARCHAR(40) NOT NULL,
+    ordre INTEGER NOT NULL,
+    date_limite DATE NOT NULL,
+    date_realisation TIMESTAMP,
+    statut VARCHAR(20) NOT NULL DEFAULT 'EN_ATTENTE',
+    CHECK (statut IN (
+        'EN_ATTENTE',
+        'EN_COURS',
+        'TERMINE'
+    )),
+    UNIQUE (campagne_id, code),
+    UNIQUE (campagne_id, ordre)
+);
+
+
+ALTER TABLE budget
+ADD COLUMN IF NOT EXISTS campagne_id BIGINT
+REFERENCES campagne_budgetaire(id);
