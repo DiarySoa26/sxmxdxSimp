@@ -1,0 +1,525 @@
+{
+    "modele": "SOMIDA_BUDGET",
+    "origine": "REVERSE_ENGINEERING_FORMALISE",
+    "statistiques": {
+        "regles_techniques": 17,
+        "regles_formalisees": 17,
+        "regles_a_valider": 0
+    },
+    "regles": [
+        {
+            "id": "RG_METIER_001",
+            "regle_technique_source": "RG_EXPORTATIONS_001",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "EXPORTATION",
+            "nom": "VOLUME EXPORTÉ (t)",
+            "cible": "volume_exporte_t",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "formule_excel_reference": "=SUMIF($E$10:$E$54,\"Quantité exportée\",$S$10:$S$54)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "cellules_excel": [
+                "A5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_002",
+            "regle_technique_source": "RG_EXPORTATIONS_002",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "EXPORTATION",
+            "nom": "CA EXPORT (MGA)",
+            "cible": "ca_export_mga",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "formule_excel_reference": "=SUMIF($E$10:$E$54,\"Chiffre d'affaires MGA\",$S$10:$S$54)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "cellules_excel": [
+                "D5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_003",
+            "regle_technique_source": "RG_EXPORTATIONS_003",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "EXPORTATION",
+            "nom": "CA JAPON (MGA)",
+            "cible": "ca_japon_mga",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Japon\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "cellules_excel": [
+                "G5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_004",
+            "regle_technique_source": "RG_EXPORTATIONS_004",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "EXPORTATION",
+            "nom": "CA RUSSIE (MGA)",
+            "cible": "ca_russie_mga",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Russie\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "cellules_excel": [
+                "J5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_005",
+            "regle_technique_source": "RG_EXPORTATIONS_005",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "EXPORTATION",
+            "nom": "CA CHINE (MGA)",
+            "cible": "ca_chine_mga",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "UNIQUE",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Chine\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "cellules_excel": [
+                "M5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_006",
+            "regle_technique_source": "RG_SYNTHESE_001",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "CA export",
+            "cible": "ca_export",
+            "operation": "SOMME_CONDITIONNELLE",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "dependances": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E2:E46"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "G2:G46"
+                }
+            ],
+            "cellules_excel": [
+                "C2",
+                "D2",
+                "E2",
+                "F2",
+                "G2",
+                "H2",
+                "I2",
+                "J2",
+                "K2",
+                "L2",
+                "M2",
+                "N2"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_007",
+            "regle_technique_source": "RG_SYNTHESE_002",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "CA export",
+            "cible": "ca_export",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(C2:N2)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2:N2"
+                }
+            ],
+            "cellules_excel": [
+                "O2"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_008",
+            "regle_technique_source": "RG_SYNTHESE_003",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Charges exploitation",
+            "cible": "charges_exploitation",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=SUM(Charges!$E$2:$E$15)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E2:E15"
+                }
+            ],
+            "cellules_excel": [
+                "C3",
+                "D3",
+                "E3",
+                "F3",
+                "G3",
+                "H3",
+                "I3",
+                "J3",
+                "K3",
+                "L3",
+                "M3",
+                "N3"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_009",
+            "regle_technique_source": "RG_SYNTHESE_004",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Charges exploitation",
+            "cible": "charges_exploitation",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(C3:N3)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3:N3"
+                }
+            ],
+            "cellules_excel": [
+                "O3"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_010",
+            "regle_technique_source": "RG_SYNTHESE_005",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Frais export",
+            "cible": "frais_export",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=SUM('Frais Export'!$E$2:$E$19)",
+            "dependances": [
+                {
+                    "feuille": "Frais Export",
+                    "cellule": "E2:E19"
+                }
+            ],
+            "cellules_excel": [
+                "C4",
+                "D4",
+                "E4",
+                "F4",
+                "G4",
+                "H4",
+                "I4",
+                "J4",
+                "K4",
+                "L4",
+                "M4",
+                "N4"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_011",
+            "regle_technique_source": "RG_SYNTHESE_006",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Frais export",
+            "cible": "frais_export",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(C4:N4)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4:N4"
+                }
+            ],
+            "cellules_excel": [
+                "O4"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_012",
+            "regle_technique_source": "RG_SYNTHESE_007",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Masse salariale",
+            "cible": "masse_salariale",
+            "operation": "SOMME",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
+            "dependances": [
+                {
+                    "feuille": "Employes",
+                    "cellule": "I2:I61"
+                }
+            ],
+            "cellules_excel": [
+                "C5",
+                "D5",
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5",
+                "K5",
+                "L5",
+                "M5",
+                "N5"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_013",
+            "regle_technique_source": "RG_SYNTHESE_008",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Masse salariale",
+            "cible": "masse_salariale",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(C5:N5)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5:N5"
+                }
+            ],
+            "cellules_excel": [
+                "O5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_014",
+            "regle_technique_source": "RG_SYNTHESE_009",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Résultat opérationnel",
+            "cible": "resultat_operationnel",
+            "operation": "SOUSTRACTION",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=C2-C3-C4-C5",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5"
+                }
+            ],
+            "cellules_excel": [
+                "C6",
+                "D6",
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6",
+                "K6",
+                "L6",
+                "M6",
+                "N6"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_015",
+            "regle_technique_source": "RG_SYNTHESE_010",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Résultat opérationnel",
+            "cible": "resultat_operationnel",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(C6:N6)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6:N6"
+                }
+            ],
+            "cellules_excel": [
+                "O6"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_016",
+            "regle_technique_source": "RG_SYNTHESE_011",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Marge opérationnelle",
+            "cible": "marge_operationnelle",
+            "operation": "DIVISION",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=IFERROR(C6/C2,0)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                }
+            ],
+            "cellules_excel": [
+                "C7",
+                "D7",
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7",
+                "K7",
+                "L7",
+                "M7",
+                "N7"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_017",
+            "regle_technique_source": "RG_SYNTHESE_012",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "BUDGET",
+            "nom": "Marge opérationnelle",
+            "cible": "marge_operationnelle",
+            "operation": "DIVISION",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=IFERROR(O6/O2,0)",
+            "dependances": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
+                }
+            ],
+            "cellules_excel": [
+                "O7"
+            ],
+            "nombre_occurrences": 1
+        }
+    ],
+    "a_valider": []
+}

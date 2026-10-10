@@ -32,19 +32,21 @@ def recevoir_fichier(chemin_fichier: str):
     UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
     # 4. Générer un identifiant d'import
-    import_id = str(uuid.uuid4())[:8]
+    # import_id = str(uuid.uuid4())[:8]
+    
+    identifiant_fichier = str(uuid.uuid4())[:8]
 
     # 5. Nouveau nom
     destination = (
         UPLOAD_DIR /
-        f"{import_id}_{source.name}"
+        f"{identifiant_fichier}_{source.name}"
     )
 
     # 6. Copier le fichier
     shutil.copy2(source, destination)
 
     print(f"[OK] Fichier sélectionné : {source.name}")
-    print(f"[OK] Import ID          : {import_id}")
+    print(f"[OK] Import ID          : {identifiant_fichier}")
     print(f"[OK] Fichier enregistré : {destination}")
 
     return destination

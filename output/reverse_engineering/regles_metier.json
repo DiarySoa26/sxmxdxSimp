@@ -1,62 +1,1683 @@
 {
-    "modele": "SOMIDA_BUDGET_V1",
-    "nombre_regles": 8,
+    "modele": "SOMIDA_BUDGET",
+    "version": "SOMIDA_BUDGET_V1",
+    "origine": "REVERSE_ENGINEERING_EXCEL",
+    "sources": {
+        "formules": "output/reverse_engineering/formules.csv",
+        "dependances": "output/reverse_engineering/dependances.csv"
+    },
+    "statistiques": {
+        "nombre_formules_excel": 83,
+        "nombre_regles_uniques": 17,
+        "nombre_repetitions_regroupees": 66,
+        "operations": {
+            "SOMME_CONDITIONNELLE": 6,
+            "SOMME": 8,
+            "SOUSTRACTION": 1,
+            "DIVISION": 2
+        },
+        "domaines": {
+            "EXPORTATION": 5,
+            "BUDGET": 12
+        },
+        "periodicites": {
+            "UNIQUE": 11,
+            "MENSUELLE": 6
+        }
+    },
     "regles": [
         {
-            "code": "RG_PROD_001",
-            "domaine": "PRODUCTION",
-            "nom": "Production commercialisable",
-            "description": "La production commercialisable correspond à la production après prise en compte des pertes.",
-            "expression": "production_commercialisable = production_brute - pertes"
-        },
-        {
-            "code": "RG_SAL_001",
-            "domaine": "PERSONNEL",
-            "nom": "Coût salarial",
-            "description": "Le coût d'un employé inclut le salaire, les primes et les charges associées.",
-            "expression": "cout_salarial = salaire_base + primes + charges"
-        },
-        {
-            "code": "RG_EXP_001",
+            "id": "RG_EXPORTATIONS_001",
+            "nom": "Calcul Excel Exportations!A5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
             "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires en devise",
-            "description": "Le chiffre d'affaires en devise est obtenu à partir de la quantité exportée et du prix unitaire.",
-            "expression": "ca_devise = quantite_exportee * prix_unitaire_devise"
+            "feuille": "Exportations",
+            "cellule_cible_reference": "A5",
+            "formule_excel_reference": "=SUMIF($E$10:$E$54,\"Quantité exportée\",$S$10:$S$54)",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIF(RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"QUANTITÉEXPORTÉE\",RANGE(ABS_COL[S],ABS_ROW[10],ABS_COL[S],ABS_ROW[54]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "A5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "A5",
+                    "formule": "=SUMIF($E$10:$E$54,\"Quantité exportée\",$S$10:$S$54)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E10:E54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "S10:S54"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "code": "RG_EXP_002",
+            "id": "RG_EXPORTATIONS_002",
+            "nom": "Calcul Excel Exportations!D5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
             "domaine": "EXPORTATION",
-            "nom": "Conversion en MGA",
-            "description": "Les ventes en devise sont converties en ariary selon le taux de change applicable.",
-            "expression": "ca_mga = ca_devise * taux_change"
+            "feuille": "Exportations",
+            "cellule_cible_reference": "D5",
+            "formule_excel_reference": "=SUMIF($E$10:$E$54,\"Chiffre d'affaires MGA\",$S$10:$S$54)",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIF(RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\",RANGE(ABS_COL[S],ABS_ROW[10],ABS_COL[S],ABS_ROW[54]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "D5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "D5",
+                    "formule": "=SUMIF($E$10:$E$54,\"Chiffre d'affaires MGA\",$S$10:$S$54)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E10:E54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "S10:S54"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "code": "RG_EXP_003",
+            "id": "RG_EXPORTATIONS_003",
+            "nom": "Calcul Excel Exportations!G5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
             "domaine": "EXPORTATION",
-            "nom": "Coût d'exportation",
-            "description": "Le coût d'exportation regroupe les différents frais nécessaires à l'expédition.",
-            "expression": "cout_export = transport + transit + manutention + fret + assurance + frais_bancaires"
+            "feuille": "Exportations",
+            "cellule_cible_reference": "G5",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Japon\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIFS(RANGE(ABS_COL[S],ABS_ROW[10],ABS_COL[S],ABS_ROW[54]),RANGE(ABS_COL[A],ABS_ROW[10],ABS_COL[A],ABS_ROW[54]),\"JAPON\",RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\")",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "G5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "G5",
+                    "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Japon\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "S10:S54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "A10:A54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E10:E54"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "code": "RG_BUD_001",
-            "domaine": "BUDGET",
-            "nom": "Charges totales",
-            "description": "Les charges totales regroupent les charges de production, les charges de structure et les frais d'exportation.",
-            "expression": "charges_totales = charges_production + charges_structure + frais_export"
+            "id": "RG_EXPORTATIONS_004",
+            "nom": "Calcul Excel Exportations!J5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_cible_reference": "J5",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Russie\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIFS(RANGE(ABS_COL[S],ABS_ROW[10],ABS_COL[S],ABS_ROW[54]),RANGE(ABS_COL[A],ABS_ROW[10],ABS_COL[A],ABS_ROW[54]),\"RUSSIE\",RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\")",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "J5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "J5",
+                    "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Russie\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "S10:S54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "A10:A54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E10:E54"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "code": "RG_BUD_002",
-            "domaine": "BUDGET",
-            "nom": "Résultat opérationnel",
-            "description": "Le résultat opérationnel correspond au chiffre d'affaires diminué des charges.",
-            "expression": "resultat_operationnel = ca_mga - charges_totales"
+            "id": "RG_EXPORTATIONS_005",
+            "nom": "Calcul Excel Exportations!M5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "EXPORTATION",
+            "feuille": "Exportations",
+            "cellule_cible_reference": "M5",
+            "formule_excel_reference": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Chine\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIFS(RANGE(ABS_COL[S],ABS_ROW[10],ABS_COL[S],ABS_ROW[54]),RANGE(ABS_COL[A],ABS_ROW[10],ABS_COL[A],ABS_ROW[54]),\"CHINE\",RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\")",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "M5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "S10:S54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "A10:A54"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E10:E54"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "M5",
+                    "formule": "=SUMIFS($S$10:$S$54,$A$10:$A$54,\"Chine\",$E$10:$E$54,\"Chiffre d'affaires MGA\")",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "S10:S54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "A10:A54"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E10:E54"
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "code": "RG_BUD_003",
+            "id": "RG_SYNTHESE_001",
+            "nom": "Calcul Excel Synthese!C2",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
             "domaine": "BUDGET",
-            "nom": "Taux de marge",
-            "description": "Le taux de marge représente le résultat rapporté au chiffre d'affaires.",
-            "expression": "taux_marge = (resultat_operationnel / ca_mga) * 100"
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C2",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "operation": "SOMME_CONDITIONNELLE",
+            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[46]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[2],ABS_COL[G],ABS_ROW[46]))",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C2",
+                "D2",
+                "E2",
+                "F2",
+                "G2",
+                "H2",
+                "I2",
+                "J2",
+                "K2",
+                "L2",
+                "M2",
+                "N2"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Exportations",
+                    "cellule": "E2:E46"
+                },
+                {
+                    "feuille": "Exportations",
+                    "cellule": "G2:G46"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "G2:G46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "H2:H46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "I2:I46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "J2:J46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "K2:K46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "L2:L46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "M2:M46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "N2:N46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "O2:O46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "P2:P46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "Q2:Q46"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N2",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)",
+                    "dependances": [
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "E2:E46"
+                        },
+                        {
+                            "feuille": "Exportations",
+                            "cellule": "R2:R46"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_002",
+            "nom": "Calcul Excel Synthese!O2",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O2",
+            "formule_excel_reference": "=SUM(C2:N2)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O2"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2:N2"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O2",
+                    "formule": "=SUM(C2:N2)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C2:N2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_003",
+            "nom": "Calcul Excel Synthese!C3",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C3",
+            "formule_excel_reference": "=SUM(Charges!$E$2:$E$15)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[15]))",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C3",
+                "D3",
+                "E3",
+                "F3",
+                "G3",
+                "H3",
+                "I3",
+                "J3",
+                "K3",
+                "L3",
+                "M3",
+                "N3"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E2:E15"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C3",
+                    "formule": "=SUM(Charges!$E$2:$E$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E2:E15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D3",
+                    "formule": "=SUM(Charges!$F$2:$F$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "F2:F15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E3",
+                    "formule": "=SUM(Charges!$G$2:$G$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "G2:G15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F3",
+                    "formule": "=SUM(Charges!$H$2:$H$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "H2:H15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G3",
+                    "formule": "=SUM(Charges!$I$2:$I$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "I2:I15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H3",
+                    "formule": "=SUM(Charges!$J$2:$J$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "J2:J15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I3",
+                    "formule": "=SUM(Charges!$K$2:$K$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "K2:K15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J3",
+                    "formule": "=SUM(Charges!$L$2:$L$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "L2:L15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K3",
+                    "formule": "=SUM(Charges!$M$2:$M$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "M2:M15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L3",
+                    "formule": "=SUM(Charges!$N$2:$N$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "N2:N15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M3",
+                    "formule": "=SUM(Charges!$O$2:$O$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "O2:O15"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N3",
+                    "formule": "=SUM(Charges!$P$2:$P$15)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "P2:P15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_004",
+            "nom": "Calcul Excel Synthese!O3",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O3",
+            "formule_excel_reference": "=SUM(C3:N3)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O3"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3:N3"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O3",
+                    "formule": "=SUM(C3:N3)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C3:N3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_005",
+            "nom": "Calcul Excel Synthese!C4",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C4",
+            "formule_excel_reference": "=SUM('Frais Export'!$E$2:$E$19)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(FRAISEXPORT!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[19]))",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C4",
+                "D4",
+                "E4",
+                "F4",
+                "G4",
+                "H4",
+                "I4",
+                "J4",
+                "K4",
+                "L4",
+                "M4",
+                "N4"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Frais Export",
+                    "cellule": "E2:E19"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C4",
+                    "formule": "=SUM('Frais Export'!$E$2:$E$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "E2:E19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D4",
+                    "formule": "=SUM('Frais Export'!$F$2:$F$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "F2:F19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E4",
+                    "formule": "=SUM('Frais Export'!$G$2:$G$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "G2:G19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F4",
+                    "formule": "=SUM('Frais Export'!$H$2:$H$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "H2:H19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G4",
+                    "formule": "=SUM('Frais Export'!$I$2:$I$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "I2:I19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H4",
+                    "formule": "=SUM('Frais Export'!$J$2:$J$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "J2:J19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I4",
+                    "formule": "=SUM('Frais Export'!$K$2:$K$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "K2:K19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J4",
+                    "formule": "=SUM('Frais Export'!$L$2:$L$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "L2:L19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K4",
+                    "formule": "=SUM('Frais Export'!$M$2:$M$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "M2:M19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L4",
+                    "formule": "=SUM('Frais Export'!$N$2:$N$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "N2:N19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M4",
+                    "formule": "=SUM('Frais Export'!$O$2:$O$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "O2:O19"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N4",
+                    "formule": "=SUM('Frais Export'!$P$2:$P$19)",
+                    "dependances": [
+                        {
+                            "feuille": "Frais Export",
+                            "cellule": "P2:P19"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_006",
+            "nom": "Calcul Excel Synthese!O4",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O4",
+            "formule_excel_reference": "=SUM(C4:N4)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O4"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4:N4"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O4",
+                    "formule": "=SUM(C4:N4)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C4:N4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_007",
+            "nom": "Calcul Excel Synthese!C5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C5",
+            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(EMPLOYES!RANGE(ABS_COL[I],ABS_ROW[2],ABS_COL[I],ABS_ROW[61]))",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C5",
+                "D5",
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5",
+                "K5",
+                "L5",
+                "M5",
+                "N5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Employes",
+                    "cellule": "I2:I61"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_008",
+            "nom": "Calcul Excel Synthese!O5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O5",
+            "formule_excel_reference": "=SUM(C5:N5)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5:N5"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O5",
+                    "formule": "=SUM(C5:N5)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C5:N5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_009",
+            "nom": "Calcul Excel Synthese!C6",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C6",
+            "formule_excel_reference": "=C2-C3-C4-C5",
+            "operation": "SOUSTRACTION",
+            "signature_structurelle": "=CELL(COL[0],ROW[-4])-CELL(COL[0],ROW[-3])-CELL(COL[0],ROW[-2])-CELL(COL[0],ROW[-1])",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C6",
+                "D6",
+                "E6",
+                "F6",
+                "G6",
+                "H6",
+                "I6",
+                "J6",
+                "K6",
+                "L6",
+                "M6",
+                "N6"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C6",
+                    "formule": "=C2-C3-C4-C5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D6",
+                    "formule": "=D2-D3-D4-D5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E6",
+                    "formule": "=E2-E3-E4-E5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F6",
+                    "formule": "=F2-F3-F4-F5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G6",
+                    "formule": "=G2-G3-G4-G5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H6",
+                    "formule": "=H2-H3-H4-H5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I6",
+                    "formule": "=I2-I3-I4-I5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J6",
+                    "formule": "=J2-J3-J4-J5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K6",
+                    "formule": "=K2-K3-K4-K5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L6",
+                    "formule": "=L2-L3-L4-L5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M6",
+                    "formule": "=M2-M3-M4-M5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M5"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N6",
+                    "formule": "=N2-N3-N4-N5",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_010",
+            "nom": "Calcul Excel Synthese!O6",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O6",
+            "formule_excel_reference": "=SUM(C6:N6)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O6"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6:N6"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O6",
+                    "formule": "=SUM(C6:N6)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C6:N6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_011",
+            "nom": "Calcul Excel Synthese!C7",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C7",
+            "formule_excel_reference": "=IFERROR(C6/C2,0)",
+            "operation": "DIVISION",
+            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-5]),0)",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "cellules_excel": [
+                "C7",
+                "D7",
+                "E7",
+                "F7",
+                "G7",
+                "H7",
+                "I7",
+                "J7",
+                "K7",
+                "L7",
+                "M7",
+                "N7"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C7",
+                    "formule": "=IFERROR(C6/C2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D7",
+                    "formule": "=IFERROR(D6/D2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E7",
+                    "formule": "=IFERROR(E6/E2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F7",
+                    "formule": "=IFERROR(F6/F2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G7",
+                    "formule": "=IFERROR(G6/G2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H7",
+                    "formule": "=IFERROR(H6/H2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I7",
+                    "formule": "=IFERROR(I6/I2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J7",
+                    "formule": "=IFERROR(J6/J2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K7",
+                    "formule": "=IFERROR(K6/K2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L7",
+                    "formule": "=IFERROR(L6/L2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M7",
+                    "formule": "=IFERROR(M6/M2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M2"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N7",
+                    "formule": "=IFERROR(N6/N2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N2"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_012",
+            "nom": "Calcul Excel Synthese!O7",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O7",
+            "formule_excel_reference": "=IFERROR(O6/O2,0)",
+            "operation": "DIVISION",
+            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-5]),0)",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "cellules_excel": [
+                "O7"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O7",
+                    "formule": "=IFERROR(O6/O2,0)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "O6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "O2"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

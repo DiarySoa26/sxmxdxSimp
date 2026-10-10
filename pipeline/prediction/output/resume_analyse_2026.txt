@@ -1,0 +1,49 @@
+ANALYSE BUDGETAIRE PREVISIONNELLE 2026
+1. Synthèse budgétaire
+
+Les ventes prévisionnelles pour 2026 sont estimées à 3 071.58 unités, soit une régression de 2.83 % par rapport à 2025.
+
+Le chiffre d'affaires à l'exportation prévisionnel est estimé à 17 358 691 879 MGA, soit une régression de 8.76 % par rapport à 2025.
+
+La production annuelle est estimée à 6 704.93 unités. Les charges d'exploitation atteignent 5 228 583 033 MGA, les frais d'exportation 3 082 706 500 MGA et la masse salariale 3 671 616 796 MGA.
+
+Le résultat opérationnel prévisionnel atteint 5 375 785 550 MGA, pour une marge opérationnelle de 30.97 %.
+
+2. Evolution par rapport à 2025
+
+Ventes                  : RÉGRESSION de 2.83 %.
+CA export               : RÉGRESSION de 8.76 %.
+Production              : RÉGRESSION de 4.87 %.
+Charges d'exploitation  : RÉGRESSION de 7.01 %.
+Frais d'exportation     : RÉGRESSION de 5.95 %.
+Masse salariale         : RÉGRESSION de 8.57 %.
+
+3. Trajectoire mensuelle
+
+Le chiffre d'affaires à l'exportation mensuel maximal est prévu en Mars, avec 1 506 031 375 MGA.
+Le chiffre d'affaires à l'exportation mensuel minimal est prévu en Décembre, avec 1 389 608 492 MGA.
+
+4. Analyse des dérives de dépenses
+
+L'analyse identifie 53 observation(s) à niveau faible, 7 à niveau modéré, 0 à niveau élevé et 0 à niveau critique.
+
+L'écart statistique maximal concerne la catégorie LOGISTIQUE en Juin. La charge prévue est de 55 231 905 MGA, contre 61 232 818 MGA attendus selon le comportement historique associé à la production.
+L'écart atteint -6 000 912 MGA, soit -9.80 %. L'indice de dérive est de 77.19/100, avec un niveau MODERE.
+
+5. Analyse par catégorie
+
+- LOGISTIQUE : indice moyen 35.49/100, indice maximal 77.19/100, écart cumulé -18 238 988 MGA.
+- SECURITE : indice moyen 44.23/100, indice maximal 74.42/100, écart cumulé -8 810 562 MGA.
+- FISCAL : indice moyen 38.99/100, indice maximal 64.79/100, écart cumulé 503 326 MGA.
+- PRODUCTION : indice moyen 38.10/100, indice maximal 63.79/100, écart cumulé -89 440 409 MGA.
+- FINANCE : indice moyen 32.50/100, indice maximal 60.15/100, écart cumulé -1 129 480 MGA.
+
+6. Conclusion automatique
+
+Les quantités vendues à l'exportation enregistrent une régression de 2.83 %, tandis que le chiffre d'affaires à l'exportation enregistre une régression de 8.76 %.
+L'évolution des charges d'exploitation (RÉGRESSION de 7.01 %) ne dépasse pas celle de la production (RÉGRESSION de 4.87 %).
+Aucune observation présentant un niveau élevé ou critique n'est détectée.
+
+Note méthodologique
+
+L'indice de dérive est un indicateur statistique construit à partir de l'écart entre les charges prévisionnelles et leur comportement historique par rapport à la production. Il ne constitue pas une probabilité calibrée d'anomalie.

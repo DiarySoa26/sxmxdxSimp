@@ -19,3 +19,12 @@ RUN curl -L \
 WORKDIR /app
 
 CMD ["tail", "-f", "/dev/null"]
+
+# RUN pip3 install --no-cache-dir flask
+
+RUN pip3 install --no-cache-dir \
+    flask \
+    pandas \
+    numpy \
+    scikit-learn \
+    psycopg2-binary

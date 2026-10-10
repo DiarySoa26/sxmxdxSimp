@@ -71,11 +71,72 @@ services:
     volumes:
       - ./:/app
 
+    ports:
+      - "5001:5000"
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: sxmxdx2
+      DB_USER: sxmxdx
+      DB_PASSWORD: diary
+
     depends_on:
       - postgres
 
-    command: tail -f /dev/null
+    command: python3 /app/pipeline/api/import_api.py
+    # command: tail -f /dev/null
+
+  
+  nextjs:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    container_name: nextjsSimp
+
+    working_dir: /app
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./frontend:/app
+      - nextjs_node_modules:/app/node_modules
+
+    environment:
+      NODE_ENV: development
+
+    command: npm run dev
+
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    container_name: backendSimp
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: sxmxdx2
+      DB_USER: sxmxdx
+      DB_PASSWORD: diary
+      PIPELINE_API_URL: http://spark:5000
+
+    volumes:
+    - ./data:/data
+
+    depends_on:
+      - postgres
+      - spark
+      
 
 
 volumes:
   postgres_data:
+  nextjs_node_modules:
