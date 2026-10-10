@@ -98,3 +98,38 @@ SELECT e.* , m.nom as nom_mois
 FROM budget_mensuel e
 JOIN mois m ON e.mois_id = m.id
 ;
+
+
+CREATE OR REPLACE VIEW view_campagne_avancement AS
+SELECT
+    c.id,
+    c.nom,
+    c.exercice_id,
+    c.date_debut,
+    c.date_fin,
+    c.statut,
+    COUNT(j.id) AS total_jalons,
+    COUNT(j.id) FILTER (
+        WHERE j.statut = 'TERMINE'
+    ) AS jalons_termines,
+    COUNT(j.id) FILTER (
+        WHERE j.statut <> 'TERMINE'
+        AND j.date_limite < CURRENT_DATE
+    ) AS jalons_en_retard,
+    CASE
+        WHEN COUNT(j.id) = 0 THEN 0
+        ELSE ROUND(
+            COUNT(j.id) FILTER (
+                WHERE j.statut = 'TERMINE'
+            ) * 100.0 / COUNT(j.id),
+            2
+        )
+    END AS progression
+FROM campagne_budgetaire c
+LEFT JOIN jalon_budgetaire j
+    ON j.campagne_id = c.id
+GROUP BY c.id;
+
+SELECT *
+FROM view_campagne_avancement
+ORDER BY date_debut DESC;
