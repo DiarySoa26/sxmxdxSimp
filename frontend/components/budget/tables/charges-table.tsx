@@ -62,18 +62,6 @@ export default function ChargesTable({
 
               return (
                 <>
-                  {/* <TableRow
-                    key={`categorie-${categorie}`}
-                    className="border-y-2 bg-primary/10 hover:bg-primary/10"
-                  >
-                    <TableCell
-                      colSpan={mois.length + 4}
-                      className="py-4 text-base font-bold uppercase tracking-wide"
-                    >
-                      {categorie}
-                    </TableCell>
-                  </TableRow> */}
-
                   <TableRow
   key={`categorie-${categorie}`}
   className="border-y-2 bg-primary/10 hover:bg-primary/10"
