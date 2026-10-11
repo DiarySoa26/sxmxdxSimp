@@ -19,6 +19,7 @@ import JalonBudgetaire, {
   type Jalon
 } from "./JalonBudgetaire";
 
+
 type Campagne = {
   id: number;
   nom: string;
