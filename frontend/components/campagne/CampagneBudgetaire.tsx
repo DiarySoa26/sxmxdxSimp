@@ -141,9 +141,10 @@ export default function CampagneBudgetaire({
 
             <JalonBudgetaire
               campagneId={details.campagne.id}
+              exerciceId={details.campagne.exerciceId}
               jalons={details.jalons}
-              fermee={!!fermee}
-              actualiser={actualiser}
+              busy={busy}
+              onJalonTermine={details.terminerJalon ? actualiser : undefined}
             />
 
             {!fermee && (
