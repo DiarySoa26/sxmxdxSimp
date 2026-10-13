@@ -44,6 +44,7 @@ import com.sxmxdx.backend.service.prediction.PredictionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -81,4 +82,16 @@ public class PredictionController {
 
         return ResponseEntity.ok(prediction);
     }
+
+    @GetMapping
+    public ResponseEntity<List<Map<String, Object>>> listerPredictions() {
+        return ResponseEntity.ok(predictionService.listerPredictions());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> rechercherPrediction(@PathVariable Long id) {
+        Map<String, Object> prediction = predictionService.rechercherPrediction(id);
+        if (prediction == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(prediction);
+}
 }

@@ -1,279 +1,3 @@
-// "use client"
-
-// import { useEffect, useState } from "react"
-// import { useRouter, useSearchParams } from "next/navigation"
-// import { CalendarDays, ClipboardCheck, Loader2 } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select"
-// import BudgetTabs from "./budget-tabs"
-// import BudgetError from "./budget-error"
-// import { getBudgetDetails, getExercices } from "@/services/budget-details-service"
-
-// type Exercice = {
-//   id_exercice: number
-//   annee_exercice: number
-// }
-
-// type OngletBudget = "charges" | "exportations" | "frais-export" | "production" | "employes" | "budget"
-
-// export default function BudgetDetails() {
-//   const router = useRouter()
-//   const searchParams = useSearchParams()
-
-//   const exerciceIdUrl = searchParams.get("exerciceId")
-//   const campagneIdUrl = searchParams.get("campagneId")
-//   const jalonIdUrl = searchParams.get("jalonId")
-//   const modeVerification = searchParams.get("verification") === "1"
-//   const retourDisponible = modeVerification && !!campagneIdUrl && !!jalonIdUrl
-
-//   const [exercices, setExercices] = useState<Exercice[]>([])
-//   const [exerciceId, setExerciceId] = useState("")
-//   const [anneeSelectionnee, setAnneeSelectionnee] = useState("")
-//   const [onglet, setOnglet] = useState<OngletBudget>("charges")
-//   const [data, setData] = useState<any[]>([])
-//   const [loadingExercices, setLoadingExercices] = useState(true)
-//   const [loadingData, setLoadingData] = useState(false)
-//   const [error, setError] = useState("")
-
-//   useEffect(() => {
-//     let actif = true
-
-//     async function chargerExercices() {
-//       try {
-//         setLoadingExercices(true)
-//         setError("")
-//         setExerciceId("")
-//         setAnneeSelectionnee("")
-//         setData([])
-
-//         const liste = await getExercices()
-//         if (!actif) return
-
-//         if (!Array.isArray(liste) || liste.length === 0) {
-//           setExercices([])
-//           return
-//         }
-
-//         setExercices(liste)
-
-//         const exerciceCampagne = exerciceIdUrl
-//           ? liste.find((e: Exercice) => String(e.id_exercice) === exerciceIdUrl)
-//           : null
-
-//         if (exerciceIdUrl && !exerciceCampagne) {
-//           setError("L'exercice associé à cette campagne est introuvable.")
-//           return
-//         }
-
-//         const selection = exerciceCampagne ?? liste[0]
-//         setExerciceId(String(selection.id_exercice))
-//         setAnneeSelectionnee(String(selection.annee_exercice))
-//       } catch (erreur) {
-//         if (!actif) return
-//         console.error("Erreur chargement exercices :", erreur)
-//         setExercices([])
-//         setExerciceId("")
-//         setAnneeSelectionnee("")
-//         setError(erreur instanceof Error ? erreur.message : "Impossible de charger les exercices.")
-//       } finally {
-//         if (actif) setLoadingExercices(false)
-//       }
-//     }
-
-//     chargerExercices()
-//     return () => { actif = false }
-//   }, [exerciceIdUrl])
-
-//   useEffect(() => {
-//     if (!exerciceId) return
-//     let actif = true
-
-//     async function chargerDonnees() {
-//       const debut = Date.now()
-//       try {
-//         setLoadingData(true)
-//         setError("")
-//         setData([])
-
-//         const resultat = await getBudgetDetails(onglet, Number(exerciceId))
-//         const tempsRestant = Math.max(0, 3000 - (Date.now() - debut))
-//         if (tempsRestant > 0) await attendre(tempsRestant)
-//         if (!actif) return
-
-//         setData(Array.isArray(resultat) ? resultat : [])
-//       } catch (erreur) {
-//         const tempsRestant = Math.max(0, 3000 - (Date.now() - debut))
-//         if (tempsRestant > 0) await attendre(tempsRestant)
-//         if (!actif) return
-
-//         console.error("Erreur chargement budget :", erreur)
-//         setData([])
-//         setError(erreur instanceof Error ? erreur.message : "Impossible de charger les données.")
-//       } finally {
-//         if (actif) setLoadingData(false)
-//       }
-//     }
-
-//     chargerDonnees()
-//     return () => { actif = false }
-//   }, [exerciceId, onglet])
-
-//   function changerExercice(value: string | null) {
-//     if (value === null) return
-//     const exercice = exercices.find(e => String(e.id_exercice) === value)
-//     if (!exercice) return
-
-//     setError("")
-//     setData([])
-//     setExerciceId(String(exercice.id_exercice))
-//     setAnneeSelectionnee(String(exercice.annee_exercice))
-//   }
-
-//   function changerOnglet(value: OngletBudget) {
-//     setError("")
-//     setData([])
-//     setOnglet(value)
-//   }
-
-//   function retournerAuxJalons() {
-//     if (!campagneIdUrl || !jalonIdUrl || !exerciceIdUrl) return
-
-//     // La consultation est liée à l'exercice de la campagne.
-//     if (exerciceId !== exerciceIdUrl || loadingData || error) return
-
-//     sessionStorage.setItem(
-//       `verification-consultee-${campagneIdUrl}-${jalonIdUrl}`,
-//       "true"
-//     )
-
-//     const params = new URLSearchParams({
-//       campagneId: campagneIdUrl,
-//       jalonId: jalonIdUrl,
-//       retourVerification: "1"
-//     })
-
-//     router.push(`/dashboard/importation?${params.toString()}`)
-//   }
-
-//   return (
-//     <div className="space-y-6">
-//       <BudgetError message={error} />
-
-//       <Card>
-//         <CardHeader>
-//           <div className="flex items-center gap-3">
-//             <div className="flex h-10 w-10 items-center justify-center rounded-lg border bg-muted">
-//               <CalendarDays className="h-5 w-5" />
-//             </div>
-//             <div>
-//               <CardTitle className="text-base">Exercice</CardTitle>
-//               <CardDescription>
-//                 {modeVerification
-//                   ? "Exercice associé à la campagne budgétaire."
-//                   : "Sélectionnez l'exercice à consulter."}
-//               </CardDescription>
-//             </div>
-//           </div>
-//         </CardHeader>
-
-//         <CardContent>
-//           <div className="w-full max-w-xs">
-//             {loadingExercices ? (
-//               <div className="flex h-10 items-center gap-2 text-sm text-muted-foreground">
-//                 <Loader2 className="h-4 w-4 animate-spin" />
-//                 Chargement des exercices...
-//               </div>
-//             ) : exercices.length === 0 ? (
-//               <div className="text-sm text-muted-foreground">
-//                 Aucun exercice disponible.
-//               </div>
-//             ) : (
-//               <Select value={exerciceId} onValueChange={changerExercice}>
-//                 <SelectTrigger className="w-full">
-//                   <span>{anneeSelectionnee || "Sélectionner un exercice"}</span>
-//                 </SelectTrigger>
-//                 <SelectContent>
-//                   {exercices.map(exercice => (
-//                     <SelectItem
-//                       key={exercice.id_exercice}
-//                       value={String(exercice.id_exercice)}
-//                     >
-//                       {exercice.annee_exercice}
-//                     </SelectItem>
-//                   ))}
-//                 </SelectContent>
-//               </Select>
-//             )}
-//           </div>
-//         </CardContent>
-//       </Card>
-
-//       {exerciceId && (
-//         <Card>
-//           <CardHeader>
-//             <div className="flex flex-wrap items-center justify-between gap-3">
-//               <div>
-//                 <CardTitle>
-//                   Données de l&apos;exercice {anneeSelectionnee}
-//                 </CardTitle>
-//                 <CardDescription className="mt-1">
-//                   Consultation des données financières et budgétaires.
-//                 </CardDescription>
-//               </div>
-
-//               {retourDisponible && (
-//                 <Button
-//                   size="sm"
-//                   disabled={
-//                     loadingData ||
-//                     !!error ||
-//                     exerciceId !== exerciceIdUrl
-//                   }
-//                   onClick={retournerAuxJalons}
-//                 >
-//                   <ClipboardCheck className="mr-2 h-4 w-4" />
-//                   Vérifier
-//                 </Button>
-//               )}
-//             </div>
-//           </CardHeader>
-
-//           <CardContent>
-//             {loadingData ? (
-//               <div className="flex min-h-[300px] flex-col items-center justify-center gap-3">
-//                 <Loader2 className="h-8 w-8 animate-spin" />
-//                 <p className="text-sm text-muted-foreground">
-//                   Chargement des données de l&apos;exercice {anneeSelectionnee}...
-//                 </p>
-//               </div>
-//             ) : (
-//               <BudgetTabs
-//                 value={onglet}
-//                 onValueChange={changerOnglet}
-//                 data={data}
-//                 loading={false}
-//               />
-//             )}
-//           </CardContent>
-//         </Card>
-//       )}
-//     </div>
-//   )
-// }
-
-// function attendre(millisecondes: number) {
-//   return new Promise<void>(resolve => setTimeout(resolve, millisecondes))
-// }
-
-
-
-
-
-
-
-
-
 "use client"
 
 import { useEffect, useState } from "react"
@@ -652,81 +376,39 @@ export default function BudgetDetails() {
         <Card>
           <CardHeader>
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <div>
+              {/* <div>
                 <CardTitle>
                   Données de l&apos;exercice{" "}
                   {anneeSelectionnee}
                 </CardTitle>
 
                 <CardDescription className="mt-1">
-                  Consultation des données financières et budgétaires.
+                  Consultation des données financières et budgétaires. {anneeSelectionnee}
                 </CardDescription>
-              </div>
+              </div> */}
 
               {/* Boutons d'exportation */}
               <div className="flex flex-wrap items-center gap-2">
-                {/* <Button
+
+                <Button
                   size="sm"
                   variant="outline"
-                  disabled={
-                    loadingData ||
-                    !!exportEnCours ||
-                    !anneeSelectionnee
-                  }
+                  disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
                   onClick={() => exporter("pdf")}
                 >
-                  {exportEnCours === "pdf" ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <FileText className="mr-2 h-4 w-4" />
-                  )}
-
-                  {exportEnCours === "pdf"
-                    ? "Exportation..."
-                    : "Exporter PDF"}
+                  <FileText className="mr-2 h-4 w-4" />
+                  Exporter PDF
                 </Button>
 
                 <Button
                   size="sm"
                   variant="outline"
-                  disabled={
-                    loadingData ||
-                    !!exportEnCours ||
-                    !anneeSelectionnee
-                  }
+                  disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
                   onClick={() => exporter("excel")}
                 >
-                  {exportEnCours === "excel" ? (
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  ) : (
-                    <FileSpreadsheet className="mr-2 h-4 w-4" />
-                  )}
-
-                  {exportEnCours === "excel"
-                    ? "Exportation..."
-                    : "Exporter Excel"}
-                </Button> */}
-
-
-<Button
-  size="sm"
-  variant="outline"
-  disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
-  onClick={() => exporter("pdf")}
->
-  <FileText className="mr-2 h-4 w-4" />
-  Exporter PDF
-</Button>
-
-<Button
-  size="sm"
-  variant="outline"
-  disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
-  onClick={() => exporter("excel")}
->
-  <FileSpreadsheet className="mr-2 h-4 w-4" />
-  Exporter Excel
-</Button>
+                  <FileSpreadsheet className="mr-2 h-4 w-4" />
+                  Exporter Excel
+                </Button>
 
 
                 {/* Vérification de campagne */}

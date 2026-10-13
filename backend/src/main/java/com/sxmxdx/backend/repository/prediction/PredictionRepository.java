@@ -63,4 +63,34 @@ public class PredictionRepository {
             ORDER BY bm.mois_id
         """, budgetId);
     }
+
+
+    public List<Map<String, Object>> rechercherPredictions() {
+        return jdbcTemplate.queryForList("""
+            SELECT b.id, e.annee, b.annee_reference, b.statut,
+                b.modele, b.date_generation
+            FROM budget b
+            JOIN exercice e ON e.id = b.exercice_id
+            WHERE b.type_budget = 'PREVISIONNEL'
+            ORDER BY e.annee DESC, b.id DESC
+        """);
+    }
+
+    public Map<String, Object> rechercherPrediction(Long id) {
+        List<Map<String, Object>> resultats = jdbcTemplate.queryForList("""
+            SELECT b.id, e.annee, b.annee_reference,
+                b.type_budget, b.statut, b.modele,
+                b.version_modele, b.ca_export,
+                b.charges_exploitation, b.frais_export,
+                b.masse_salariale, b.resultat_operationnel,
+                b.marge_operationnelle, b.date_generation,
+                pa.resume
+            FROM budget b
+            JOIN exercice e ON e.id = b.exercice_id
+            LEFT JOIN prediction_analyse pa ON pa.budget_id = b.id
+            WHERE b.id = ? AND b.type_budget = 'PREVISIONNEL'
+        """, id);
+
+        return resultats.isEmpty() ? null : resultats.get(0);
+    }
 }

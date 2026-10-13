@@ -53,4 +53,20 @@ public class PredictionService {
 
         return resultat;
     }
+
+    public List<Map<String, Object>> listerPredictions() {
+        return predictionRepository.rechercherPredictions();
+    }
+
+    public Map<String, Object> rechercherPrediction(Long id) {
+        Map<String, Object> prediction =
+                predictionRepository.rechercherPrediction(id);
+
+        if (prediction == null) return null;
+
+        Map<String, Object> resultat = new LinkedHashMap<>(prediction);
+        resultat.put("mois", predictionRepository.rechercherMois(id));
+
+        return resultat;
+    }
 }

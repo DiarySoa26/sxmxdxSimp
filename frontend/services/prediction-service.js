@@ -40,3 +40,20 @@ export async function getLastPrediction() {
 
   return await response.json()
 }
+
+
+export async function getPredictions() {
+  const response = await fetch(`${API_URL}/api/predictions`, {
+    cache: "no-store",
+  })
+  if (!response.ok) throw new Error("Impossible de charger les prédictions.")
+  return response.json()
+}
+
+export async function getPredictionById(id) {
+  const response = await fetch(`${API_URL}/api/predictions/${id}`, {
+    cache: "no-store",
+  })
+  if (!response.ok) throw new Error("Impossible de charger cette prédiction.")
+  return response.json()
+}
