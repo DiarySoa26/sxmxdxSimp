@@ -33,6 +33,32 @@ ON CONFLICT (nom) DO NOTHING;
 
 
 
+CREATE TABLE IF NOT EXISTS journal_audit (
+    id BIGSERIAL PRIMARY KEY,
+    utilisateur_id INTEGER REFERENCES utilisateur(id)
+        ON DELETE SET NULL,
+    action VARCHAR(100) NOT NULL,
+    module VARCHAR(100) NOT NULL,
+    description TEXT,
+    entite_type VARCHAR(100),
+    entite_id VARCHAR(100),
+    statut VARCHAR(20) NOT NULL
+        CHECK (statut IN ('SUCCES', 'ECHEC')),
+    date_action TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_audit_date
+ON journal_audit(date_action DESC);
+
+CREATE INDEX IF NOT EXISTS idx_audit_utilisateur
+ON journal_audit(utilisateur_id);
+
+CREATE INDEX IF NOT EXISTS idx_audit_module
+ON journal_audit(module);
+
+
+
+
 
 INSERT INTO utilisateur (
     nom,
