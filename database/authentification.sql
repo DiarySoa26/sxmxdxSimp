@@ -27,7 +27,8 @@ INSERT INTO role (nom, description)
 VALUES
     ('ADMIN', 'Administrateur de l''application'),
     ('COMPTABLE', 'Gestion des imports et budgets'),
-    ('LECTEUR', 'Consultation des budgets')
+    ('LECTEUR', 'Consultation des budgets'),
+    ('DAF', 'Directeur administratif et financier')
 ON CONFLICT (nom) DO NOTHING;
 
 
