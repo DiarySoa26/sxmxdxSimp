@@ -2,6 +2,7 @@ package com.sxmxdx.backend.service.prediction;
 
 import com.sxmxdx.backend.repository.prediction.PredictionRepository;
 import com.sxmxdx.backend.service.PipelineService;
+import com.sxmxdx.backend.service.JournalAuditService;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashMap;
@@ -13,43 +14,81 @@ public class PredictionService {
 
     private final PipelineService pipelineService;
     private final PredictionRepository predictionRepository;
+    private final JournalAuditService journalAuditService;
 
     public PredictionService(
             PipelineService pipelineService,
-            PredictionRepository predictionRepository
+            PredictionRepository predictionRepository,
+            JournalAuditService journalAuditService
     ) {
         this.pipelineService = pipelineService;
         this.predictionRepository = predictionRepository;
+        this.journalAuditService = journalAuditService;
     }
 
-    public Map<?, ?> genererPrediction() {
+    public Map<?, ?> genererPrediction(Integer auteurId) {
         System.out.println("[PREDICTION] Appel du pipeline Flask...");
 
-        Map<?, ?> resultat = pipelineService.genererPrediction();
+        try {
+            Map<?, ?> resultat = pipelineService.genererPrediction();
 
-        System.out.println("[PREDICTION] Réponse du pipeline reçue.");
+            System.out.println("[PREDICTION] Réponse : " + resultat);
 
-        return resultat;
+            boolean succes = resultat != null
+                    && Boolean.TRUE.equals(resultat.get("success"));
+
+            enregistrerAudit(
+                    auteurId,
+                    succes ? "GENERATION_PREDICTION" : "ECHEC_GENERATION_PREDICTION",
+                    succes ? "Génération des prédictions réussie."
+                           : "Échec de génération des prédictions.",
+                    succes ? "SUCCES" : "ECHEC"
+            );
+
+            return resultat;
+
+        } catch (RuntimeException e) {
+            enregistrerAudit(
+                    auteurId,
+                    "ECHEC_GENERATION_PREDICTION",
+                    "Erreur : " + e.getMessage(),
+                    "ECHEC"
+            );
+            throw e;
+        }
+    }
+
+    private void enregistrerAudit(
+            Integer auteurId,
+            String action,
+            String description,
+            String statut
+    ) {
+        try {
+            journalAuditService.enregistrer(
+                    auteurId,
+                    action,
+                    "PREDICTION",
+                    description,
+                    "PREDICTION",
+                    null,
+                    statut
+            );
+        } catch (Exception e) {
+            System.err.println("[AUDIT] " + e.getMessage());
+        }
     }
 
     public Map<String, Object> lastPrediction() {
         Map<String, Object> prediction =
                 predictionRepository.rechercherDernierePrediction();
 
-        if (prediction == null) {
-            return null;
-        }
+        if (prediction == null) return null;
 
-        Long budgetId =
-                ((Number) prediction.get("id")).longValue();
+        Long budgetId = ((Number) prediction.get("id")).longValue();
 
-        List<Map<String, Object>> mois =
-                predictionRepository.rechercherMois(budgetId);
-
-        Map<String, Object> resultat =
-                new LinkedHashMap<>(prediction);
-
-        resultat.put("mois", mois);
+        Map<String, Object> resultat = new LinkedHashMap<>(prediction);
+        resultat.put("mois", predictionRepository.rechercherMois(budgetId));
 
         return resultat;
     }

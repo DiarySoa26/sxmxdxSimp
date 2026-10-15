@@ -1,18 +1,22 @@
 import { API_URL } from "@/config/api-config"
 
 export async function genererPrediction() {
+  const user = JSON.parse(sessionStorage.getItem("sxmxdx_user") || "null")
+  const auteurId = user?.id
+
+  if (!auteurId) {
+    throw new Error("Utilisateur non connecté")
+  }
+
   const response = await fetch(
-    `${API_URL}/api/predictions/generer`,
+    `${API_URL}/api/predictions/generer?auteurId=${auteurId}`,
     { method: "POST" }
   )
 
-  const data = await response.json()
+  const data = await response.json().catch(() => ({}))
 
-  if (!response.ok || data.success === false) {
-    throw new Error(
-      data.message ||
-      "Erreur lors de la génération de la prédiction."
-    )
+  if (!response.ok) {
+    throw new Error(data.message || "Erreur de génération de la prédiction")
   }
 
   return data
