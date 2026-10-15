@@ -1,4 +1,3 @@
-
 package com.sxmxdx.backend.controller;
 
 import com.sxmxdx.backend.dto.UtilisateurRequest;
@@ -30,31 +29,40 @@ public class UtilisateurController {
 
     @PostMapping
     public ResponseEntity<Map<String, Object>> creer(
-        @RequestBody UtilisateurRequest request
+            @RequestBody UtilisateurRequest request,
+            @RequestParam Integer auteurId
     ) {
         return ResponseEntity.status(HttpStatus.CREATED)
-            .body(service.creer(request));
+                .body(service.creer(request, auteurId));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Map<String, Object>> modifier(
-        @PathVariable Integer id,
-        @RequestBody UtilisateurModificationRequest request
+            @PathVariable Integer id,
+            @RequestBody UtilisateurModificationRequest request,
+            @RequestParam Integer auteurId
     ) {
-        return ResponseEntity.ok(service.modifier(id, request));
+        return ResponseEntity.ok(
+                service.modifier(id, request, auteurId)
+        );
     }
 
     @PatchMapping("/{id}/statut")
     public ResponseEntity<Map<String, Object>> changerStatut(
-        @PathVariable Integer id,
-        @RequestBody Map<String, Boolean> request
+            @PathVariable Integer id,
+            @RequestBody Map<String, Boolean> request,
+            @RequestParam Integer auteurId
     ) {
         if (request == null || request.get("actif") == null) {
             return ResponseEntity.badRequest().build();
         }
 
         return ResponseEntity.ok(
-            service.changerStatut(id, request.get("actif"))
+                service.changerStatut(
+                        id,
+                        request.get("actif"),
+                        auteurId
+                )
         );
     }
 }

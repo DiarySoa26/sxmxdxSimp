@@ -1,3 +1,42 @@
+CREATE OR REPLACE VIEW view_journal_connexion AS
+SELECT
+    j.id AS journal_id,
+    u.id AS utilisateur_id,
+    u.nom,
+    u.prenom,
+    u.email,
+    r.nom AS role,
+    j.date_connexion,
+    j.succes
+FROM journal_connexion j
+JOIN utilisateur u ON u.id = j.utilisateur_id
+LEFT JOIN role r ON r.id = u.role_id;
+
+
+CREATE OR REPLACE VIEW view_journal_audit AS
+SELECT
+    j.id,
+    j.utilisateur_id,
+    u.nom,
+    u.prenom,
+    u.email,
+    r.nom AS role,
+    j.action,
+    j.module,
+    j.description,
+    j.entite_type,
+    j.entite_id,
+    j.statut,
+    j.date_action
+FROM journal_audit j
+LEFT JOIN utilisateur u
+    ON u.id = j.utilisateur_id
+LEFT JOIN role r
+    ON r.id = u.role_id;
+
+
+
+
 CREATE OR REPLACE VIEW view_exercice AS
 SELECT
     e.id as id_exercice,

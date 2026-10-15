@@ -36,16 +36,14 @@ public class ImportController {
 
     @PostMapping
     public ResponseEntity<?> importerExercice(
-            @RequestParam("file")
-            MultipartFile file
+            @RequestParam("file") MultipartFile file,
+             @RequestParam Integer auteurId
     ) {
 
         try {
 
             Map<?, ?> resultat =
-                    importService.importFile(
-                            file
-                    );
+                    importService.importFile(file, auteurId);
 
             return ResponseEntity.ok(
                     resultat

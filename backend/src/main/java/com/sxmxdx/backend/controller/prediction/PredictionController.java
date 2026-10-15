@@ -61,14 +61,10 @@ public class PredictionController {
     }
 
     @PostMapping("/generer")
-    public ResponseEntity<Map<?, ?>> genererPrediction() {
-        System.out.println(
-                "[PREDICTION] Demande de génération reçue."
-        );
-
-        return ResponseEntity.ok(
-                predictionService.genererPrediction()
-        );
+    public Map<?, ?> genererPrediction(
+            @RequestParam Integer auteurId
+    ) {
+        return predictionService.genererPrediction(auteurId);
     }
 
     @GetMapping("/last")

@@ -20,18 +20,26 @@ public class BudgetController {
         this.budgetService = budgetService;
     }
 
-    @PostMapping("/generer")
-    public ResponseEntity<Map<?, ?>> genererBudget() {
+//     @PostMapping("/generer")
+//     public ResponseEntity<Map<?, ?>> genererBudget() {
 
-        System.out.println(
-                "[BUDGET] Demande de génération reçue."
-        );
+//         System.out.println(
+//                 "[BUDGET] Demande de génération reçue."
+//         );
 
-        Map<?, ?> resultat =
-                budgetService.genererBudget();
+//         Map<?, ?> resultat =
+//                 budgetService.genererBudget();
 
-        return ResponseEntity.ok(
-                resultat
-        );
-    }
+//         return ResponseEntity.ok(
+//                 resultat
+//         );
+//     }
+
+
+        @PostMapping("/generer")
+        public Map<?, ?> genererBudget(
+                @RequestParam Integer auteurId
+        ) {
+        return budgetService.genererBudget(auteurId);
+        }
 }
