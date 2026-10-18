@@ -242,9 +242,7 @@ public class ComparaisonProspectiveService {
                 "COMPARAISON_PROSPECTIVE",
                 "Comparaison prospective entre le budget généré "
                     + anneeBudget
-                    + " (ID " + budget.getId() + ")"
-                    + " et la prévision " + anneePrevision
-                    + " (ID " + prevision.getId() + ")",
+                    + " et la prévision " + anneePrevision,
                 budget.getId() + "-" + prevision.getId(),
                 "SUCCES"
             );
