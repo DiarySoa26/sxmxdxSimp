@@ -11,11 +11,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 import { CalendarDays, Loader2, Search, WalletCards } from "lucide-react"
 
-// ============================================================
-// TYPE EXERCICE
-// Correspond à ExerciceDTO du backend
-// ============================================================
-
 type Exercice = {
   idExercice: number
   anneeExercice: number
@@ -27,18 +22,10 @@ type Exercice = {
   messageErreur: string | null
 }
 
-// ============================================================
-// ANNEES : 2050 -> 1950
-// ============================================================
-
 const ANNEES = Array.from(
   { length: 2050 - 1950 + 1 },
   (_, index) => 2050 - index
 )
-
-// ============================================================
-// PAGE
-// ============================================================
 
 export default function ExercicesPage() {
   const [annee, setAnnee] = useState<string>("TOUS")
@@ -46,9 +33,6 @@ export default function ExercicesPage() {
   const [loading, setLoading] = useState(true)
   const [erreur, setErreur] = useState("")
 
-  // ==========================================================
-  // CHARGEMENT INITIAL : TOUS LES EXERCICES
-  // ==========================================================
 
   useEffect(() => {
     async function chargerExercices() {
@@ -72,12 +56,6 @@ export default function ExercicesPage() {
     chargerExercices()
   }, [])
 
-  // ==========================================================
-  // RECHERCHE
-  // TOUS -> null
-  // Une année -> Number(annee)
-  // ==========================================================
-
   async function rechercher() {
     try {
       setLoading(true)
@@ -99,9 +77,6 @@ export default function ExercicesPage() {
     }
   }
 
-  // ==========================================================
-  // GENERER BUDGET
-  // ==========================================================
 
   function genererBudget(exercice: Exercice) {
     console.log("Génération budget :", {
@@ -110,10 +85,6 @@ export default function ExercicesPage() {
       idImportFichier: exercice.idImportFichier,
     })
   }
-
-  // ==========================================================
-  // STATUT
-  // ==========================================================
 
   function afficherStatut(statut: string | null) {
     if (!statut) {
@@ -135,9 +106,6 @@ export default function ExercicesPage() {
     return <Badge variant="outline">{statut}</Badge>
   }
 
-  // ==========================================================
-  // DATE
-  // ==========================================================
 
   function afficherDate(date: string | null) {
     if (!date) {
@@ -153,14 +121,11 @@ export default function ExercicesPage() {
     return valeur.toLocaleString("fr-FR")
   }
 
-  // ==========================================================
-  // AFFICHAGE
-  // ==========================================================
 
   return (
     <div className="flex flex-1 flex-col gap-6 p-6">
 
-      {/* ENTETE */}
+      {/* ENTETE >>>>>>*/}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Exercices</h1>
         <p className="mt-1 text-sm text-muted-foreground">
