@@ -178,6 +178,7 @@ public class BudgetDetailsRepository {
                 SELECT *
                 FROM budget
                 WHERE exercice_id = :exerciceId
+                AND type_budget = 'GENERE'
                 ORDER BY id DESC
                 """,
                 exerciceId

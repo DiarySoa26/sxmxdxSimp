@@ -13,8 +13,17 @@ public class ComparaisonHistoriqueController {
     public ComparaisonHistoriqueController(ComparaisonHistoriqueService service) { this.service = service; }
     @GetMapping("/exercices")
     public List<Integer> exercices() { return service.anneesDisponibles(); }
+    // @GetMapping("/historique")
+    // public ComparaisonHistoriqueDTO historique(@RequestParam Integer annee1, @RequestParam Integer annee2) {
+    //     return service.comparer(annee1, annee2);
+    // }
+
     @GetMapping("/historique")
-    public ComparaisonHistoriqueDTO historique(@RequestParam Integer annee1, @RequestParam Integer annee2) {
-        return service.comparer(annee1, annee2);
+    public ComparaisonHistoriqueDTO comparer(
+            @RequestParam Integer annee1,
+            @RequestParam Integer annee2,
+            @RequestParam Integer auteurId
+    ) {
+        return service.comparer(annee1, annee2, auteurId);
     }
 }

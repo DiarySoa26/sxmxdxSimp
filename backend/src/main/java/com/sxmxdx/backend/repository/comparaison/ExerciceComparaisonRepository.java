@@ -10,4 +10,9 @@ public interface ExerciceComparaisonRepository extends JpaRepository<ExerciceCom
     Optional<ExerciceComparaison> findByAnnee(Integer annee);
     @Query("SELECT DISTINCT e.annee FROM ExerciceComparaison e, BudgetComparaison b WHERE b.exerciceId = e.id ORDER BY e.annee DESC")
     List<Integer> anneesAvecBudget();
+
+
+    //  Optional<ExerciceComparaison> findByAnnee(Integer annee);
+    // @Query("SELECT DISTINCT annee FROM ExerciceComparaison e, BudgetComparaison b WHERE b.exerciceId = e.id ORDER BY e.annee DESC")
+    // List<Integer> anneesAvecBudget();
 }

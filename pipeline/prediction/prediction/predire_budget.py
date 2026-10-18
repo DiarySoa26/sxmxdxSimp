@@ -1,7 +1,7 @@
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from modeles import choisir_modele, prevoir, backtest_resultat, borne_80
 
 BASE = Path(__file__).resolve().parent.parent
 OUTPUT = BASE/"output"
@@ -12,13 +12,14 @@ ANNEE_PREDICTION = ANNEE_REFERENCE+1
 dernier = df[df["annee"]==ANNEE_REFERENCE].sort_values("mois").copy()
 if len(dernier)!=12: raise ValueError(f"L'exercice {ANNEE_REFERENCE} doit contenir 12 mois.")
 
+# cible -> nom de la colonne lag_12 conservée dans le fichier de sortie (compatibilité)
 config = {
-    "ventes":(["index_temps","mois_sin","mois_cos","ventes_lag_12"],"ventes"),
-    "ca_export":(["index_temps","mois_sin","mois_cos","ca_export_lag_12"],"ca_export"),
-    "production_reelle":(["index_temps","mois_sin","mois_cos","production_lag_12"],"production_reelle"),
-    "charges_exploitation":(["index_temps","mois_sin","mois_cos","charges_lag_12"],"charges_exploitation"),
-    "frais_export":(["index_temps","mois_sin","mois_cos","frais_export_lag_12"],"frais_export"),
-    "masse_salariale":(["index_temps","mois_sin","mois_cos","masse_salariale_lag_12"],"masse_salariale")
+    "ventes":"ventes_lag_12",
+    "ca_export":"ca_export_lag_12",
+    "production_reelle":"production_lag_12",
+    "charges_exploitation":"charges_lag_12",
+    "frais_export":"frais_export_lag_12",
+    "masse_salariale":"masse_salariale_lag_12"
 }
 
 print("="*80)
@@ -30,13 +31,12 @@ futur["index_temps"] = np.arange(int(df["index_temps"].max())+1,int(df["index_te
 futur["mois_sin"] = np.sin(2*np.pi*futur["mois"]/12)
 futur["mois_cos"] = np.cos(2*np.pi*futur["mois"]/12)
 
-for cible,(features,source) in config.items():
-    lag = features[-1]
-    futur[lag] = dernier[source].to_numpy()
-    train = df[[cible]+features].dropna()
-    if train.empty: raise ValueError(f"Données insuffisantes : {cible}")
-    modele = LinearRegression().fit(train[features],train[cible])
-    futur[cible] = np.maximum(modele.predict(futur[features]),0)
+choix = {}
+for cible,lag in config.items():
+    futur[lag] = dernier[cible].to_numpy()
+    choix[cible] = choisir_modele(df,cible)
+    futur[cible] = prevoir(df,cible,futur["mois"],choix[cible]["alpha"])
+    print(f"[MODELE] {cible:22s} -> {choix[cible]['modele']}")
 
 futur["resultat_operationnel"] = futur["ca_export"]-futur["charges_exploitation"]-futur["frais_export"]-futur["masse_salariale"]
 futur["marge_operationnelle"] = futur["resultat_operationnel"]/futur["ca_export"].replace(0,np.nan)
@@ -59,17 +59,37 @@ annuel["evolution_charges_pct"] = evolution(annuel["charges_exploitation"],derni
 annuel["evolution_frais_export_pct"] = evolution(annuel["frais_export"],dernier["frais_export"].sum())
 annuel["evolution_masse_salariale_pct"] = evolution(annuel["masse_salariale"],dernier["masse_salariale"].sum())
 
+# --- Fourchettes indicatives (~80 %) déduites de l'erreur annuelle observée en backtest ---
+erreurs_resultat = backtest_resultat(df,{c:m["alpha"] for c,m in choix.items() if c in
+                                         ["ca_export","charges_exploitation","frais_export","masse_salariale"]})
+rms_resultat = float(np.sqrt(np.mean(np.square(erreurs_resultat)))) if erreurs_resultat else np.nan
+lignes = []
+for cible,valeur in [("ventes",annuel["ventes"]),("ca_export",annuel["ca_export"]),("production_reelle",annuel["production"]),
+                     ("charges_exploitation",annuel["charges_exploitation"]),("frais_export",annuel["frais_export"]),
+                     ("masse_salariale",annuel["masse_salariale"]),("resultat_operationnel",annuel["resultat_operationnel"])]:
+    rms = rms_resultat if cible=="resultat_operationnel" else (choix[cible]["eval"] or {}).get("ecart_annuel_rms",np.nan)
+    bas,haut = borne_80(valeur,rms) if pd.notna(rms) else (np.nan,np.nan)
+    if cible=="resultat_operationnel" and pd.notna(bas) and bas>haut: bas,haut = haut,bas
+    lignes.append({"annee":ANNEE_PREDICTION,"indicateur":cible,"prevision_annuelle":valeur,
+                   "borne_basse_80":bas,"borne_haute_80":haut,"erreur_typique_pct":rms,
+                   "modele":choix[cible]["modele"] if cible in choix else "COMBINAISON"})
+intervalles = pd.DataFrame(lignes)
+
 annuel = pd.DataFrame([annuel])
 mensuel_file = OUTPUT/f"prediction_budget_{ANNEE_PREDICTION}_mensuel.csv"
 annuel_file = OUTPUT/f"prediction_budget_{ANNEE_PREDICTION}_annuel.csv"
+intervalles_file = OUTPUT/f"prediction_budget_{ANNEE_PREDICTION}_intervalles.csv"
 
 futur.to_csv(mensuel_file,index=False)
 annuel.to_csv(annuel_file,index=False)
+intervalles.to_csv(intervalles_file,index=False)
 
 pd.set_option("display.float_format",lambda x:f"{x:,.2f}")
+pd.set_option("display.width",250)
 print("\nPREVISION MENSUELLE")
 print(futur[["mois","ventes","ca_export","production_reelle","charges_exploitation","frais_export","masse_salariale","resultat_operationnel"]].to_string(index=False))
 print("\nSYNTHESE ANNUELLE")
 print(annuel.to_string(index=False))
-print(f"\n[OK] {mensuel_file}")
-print(f"[OK] {annuel_file}")
+print("\nFOURCHETTES INDICATIVES (~80 %, d'après l'erreur annuelle en backtest)")
+print(intervalles.to_string(index=False))
+print(f"\n[OK] {mensuel_file}\n[OK] {annuel_file}\n[OK] {intervalles_file}")

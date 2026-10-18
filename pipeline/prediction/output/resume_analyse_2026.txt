@@ -1,49 +1,65 @@
-ANALYSE BUDGETAIRE PREVISIONNELLE 2026
-1. Synthèse budgétaire
+BUDGET PRÉVISIONNEL 2026 — RÉSUMÉ
+Pour 2026, on s'attend à vendre environ 3 147 unités à l'étranger, soit un chiffre d'affaires d'environ 18,54 milliards MGA. Par rapport à 2025, les ventes sont quasi stables (-0,45 %) et le chiffre d'affaires est en légère baisse de 2,53 %.
 
-Les ventes prévisionnelles pour 2026 sont estimées à 3 159.88 unités, soit une régression de 0.03 % par rapport à 2025.
+Après paiement de toutes les dépenses courantes, il resterait environ 5,84 milliards MGA de bénéfice d'exploitation (le « résultat opérationnel »). Autrement dit, sur 100 MGA encaissés, il en resterait environ 31.
 
-Le chiffre d'affaires à l'exportation prévisionnel est estimé à 18 775 043 017 MGA, soit une régression de 1.31 % par rapport à 2025.
+Côté dépenses, aucun poste ne s'écarte de façon anormale de ce que l'activité prévue justifie.
 
-La production annuelle est estimée à 7 046.01 unités. Les charges d'exploitation atteignent 5 644 260 865 MGA, les frais d'exportation 3 250 964 032 MGA et la masse salariale 4 349 088 482 MGA.
+1. CE QUE L'ON PRÉVOIT POUR 2026
 
-Le résultat opérationnel prévisionnel atteint 5 530 729 638 MGA, pour une marge opérationnelle de 29.46 %.
+- Ventes : 3 147 unités (contre environ 3 161 en 2025).
+- Chiffre d'affaires à l'exportation : 18,54 milliards MGA.
+- Production : 6 957 unités fabriquées.
+- Charges d'exploitation (coûts du fonctionnement courant : 5,50 milliards MGA.
+- Frais d'exportation : 3,19 milliards MGA.
+- Masse salariale (salaires et coûts du personnel) : 4,02 milliards MGA.
+- Résultat opérationnel : 5,84 milliards MGA.
 
-2. Evolution par rapport à 2025
+2. COMPARAISON AVEC 2025
 
-Ventes                  : RÉGRESSION de 0.03 %.
-CA export               : RÉGRESSION de 1.31 %.
-Production              : RÉGRESSION de 0.04 %.
-Charges d'exploitation  : ÉVOLUTION de 0.38 %.
-Frais d'exportation     : RÉGRESSION de 0.82 %.
-Masse salariale         : ÉVOLUTION de 8.30 %.
+- Ventes : quasi stables (-0,45 %).
+- Chiffre d'affaires : en légère baisse de 2,53 %.
+- Production : en légère baisse de 1,30 %.
+- Charges d'exploitation : en légère baisse de 2,22 %.
+- Frais d'exportation : en légère baisse de 2,62 %.
+- Masse salariale : quasi stable (0,00 %).
 
-3. Trajectoire mensuelle
+3. MOIS PAR MOIS
 
-Le chiffre d'affaires à l'exportation mensuel maximal est prévu en Mars, avec 1 608 780 745 MGA.
-Le chiffre d'affaires à l'exportation mensuel minimal est prévu en Décembre, avec 1 539 786 993 MGA.
+Le meilleur mois pour le chiffre d'affaires devrait être août (1,58 milliard MGA) et le plus faible juin (1,52 milliard MGA).
+L'écart entre ces deux mois est faible : l'activité est prévue assez régulière tout au long de l'année.
 
-4. Analyse des dérives de dépenses
+4. QUEL DEGRÉ DE CONFIANCE ?
 
-L'analyse identifie 60 observation(s) à niveau faible, 0 à niveau modéré, 0 à niveau élevé et 0 à niveau critique.
+Pour mesurer la fiabilité de la precision, on a « rejoué » le calcul sur les années passées et comparé avec ce qui s'est réellement produit.
+- Chiffre d'affaires : la valeur réelle devrait se situer entre 16,91 milliards MGA et 20,18 milliards MGA .
+- Résultat opérationnel : il devrait se situer entre 4,88 milliards MGA et 6,79 milliards MGA.
+- Masse salariale : on suppose que les salaires restent au niveau actuel. Toute embauche ou augmentation décidée pour l'année devra s'ajouter à ce chiffre.
 
-L'écart statistique maximal concerne la catégorie PRODUCTION en Juillet. La charge prévue est de 352 611 686 MGA, contre 341 225 853 MGA attendus selon le comportement historique associé à la production.
-L'écart atteint 11 385 834 MGA, soit 3.34 %. L'indice de dérive est de 47.84/100, avec un niveau FAIBLE.
+5. SURVEILLANCE DES DÉPENSES
 
-5. Analyse par catégorie
+On vérifie ici si chaque poste de dépenses prévu est cohérent avec le niveau de production attendu. Un poste « dérive » quand il est prévu plus cher (ou moins cher) que ce que l'activité justifie habituellement.
+Le plus gros écart concerne le poste « finance » en février : 10,9 millions MGA prévus contre 11,6 millions MGA attendus, soit 705 096 MGA de moins (6,08 %). Niveau : rien d'inquiétant.
 
-- PRODUCTION : indice moyen 23.64/100, indice maximal 47.84/100, écart cumulé 24 690 113 MGA.
-- SECURITE : indice moyen 21.61/100, indice maximal 47.57/100, écart cumulé 2 170 016 MGA.
-- LOGISTIQUE : indice moyen 18.05/100, indice maximal 38.31/100, écart cumulé 2 892 064 MGA.
-- FINANCE : indice moyen 19.65/100, indice maximal 37.63/100, écart cumulé 556 007 MGA.
-- FISCAL : indice moyen 13.02/100, indice maximal 24.33/100, écart cumulé 1 382 023 MGA.
+Poste par poste :
+- Sécurité : rien d'inquiétant (sur l'année, 282 869 MGA en dessous de ce que l'activité justifie).
+- Finance : rien d'inquiétant (sur l'année, 1,0 million MGA en dessous de ce que l'activité justifie).
+- Fiscalité : rien d'inquiétant (sur l'année, 2,8 millions MGA en dessous de ce que l'activité justifie).
+- Logistique : rien d'inquiétant (sur l'année, 7,0 millions MGA en dessous de ce que l'activité justifie).
+- Production : rien d'inquiétant (sur l'année, 37,0 millions MGA en dessous de ce que l'activité justifie).
 
-6. Conclusion automatique
+6. CONCLUSION
 
-Les quantités vendues à l'exportation enregistrent une régression de 0.03 %, tandis que le chiffre d'affaires à l'exportation enregistre une régression de 1.31 %.
-Les charges d'exploitation progressent davantage que la production : ÉVOLUTION de 0.38 % pour les charges contre RÉGRESSION de 0.04 % pour la production. Les catégories présentant les indices de dérive les plus élevés sont signalées pour analyse.
-Aucune observation présentant un niveau élevé ou critique n'est détectée.
+L'année 2026 s'annonce globalement stable par rapport à 2025 : ventes quasi stables (-0,45 %), chiffre d'affaires en légère baisse de 2,53 %.
+Les dépenses d'exploitation évoluent au même rythme que la production ou moins vite : pas de dérive de coûts d'ensemble.
+Aucun écart de dépenses n'est préoccupant.
 
-Note méthodologique
+POUR MIEUX COMPRENDRE
 
-L'indice de dérive est un indicateur statistique construit à partir de l'écart entre les charges prévisionnelles et leur comportement historique par rapport à la production. Il ne constitue pas une probabilité calibrée d'anomalie.
+- MGA : Ariary malgache, la monnaie utilisée pour tous les montants.
+- Chiffre d'affaires (CA) : total des ventes encaissées.
+- Charges d'exploitation : dépenses du fonctionnement courant de l'activité.
+- Frais d'exportation : coûts liés à l'envoi des produits à l'étranger.
+- Masse salariale : total des salaires et coûts du personnel.
+- Résultat opérationnel : ce qui reste du chiffre d'affaires après ces dépenses ; la marge en est la part, par exemple 30 % = 30 MGA conservés pour 100 MGA encaissés.
+- Dérive : écart entre une dépense prévue et celle que l'on attendrait vu le niveau de production. C'est un indicateur statistique d'alerte, pas une preuve d'anomalie.

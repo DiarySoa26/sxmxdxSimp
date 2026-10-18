@@ -28,6 +28,23 @@ print(f"[OK] Période       : {df['annee'].min()} -> {df['annee'].max()}")
 print("\nMois par année :")
 print(df.groupby("annee")["mois"].nunique())
 
+# --- Contrôle qualité : années identiques (copie / double import suspect) ---
+COLS_CONTROLE = ["ventes","ca_export","production_reelle","charges_exploitation","frais_export"]
+annees_ok = sorted(a for a,n in df.groupby("annee")["mois"].nunique().items() if n==12)
+alertes = []
+for i,a in enumerate(annees_ok):
+    for b in annees_ok[i+1:]:
+        xa = df[df["annee"]==a].sort_values("mois")[COLS_CONTROLE].to_numpy()
+        xb = df[df["annee"]==b].sort_values("mois")[COLS_CONTROLE].to_numpy()
+        if np.allclose(xa,xb,rtol=0,atol=0.01):
+            alertes.append(f"{b} est strictement identique à {a} (ventes, CA, production, charges, frais)")
+print("\nCONTROLE QUALITE")
+if alertes:
+    for m in alertes: print(f"[ALERTE DONNEES] {m} -> vérifier l'import : l'apprentissage et les métriques en sont faussés.")
+else:
+    print("[OK] Aucune année dupliquée.")
+(OUTPUT.parent/"alertes_qualite_donnees.txt").write_text("\n".join(alertes) if alertes else "Aucune alerte.",encoding="utf-8")
+
 df["date"] = pd.to_datetime(dict(year=df["annee"],month=df["mois"],day=1))
 df["index_temps"] = np.arange(len(df))
 df["mois_sin"] = np.sin(2*np.pi*df["mois"]/12)

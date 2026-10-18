@@ -1,7 +1,7 @@
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from modeles import prevoir_categories
 from database import get_connection
 
 BASE = Path(__file__).resolve().parent.parent
@@ -34,36 +34,11 @@ connexion.close()
 
 charges["montant"] = pd.to_numeric(charges["montant"],errors="coerce")
 charges = charges.sort_values(["categorie","annee","mois"]).reset_index(drop=True)
-annee_min = int(charges["annee"].min())
-charges["index_temps"] = (charges["annee"]-annee_min)*12+charges["mois"]-1
-charges["mois_sin"] = np.sin(2*np.pi*charges["mois"]/12)
-charges["mois_cos"] = np.cos(2*np.pi*charges["mois"]/12)
-charges["montant_lag_12"] = charges.groupby("categorie")["montant"].shift(12)
 
-resultats = []
-for categorie in sorted(charges["categorie"].dropna().unique()):
-    hist = charges[charges["categorie"]==categorie].copy()
-    train = hist.dropna(subset=["montant","montant_lag_12"])
-    reference = hist[hist["annee"]==ANNEE_REFERENCE].sort_values("mois")
-    if train.empty or len(reference)!=12:
-        print(f"[IGNORÉ] {categorie} : historique insuffisant")
-        continue
+# Niveau lissé x profil saisonnier par catégorie, puis réconciliation sur le total du budget
+resultat,choix = prevoir_categories(charges,budget,ANNEE_REFERENCE)
+for cat,modele in choix.items(): print(f"[MODELE] {cat:15s} -> {modele}")
 
-    features = ["index_temps","mois_sin","mois_cos","montant_lag_12"]
-    modele = LinearRegression().fit(train[features],train["montant"])
-
-    futur = pd.DataFrame({"annee":[ANNEE_PREDICTION]*12,"mois":range(1,13)})
-    futur["index_temps"] = np.arange(int(hist["index_temps"].max())+1,int(hist["index_temps"].max())+13)
-    futur["mois_sin"] = np.sin(2*np.pi*futur["mois"]/12)
-    futur["mois_cos"] = np.cos(2*np.pi*futur["mois"]/12)
-    futur["montant_lag_12"] = reference["montant"].to_numpy()
-    futur["categorie"] = categorie
-    futur["production_prevue"] = budget["production_reelle"].to_numpy()
-    futur["charge_prevue"] = np.maximum(modele.predict(futur[features]),0)
-    resultats.append(futur[["annee","mois","categorie","production_prevue","charge_prevue"]])
-
-if not resultats: raise ValueError("Aucune prévision par catégorie.")
-resultat = pd.concat(resultats,ignore_index=True)
 resultat.to_csv(SORTIE,index=False)
 
 print("\nSYNTHESE PAR CATEGORIE")
