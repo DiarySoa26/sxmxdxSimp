@@ -8,11 +8,14 @@ import java.util.Optional;
 
 public interface ExerciceComparaisonRepository extends JpaRepository<ExerciceComparaison,Long> {
     Optional<ExerciceComparaison> findByAnnee(Integer annee);
-    @Query("SELECT DISTINCT e.annee FROM ExerciceComparaison e, BudgetComparaison b WHERE b.exerciceId = e.id ORDER BY e.annee DESC")
+    // @Query("SELECT DISTINCT e.annee FROM ExerciceComparaison e, BudgetComparaison b WHERE b.exerciceId = e.id ORDER BY e.annee DESC")
+    
+    @Query("""
+    SELECT DISTINCT e.annee
+    FROM ExerciceComparaison e
+    JOIN BudgetComparaison b ON b.exerciceId = e.id
+    WHERE b.typeBudget = 'GENERE'
+    ORDER BY e.annee DESC
+""")
     List<Integer> anneesAvecBudget();
-
-
-    //  Optional<ExerciceComparaison> findByAnnee(Integer annee);
-    // @Query("SELECT DISTINCT annee FROM ExerciceComparaison e, BudgetComparaison b WHERE b.exerciceId = e.id ORDER BY e.annee DESC")
-    // List<Integer> anneesAvecBudget();
 }

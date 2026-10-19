@@ -86,7 +86,7 @@ const formatValeur = (value: number, unite: string) => {
 
 const formatEcart = (value: number, unite: string) => {
   if (unite === "POINT") {
-    return `${(Number(value) * 100).toFixed(2)} pts`
+    return `${(Number(value) * 100).toFixed(2)} %`
   }
 
   return `${formatNombre(value)} MGA`
@@ -179,7 +179,7 @@ export default function EvaluationPrediction() {
     <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-semibold tracking-tight">
-          Évaluation des prévisions ML
+          Évaluation des prévisions
         </h2>
         <p className="text-sm text-muted-foreground mt-1">
           Comparaison des budgets constatés et prévisionnels
@@ -336,8 +336,8 @@ export default function EvaluationPrediction() {
               </CardTitle>
               <CardDescription>
                 Exercice {evaluation.annee} —
-                Budget constaté #{evaluation.budgetGenereId}
-                {" "}et prévision #{evaluation.budgetPrevisionnelId}
+                Budget constaté
+                {" "}et prévision 
               </CardDescription>
             </CardHeader>
 
@@ -422,7 +422,7 @@ export default function EvaluationPrediction() {
           <Card>
             <CardHeader>
               <CardTitle>
-                Visualisation des écarts budgétaires
+                Visualisation des écarts budgétaires annuels
               </CardTitle>
               <CardDescription>
                 Comparaison des montants en MGA
@@ -494,7 +494,7 @@ export default function EvaluationPrediction() {
               </CardTitle>
               <CardDescription>
                 Analyse automatique des écarts entre
-                les prévisions ML et les données constatées.
+                les prévisions et les données constatées.
               </CardDescription>
             </CardHeader>
 

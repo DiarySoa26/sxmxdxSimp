@@ -84,10 +84,13 @@ export default function ComparaisonHistorique() {
           <tbody>{indicateurs.map(i => { const point = i.unite === "POINT"; const f = point ? 100 : 1; return <tr key={i.code} className="border-b hover:bg-muted/30">
             <td className="p-3 font-medium">{i.libelle}</td><td className="p-3 text-right whitespace-nowrap">{number(Number(i.valeur1) * f, point ? 2 : 0)}{point ? " %" : ""}</td>
             <td className="p-3 text-right whitespace-nowrap">{number(Number(i.valeur2) * f, point ? 2 : 0)}{point ? " %" : ""}</td>
-            <td className="p-3 text-right whitespace-nowrap">{number(Number(i.ecart) * f, point ? 2 : 0)}</td>
-            <td className="p-3 text-right whitespace-nowrap">{i.evolutionPourcentage == null ? "—" : `${Number(i.evolutionPourcentage) > 0 ? "+" : ""}${number(i.evolutionPourcentage, 2)} ${point ? "pts" : "%"}`}</td>
+            <td className="p-3 text-right whitespace-nowrap">{number(Number(i.ecart) * f, point ? 2 : 0)}{point ? " %" : ""}</td>
+            <td className="p-3 text-right whitespace-nowrap">{i.evolutionPourcentage == null ? "—" : `${Number(i.evolutionPourcentage) > 0 ? "+" : ""}${number(i.evolutionPourcentage, 2)} ${point ? "%" : "%"}`}</td>
           </tr> })}</tbody>
-        </table></div><p className="mt-3 text-xs text-muted-foreground">Une augmentation des charges n'est pas nécessairement favorable. Les marges sont comparées en points de pourcentage.</p></CardContent>
+        </table>
+        </div>
+        {/* <p className="mt-3 text-xs text-muted-foreground">Une augmentation des charges n'est pas nécessairement favorable. Les marges sont comparées en points de pourcentage.</p> */}
+        </CardContent>
       </Card>
       <Card><CardHeader><CardTitle className="text-lg">Visualisation annuelle</CardTitle><CardDescription>Montants en milliards MGA</CardDescription></CardHeader>
         <CardContent><div className="h-[360px] w-full"><ResponsiveContainer width="100%" height="100%"><BarChart data={graphique} margin={{ bottom: 55, left: 8, right: 10 }}>
