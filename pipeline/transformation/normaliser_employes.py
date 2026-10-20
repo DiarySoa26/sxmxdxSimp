@@ -42,7 +42,7 @@ def renommer(df):
         "Matricule":
             "matricule",
 
-        "Nom simulé":
+        "Nom":
             "nom",
 
         "Site":

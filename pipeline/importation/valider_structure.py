@@ -12,6 +12,8 @@ FEUILLES_ATTENDUES = [
     "Exportations",
     "Frais Export",
     "Synthese",
+    "CR",
+    "Amortissements",
 ]
 
 

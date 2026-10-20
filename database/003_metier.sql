@@ -193,3 +193,31 @@ ADD COLUMN IF NOT EXISTS unite VARCHAR(50);
 
 ALTER TABLE production
 ADD COLUMN IF NOT EXISTS site VARCHAR(100);
+
+
+
+
+CREATE TABLE IF NOT EXISTS amortissement_mensuel (
+    id BIGSERIAL PRIMARY KEY,
+
+    import_id BIGINT NOT NULL
+        REFERENCES import_fichier(id),
+
+    exercice_id BIGINT NOT NULL
+        REFERENCES exercice(id),
+
+    categorie VARCHAR(100) NOT NULL,
+
+    nature VARCHAR(255) NOT NULL,
+
+    perimetre_general VARCHAR(255),
+
+    unite VARCHAR(10) DEFAULT 'MGA',
+
+    mois INTEGER NOT NULL
+        CHECK (mois BETWEEN 1 AND 12),
+
+    montant NUMERIC(20,4) NOT NULL DEFAULT 0,
+
+    UNIQUE (import_id, nature, mois)
+);

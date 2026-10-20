@@ -53,41 +53,44 @@ BEGIN;
 
 -- 1. Supprimer les budgets
 DELETE FROM budget
-WHERE import_id = 25;
+WHERE import_id = 31;
 
 -- 2. Supprimer les campagnes budgétaires
 DELETE FROM charge
-WHERE import_id = 25;
+WHERE import_id = 31;
 
 -- 3. Supprimer les exportations
 DELETE FROM exportation
-WHERE import_id = 25;
+WHERE import_id = 31;
 
 -- 4. Supprimer la production
 DELETE FROM production
-WHERE import_id = 25;
+WHERE import_id = 31;
 
 -- 6. Supprimer les frais d'exportation
 DELETE FROM frais_export
-WHERE import_id = 25;
+WHERE import_id = 31;
 
 DELETE FROM employe
-WHERE import_id = 25;
+WHERE import_id = 31;
+
+DELETE FROM amortissement_mensuel
+WHERE import_id = 31;
 
 
 
 
 
 DELETE FROM jalon_budgetaire
-WHERE campagne_id = 3;
+WHERE campagne_id = 7;
 
 
 DELETE FROM campagne_budgetaire
-WHERE exercice_id = 25;
+WHERE exercice_id = 33;
 
 
 DELETE FROM import_fichier
-WHERE exercice_id = 25;
+WHERE exercice_id = 33;
 
 DELETE FROM exercice
-WHERE id = 25;
+WHERE id = 33;

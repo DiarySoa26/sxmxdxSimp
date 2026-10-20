@@ -3,10 +3,12 @@ import csv
 import json
 import sys
 
+from re_commun import lire_arguments, dossier_sortie
 
-OUTPUT_DIR = Path(
-    "output/reverse_engineering"
-)
+lire_arguments()  # --sortie / --config
+
+
+OUTPUT_DIR = dossier_sortie()
 
 FORMULES_FILE = (
     OUTPUT_DIR / "formules.csv"
@@ -203,6 +205,22 @@ def main():
     print(
         "[OK] Aucune règle n'a été perdue."
     )
+
+    nb_irreguliers = regles.get(
+        "statistiques",
+        {}
+    ).get(
+        "regroupements_irreguliers",
+        0
+    )
+
+    if nb_irreguliers:
+
+        print(
+            f"[ATTENTION] {nb_irreguliers} règle(s) regroupent des "
+            "formules qui ne sont pas toutes identiques : "
+            "voir 'anomalies_regroupement' dans regles_metier.json."
+        )
 
     if nb_a_valider:
 

@@ -287,7 +287,7 @@
 #     import_id = None
 #     exercice_id = None
 
-#     TOTAL_ETAPES = 11
+#     TOTAL_ETAPES = 12
 
 #     try:
 
@@ -1340,6 +1340,16 @@ def importer_exercice(
             f"{exercice_id}"
         )
 
+        # RE V2 : produire les regles par import, sans écraser les exercices précédents.
+        import os
+        if os.environ.get("SOMIDA_REVERSE_ENGINEERING", "1") == "1":
+            sortie_re = PROJECT_ROOT / "output" / "reverse_engineering" / f"import_{import_id}"
+            subprocess.run([
+                sys.executable,
+                str(PROJECT_ROOT / "pipeline" / "reverse_engineering" / "lancer_reverse_engineering.py"),
+                str(fichier_upload), "--sortie", str(sortie_re)
+            ], cwd=PROJECT_ROOT, check=True)
+
         # ====================================================
         # ETAPE 4
         # EXTRACTION
@@ -1533,13 +1543,28 @@ def importer_exercice(
             import_id
         )
 
+        # ETAPE 11 : amortissements indépendants des charges d'exploitation.
+        afficher_etape(11, TOTAL_ETAPES, "Normalisation des amortissements")
+        from pipeline.transformation.normaliser_amortissements import normaliser_amortissements
+        fichier_amortissements = dossier_staging / "amortissements_normalises.csv"
+        nb_amortissements = normaliser_amortissements(
+            fichier_upload, fichier_amortissements
+        )
+        from pipeline.transformation.charger_amortissements import charger_amortissements
+        nb_charges = charger_amortissements(
+            fichier_amortissements, import_id, exercice_id
+        )
+        if nb_charges != nb_amortissements:
+            raise RuntimeError("Incohérence entre amortissements CSV et PostgreSQL")
+        print(f"[OK] {nb_charges} amortissements enregistrés")
+
         # ====================================================
-        # ETAPE 11
+        # ETAPE 12
         # VALIDATION FINALE
         # ====================================================
 
         afficher_etape(
-            11,
+            12,
             TOTAL_ETAPES,
             "Validation globale de l'import"
         )

@@ -1,0 +1,800 @@
+feuille,cellule,formule
+Employes,I2,=SUM(F2:H2)
+Employes,I3,=SUM(F3:H3)
+Employes,I4,=SUM(F4:H4)
+Employes,I5,=SUM(F5:H5)
+Employes,I6,=SUM(F6:H6)
+Employes,I7,=SUM(F7:H7)
+Employes,I8,=SUM(F8:H8)
+Employes,I9,=SUM(F9:H9)
+Employes,I10,=SUM(F10:H10)
+Employes,I11,=SUM(F11:H11)
+Employes,I12,=SUM(F12:H12)
+Employes,I13,=SUM(F13:H13)
+Employes,I14,=SUM(F14:H14)
+Employes,I15,=SUM(F15:H15)
+Employes,I16,=SUM(F16:H16)
+Employes,I17,=SUM(F17:H17)
+Employes,I18,=SUM(F18:H18)
+Employes,I19,=SUM(F19:H19)
+Employes,I20,=SUM(F20:H20)
+Employes,I21,=SUM(F21:H21)
+Employes,I22,=SUM(F22:H22)
+Employes,I23,=SUM(F23:H23)
+Employes,I24,=SUM(F24:H24)
+Employes,I25,=SUM(F25:H25)
+Employes,I26,=SUM(F26:H26)
+Employes,I27,=SUM(F27:H27)
+Employes,I28,=SUM(F28:H28)
+Employes,I29,=SUM(F29:H29)
+Employes,I30,=SUM(F30:H30)
+Employes,I31,=SUM(F31:H31)
+Employes,I32,=SUM(F32:H32)
+Employes,I33,=SUM(F33:H33)
+Employes,I34,=SUM(F34:H34)
+Employes,I35,=SUM(F35:H35)
+Employes,I36,=SUM(F36:H36)
+Employes,I37,=SUM(F37:H37)
+Employes,I38,=SUM(F38:H38)
+Employes,I39,=SUM(F39:H39)
+Employes,I40,=SUM(F40:H40)
+Employes,I41,=SUM(F41:H41)
+Employes,I42,=SUM(F42:H42)
+Employes,I43,=SUM(F43:H43)
+Employes,I44,=SUM(F44:H44)
+Employes,I45,=SUM(F45:H45)
+Employes,I46,=SUM(F46:H46)
+Employes,I47,=SUM(F47:H47)
+Employes,I48,=SUM(F48:H48)
+Employes,I49,=SUM(F49:H49)
+Employes,I50,=SUM(F50:H50)
+Employes,I51,=SUM(F51:H51)
+Employes,I52,=SUM(F52:H52)
+Employes,I53,=SUM(F53:H53)
+Employes,I54,=SUM(F54:H54)
+Employes,I55,=SUM(F55:H55)
+Employes,I56,=SUM(F56:H56)
+Employes,I57,=SUM(F57:H57)
+Employes,I58,=SUM(F58:H58)
+Employes,I59,=SUM(F59:H59)
+Employes,I60,=SUM(F60:H60)
+Employes,I61,=SUM(F61:H61)
+Employes,I62,=SUM(F62:H62)
+Employes,I63,=SUM(F63:H63)
+Employes,I64,=SUM(F64:H64)
+Employes,I65,=SUM(F65:H65)
+Employes,I66,=SUM(F66:H66)
+Employes,I67,=SUM(F67:H67)
+Employes,I68,=SUM(F68:H68)
+Employes,I69,=SUM(F69:H69)
+Employes,I70,=SUM(F70:H70)
+Employes,I71,=SUM(F71:H71)
+Employes,I72,=SUM(F72:H72)
+Employes,I73,=SUM(F73:H73)
+Employes,I74,=SUM(F74:H74)
+Employes,I75,=SUM(F75:H75)
+Employes,I76,=SUM(F76:H76)
+Employes,I77,=SUM(F77:H77)
+Employes,I78,=SUM(F78:H78)
+Employes,I79,=SUM(F79:H79)
+Employes,I80,=SUM(F80:H80)
+Employes,I81,=SUM(F81:H81)
+Employes,I82,=SUM(F82:H82)
+Employes,I83,=SUM(F83:H83)
+Employes,I84,=SUM(F84:H84)
+Employes,I85,=SUM(F85:H85)
+Employes,I86,=SUM(F86:H86)
+Employes,I87,=SUM(F87:H87)
+Employes,I88,=SUM(F88:H88)
+Employes,I89,=SUM(F89:H89)
+Employes,I90,=SUM(F90:H90)
+Employes,I91,=SUM(F91:H91)
+Production,P2,=SUM(D2:O2)
+Production,P3,=SUM(D3:O3)
+Production,P4,=SUM(D4:O4)
+Production,P5,=SUM(D5:O5)
+Production,P6,=SUM(D6:O6)
+Production,P7,=SUM(D7:O7)
+Production,P8,=SUM(D8:O8)
+Production,P9,=SUM(D9:O9)
+Production,P10,=SUM(D10:O10)
+Production,P11,=SUM(D11:O11)
+Exportations,A5,"=SUMIF($E$10:$E$54,""Quantité exportée"",$S$10:$S$54)"
+Exportations,D5,"=SUMIF($E$10:$E$54,""Chiffre d'affaires MGA"",$S$10:$S$54)"
+Exportations,G5,"=SUMIFS($S$10:$S$54,$A$10:$A$54,""Japon"",$E$10:$E$54,""Chiffre d'affaires MGA"")"
+Exportations,J5,"=SUMIFS($S$10:$S$54,$A$10:$A$54,""Russie"",$E$10:$E$54,""Chiffre d'affaires MGA"")"
+Exportations,M5,"=SUMIFS($S$10:$S$54,$A$10:$A$54,""Chine"",$E$10:$E$54,""Chiffre d'affaires MGA"")"
+Exportations,G12,"=IF($D12=""USD"",G11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",G11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H12,"=IF($D12=""USD"",H11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",H11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I12,"=IF($D12=""USD"",I11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",I11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J12,"=IF($D12=""USD"",J11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",J11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K12,"=IF($D12=""USD"",K11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",K11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L12,"=IF($D12=""USD"",L11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",L11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M12,"=IF($D12=""USD"",M11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",M11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N12,"=IF($D12=""USD"",N11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",N11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O12,"=IF($D12=""USD"",O11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",O11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P12,"=IF($D12=""USD"",P11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",P11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q12,"=IF($D12=""USD"",Q11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",Q11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R12,"=IF($D12=""USD"",R11*'Donnees SOMIDA'!$B$5,IF($D12=""JPY"",R11*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S12,=SUM(G12:R12)
+Exportations,G15,"=IF($D15=""USD"",G14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",G14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H15,"=IF($D15=""USD"",H14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",H14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I15,"=IF($D15=""USD"",I14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",I14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J15,"=IF($D15=""USD"",J14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",J14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K15,"=IF($D15=""USD"",K14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",K14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L15,"=IF($D15=""USD"",L14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",L14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M15,"=IF($D15=""USD"",M14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",M14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N15,"=IF($D15=""USD"",N14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",N14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O15,"=IF($D15=""USD"",O14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",O14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P15,"=IF($D15=""USD"",P14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",P14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q15,"=IF($D15=""USD"",Q14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",Q14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R15,"=IF($D15=""USD"",R14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",R14*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S15,=SUM(G15:R15)
+Exportations,G18,"=IF($D18=""USD"",G17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",G17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H18,"=IF($D18=""USD"",H17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",H17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I18,"=IF($D18=""USD"",I17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",I17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J18,"=IF($D18=""USD"",J17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",J17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K18,"=IF($D18=""USD"",K17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",K17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L18,"=IF($D18=""USD"",L17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",L17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M18,"=IF($D18=""USD"",M17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",M17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N18,"=IF($D18=""USD"",N17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",N17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O18,"=IF($D18=""USD"",O17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",O17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P18,"=IF($D18=""USD"",P17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",P17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q18,"=IF($D18=""USD"",Q17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",Q17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R18,"=IF($D18=""USD"",R17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",R17*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S18,=SUM(G18:R18)
+Exportations,G21,"=IF($D21=""USD"",G20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",G20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H21,"=IF($D21=""USD"",H20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",H20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I21,"=IF($D21=""USD"",I20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",I20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J21,"=IF($D21=""USD"",J20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",J20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K21,"=IF($D21=""USD"",K20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",K20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L21,"=IF($D21=""USD"",L20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",L20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M21,"=IF($D21=""USD"",M20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",M20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N21,"=IF($D21=""USD"",N20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",N20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O21,"=IF($D21=""USD"",O20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",O20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P21,"=IF($D21=""USD"",P20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",P20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q21,"=IF($D21=""USD"",Q20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",Q20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R21,"=IF($D21=""USD"",R20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",R20*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S21,=SUM(G21:R21)
+Exportations,G24,"=IF($D24=""USD"",G23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",G23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H24,"=IF($D24=""USD"",H23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",H23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I24,"=IF($D24=""USD"",I23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",I23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J24,"=IF($D24=""USD"",J23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",J23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K24,"=IF($D24=""USD"",K23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",K23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L24,"=IF($D24=""USD"",L23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",L23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M24,"=IF($D24=""USD"",M23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",M23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N24,"=IF($D24=""USD"",N23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",N23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O24,"=IF($D24=""USD"",O23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",O23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P24,"=IF($D24=""USD"",P23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",P23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q24,"=IF($D24=""USD"",Q23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",Q23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R24,"=IF($D24=""USD"",R23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",R23*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S24,=SUM(G24:R24)
+Exportations,G27,"=IF($D27=""USD"",G26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",G26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H27,"=IF($D27=""USD"",H26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",H26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I27,"=IF($D27=""USD"",I26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",I26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J27,"=IF($D27=""USD"",J26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",J26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K27,"=IF($D27=""USD"",K26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",K26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L27,"=IF($D27=""USD"",L26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",L26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M27,"=IF($D27=""USD"",M26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",M26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N27,"=IF($D27=""USD"",N26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",N26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O27,"=IF($D27=""USD"",O26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",O26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P27,"=IF($D27=""USD"",P26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",P26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q27,"=IF($D27=""USD"",Q26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",Q26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R27,"=IF($D27=""USD"",R26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",R26*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S27,=SUM(G27:R27)
+Exportations,G30,"=IF($D30=""USD"",G29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",G29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H30,"=IF($D30=""USD"",H29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",H29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I30,"=IF($D30=""USD"",I29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",I29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J30,"=IF($D30=""USD"",J29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",J29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K30,"=IF($D30=""USD"",K29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",K29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L30,"=IF($D30=""USD"",L29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",L29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M30,"=IF($D30=""USD"",M29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",M29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N30,"=IF($D30=""USD"",N29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",N29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O30,"=IF($D30=""USD"",O29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",O29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P30,"=IF($D30=""USD"",P29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",P29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q30,"=IF($D30=""USD"",Q29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",Q29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R30,"=IF($D30=""USD"",R29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",R29*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S30,=SUM(G30:R30)
+Exportations,G33,"=IF($D33=""USD"",G32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",G32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H33,"=IF($D33=""USD"",H32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",H32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I33,"=IF($D33=""USD"",I32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",I32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J33,"=IF($D33=""USD"",J32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",J32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K33,"=IF($D33=""USD"",K32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",K32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L33,"=IF($D33=""USD"",L32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",L32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M33,"=IF($D33=""USD"",M32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",M32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N33,"=IF($D33=""USD"",N32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",N32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O33,"=IF($D33=""USD"",O32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",O32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P33,"=IF($D33=""USD"",P32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",P32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q33,"=IF($D33=""USD"",Q32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",Q32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R33,"=IF($D33=""USD"",R32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",R32*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S33,=SUM(G33:R33)
+Exportations,G36,"=IF($D36=""USD"",G35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",G35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H36,"=IF($D36=""USD"",H35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",H35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I36,"=IF($D36=""USD"",I35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",I35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J36,"=IF($D36=""USD"",J35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",J35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K36,"=IF($D36=""USD"",K35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",K35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L36,"=IF($D36=""USD"",L35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",L35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M36,"=IF($D36=""USD"",M35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",M35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N36,"=IF($D36=""USD"",N35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",N35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O36,"=IF($D36=""USD"",O35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",O35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P36,"=IF($D36=""USD"",P35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",P35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q36,"=IF($D36=""USD"",Q35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",Q35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R36,"=IF($D36=""USD"",R35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",R35*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S36,=SUM(G36:R36)
+Exportations,G39,"=IF($D39=""USD"",G38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",G38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H39,"=IF($D39=""USD"",H38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",H38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I39,"=IF($D39=""USD"",I38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",I38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J39,"=IF($D39=""USD"",J38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",J38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K39,"=IF($D39=""USD"",K38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",K38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L39,"=IF($D39=""USD"",L38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",L38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M39,"=IF($D39=""USD"",M38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",M38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N39,"=IF($D39=""USD"",N38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",N38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O39,"=IF($D39=""USD"",O38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",O38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P39,"=IF($D39=""USD"",P38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",P38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q39,"=IF($D39=""USD"",Q38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",Q38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R39,"=IF($D39=""USD"",R38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",R38*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S39,=SUM(G39:R39)
+Exportations,G42,"=IF($D42=""USD"",G41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",G41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H42,"=IF($D42=""USD"",H41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",H41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I42,"=IF($D42=""USD"",I41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",I41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J42,"=IF($D42=""USD"",J41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",J41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K42,"=IF($D42=""USD"",K41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",K41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L42,"=IF($D42=""USD"",L41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",L41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M42,"=IF($D42=""USD"",M41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",M41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N42,"=IF($D42=""USD"",N41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",N41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O42,"=IF($D42=""USD"",O41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",O41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P42,"=IF($D42=""USD"",P41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",P41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q42,"=IF($D42=""USD"",Q41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",Q41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R42,"=IF($D42=""USD"",R41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",R41*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S42,=SUM(G42:R42)
+Exportations,G45,"=IF($D45=""USD"",G44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",G44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H45,"=IF($D45=""USD"",H44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",H44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I45,"=IF($D45=""USD"",I44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",I44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J45,"=IF($D45=""USD"",J44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",J44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K45,"=IF($D45=""USD"",K44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",K44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L45,"=IF($D45=""USD"",L44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",L44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M45,"=IF($D45=""USD"",M44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",M44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N45,"=IF($D45=""USD"",N44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",N44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O45,"=IF($D45=""USD"",O44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",O44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P45,"=IF($D45=""USD"",P44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",P44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q45,"=IF($D45=""USD"",Q44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",Q44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R45,"=IF($D45=""USD"",R44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",R44*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S45,=SUM(G45:R45)
+Exportations,G48,"=IF($D48=""USD"",G47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",G47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H48,"=IF($D48=""USD"",H47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",H47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I48,"=IF($D48=""USD"",I47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",I47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J48,"=IF($D48=""USD"",J47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",J47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K48,"=IF($D48=""USD"",K47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",K47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L48,"=IF($D48=""USD"",L47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",L47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M48,"=IF($D48=""USD"",M47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",M47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N48,"=IF($D48=""USD"",N47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",N47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O48,"=IF($D48=""USD"",O47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",O47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P48,"=IF($D48=""USD"",P47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",P47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q48,"=IF($D48=""USD"",Q47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",Q47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R48,"=IF($D48=""USD"",R47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",R47*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S48,=SUM(G48:R48)
+Exportations,G51,"=IF($D51=""USD"",G50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",G50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H51,"=IF($D51=""USD"",H50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",H50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I51,"=IF($D51=""USD"",I50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",I50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J51,"=IF($D51=""USD"",J50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",J50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K51,"=IF($D51=""USD"",K50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",K50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L51,"=IF($D51=""USD"",L50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",L50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M51,"=IF($D51=""USD"",M50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",M50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N51,"=IF($D51=""USD"",N50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",N50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O51,"=IF($D51=""USD"",O50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",O50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P51,"=IF($D51=""USD"",P50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",P50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q51,"=IF($D51=""USD"",Q50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",Q50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R51,"=IF($D51=""USD"",R50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",R50*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S51,=SUM(G51:R51)
+Exportations,G54,"=IF($D54=""USD"",G53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",G53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,H54,"=IF($D54=""USD"",H53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",H53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,I54,"=IF($D54=""USD"",I53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",I53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,J54,"=IF($D54=""USD"",J53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",J53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,K54,"=IF($D54=""USD"",K53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",K53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,L54,"=IF($D54=""USD"",L53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",L53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,M54,"=IF($D54=""USD"",M53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",M53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,N54,"=IF($D54=""USD"",N53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",N53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,O54,"=IF($D54=""USD"",O53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",O53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,P54,"=IF($D54=""USD"",P53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",P53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,Q54,"=IF($D54=""USD"",Q53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",Q53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,R54,"=IF($D54=""USD"",R53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",R53*'Donnees SOMIDA'!$B$6,0))"
+Exportations,S54,=SUM(G54:R54)
+Frais Export,Q2,=SUM(E2:P2)
+Frais Export,Q3,=SUM(E3:P3)
+Frais Export,Q4,=SUM(E4:P4)
+Frais Export,Q5,=SUM(E5:P5)
+Frais Export,Q6,=SUM(E6:P6)
+Frais Export,Q7,=SUM(E7:P7)
+Frais Export,Q8,=SUM(E8:P8)
+Frais Export,Q9,=SUM(E9:P9)
+Frais Export,Q10,=SUM(E10:P10)
+Frais Export,Q11,=SUM(E11:P11)
+Frais Export,Q12,=SUM(E12:P12)
+Frais Export,Q13,=SUM(E13:P13)
+Frais Export,Q14,=SUM(E14:P14)
+Frais Export,Q15,=SUM(E15:P15)
+Frais Export,Q16,=SUM(E16:P16)
+Frais Export,Q17,=SUM(E17:P17)
+Frais Export,Q18,=SUM(E18:P18)
+Frais Export,Q19,=SUM(E19:P19)
+Synthese,C2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$G$10:$G$80)"
+Synthese,D2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$H$10:$H$80)"
+Synthese,E2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$I$10:$I$80)"
+Synthese,F2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$J$10:$J$80)"
+Synthese,G2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$K$10:$K$80)"
+Synthese,H2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$L$10:$L$80)"
+Synthese,I2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$M$10:$M$80)"
+Synthese,J2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$N$10:$N$80)"
+Synthese,K2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$O$10:$O$80)"
+Synthese,L2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$P$10:$P$80)"
+Synthese,M2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$Q$10:$Q$80)"
+Synthese,N2,"=SUMIF(Exportations!$E$10:$E$80,""Chiffre d'affaires MGA"",Exportations!$R$10:$R$80)"
+Synthese,O2,=SUM(C2:N2)
+Synthese,C3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$E$2:$E$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$E$2:$E$27)+C5+Amortissements!E13"
+Synthese,D3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$F$2:$F$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$F$2:$F$27)+D5+Amortissements!F13"
+Synthese,E3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$G$2:$G$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$G$2:$G$27)+E5+Amortissements!G13"
+Synthese,F3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$H$2:$H$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$H$2:$H$27)+F5+Amortissements!H13"
+Synthese,G3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$I$2:$I$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$I$2:$I$27)+G5+Amortissements!I13"
+Synthese,H3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$J$2:$J$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$J$2:$J$27)+H5+Amortissements!J13"
+Synthese,I3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$K$2:$K$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$K$2:$K$27)+I5+Amortissements!K13"
+Synthese,J3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$L$2:$L$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$L$2:$L$27)+J5+Amortissements!L13"
+Synthese,K3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$M$2:$M$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$M$2:$M$27)+K5+Amortissements!M13"
+Synthese,L3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$N$2:$N$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$N$2:$N$27)+L5+Amortissements!N13"
+Synthese,M3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$O$2:$O$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$O$2:$O$27)+M5+Amortissements!O13"
+Synthese,N3,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$P$2:$P$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$P$2:$P$27)+N5+Amortissements!P13"
+Synthese,O3,=SUM(C3:N3)
+Synthese,C4,=SUM('Frais Export'!E2:E50)
+Synthese,D4,=SUM('Frais Export'!F2:F50)
+Synthese,E4,=SUM('Frais Export'!G2:G50)
+Synthese,F4,=SUM('Frais Export'!H2:H50)
+Synthese,G4,=SUM('Frais Export'!I2:I50)
+Synthese,H4,=SUM('Frais Export'!J2:J50)
+Synthese,I4,=SUM('Frais Export'!K2:K50)
+Synthese,J4,=SUM('Frais Export'!L2:L50)
+Synthese,K4,=SUM('Frais Export'!M2:M50)
+Synthese,L4,=SUM('Frais Export'!N2:N50)
+Synthese,M4,=SUM('Frais Export'!O2:O50)
+Synthese,N4,=SUM('Frais Export'!P2:P50)
+Synthese,O4,=SUM(C4:N4)
+Synthese,C5,=SUM(Employes!$I$2:$I$100)
+Synthese,D5,=SUM(Employes!$I$2:$I$100)
+Synthese,E5,=SUM(Employes!$I$2:$I$100)
+Synthese,F5,=SUM(Employes!$I$2:$I$100)
+Synthese,G5,=SUM(Employes!$I$2:$I$100)
+Synthese,H5,=SUM(Employes!$I$2:$I$100)
+Synthese,I5,=SUM(Employes!$I$2:$I$100)
+Synthese,J5,=SUM(Employes!$I$2:$I$100)
+Synthese,K5,=SUM(Employes!$I$2:$I$100)
+Synthese,L5,=SUM(Employes!$I$2:$I$100)
+Synthese,M5,=SUM(Employes!$I$2:$I$100)
+Synthese,N5,=SUM(Employes!$I$2:$I$100)
+Synthese,O5,=SUM(C5:N5)
+Synthese,C6,=C2-C3-C4
+Synthese,D6,=D2-D3-D4
+Synthese,E6,=E2-E3-E4
+Synthese,F6,=F2-F3-F4
+Synthese,G6,=G2-G3-G4
+Synthese,H6,=H2-H3-H4
+Synthese,I6,=I2-I3-I4
+Synthese,J6,=J2-J3-J4
+Synthese,K6,=K2-K3-K4
+Synthese,L6,=L2-L3-L4
+Synthese,M6,=M2-M3-M4
+Synthese,N6,=N2-N3-N4
+Synthese,O6,=SUM(C6:N6)
+Synthese,C7,"=IFERROR(C6/C2,0)"
+Synthese,D7,"=IFERROR(D6/D2,0)"
+Synthese,E7,"=IFERROR(E6/E2,0)"
+Synthese,F7,"=IFERROR(F6/F2,0)"
+Synthese,G7,"=IFERROR(G6/G2,0)"
+Synthese,H7,"=IFERROR(H6/H2,0)"
+Synthese,I7,"=IFERROR(I6/I2,0)"
+Synthese,J7,"=IFERROR(J6/J2,0)"
+Synthese,K7,"=IFERROR(K6/K2,0)"
+Synthese,L7,"=IFERROR(L6/L2,0)"
+Synthese,M7,"=IFERROR(M6/M2,0)"
+Synthese,N7,"=IFERROR(N6/N2,0)"
+Synthese,O7,"=IFERROR(O6/O2,0)"
+CR,B5,"=IF(Synthese!C2="""",0,Synthese!C2)"
+CR,C5,"=IF(Synthese!D2="""",0,Synthese!D2)"
+CR,D5,"=IF(Synthese!E2="""",0,Synthese!E2)"
+CR,E5,"=IF(Synthese!F2="""",0,Synthese!F2)"
+CR,F5,"=IF(Synthese!G2="""",0,Synthese!G2)"
+CR,G5,"=IF(Synthese!H2="""",0,Synthese!H2)"
+CR,H5,"=IF(Synthese!I2="""",0,Synthese!I2)"
+CR,I5,"=IF(Synthese!J2="""",0,Synthese!J2)"
+CR,J5,"=IF(Synthese!K2="""",0,Synthese!K2)"
+CR,K5,"=IF(Synthese!L2="""",0,Synthese!L2)"
+CR,L5,"=IF(Synthese!M2="""",0,Synthese!M2)"
+CR,M5,"=IF(Synthese!N2="""",0,Synthese!N2)"
+CR,N5,=SUM(B5:M5)
+CR,B6,=0
+CR,C6,=0
+CR,D6,=0
+CR,E6,=0
+CR,F6,=0
+CR,G6,=0
+CR,H6,=0
+CR,I6,=0
+CR,J6,=0
+CR,K6,=0
+CR,L6,=0
+CR,M6,=0
+CR,N6,=SUM(B6:M6)
+CR,B7,=0
+CR,C7,=0
+CR,D7,=0
+CR,E7,=0
+CR,F7,=0
+CR,G7,=0
+CR,H7,=0
+CR,I7,=0
+CR,J7,=0
+CR,K7,=0
+CR,L7,=0
+CR,M7,=0
+CR,N7,=SUM(B7:M7)
+CR,B8,=SUM(B5:B7)
+CR,C8,=SUM(C5:C7)
+CR,D8,=SUM(D5:D7)
+CR,E8,=SUM(E5:E7)
+CR,F8,=SUM(F5:F7)
+CR,G8,=SUM(G5:G7)
+CR,H8,=SUM(H5:H7)
+CR,I8,=SUM(I5:I7)
+CR,J8,=SUM(J5:J7)
+CR,K8,=SUM(K5:K7)
+CR,L8,=SUM(L5:L7)
+CR,M8,=SUM(M5:M7)
+CR,N8,=SUM(B8:M8)
+CR,B9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$E$2:$E$27)"
+CR,C9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$F$2:$F$27)"
+CR,D9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$G$2:$G$27)"
+CR,E9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$H$2:$H$27)"
+CR,F9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$I$2:$I$27)"
+CR,G9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$J$2:$J$27)"
+CR,H9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$K$2:$K$27)"
+CR,I9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$L$2:$L$27)"
+CR,J9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$M$2:$M$27)"
+CR,K9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$N$2:$N$27)"
+CR,L9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$O$2:$O$27)"
+CR,M9,"=SUMIF(Charges!$A$2:$A$27,""PRODUCTION"",Charges!$P$2:$P$27)"
+CR,N9,=SUM(B9:M9)
+CR,B10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$E$2:$E$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$E$2:$E$27)+SUM('Frais Export'!$E$2:$E$50)"
+CR,C10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$F$2:$F$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$F$2:$F$27)+SUM('Frais Export'!$F$2:$F$50)"
+CR,D10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$G$2:$G$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$G$2:$G$27)+SUM('Frais Export'!$G$2:$G$50)"
+CR,E10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$H$2:$H$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$H$2:$H$27)+SUM('Frais Export'!$H$2:$H$50)"
+CR,F10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$I$2:$I$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$I$2:$I$27)+SUM('Frais Export'!$I$2:$I$50)"
+CR,G10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$J$2:$J$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$J$2:$J$27)+SUM('Frais Export'!$J$2:$J$50)"
+CR,H10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$K$2:$K$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$K$2:$K$27)+SUM('Frais Export'!$K$2:$K$50)"
+CR,I10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$L$2:$L$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$L$2:$L$27)+SUM('Frais Export'!$L$2:$L$50)"
+CR,J10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$M$2:$M$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$M$2:$M$27)+SUM('Frais Export'!$M$2:$M$50)"
+CR,K10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$N$2:$N$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$N$2:$N$27)+SUM('Frais Export'!$N$2:$N$50)"
+CR,L10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$O$2:$O$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$O$2:$O$27)+SUM('Frais Export'!$O$2:$O$50)"
+CR,M10,"=SUMIF(Charges!$A$2:$A$27,""ADMINISTRATION"",Charges!$P$2:$P$27)-SUMIF(Charges!$B$2:$B$27,""Salaires administratifs"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""LOGISTIQUE"",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,""SECURITE"",Charges!$P$2:$P$27)+SUM('Frais Export'!$P$2:$P$50)"
+CR,N10,=SUM(B10:M10)
+CR,B11,=SUM(B9:B10)
+CR,C11,=SUM(C9:C10)
+CR,D11,=SUM(D9:D10)
+CR,E11,=SUM(E9:E10)
+CR,F11,=SUM(F9:F10)
+CR,G11,=SUM(G9:G10)
+CR,H11,=SUM(H9:H10)
+CR,I11,=SUM(I9:I10)
+CR,J11,=SUM(J9:J10)
+CR,K11,=SUM(K9:K10)
+CR,L11,=SUM(L9:L10)
+CR,M11,=SUM(M9:M10)
+CR,N11,=SUM(B11:M11)
+CR,B12,=B8-B11
+CR,C12,=C8-C11
+CR,D12,=D8-D11
+CR,E12,=E8-E11
+CR,F12,=F8-F11
+CR,G12,=G8-G11
+CR,H12,=H8-H11
+CR,I12,=I8-I11
+CR,J12,=J8-J11
+CR,K12,=K8-K11
+CR,L12,=L8-L11
+CR,M12,=M8-M11
+CR,N12,=SUM(B12:M12)
+CR,B13,=0
+CR,C13,=0
+CR,D13,=0
+CR,E13,=0
+CR,F13,=0
+CR,G13,=0
+CR,H13,=0
+CR,I13,=0
+CR,J13,=0
+CR,K13,=0
+CR,L13,=0
+CR,M13,=0
+CR,N13,=SUM(B13:M13)
+CR,B14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$E$2:$E$27)"
+CR,C14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$F$2:$F$27)"
+CR,D14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$G$2:$G$27)"
+CR,E14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$H$2:$H$27)"
+CR,F14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$I$2:$I$27)"
+CR,G14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$J$2:$J$27)"
+CR,H14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$K$2:$K$27)"
+CR,I14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$L$2:$L$27)"
+CR,J14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$M$2:$M$27)"
+CR,K14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$N$2:$N$27)"
+CR,L14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$O$2:$O$27)"
+CR,M14,"=SUMIF(Charges!$A$2:$A$27,""FISCAL"",Charges!$P$2:$P$27)"
+CR,N14,=SUM(B14:M14)
+CR,B15,"=IF(Synthese!C5="""",0,Synthese!C5)"
+CR,C15,"=IF(Synthese!D5="""",0,Synthese!D5)"
+CR,D15,"=IF(Synthese!E5="""",0,Synthese!E5)"
+CR,E15,"=IF(Synthese!F5="""",0,Synthese!F5)"
+CR,F15,"=IF(Synthese!G5="""",0,Synthese!G5)"
+CR,G15,"=IF(Synthese!H5="""",0,Synthese!H5)"
+CR,H15,"=IF(Synthese!I5="""",0,Synthese!I5)"
+CR,I15,"=IF(Synthese!J5="""",0,Synthese!J5)"
+CR,J15,"=IF(Synthese!K5="""",0,Synthese!K5)"
+CR,K15,"=IF(Synthese!L5="""",0,Synthese!L5)"
+CR,L15,"=IF(Synthese!M5="""",0,Synthese!M5)"
+CR,M15,"=IF(Synthese!N5="""",0,Synthese!N5)"
+CR,N15,=SUM(B15:M15)
+CR,B16,=B12+B13-B14-B15
+CR,C16,=C12+C13-C14-C15
+CR,D16,=D12+D13-D14-D15
+CR,E16,=E12+E13-E14-E15
+CR,F16,=F12+F13-F14-F15
+CR,G16,=G12+G13-G14-G15
+CR,H16,=H12+H13-H14-H15
+CR,I16,=I12+I13-I14-I15
+CR,J16,=J12+J13-J14-J15
+CR,K16,=K12+K13-K14-K15
+CR,L16,=L12+L13-L14-L15
+CR,M16,=M12+M13-M14-M15
+CR,N16,=SUM(B16:M16)
+CR,B17,=0
+CR,C17,=0
+CR,D17,=0
+CR,E17,=0
+CR,F17,=0
+CR,G17,=0
+CR,H17,=0
+CR,I17,=0
+CR,J17,=0
+CR,K17,=0
+CR,L17,=0
+CR,M17,=0
+CR,N17,=SUM(B17:M17)
+CR,B18,=0
+CR,C18,=0
+CR,D18,=0
+CR,E18,=0
+CR,F18,=0
+CR,G18,=0
+CR,H18,=0
+CR,I18,=0
+CR,J18,=0
+CR,K18,=0
+CR,L18,=0
+CR,M18,=0
+CR,N18,=SUM(B18:M18)
+CR,B19,=Amortissements!E13
+CR,C19,=Amortissements!F13
+CR,D19,=Amortissements!G13
+CR,E19,=Amortissements!H13
+CR,F19,=Amortissements!I13
+CR,G19,=Amortissements!J13
+CR,H19,=Amortissements!K13
+CR,I19,=Amortissements!L13
+CR,J19,=Amortissements!M13
+CR,K19,=Amortissements!N13
+CR,L19,=Amortissements!O13
+CR,M19,=Amortissements!P13
+CR,N19,=SUM(B19:M19)
+CR,B20,=0
+CR,C20,=0
+CR,D20,=0
+CR,E20,=0
+CR,F20,=0
+CR,G20,=0
+CR,H20,=0
+CR,I20,=0
+CR,J20,=0
+CR,K20,=0
+CR,L20,=0
+CR,M20,=0
+CR,N20,=SUM(B20:M20)
+CR,B21,=0
+CR,C21,=0
+CR,D21,=0
+CR,E21,=0
+CR,F21,=0
+CR,G21,=0
+CR,H21,=0
+CR,I21,=0
+CR,J21,=0
+CR,K21,=0
+CR,L21,=0
+CR,M21,=0
+CR,N21,=SUM(B21:M21)
+CR,B22,=B16+B17-B18-B19-B20+B21
+CR,C22,=C16+C17-C18-C19-C20+C21
+CR,D22,=D16+D17-D18-D19-D20+D21
+CR,E22,=E16+E17-E18-E19-E20+E21
+CR,F22,=F16+F17-F18-F19-F20+F21
+CR,G22,=G16+G17-G18-G19-G20+G21
+CR,H22,=H16+H17-H18-H19-H20+H21
+CR,I22,=I16+I17-I18-I19-I20+I21
+CR,J22,=J16+J17-J18-J19-J20+J21
+CR,K22,=K16+K17-K18-K19-K20+K21
+CR,L22,=L16+L17-L18-L19-L20+L21
+CR,M22,=M16+M17-M18-M19-M20+M21
+CR,N22,=SUM(B22:M22)
+CR,B23,=0
+CR,C23,=0
+CR,D23,=0
+CR,E23,=0
+CR,F23,=0
+CR,G23,=0
+CR,H23,=0
+CR,I23,=0
+CR,J23,=0
+CR,K23,=0
+CR,L23,=0
+CR,M23,=0
+CR,N23,=SUM(B23:M23)
+CR,B24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$E$2:$E$27)"
+CR,C24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$F$2:$F$27)"
+CR,D24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$G$2:$G$27)"
+CR,E24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$H$2:$H$27)"
+CR,F24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$I$2:$I$27)"
+CR,G24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$J$2:$J$27)"
+CR,H24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$K$2:$K$27)"
+CR,I24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$L$2:$L$27)"
+CR,J24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$M$2:$M$27)"
+CR,K24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$N$2:$N$27)"
+CR,L24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$O$2:$O$27)"
+CR,M24,"=SUMIF(Charges!$A$2:$A$27,""FINANCE"",Charges!$P$2:$P$27)"
+CR,N24,=SUM(B24:M24)
+CR,B25,=B23-B24
+CR,C25,=C23-C24
+CR,D25,=D23-D24
+CR,E25,=E23-E24
+CR,F25,=F23-F24
+CR,G25,=G23-G24
+CR,H25,=H23-H24
+CR,I25,=I23-I24
+CR,J25,=J23-J24
+CR,K25,=K23-K24
+CR,L25,=L23-L24
+CR,M25,=M23-M24
+CR,N25,=SUM(B25:M25)
+CR,B26,=B22+B25
+CR,C26,=C22+C25
+CR,D26,=D22+D25
+CR,E26,=E22+E25
+CR,F26,=F22+F25
+CR,G26,=G22+G25
+CR,H26,=H22+H25
+CR,I26,=I22+I25
+CR,J26,=J22+J25
+CR,K26,=K22+K25
+CR,L26,=L22+L25
+CR,M26,=M22+M25
+CR,N26,=SUM(B26:M26)
+CR,B27,"=IF(B26>0,B26*20%,0)"
+CR,C27,"=IF(C26>0,C26*20%,0)"
+CR,D27,"=IF(D26>0,D26*20%,0)"
+CR,E27,"=IF(E26>0,E26*20%,0)"
+CR,F27,"=IF(F26>0,F26*20%,0)"
+CR,G27,"=IF(G26>0,G26*20%,0)"
+CR,H27,"=IF(H26>0,H26*20%,0)"
+CR,I27,"=IF(I26>0,I26*20%,0)"
+CR,J27,"=IF(J26>0,J26*20%,0)"
+CR,K27,"=IF(K26>0,K26*20%,0)"
+CR,L27,"=IF(L26>0,L26*20%,0)"
+CR,M27,"=IF(M26>0,M26*20%,0)"
+CR,N27,=SUM(B27:M27)
+CR,B28,=0
+CR,C28,=0
+CR,D28,=0
+CR,E28,=0
+CR,F28,=0
+CR,G28,=0
+CR,H28,=0
+CR,I28,=0
+CR,J28,=0
+CR,K28,=0
+CR,L28,=0
+CR,M28,=0
+CR,N28,=SUM(B28:M28)
+CR,B29,=B26-B27-B28
+CR,C29,=C26-C27-C28
+CR,D29,=D26-D27-D28
+CR,E29,=E26-E27-E28
+CR,F29,=F26-F27-F28
+CR,G29,=G26-G27-G28
+CR,H29,=H26-H27-H28
+CR,I29,=I26-I27-I28
+CR,J29,=J26-J27-J28
+CR,K29,=K26-K27-K28
+CR,L29,=L26-L27-L28
+CR,M29,=M26-M27-M28
+CR,N29,=SUM(B29:M29)
+CR,B30,=0
+CR,C30,=0
+CR,D30,=0
+CR,E30,=0
+CR,F30,=0
+CR,G30,=0
+CR,H30,=0
+CR,I30,=0
+CR,J30,=0
+CR,K30,=0
+CR,L30,=0
+CR,M30,=0
+CR,N30,=SUM(B30:M30)
+CR,B31,=0
+CR,C31,=0
+CR,D31,=0
+CR,E31,=0
+CR,F31,=0
+CR,G31,=0
+CR,H31,=0
+CR,I31,=0
+CR,J31,=0
+CR,K31,=0
+CR,L31,=0
+CR,M31,=0
+CR,N31,=SUM(B31:M31)
+CR,B32,=B30-B31
+CR,C32,=C30-C31
+CR,D32,=D30-D31
+CR,E32,=E30-E31
+CR,F32,=F30-F31
+CR,G32,=G30-G31
+CR,H32,=H30-H31
+CR,I32,=I30-I31
+CR,J32,=J30-J31
+CR,K32,=K30-K31
+CR,L32,=L30-L31
+CR,M32,=M30-M31
+CR,N32,=SUM(B32:M32)
+CR,B33,=B29+B32
+CR,C33,=C29+C32
+CR,D33,=D29+D32
+CR,E33,=E29+E32
+CR,F33,=F29+F32
+CR,G33,=G29+G32
+CR,H33,=H29+H32
+CR,I33,=I29+I32
+CR,J33,=J29+J32
+CR,K33,=K29+K32
+CR,L33,=L29+L32
+CR,M33,=M29+M32
+CR,N33,=SUM(B33:M33)
+CR,B34,"=IFERROR(B33/B5,0)"
+CR,C34,"=IFERROR(C33/C5,0)"
+CR,D34,"=IFERROR(D33/D5,0)"
+CR,E34,"=IFERROR(E33/E5,0)"
+CR,F34,"=IFERROR(F33/F5,0)"
+CR,G34,"=IFERROR(G33/G5,0)"
+CR,H34,"=IFERROR(H33/H5,0)"
+CR,I34,"=IFERROR(I33/I5,0)"
+CR,J34,"=IFERROR(J33/J5,0)"
+CR,K34,"=IFERROR(K33/K5,0)"
+CR,L34,"=IFERROR(L33/L5,0)"
+CR,M34,"=IFERROR(M33/M5,0)"
+CR,N34,"=IFERROR(N33/N5,0)"
+Amortissements,E13,=SUM(E2:E12)
+Amortissements,F13,=SUM(F2:F12)
+Amortissements,G13,=SUM(G2:G12)
+Amortissements,H13,=SUM(H2:H12)
+Amortissements,I13,=SUM(I2:I12)
+Amortissements,J13,=SUM(J2:J12)
+Amortissements,K13,=SUM(K2:K12)
+Amortissements,L13,=SUM(L2:L12)
+Amortissements,M13,=SUM(M2:M12)
+Amortissements,N13,=SUM(N2:N12)
+Amortissements,O13,=SUM(O2:O12)
+Amortissements,P13,=SUM(P2:P12)
+Amortissements,Q13,=SUM(E13:P13)

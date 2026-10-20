@@ -9,12 +9,23 @@ from openpyxl.utils.cell import (
     column_index_from_string,
 )
 
+from re_commun import (
+    lire_arguments, dossier_sortie, charger_mises_en_page, classer_cellule,
+    axe_de_regroupement, regroupement_actif, domaine_de_feuille, nom_modele,
+    version_modele, nom_fichier_analyse, decrire_mise_en_page, charger_config,
+)
+
+lire_arguments()  # --sortie / --config
+
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-OUTPUT_DIR = Path("output/reverse_engineering")
+OUTPUT_DIR = dossier_sortie()
+
+# {feuille: mise en page temporelle détectée par analyser_structure}
+MISES_EN_PAGE = {}
 
 FORMULES_FILE = OUTPUT_DIR / "formules.csv"
 DEPENDANCES_FILE = OUTPUT_DIR / "dependances.csv"
@@ -426,6 +437,63 @@ def normaliser_formule_relative(formule, cellule_cible):
 
 
 # ============================================================
+# FORMULES RECOPIEES
+# ============================================================
+
+_LIGNE_RELATIVE = re.compile(r"(?<![A-Z_])ROW\[([+-]?\d+)\]")
+_COLONNE_RELATIVE = re.compile(r"(?<![A-Z_])COL\[([+-]?\d+)\]")
+
+
+def signature_formule_recopiee(
+    feuille_norm,
+    operation,
+    cellule,
+    formule,
+    ligne,
+    colonne
+):
+
+    try:
+        relative = normaliser_formule_relative(
+            formule,
+            cellule
+        )
+    except Exception:
+        return None
+
+    deplacements_ligne = _LIGNE_RELATIVE.findall(relative)
+    deplacements_colonne = _COLONNE_RELATIVE.findall(relative)
+
+    # Recopie vers le bas : chaque ligne se calcule a partir d'elle-meme
+    if (
+        deplacements_ligne
+        and all(int(d) == 0 for d in deplacements_ligne)
+    ):
+        return (
+            feuille_norm,
+            "RECOPIE_BAS",
+            colonne,
+            operation,
+            relative
+        )
+
+    # Recopie vers la droite : chaque colonne se calcule a partir d'elle-meme
+    if (
+        deplacements_colonne
+        and all(int(d) == 0 for d in deplacements_colonne)
+    ):
+        return (
+            feuille_norm,
+            "RECOPIE_DROITE",
+            ligne,
+            operation,
+            relative
+        )
+
+    return None
+
+
+# ============================================================
 # SIGNATURE METIER
 # ============================================================
 
@@ -461,37 +529,65 @@ def creer_signature_regroupement(
     feuille_norm = normaliser_nom(feuille)
 
     # ========================================================
-    # CAS SPECIAL : SYNTHESE
+    # FEUILLES AVEC MISE EN PAGE TEMPORELLE (detectee automatiquement)
     #
-    # Dans le modèle actuel :
+    # Exemple (mois en colonnes, total annuel juste apres) :
+    #   mois = Janvier..Decembre, total = colonne suivante
     #
-    # C:N = Janvier -> Décembre
-    # O   = Total annuel
-    #
-    # Une ligne représente une même logique métier.
+    # Une ligne (ou une colonne si les mois sont en lignes)
+    # represente une meme logique metier.
     # ========================================================
 
-    if feuille_norm == "SYNTHESE":
+    mise_en_page = MISES_EN_PAGE.get(feuille)
 
-        # Colonnes mensuelles C -> N
-        if 3 <= colonne <= 14:
+    if mise_en_page and regroupement_actif(feuille):
 
-            return (
-                feuille_norm,
-                "MENSUEL",
-                ligne,
-                operation
-            )
+        categorie = classer_cellule(
+            mise_en_page,
+            colonne,
+            ligne
+        )
 
-        # Colonne O = annuel
-        if colonne == 15:
+        if categorie:
 
             return (
                 feuille_norm,
-                "ANNUEL",
-                ligne,
+                categorie,
+                axe_de_regroupement(
+                    mise_en_page,
+                    colonne,
+                    ligne
+                ),
                 operation
             )
+
+    # ========================================================
+    # FORMULES RECOPIEES (vers le bas ou vers la droite)
+    #
+    # Exemple : I2 = F2+G2+H2, I3 = F3+G3+H3, ... I61
+    #
+    # Regroupement PRUDENT : uniquement si toutes les references
+    # relatives restent sur la meme ligne (recopie vers le bas) ou sur
+    # la meme colonne (recopie vers la droite). Cela evite de fusionner
+    # des lignes metier distinctes qui auraient la meme forme.
+    # ========================================================
+
+    if charger_config().get(
+        "regroupement_formules_recopiees",
+        True
+    ):
+
+        famille = signature_formule_recopiee(
+            feuille_norm,
+            operation,
+            cellule,
+            formule,
+            ligne,
+            colonne
+        )
+
+        if famille:
+            return famille
 
     # ========================================================
     # FORMULES STRICTEMENT IDENTIQUES
@@ -510,7 +606,12 @@ def creer_signature_regroupement(
 # PERIODICITE
 # ============================================================
 
-def determiner_periodicite(occurrences):
+def _suite_consecutive(valeurs):
+    valeurs = sorted(set(valeurs))
+    return valeurs == list(range(valeurs[0], valeurs[0] + len(valeurs)))
+
+
+def determiner_periodicite(occurrences, feuille=None):
     if len(occurrences) == 1:
         return "UNIQUE"
 
@@ -527,20 +628,43 @@ def determiner_periodicite(occurrences):
     if not cellules:
         return "REPETEE"
 
-    lignes = {
-        c["ligne"]
-        for c in cellules
-    }
+    lignes = {c["ligne"] for c in cellules}
+    colonnes = {c["colonne_numero"] for c in cellules}
 
-    colonnes = sorted(
-        c["colonne_numero"]
-        for c in cellules
-    )
+    # 1. Mise en page detectee : la regle couvre tous les mois de la feuille
+    mise_en_page = MISES_EN_PAGE.get(feuille)
 
-    # Même ligne C:N
+    if mise_en_page and regroupement_actif(feuille):
+
+        mois = set(mise_en_page["positions"])
+
+        if (
+            mise_en_page["orientation"] == "COLONNES"
+            and len(lignes) == 1
+            and colonnes == mois
+        ):
+            return "MENSUELLE"
+
+        if (
+            mise_en_page["orientation"] == "LIGNES"
+            and len(colonnes) == 1
+            and lignes == mois
+        ):
+            return "MENSUELLE"
+
+    # 2. Sans mise en page : 12 cases consecutives sur une meme ligne
+    #    (ou une meme colonne), a n'importe quel endroit de la feuille
     if (
         len(lignes) == 1
-        and colonnes == list(range(3, 15))
+        and len(colonnes) == 12
+        and _suite_consecutive(colonnes)
+    ):
+        return "MENSUELLE"
+
+    if (
+        len(colonnes) == 1
+        and len(lignes) == 12
+        and _suite_consecutive(lignes)
     ):
         return "MENSUELLE"
 
@@ -552,24 +676,9 @@ def determiner_periodicite(occurrences):
 # ============================================================
 
 def determiner_domaine(feuille):
-    nom = normaliser_nom(feuille)
-
-    if "PRODUCTION" in nom:
-        return "PRODUCTION"
-
-    if "EXPORT" in nom:
-        return "EXPORTATION"
-
-    if "EMPLOYE" in nom or "SALAIRE" in nom:
-        return "SALAIRES"
-
-    if "CHARGE" in nom:
-        return "CHARGES"
-
-    if "SYNTHESE" in nom or "BUDGET" in nom:
-        return "BUDGET"
-
-    return "AUTRE"
+    # Mots-cles de la configuration, puis mots-cles par defaut,
+    # sinon le nom de la feuille lui-meme (jamais un « AUTRE » opaque).
+    return domaine_de_feuille(feuille)
 
 
 # ============================================================
@@ -701,7 +810,8 @@ def generer_regles_techniques(
         )
 
         periodicite = determiner_periodicite(
-            occurrences
+            occurrences,
+            feuille
         )
 
         cellules = [
@@ -716,6 +826,26 @@ def generer_regles_techniques(
                 reference["cellule"]
             )
         )
+
+        # Garde-fou : un regroupement par ligne ne doit pas cacher une
+        # formule differente (mois « force » a la main, erreur de copie...)
+        anomalies = []
+
+        if len(occurrences) > 1:
+            for occ in occurrences[1:]:
+                try:
+                    autre = normaliser_formule_relative(
+                        occ["formule"],
+                        occ["cellule"]
+                    )
+                except Exception:
+                    continue
+
+                if autre != signature_structurelle:
+                    anomalies.append({
+                        "cellule": occ["cellule"],
+                        "formule": occ["formule"]
+                    })
 
         regle = {
             "id": id_regle,
@@ -752,6 +882,9 @@ def generer_regles_techniques(
 
             "periodicite":
                 periodicite,
+
+            "anomalies_regroupement":
+                anomalies,
 
             "cellules_excel":
                 cellules,
@@ -817,7 +950,14 @@ def calculer_statistiques(
             dict(domaines),
 
         "periodicites":
-            dict(periodicites)
+            dict(periodicites),
+
+        "regroupements_irreguliers":
+            sum(
+                1
+                for regle in regles
+                if regle.get("anomalies_regroupement")
+            )
     }
 
 
@@ -902,6 +1042,17 @@ def afficher_resultat(
             )
         )
 
+        if regle.get("anomalies_regroupement"):
+
+            print(
+                "  [ATTENTION]  formule differente de la reference "
+                "dans : "
+                + ", ".join(
+                    a["cellule"]
+                    for a in regle["anomalies_regroupement"]
+                )
+            )
+
 
 # ============================================================
 # PROGRAMME PRINCIPAL
@@ -920,6 +1071,26 @@ def generer_regles():
     print(
         f"Lecture : {FORMULES_FILE}"
     )
+
+    global MISES_EN_PAGE
+
+    MISES_EN_PAGE = {
+        nom: mep
+        for nom, mep in charger_mises_en_page().items()
+        if mep
+    }
+
+    if MISES_EN_PAGE:
+        print()
+        print("Mises en page temporelles utilisees :")
+        for nom, mep in MISES_EN_PAGE.items():
+            print(f"  {nom:<25} {decrire_mise_en_page(mep)}")
+    else:
+        print()
+        print(
+            "[INFO] Aucune mise en page temporelle (structure.json absent "
+            "ou sans en-tetes de mois) : regroupement par formules identiques."
+        )
 
     formules = lire_csv(
         FORMULES_FILE
@@ -960,9 +1131,11 @@ def generer_regles():
     )
 
     resultat = {
-        "modele": "SOMIDA_BUDGET",
+        "modele": nom_modele(),
 
-        "version": "SOMIDA_BUDGET_V1",
+        "version": version_modele(),
+
+        "fichier_source": nom_fichier_analyse(),
 
         "origine":
             "REVERSE_ENGINEERING_EXCEL",

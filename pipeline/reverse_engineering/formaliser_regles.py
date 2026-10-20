@@ -1,22 +1,20 @@
 from pathlib import Path
 import json
 
+from re_commun import lire_arguments, dossier_sortie
+
+lire_arguments()  # --sortie / --config
+
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-REGLES_FILE = Path(
-    "output/reverse_engineering/regles_metier.json"
-)
+REGLES_FILE = dossier_sortie() / "regles_metier.json"
 
-SEMANTIQUE_FILE = Path(
-    "output/reverse_engineering/semantique.json"
-)
+SEMANTIQUE_FILE = dossier_sortie() / "semantique.json"
 
-OUTPUT_FILE = Path(
-    "output/reverse_engineering/regles_executables.json"
-)
+OUTPUT_FILE = dossier_sortie() / "regles_executables.json"
 
 
 # ============================================================
@@ -187,6 +185,23 @@ def formaliser():
             "dependances":
                 regle.get(
                     "dependances_reference",
+                    []
+                ),
+
+            "dependances_semantiques":
+                semantique.get(
+                    "dependances_semantiques",
+                    []
+                ),
+
+            "expression_metier":
+                semantique.get(
+                    "expression_metier"
+                ),
+
+            "anomalies_regroupement":
+                regle.get(
+                    "anomalies_regroupement",
                     []
                 ),
 

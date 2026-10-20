@@ -1,158 +1,58 @@
 from pathlib import Path
 import json
+import sys
+
+from re_commun import lire_arguments, dossier_sortie, charger_config
+
+ARGUMENTS = lire_arguments()  # --sortie / --config ; reste : [mapping.json]
 
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-INPUT_FILE = Path(
-    "output/reverse_engineering/regles_metier.json"
-)
+INPUT_FILE = dossier_sortie() / "regles_metier.json"
 
-OUTPUT_FILE = Path(
-    "output/reverse_engineering/regles_executables.json"
-)
+# Sortie distincte de regles_executables.json (formaliser_regles.py) :
+# les deux formalisations ne s'ecrasent plus mutuellement.
+OUTPUT_FILE = dossier_sortie() / "regles_executables_metier.json"
 
 
 # ============================================================
 # CORRESPONDANCE ENTRE LES REGLES EXCEL ET LE METIER
+#
+# Etape FACULTATIVE : elle sert a donner des codes/noms metier
+# choisis a la main (RG_BUD_001 ...) a certaines regles.
+# Le mapping n'est plus dans le code : c'est un fichier JSON
+# { "RG_FEUILLE_001": { "code_metier": ..., "nom_metier": ..., ... } }
+#
+# Recherche : 1. argument  2. cle "mapping_metier" de re_config.json
+#             3. <dossier de sortie>/mapping_metier.json
+# Exemple fourni : exemples/mapping_metier_somida_budget.json
 # ============================================================
 
-MAPPING_METIER = {
+def trouver_fichier_mapping():
 
-    # --------------------------------------------------------
-    # SYNTHESE - MENSUEL
-    # --------------------------------------------------------
+    if ARGUMENTS:
+        return Path(ARGUMENTS[0])
 
-    "RG_SYNTHESE_001": {
-        "code_metier": "RG_BUD_001",
-        "nom_metier": "Calcul du chiffre d'affaires mensuel",
-        "cible": "chiffre_affaires",
-        "source": "exportation.ca_mga",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "MENSUELLE"
-    },
+    configure = charger_config().get("mapping_metier")
 
-    "RG_SYNTHESE_003": {
-        "code_metier": "RG_BUD_002",
-        "nom_metier": "Calcul des charges mensuelles",
-        "cible": "charges_metier",
-        "source": "charge.montant",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "MENSUELLE"
-    },
+    if configure:
+        return Path(configure)
 
-    "RG_SYNTHESE_005": {
-        "code_metier": "RG_BUD_003",
-        "nom_metier": "Calcul des frais d'exportation mensuels",
-        "cible": "frais_export",
-        "source": "frais_export.total",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "MENSUELLE"
-    },
-
-    "RG_SYNTHESE_007": {
-        "code_metier": "RG_BUD_004",
-        "nom_metier": "Calcul des charges salariales",
-        "cible": "charges_salariales",
-        "source": "employe.cout_total",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "MENSUELLE"
-    },
-
-    "RG_SYNTHESE_009": {
-        "code_metier": "RG_BUD_005",
-        "nom_metier": "Calcul du résultat opérationnel mensuel",
-        "cible": "resultat_operationnel",
-        "sources": [
-            "chiffre_affaires",
-            "charges_metier",
-            "frais_export",
-            "charges_salariales"
-        ],
-        "operation_metier": "SOUSTRACTION",
-        "expression": (
-            "chiffre_affaires "
-            "- charges_metier "
-            "- frais_export "
-            "- charges_salariales"
-        ),
-        "periodicite_metier": "MENSUELLE"
-    },
-
-    "RG_SYNTHESE_011": {
-        "code_metier": "RG_BUD_006",
-        "nom_metier": "Calcul du taux de marge mensuel",
-        "cible": "taux_marge",
-        "numerateur": "resultat_operationnel",
-        "denominateur": "chiffre_affaires",
-        "operation_metier": "DIVISION",
-        "gestion_zero": True,
-        "periodicite_metier": "MENSUELLE"
-    },
+    return dossier_sortie() / "mapping_metier.json"
 
 
-    # --------------------------------------------------------
-    # SYNTHESE - ANNUEL
-    # --------------------------------------------------------
+def charger_mapping():
 
-    "RG_SYNTHESE_002": {
-        "code_metier": "RG_BUD_007",
-        "nom_metier": "Calcul du chiffre d'affaires annuel",
-        "cible": "chiffre_affaires_annuel",
-        "source": "chiffre_affaires",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "ANNUELLE"
-    },
+    chemin = trouver_fichier_mapping()
 
-    "RG_SYNTHESE_004": {
-        "code_metier": "RG_BUD_008",
-        "nom_metier": "Calcul des charges annuelles",
-        "cible": "charges_metier_annuelles",
-        "source": "charges_metier",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "ANNUELLE"
-    },
+    if not chemin.exists():
+        return None, chemin
 
-    "RG_SYNTHESE_006": {
-        "code_metier": "RG_BUD_009",
-        "nom_metier": "Calcul des frais d'exportation annuels",
-        "cible": "frais_export_annuels",
-        "source": "frais_export",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "ANNUELLE"
-    },
-
-    "RG_SYNTHESE_008": {
-        "code_metier": "RG_BUD_010",
-        "nom_metier": "Calcul des charges salariales annuelles",
-        "cible": "charges_salariales_annuelles",
-        "source": "charges_salariales",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "ANNUELLE"
-    },
-
-    "RG_SYNTHESE_010": {
-        "code_metier": "RG_BUD_011",
-        "nom_metier": "Calcul du résultat opérationnel annuel",
-        "cible": "resultat_operationnel_annuel",
-        "source": "resultat_operationnel",
-        "operation_metier": "SOMME",
-        "periodicite_metier": "ANNUELLE"
-    },
-
-    "RG_SYNTHESE_012": {
-        "code_metier": "RG_BUD_012",
-        "nom_metier": "Calcul du taux de marge annuel",
-        "cible": "taux_marge_annuel",
-        "numerateur": "resultat_operationnel_annuel",
-        "denominateur": "chiffre_affaires_annuel",
-        "operation_metier": "DIVISION",
-        "gestion_zero": True,
-        "periodicite_metier": "ANNUELLE"
-    }
-}
+    with chemin.open("r", encoding="utf-8") as fichier:
+        return json.load(fichier), chemin
 
 
 # ============================================================
@@ -178,7 +78,7 @@ def lire_json(path):
 # FORMALISATION
 # ============================================================
 
-def formaliser_regles(document):
+def formaliser_regles(document, MAPPING_METIER):
 
     regles_techniques = document.get(
         "regles",
@@ -354,6 +254,23 @@ def main():
     print("SXMXDX - FORMALISATION DES REGLES METIER")
     print("=" * 70)
 
+    mapping, chemin_mapping = charger_mapping()
+
+    if mapping is None:
+
+        print(
+            f"\n[INFO] Aucun fichier de mapping metier ({chemin_mapping})."
+        )
+        print(
+            "Etape facultative ignoree : les regles formalisees "
+            "automatiquement sont dans regles_executables.json "
+            "(formaliser_regles.py)."
+        )
+        print("=" * 70)
+        return
+
+    print(f"\nMapping : {chemin_mapping} ({len(mapping)} regle(s))")
+
     document = lire_json(
         INPUT_FILE
     )
@@ -377,7 +294,8 @@ def main():
         regles_executables,
         regles_non_mappees
     ) = formaliser_regles(
-        document
+        document,
+        mapping
     )
 
     erreurs = valider_regles(
@@ -411,7 +329,7 @@ def main():
         ),
 
         "origine":
-            "FORMALISATION_REVERSE_ENGINEERING",
+            "FORMALISATION_REVERSE_ENGINEERING_MAPPING",
 
         "source":
             str(INPUT_FILE),

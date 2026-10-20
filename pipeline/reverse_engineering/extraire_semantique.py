@@ -5,65 +5,58 @@ import sys
 import unicodedata
 
 from openpyxl import load_workbook
+from openpyxl.formula.tokenizer import Tokenizer
 from openpyxl.utils.cell import coordinate_from_string
 
+from re_commun import (
+    lire_arguments, dossier_sortie, verifier_fichier_excel, charger_config,
+    numero_mois, tous_les_noms_de_mois, sans_accents, mise_en_page_feuille,
+    feuilles_lisibles,
+)
 
+ARGUMENTS = lire_arguments()
 
-if len(sys.argv) < 2:
+if len(ARGUMENTS) < 1:
     print(
         "Utilisation : "
-        "python extraire_semantique.py <fichier_excel>"
+        "python extraire_semantique.py <fichier_excel> "
+        "[--sortie DOSSIER] [--config FICHIER.json]"
     )
     sys.exit(1)
 
-EXCEL_FILE = Path(sys.argv[1]).resolve()
+EXCEL_FILE = Path(ARGUMENTS[0]).resolve()
 
+REGLES_FILE = dossier_sortie() / "regles_metier.json"
 
-REGLES_FILE = Path(
-    "output/reverse_engineering/regles_metier.json"
-)
+OUTPUT_FILE = dossier_sortie() / "semantique.json"
 
-OUTPUT_FILE = Path(
-    "output/reverse_engineering/semantique.json"
-)
+# {feuille: mise en page temporelle}, rempli dans main()
+MISES_EN_PAGE = {}
 
 
 # ============================================================
 # VALEURS QUI NE SONT PAS DES CONCEPTS METIER
 # ============================================================
 
-VALEURS_NON_SEMANTIQUES = {
+_VALEURS_DE_BASE = {
     "",
-    "mga",
-    "usd",
-    "jpy",
-    "eur",
-    "ar",
-    "%",
-    "t",
-    "kg",
-    "g",
-    "tonne",
-    "tonnes",
-    "unite",
-    "unites",
-    "total",
-    "total_annuel",
-    "annuel",
-    "mensuel",
-    "janvier",
-    "fevrier",
-    "mars",
-    "avril",
-    "mai",
-    "juin",
-    "juillet",
-    "aout",
-    "septembre",
-    "octobre",
-    "novembre",
-    "decembre"
+    # devises et unites courantes
+    "mga", "usd", "jpy", "eur", "gbp", "chf", "cad", "cny", "zar",
+    "ar", "fmg", "xof", "xaf",
+    "%", "t", "kg", "g", "tonne", "tonnes", "l", "ml", "m", "m2", "m3",
+    "pcs", "pce", "unite", "unites", "unit", "units",
+    # agregats generiques
+    "total", "total_annuel", "annuel", "mensuel", "annee", "year",
+    "monthly", "annual", "yearly", "cumul",
 }
+
+
+def construire_valeurs_non_semantiques():
+    valeurs = set(_VALEURS_DE_BASE)
+    valeurs |= tous_les_noms_de_mois()
+    for extra in charger_config().get("valeurs_non_semantiques", []):
+        valeurs.add(normaliser_identifiant(extra) or "")
+    return valeurs
 
 
 # ============================================================
@@ -123,6 +116,8 @@ def normaliser_identifiant(valeur):
 # DETECTION DES VALEURS NON SEMANTIQUES
 # ============================================================
 
+VALEURS_NON_SEMANTIQUES = construire_valeurs_non_semantiques()
+
 def chercher_libelle_de_ligne(
     ws,
     cellule
@@ -179,6 +174,50 @@ def chercher_libelle_de_ligne(
 
 
 
+def chercher_libelle_de_colonne(
+    ws,
+    cellule
+):
+    """
+    Pendant vertical de chercher_libelle_de_ligne : quand les mois sont
+    en lignes, le total annuel d'une colonne herite du libelle en tete de colonne.
+    """
+
+    cellule_obj = ws[cellule]
+
+    colonne = cellule_obj.column
+
+    for ligne in range(
+        1,
+        cellule_obj.row
+    ):
+
+        texte = normaliser_texte(
+            ws.cell(
+                row=ligne,
+                column=colonne
+            ).value
+        )
+
+        if texte is None:
+            continue
+
+        if est_libelle_metier(
+            texte
+        ):
+
+            return {
+                "valeur": texte,
+                "ligne": ligne,
+                "colonne": colonne,
+                "position": "DEBUT_COLONNE",
+                "distance":
+                    cellule_obj.row - ligne
+            }
+
+    return None
+
+
 def est_libelle_metier(valeur):
 
     texte = normaliser_texte(
@@ -192,6 +231,10 @@ def est_libelle_metier(valeur):
     if texte.startswith("="):
         return False
 
+    # Symboles seuls ($, €, %, -...) : unites, pas des concepts
+    if not any(c.isalnum() for c in texte):
+        return False
+
     identifiant = normaliser_identifiant(
         texte
     )
@@ -200,6 +243,10 @@ def est_libelle_metier(valeur):
         return False
 
     if identifiant in VALEURS_NON_SEMANTIQUES:
+        return False
+
+    # Mois avec annee : "Janvier 2025", "jan-25"
+    if numero_mois(texte):
         return False
 
     # Nombre seul
@@ -262,8 +309,14 @@ def charger_excel():
 def chercher_libelle_gauche(
     ws,
     cellule,
-    distance_max=10
+    distance_max=None
 ):
+
+    if distance_max is None:
+        distance_max = charger_config().get(
+            "distance_max_libelle",
+            10
+        )
 
     cellule_obj = ws[cellule]
 
@@ -331,8 +384,14 @@ def chercher_libelle_gauche(
 def chercher_libelle_haut(
     ws,
     cellule,
-    distance_max=10
+    distance_max=None
 ):
+
+    if distance_max is None:
+        distance_max = charger_config().get(
+            "distance_max_libelle",
+            10
+        )
 
     cellule_obj = ws[cellule]
 
@@ -435,6 +494,64 @@ def chercher_libelle(
     return None
 
 
+def chercher_libelle_selon_mise_en_page(
+    ws,
+    cellule,
+    mise_en_page
+):
+    """
+    Cellule situee dans la zone des mois (ou dans la colonne/ligne de total) :
+    le libelle est celui de la ligne (mois en colonnes) ou de la colonne
+    (mois en lignes), QUELLE QUE SOIT la distance qui les separe.
+    Retourne None si la cellule n'est pas dans cette zone.
+    """
+
+    if not mise_en_page:
+        return None
+
+    from re_commun import classer_cellule
+    from openpyxl.utils import column_index_from_string
+
+    colonne, ligne = coordinate_from_string(
+        cellule
+    )
+
+    categorie = classer_cellule(
+        mise_en_page,
+        column_index_from_string(colonne.upper()),
+        int(ligne)
+    )
+
+    if categorie is None:
+        return None
+
+    cellule_obj = ws[cellule]
+
+    colonnes = mise_en_page["orientation"] == "COLONNES"
+
+    if categorie == "ANNUEL":
+
+        # Meme concept metier que les mois de la ligne / colonne
+        if colonnes:
+            return chercher_libelle_de_ligne(ws, cellule)
+
+        return chercher_libelle_de_colonne(ws, cellule)
+
+    # MENSUEL
+    if colonnes:
+        return chercher_libelle_gauche(
+            ws,
+            cellule,
+            distance_max=cellule_obj.column
+        )
+
+    return chercher_libelle_haut(
+        ws,
+        cellule,
+        distance_max=cellule_obj.row
+    )
+
+
 # ============================================================
 # PERIODICITE SEMANTIQUE
 # ============================================================
@@ -448,47 +565,31 @@ def determiner_periodicite_semantique(
     if not feuille or not cellule:
         return periodicite_technique
 
-    feuille_normalisee = (
-        normaliser_identifiant(
-            feuille
-        )
-    )
+    mise_en_page = MISES_EN_PAGE.get(feuille)
 
-    colonne, _ = coordinate_from_string(
+    if not mise_en_page:
+        return periodicite_technique
+
+    colonne, ligne = coordinate_from_string(
         cellule
     )
 
-    colonne = colonne.upper()
+    from re_commun import classer_cellule
+    from openpyxl.utils import column_index_from_string
 
-    # --------------------------------------------------------
-    # CAS PARTICULIER DE LA SYNTHESE
-    #
-    # C:N = janvier à décembre
-    # O   = total annuel
-    # --------------------------------------------------------
+    categorie = classer_cellule(
+        mise_en_page,
+        column_index_from_string(colonne.upper()),
+        int(ligne)
+    )
 
-    if feuille_normalisee == "synthese":
+    # Mois detectes dans les en-tetes -> MENSUELLE
+    # Colonne (ou ligne) de total juste apres les mois -> ANNUELLE
+    if categorie == "MENSUEL":
+        return "MENSUELLE"
 
-        colonnes_mensuelles = {
-            "C",
-            "D",
-            "E",
-            "F",
-            "G",
-            "H",
-            "I",
-            "J",
-            "K",
-            "L",
-            "M",
-            "N"
-        }
-
-        if colonne in colonnes_mensuelles:
-            return "MENSUELLE"
-
-        if colonne == "O":
-            return "ANNUELLE"
+    if categorie == "ANNUEL":
+        return "ANNUELLE"
 
     return periodicite_technique
 
@@ -508,6 +609,199 @@ def determiner_type_semantique(
         return "MESURE_ANNUELLE"
 
     return "MESURE"
+
+
+# ============================================================
+# DEPENDANCES SEMANTIQUES ET EXPRESSION METIER
+#
+# Remplace le mapping manuel (RG_xxx -> sources/expression) :
+# chaque cellule source est traduite en concept metier grace a
+# son libelle dans le classeur.
+# ============================================================
+
+import re as _re
+
+_CELLULE_SIMPLE = _re.compile(r"^[A-Za-z]{1,3}\d+$")
+
+_CACHE_LIBELLES = {}
+
+
+def libelle_de_source(workbook, feuille, plage):
+
+    cle = (feuille, plage)
+
+    if cle in _CACHE_LIBELLES:
+        return _CACHE_LIBELLES[cle]
+
+    resultat = None
+
+    try:
+
+        if feuille in workbook.sheetnames:
+
+            ws = workbook[feuille]
+
+            if hasattr(ws, "iter_rows"):
+
+                premiere_cellule = plage.split(":")[0]
+
+                if _CELLULE_SIMPLE.match(premiere_cellule):
+
+                    resultat = chercher_libelle_selon_mise_en_page(
+                        ws,
+                        premiere_cellule,
+                        MISES_EN_PAGE.get(feuille)
+                    )
+
+                if resultat is not None:
+
+                    pass
+
+                elif ":" in plage:
+
+                    debut, fin = plage.split(":")
+
+                    if (
+                        _CELLULE_SIMPLE.match(debut)
+                        and _CELLULE_SIMPLE.match(fin)
+                    ):
+
+                        premiere = ws[debut]
+                        derniere = ws[fin]
+
+                        # Colonne de donnees : l'en-tete est au-dessus
+                        if (
+                            premiere.column == derniere.column
+                            and premiere.row != derniere.row
+                        ):
+
+                            resultat = (
+                                chercher_libelle_haut(ws, debut)
+                                or chercher_libelle_gauche(ws, debut)
+                            )
+
+                        else:
+
+                            resultat = chercher_libelle(ws, debut)
+
+                elif _CELLULE_SIMPLE.match(plage):
+
+                    resultat = chercher_libelle(ws, plage)
+
+    except Exception:
+
+        resultat = None
+
+    _CACHE_LIBELLES[cle] = resultat
+
+    return resultat
+
+
+def construire_expression(
+    workbook,
+    formule,
+    feuille_courante
+):
+    """
+    '=C2-C3-C4' -> 'chiffre_affaires - charges - frais'
+    Retourne None si une des sources n'a pas de libelle.
+    """
+
+    if not formule:
+        return None
+
+    try:
+        tokens = Tokenizer(formule).items
+    except Exception:
+        return None
+
+    morceaux = []
+
+    for token in tokens:
+
+        if (
+            token.type == "OPERAND"
+            and token.subtype == "RANGE"
+        ):
+
+            valeur = token.value.replace("$", "").replace("'", "")
+
+            if "!" in valeur:
+                feuille_source, cellule = valeur.rsplit("!", 1)
+            else:
+                feuille_source, cellule = feuille_courante, valeur
+
+            libelle = libelle_de_source(
+                workbook,
+                feuille_source,
+                cellule
+            )
+
+            if not libelle:
+                return None
+
+            identifiant = normaliser_identifiant(
+                libelle["valeur"]
+            )
+
+            if feuille_source != feuille_courante:
+                identifiant = (
+                    f"{normaliser_identifiant(feuille_source)}."
+                    f"{identifiant}"
+                )
+
+            morceaux.append(identifiant)
+
+        elif token.type == "OPERATOR-INFIX":
+            morceaux.append(f" {token.value} ")
+
+        elif token.type == "SEP":
+            morceaux.append(", ")
+
+        elif token.type == "WHITE-SPACE":
+            continue
+
+        else:
+            morceaux.append(token.value)
+
+    return "".join(morceaux).strip()
+
+
+def analyser_dependances_semantiques(
+    workbook,
+    regle,
+    feuille_courante
+):
+
+    dependances = []
+
+    for dep in regle.get("dependances_reference") or []:
+
+        libelle = libelle_de_source(
+            workbook,
+            dep.get("feuille"),
+            dep.get("cellule")
+        )
+
+        dependances.append({
+            "feuille": dep.get("feuille"),
+            "cellule": dep.get("cellule"),
+            "libelle": (
+                libelle["valeur"] if libelle else None
+            ),
+            "identifiant_semantique": (
+                normaliser_identifiant(libelle["valeur"])
+                if libelle else None
+            )
+        })
+
+    expression = construire_expression(
+        workbook,
+        regle.get("formule_excel_reference"),
+        feuille_courante
+    )
+
+    return dependances, expression
 
 
 # ============================================================
@@ -602,6 +896,15 @@ def analyser_regle(
         feuille
     ]
 
+    (
+        resultat["dependances_semantiques"],
+        resultat["expression_metier"]
+    ) = analyser_dependances_semantiques(
+        workbook,
+        regle,
+        feuille
+    )
+
     # --------------------------------------------------------
     # RECHERCHE DU LIBELLE
     # --------------------------------------------------------
@@ -610,26 +913,17 @@ def analyser_regle(
     # RECHERCHE SEMANTIQUE
     # ========================================================
 
-    if (
-        normaliser_identifiant(feuille) == "synthese"
-        and periodicite_semantique == "ANNUELLE"
-    ):
-        # Une valeur annuelle de Synthese appartient
-        # au même concept métier que la ligne mensuelle.
-        #
-        # Exemple :
-        #
-        # A2 = CA export
-        # C2:N2 = CA mensuel
-        # O2 = CA annuel
-        #
-        # O2 doit donc récupérer "CA export".
-        libelle = chercher_libelle_de_ligne(
-            ws,
-            cellule
-        )
+    # Cellule dans la zone des mois / du total : libelle de la ligne
+    # (ou de la colonne) sans limite de distance.
+    # Sinon : recherche a gauche puis au-dessus.
+    libelle = chercher_libelle_selon_mise_en_page(
+        ws,
+        cellule,
+        MISES_EN_PAGE.get(feuille)
+    )
 
-    else:
+    if libelle is None:
+
         libelle = chercher_libelle(
             ws,
             cellule
@@ -805,7 +1099,10 @@ def calculer_statistiques(
                 annuelles,
 
             "UNIQUE":
-                uniques
+                uniques,
+
+            "REPETEE":
+                total - mensuelles - annuelles - uniques
         }
     }
 
@@ -830,6 +1127,19 @@ def main():
     document = charger_regles()
 
     workbook = charger_excel()
+
+    global MISES_EN_PAGE
+
+    MISES_EN_PAGE = {
+        ws.title: mise_en_page_feuille(ws)
+        for ws in feuilles_lisibles(workbook)
+    }
+
+    MISES_EN_PAGE = {
+        nom: mep
+        for nom, mep in MISES_EN_PAGE.items()
+        if mep
+    }
 
     regles = document.get(
         "regles",
