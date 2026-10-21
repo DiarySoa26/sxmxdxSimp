@@ -53,7 +53,8 @@ def lire_resultats():
         {"indicateur":"PRODUCTION","evolution_pct":float(a["evolution_production_pct"])},
         {"indicateur":"CHARGES_EXPLOITATION","evolution_pct":float(a["evolution_charges_pct"])},
         {"indicateur":"FRAIS_EXPORT","evolution_pct":float(a["evolution_frais_export_pct"])},
-        {"indicateur":"MASSE_SALARIALE","evolution_pct":float(a["evolution_masse_salariale_pct"])}
+        {"indicateur":"MASSE_SALARIALE","evolution_pct":float(a["evolution_masse_salariale_pct"])},
+        {"indicateur":"AMORTISSEMENTS","evolution_pct":float(a["evolution_amortissements_pct"])}
     ]
 
     mensuel=pd.read_csv(OUTPUT_DIR/f"prediction_budget_{annee_prediction}_mensuel.csv")

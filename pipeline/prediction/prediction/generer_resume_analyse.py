@@ -62,7 +62,6 @@ def fourchette(indicateur,formateur):
     if pd.isna(l["borne_basse_80"]) or pd.isna(l["borne_haute_80"]): return None
     return f"entre {formateur(l['borne_basse_80'])} et {formateur(l['borne_haute_80'])}"
 
-# ---------------------------------------------------------------------------
 categories_noms = sorted(derives["categorie"].dropna().unique())
 liste_cat = ", ".join(nom_cat(c) for c in categories_noms)
 
@@ -97,11 +96,15 @@ lignes = [f"BUDGET PRÉVISIONNEL {ANNEE} — RÉSUMÉ",
         #   "EN BREF",""
           ]
 
-# --- En bref -----------------------------------------------------------------
 lignes.append(
     f"Pour {ANNEE}, on s'attend à vendre environ {fr(budget['ventes'],0)} unités à l'étranger, soit un chiffre d'affaires "
     f"d'environ {montant(budget['ca_export'])}. Par rapport à {ANNEE_REFERENCE}, les ventes sont {evolution(evo_ventes,True)} "
     f"et le chiffre d'affaires est {evolution(evo_ca)}.")
+lignes.append("")
+lignes.append(
+    f"Les dotations aux amortissements prévues sont de {montant(budget['amortissements'])}. "
+    "Elles sont déduites du résultat et restent distinctes des charges d'exploitation."
+)
 lignes.append("")
 lignes.append(
     f"Après paiement de toutes les dépenses courantes, il resterait environ {montant(resultat)} de bénéfice d'exploitation "
@@ -113,7 +116,6 @@ else:
     lignes.append("Côté dépenses, aucun poste ne s'écarte de façon anormale de ce que l'activité prévue justifie.")
 lignes.append("")
 
-# --- 1. Prévisions -----------------------------------------------------------
 lignes += [f"1. CE QUE L'ON PRÉVOIT POUR {ANNEE}","",
     f"- Ventes : {fr(budget['ventes'],0)} unités (contre environ {fr(valeur_reference(budget['ventes'],evo_ventes),0)} en {ANNEE_REFERENCE}).",
     f"- Chiffre d'affaires à l'exportation : {montant(budget['ca_export'])}.",
@@ -125,7 +127,6 @@ lignes += [f"1. CE QUE L'ON PRÉVOIT POUR {ANNEE}","",
     f"- Masse salariale (salaires et coûts du personnel) : {montant(budget['masse_salariale'])}.",
     f"- Résultat opérationnel : {montant(resultat)}.",""]
 
-# --- 2. Comparaison ----------------------------------------------------------
 lignes += [f"2. COMPARAISON AVEC {ANNEE_REFERENCE}","",
     f"- Ventes : {evolution(evo_ventes,True)}.",
     f"- Chiffre d'affaires : {evolution(evo_ca)}.",
@@ -134,7 +135,6 @@ lignes += [f"2. COMPARAISON AVEC {ANNEE_REFERENCE}","",
     f"- Frais d'exportation : {evolution(evo_frais,True)}.",
     f"- Masse salariale : {evolution(evo_ms)}.",""]
 
-# --- 3. Mois par mois --------------------------------------------------------
 lignes += ["3. MOIS PAR MOIS","",
     f"Le meilleur mois pour le chiffre d'affaires devrait être {nom_mois(ca_max['mois'])} ({montant(ca_max['ca_export'])}) "
     f"et le plus faible {nom_mois(ca_min['mois'])} ({montant(ca_min['ca_export'])}).",
@@ -142,7 +142,6 @@ lignes += ["3. MOIS PAR MOIS","",
      if ecart_mois_pct<10 else
      "L'écart entre ces deux mois est notable : l'activité varie sensiblement selon la période de l'année."),""]
 
-# --- 4. Fiabilité ------------------------------------------------------------
 lignes += ["4. QUEL DEGRÉ DE CONFIANCE ?","",
     "Pour mesurer la fiabilité de la precision, on a « rejoué » le calcul "
     "sur les années passées et comparé avec ce qui s'est réellement produit."]
@@ -160,7 +159,6 @@ if intervalles is not None and "masse_salariale" in intervalles.index and interv
 #                   ". Cela peut fausser les prévisions et doit être vérifié.")
 lignes.append("")
 
-# --- 5. Surveillance des dépenses -------------------------------------------
 dm = derives.loc[derives["indice_derive"].idxmax()]
 nb_mois = total_controles//max(len(categories_noms),1)
 detail = f"{nb['FAIBLE']} sans souci"
@@ -186,7 +184,7 @@ for _,c in par_cat.sort_values(["rang","ecart"],ascending=[False,False]).iterrow
                   f"(sur l'année, {montant(abs(c['ecart']))} {sens} de ce que l'activité justifie).")
 lignes.append("")
 
-# --- 6. Conclusion -----------------------------------------------------------
+
 lignes += ["6. CONCLUSION",""]
 if abs(evo_ca)<5 and abs(evo_ventes)<5:
     lignes.append(f"L'année {ANNEE} s'annonce globalement stable par rapport à {ANNEE_REFERENCE} : ventes {evolution(evo_ventes,True)}, "

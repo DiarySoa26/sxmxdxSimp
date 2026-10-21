@@ -12,14 +12,14 @@ ANNEE_PREDICTION = ANNEE_REFERENCE+1
 dernier = df[df["annee"]==ANNEE_REFERENCE].sort_values("mois").copy()
 if len(dernier)!=12: raise ValueError(f"L'exercice {ANNEE_REFERENCE} doit contenir 12 mois.")
 
-# cible -> nom de la colonne lag_12 conservée dans le fichier de sortie (compatibilité)
 config = {
     "ventes":"ventes_lag_12",
     "ca_export":"ca_export_lag_12",
     "production_reelle":"production_lag_12",
     "charges_exploitation":"charges_lag_12",
     "frais_export":"frais_export_lag_12",
-    "masse_salariale":"masse_salariale_lag_12"
+    "masse_salariale":"masse_salariale_lag_12",
+    "amortissements":"amortissements_lag_12"
 }
 
 print("="*80)
@@ -38,7 +38,7 @@ for cible,lag in config.items():
     futur[cible] = prevoir(df,cible,futur["mois"],choix[cible]["alpha"])
     print(f"[MODELE] {cible:22s} -> {choix[cible]['modele']}")
 
-futur["resultat_operationnel"] = futur["ca_export"]-futur["charges_exploitation"]-futur["frais_export"]-futur["masse_salariale"]
+futur["resultat_operationnel"] = futur["ca_export"]-futur["charges_exploitation"]-futur["frais_export"]-futur["masse_salariale"]-futur["amortissements"]
 futur["marge_operationnelle"] = futur["resultat_operationnel"]/futur["ca_export"].replace(0,np.nan)
 
 def evolution(nouveau,ancien): return ((nouveau-ancien)/ancien*100) if ancien else np.nan
@@ -48,6 +48,7 @@ annuel = {
     "ventes":futur["ventes"].sum(),"ca_export":futur["ca_export"].sum(),
     "production":futur["production_reelle"].sum(),"charges_exploitation":futur["charges_exploitation"].sum(),
     "frais_export":futur["frais_export"].sum(),"masse_salariale":futur["masse_salariale"].sum(),
+    "amortissements":futur["amortissements"].sum(),
     "resultat_operationnel":futur["resultat_operationnel"].sum()
 }
 
@@ -58,15 +59,16 @@ annuel["evolution_production_pct"] = evolution(annuel["production"],dernier["pro
 annuel["evolution_charges_pct"] = evolution(annuel["charges_exploitation"],dernier["charges_exploitation"].sum())
 annuel["evolution_frais_export_pct"] = evolution(annuel["frais_export"],dernier["frais_export"].sum())
 annuel["evolution_masse_salariale_pct"] = evolution(annuel["masse_salariale"],dernier["masse_salariale"].sum())
+annuel["evolution_amortissements_pct"] = evolution(annuel["amortissements"],dernier["amortissements"].sum())
 
 # --- Fourchettes indicatives (~80 %) déduites de l'erreur annuelle observée en backtest ---
 erreurs_resultat = backtest_resultat(df,{c:m["alpha"] for c,m in choix.items() if c in
-                                         ["ca_export","charges_exploitation","frais_export","masse_salariale"]})
+                                         ["ca_export","charges_exploitation","frais_export","masse_salariale","amortissements"]})
 rms_resultat = float(np.sqrt(np.mean(np.square(erreurs_resultat)))) if erreurs_resultat else np.nan
 lignes = []
 for cible,valeur in [("ventes",annuel["ventes"]),("ca_export",annuel["ca_export"]),("production_reelle",annuel["production"]),
                      ("charges_exploitation",annuel["charges_exploitation"]),("frais_export",annuel["frais_export"]),
-                     ("masse_salariale",annuel["masse_salariale"]),("resultat_operationnel",annuel["resultat_operationnel"])]:
+                     ("masse_salariale",annuel["masse_salariale"]),("amortissements",annuel["amortissements"]),("resultat_operationnel",annuel["resultat_operationnel"])]:
     rms = rms_resultat if cible=="resultat_operationnel" else (choix[cible]["eval"] or {}).get("ecart_annuel_rms",np.nan)
     bas,haut = borne_80(valeur,rms) if pd.notna(rms) else (np.nan,np.nan)
     if cible=="resultat_operationnel" and pd.notna(bas) and bas>haut: bas,haut = haut,bas
@@ -87,7 +89,7 @@ intervalles.to_csv(intervalles_file,index=False)
 pd.set_option("display.float_format",lambda x:f"{x:,.2f}")
 pd.set_option("display.width",250)
 print("\nPREVISION MENSUELLE")
-print(futur[["mois","ventes","ca_export","production_reelle","charges_exploitation","frais_export","masse_salariale","resultat_operationnel"]].to_string(index=False))
+print(futur[["mois","ventes","ca_export","production_reelle","charges_exploitation","frais_export","masse_salariale","amortissements","resultat_operationnel"]].to_string(index=False))
 print("\nSYNTHESE ANNUELLE")
 print(annuel.to_string(index=False))
 print("\nFOURCHETTES INDICATIVES (~80 %, d'après l'erreur annuelle en backtest)")

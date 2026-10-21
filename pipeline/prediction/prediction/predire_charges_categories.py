@@ -35,7 +35,6 @@ connexion.close()
 charges["montant"] = pd.to_numeric(charges["montant"],errors="coerce")
 charges = charges.sort_values(["categorie","annee","mois"]).reset_index(drop=True)
 
-# Niveau lissé x profil saisonnier par catégorie, puis réconciliation sur le total du budget
 resultat,choix = prevoir_categories(charges,budget,ANNEE_REFERENCE)
 for cat,modele in choix.items(): print(f"[MODELE] {cat:15s} -> {modele}")
 

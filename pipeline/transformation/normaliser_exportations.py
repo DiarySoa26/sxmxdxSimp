@@ -40,7 +40,7 @@
 
 
 # # PostgreSQL vu depuis le conteneur Spark
-# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx2"
+# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx3"
 
 
 # JDBC_PROPERTIES = {
@@ -766,7 +766,7 @@ MAPPING_MOIS = {
 }
 
 
-JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx2"
+JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx3"
 
 
 JDBC_PROPERTIES = {
@@ -1621,7 +1621,7 @@ def inserer_postgresql(df):
 
     print(
         "[OK] Données insérées dans "
-        "sxmxdx2.exportation."
+        "sxmxdx3.exportation."
     )
 
 

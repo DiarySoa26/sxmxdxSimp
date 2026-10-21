@@ -74,3 +74,8 @@ VALUES (
     '$2b$12$IE7hAFmpKrnWOmBFY8OXMuv9JmSsNioDv5loIEcXCro2VCJ0uhzoS',
     1
 );
+
+
+
+-- ALTER TABLE utilisateur
+-- ADD COLUMN IF NOT EXISTS changement_mdp_obligatoire BOOLEAN NOT NULL DEFAULT FALSE;

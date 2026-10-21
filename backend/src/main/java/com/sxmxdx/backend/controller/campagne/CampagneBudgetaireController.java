@@ -16,13 +16,19 @@ public class CampagneBudgetaireController {
     }
 
     @PostMapping("/apres-generation")
-    public Object creerApresBudget(@RequestBody CampagneApresBudgetRequest r) {
-        return service.creerApresBudget(r);
+    public Object creerApresBudget(
+            @RequestBody CampagneApresBudgetRequest r,
+            @RequestParam Integer auteurId
+    ) {
+        return service.creerApresBudget(r, auteurId);
     }
 
     @PostMapping
-    public Object creer(@RequestBody CampagneRequest r) {
-        return service.creer(r);
+    public Object creer(
+            @RequestBody CampagneRequest r,
+            @RequestParam Integer auteurId
+    ) {
+        return service.creer(r, auteurId);
     }
 
     @GetMapping
@@ -37,31 +43,37 @@ public class CampagneBudgetaireController {
 
     @PutMapping("/{id}")
     public Object modifier(
-        @PathVariable Long id,
-        @RequestBody CampagneRequest r
+            @PathVariable Long id,
+            @RequestBody CampagneRequest r,
+            @RequestParam Integer auteurId
     ) {
-        return service.modifier(id, r);
+        return service.modifier(id, r, auteurId);
     }
 
     @PatchMapping("/{id}/jalons/{jalonId}")
     public Object modifierJalon(
-        @PathVariable Long id,
-        @PathVariable Long jalonId,
-        @RequestBody JalonRequest r
+            @PathVariable Long id,
+            @PathVariable Long jalonId,
+            @RequestBody JalonRequest r,
+            @RequestParam Integer auteurId
     ) {
-        return service.modifierJalon(id, jalonId, r);
+        return service.modifierJalon(id, jalonId, r, auteurId);
     }
 
     @PatchMapping("/{id}/jalons/{jalonId}/terminer")
     public Object terminerJalon(
-        @PathVariable Long id,
-        @PathVariable Long jalonId
+            @PathVariable Long id,
+            @PathVariable Long jalonId,
+            @RequestParam Integer auteurId
     ) {
-        return service.terminerJalon(id, jalonId);
+        return service.terminerJalon(id, jalonId, auteurId);
     }
 
     @PatchMapping("/{id}/valider")
-    public Object valider(@PathVariable Long id) {
-        return service.validerCampagne(id);
+    public Object valider(
+            @PathVariable Long id,
+            @RequestParam Integer auteurId
+    ) {
+        return service.validerCampagne(id, auteurId);
     }
 }

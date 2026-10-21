@@ -1,417 +1,28 @@
-// "use client";
-
-// import { useState } from "react";
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import {
-//   modifierJalon,
-//   terminerJalon
-// } from "@/services/campagne-service";
-
-// import { useRouter } from "next/navigation"
-
-// export type Jalon = {
-//   id: number;
-//   code: string;
-//   nom: string;
-//   ordre: number;
-//   dateLimite: string;
-//   dateRealisation: string | null;
-//   statut: string;
-// };
-
-// const today = () => {
-//   const d = new Date();
-//   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-// };
-
-// export default function JalonBudgetaire({
-//     campagneId,
-//     jalons,
-//     fermee,
-//     actualiser
-//   }: {
-//     campagneId: number;
-//     jalons: Jalon[];
-//     fermee: boolean;
-//     actualiser: () => Promise<void>;
-//   }) {
-
-//   const [edition, setEdition] = useState<number | null>(null);
-//   const [date, setDate] = useState("");
-//   const [busy, setBusy] = useState(false);
-//   const [error, setError] = useState("");
-
-//   const router = useRouter()
-
-//   const verifierBudget = (exerciceId: number) => {
-//     router.push(`/dashboard/budgets?exerciceId=${exerciceId}`)
-//   }
-
-//   const action = async (fn: () => Promise<unknown>) => {
-//     setBusy(true);
-//     setError("");
-
-//     try {
-//       await fn();
-//       await actualiser();
-//       setEdition(null);
-//     } catch (e) {
-//       setError(e instanceof Error ? e.message : "Erreur");
-//     } finally {
-//       setBusy(false);
-//     }
-//   };
-
-//   return (
-//     <div className="space-y-3">
-//       <h3 className="font-semibold">Jalons</h3>
-
-//       {error && <p className="text-sm text-destructive">{error}</p>}
-
-//       {jalons.map(j => {
-//         const fini = j.statut === "TERMINE";
-//         const reel = j.dateRealisation?.slice(0, 10);
-//         const enRetard = !fini && today() > j.dateLimite;
-//         const termineEnRetard = fini && !!reel && reel > j.dateLimite;
-
-//         const statut = termineEnRetard
-//           ? "Terminé en retard"
-//           : fini
-//             ? "Terminé"
-//             : enRetard
-//               ? "En retard"
-//               : today() === j.dateLimite
-//                 ? "À échéance"
-//                 : "En attente";
-
-//         return (
-//           <div key={j.id} className="rounded-lg border p-4">
-//             <div className="flex flex-wrap items-center justify-between gap-2">
-//               <div>
-//                 <p className="text-sm font-medium">
-//                   {j.ordre}. {j.nom}
-//                 </p>
-
-//                 <p className={`text-xs ${enRetard
-//                   ? "text-rose-600"
-//                   : "text-muted-foreground"}`}>
-//                   {statut} · Limite : {j.dateLimite}
-//                   {reel ? ` · Réalisé : ${reel}` : ""}
-//                 </p>
-//               </div>
-
-//               {!fermee && (
-//                 <div className="flex gap-2">
-//                   {["VERIFICATION", "VALIDATION"].includes(j.code) && (
-//                     <Button
-//                       size="sm"
-//                       variant="outline"
-//                       disabled={busy}
-//                       onClick={() => {
-//                         setEdition(edition === j.id ? null : j.id);
-//                         setDate(j.dateLimite);
-//                       }}
-//                     >
-//                       Échéance
-//                     </Button>
-//                   )}
-
-//                   {j.code === "VERIFICATION" && !fini && (
-//                     <Button
-//                       size="sm"
-//                       disabled={
-//                         busy ||
-//                         !jalons
-//                           .filter(x => ["IMPORTATION", "GENERATION"].includes(x.code))
-//                           .every(x => x.statut === "TERMINE")
-//                       }
-//                       onClick={() => action(
-//                         () => terminerJalon(campagneId, j.id)
-//                       )}
-//                     >
-//                       Vérification terminée
-//                     </Button>
-//                   )}
-//                 </div>
-//               )}
-//             </div>
-
-//             {edition === j.id && (
-//               <div className="mt-3 flex gap-2">
-//                 <Input
-//                   className="max-w-52"
-//                   type="date"
-//                   value={date}
-//                   onChange={e => setDate(e.target.value)}
-//                 />
-
-//                 <Button
-//                   size="sm"
-//                   disabled={busy || !date}
-//                   onClick={() => action(
-//                     () => modifierJalon(campagneId, j.id, date)
-//                   )}
-//                 >
-//                   Enregistrer
-//                 </Button>
-//               </div>
-//             )}
-//           </div>
-//         );
-//       })}
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-// "use client"
-
-// import { useEffect, useState } from "react"
-// import { useRouter, useSearchParams } from "next/navigation"
-// import { CalendarDays, CheckCircle2, ClipboardCheck, Clock3, FileSpreadsheet, ShieldCheck, WalletCards } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-
-// export type Jalon = {
-//   id: number
-//   code: string
-//   nom: string
-//   ordre: number
-//   statut: string
-//   dateLimite?: string | null
-//   dateRealisation?: string | null
-// }
-
-// type Props = {
-//   campagneId: number
-//   exerciceId: number
-//   jalons: Jalon[]
-//   busy: boolean
-//   action: (operation: () => Promise<unknown>) => void | Promise<void>
-//   terminerJalon: (campagneId: number, jalonId: number) => Promise<unknown>
-// }
-
-// const icones = {
-//   IMPORTATION: FileSpreadsheet,
-//   GENERATION: WalletCards,
-//   VERIFICATION: ClipboardCheck,
-//   VALIDATION: ShieldCheck
-// }
-
-// function dateFR(date?: string | null) {
-//   if (!date) return "Non définie"
-//   const [annee, mois, jour] = date.substring(0, 10).split("-")
-//   return annee && mois && jour ? `${jour}/${mois}/${annee}` : date
-// }
-
-// export default function JalonBudgetaire({
-//   campagneId, exerciceId, jalons = [], busy, action, terminerJalon
-// }: Props) {
-//   const router = useRouter()
-//   const searchParams = useSearchParams()
-//   const [jalonConsulte, setJalonConsulte] = useState<number | null>(null)
-
-//   const jalonsTries = [...jalons].sort((a, b) => a.ordre - b.ordre)
-//   const prerequisTermines = jalons
-//     .filter(x => ["IMPORTATION", "GENERATION"].includes(x.code))
-//     .every(x => x.statut === "TERMINE")
-
-//   useEffect(() => {
-//     const retour = searchParams.get("retourVerification") === "1"
-//     const campagneRetour = searchParams.get("campagneId")
-//     const jalonRetour = Number(searchParams.get("jalonId"))
-
-//     if (
-//       retour &&
-//       campagneRetour === String(campagneId) &&
-//       Number.isInteger(jalonRetour) &&
-//       jalonRetour > 0 &&
-//       sessionStorage.getItem(
-//         `verification-consultee-${campagneId}-${jalonRetour}`
-//       ) === "true"
-//     ) {
-//       setJalonConsulte(jalonRetour)
-//     }
-//   }, [searchParams, campagneId])
-
-//   // function consulterBudget(jalonId: number) {
-//   //   if (!Number.isInteger(Number(exerciceId)) || Number(exerciceId) <= 0) return
-
-//   //   const params = new URLSearchParams({
-//   //     exerciceId: String(exerciceId),
-//   //     campagneId: String(campagneId),
-//   //     jalonId: String(jalonId),
-//   //     verification: "1"
-//   //   })
-
-//   //   router.push(`/dashboard/budgets?${params.toString()}`)
-//   // }
-
-
-//   function consulterBudget(jalonId: number) {
-//   console.log("Navigation vers BudgetDetails :", {
-//     campagneId,
-//     exerciceId,
-//     jalonId
-//   })
-
-//   const id = Number(exerciceId)
-
-//   if (!Number.isInteger(id) || id <= 0) {
-//     console.error("Identifiant d'exercice invalide :", exerciceId)
-//     alert("Impossible d'ouvrir le budget : identifiant de l'exercice manquant.")
-//     return
-//   }
-
-//   const params = new URLSearchParams({
-//     exerciceId: String(id),
-//     campagneId: String(campagneId),
-//     jalonId: String(jalonId),
-//     verification: "1"
-//   })
-
-//   const url = `/dashboard/budgets?${params.toString()}`
-
-//   console.log("URL de destination :", url)
-//   router.push(url)
-// }
-
-//   function validerVerification(jalonId: number) {
-//     action(async () => {
-//       await terminerJalon(campagneId, jalonId)
-//       sessionStorage.removeItem(`verification-consultee-${campagneId}-${jalonId}`)
-//       setJalonConsulte(null)
-//     })
-//   }
-
-//   return (
-//     <Card>
-//       <CardHeader>
-//         <CardTitle className="text-base">Jalons budgétaires</CardTitle>
-//         <p className="text-sm text-muted-foreground">
-//           Suivi des étapes de la campagne budgétaire
-//         </p>
-//       </CardHeader>
-
-//       <CardContent className="space-y-3">
-//         {jalonsTries.map(j => {
-//           const Icone = icones[j.code as keyof typeof icones] ?? CalendarDays
-//           const termine = j.statut === "TERMINE"
-//           const estVerification = j.code === "VERIFICATION"
-//           const peutVerifier = prerequisTermines && !termine
-//           const consultationEffectuee = jalonConsulte === j.id
-
-//           return (
-//             <div
-//               key={j.id}
-//               className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between"
-//             >
-//               <div className="flex items-start gap-3">
-//                 <div className="rounded-lg bg-muted p-2.5">
-//                   <Icone className="h-5 w-5 text-muted-foreground" />
-//                 </div>
-
-//                 <div className="space-y-1">
-//                   <div className="flex flex-wrap items-center gap-2">
-//                     <p className="font-medium">{j.ordre}. {j.nom}</p>
-//                     <span className={`rounded-full px-2 py-0.5 text-xs ${
-//                       termine
-//                         ? "bg-emerald-100 text-emerald-700"
-//                         : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-//                     }`}>
-//                       {termine ? "Terminé" : j.statut === "EN_ATTENTE" ? "En attente" : j.statut}
-//                     </span>
-//                   </div>
-
-//                   <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
-//                     <span className="inline-flex items-center gap-1">
-//                       <CalendarDays className="h-3.5 w-3.5" />
-//                       Échéance : {dateFR(j.dateLimite)}
-//                     </span>
-//                     {j.dateRealisation && (
-//                       <span className="inline-flex items-center gap-1">
-//                         <CheckCircle2 className="h-3.5 w-3.5" />
-//                         Réalisé le {dateFR(j.dateRealisation)}
-//                       </span>
-//                     )}
-//                   </div>
-//                 </div>
-//               </div>
-
-//               <div className="flex shrink-0 flex-wrap items-center gap-2">
-//                 {termine ? (
-//                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-//                 ) : estVerification ? (
-//                   <>
-//                     <Button
-//                       size="sm"
-//                       variant="outline"
-//                       // disabled={busy || !peutVerifier || !Number.isInteger(Number(exerciceId)) || Number(exerciceId) <= 0}
-//                       onClick={() => consulterBudget(j.id)}
-//                     >
-//                       <ClipboardCheck className="mr-2 h-4 w-4" />
-//                       Vérifier les détails
-//                     </Button>
-
-//                     {consultationEffectuee && (
-//                       <Button
-//                         size="sm"
-//                         disabled={busy || !peutVerifier}
-//                         onClick={() => validerVerification(j.id)}
-//                       >
-//                         <CheckCircle2 className="mr-2 h-4 w-4" />
-//                         Vérification terminée
-//                       </Button>
-//                     )}
-//                   </>
-//                 ) : (
-//                   <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-//                     <Clock3 className="h-4 w-4" />
-//                     {j.code === "VALIDATION" ? "En attente de validation" : "Étape enregistrée"}
-//                   </span>
-//                 )}
-//               </div>
-//             </div>
-//           )
-//         })}
-
-//         {jalonsTries.length === 0 && (
-//           <p className="py-6 text-center text-sm text-muted-foreground">
-//             Aucun jalon disponible.
-//           </p>
-//         )}
-//       </CardContent>
-//     </Card>
-//   )
-// }
-
-
-
-
-
-
-
-
-
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+
 import {
-  CalendarDays, CheckCircle2, ClipboardCheck, Clock3,
-  FileSpreadsheet, ShieldCheck, WalletCards, Loader2
+  CalendarDays,
+  CheckCircle2,
+  ClipboardCheck,
+  Clock3,
+  FileSpreadsheet,
+  ShieldCheck,
+  WalletCards,
+  Loader2
 } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card"
+
 import { terminerJalon } from "@/services/campagne-service"
 
 export type Jalon = {
@@ -441,9 +52,17 @@ const icones = {
 
 function dateFR(date?: string | null) {
   if (!date) return "Non définie"
-  const [annee, mois, jour] = date.substring(0, 10).split("-")
-  return annee && mois && jour ? `${jour}/${mois}/${annee}` : date
+
+  const [annee, mois, jour] =
+    date.substring(0, 10).split("-")
+
+  return annee && mois && jour
+    ? `${jour}/${mois}/${annee}`
+    : date
 }
+
+const attendre = (ms: number) =>
+  new Promise<void>(resolve => setTimeout(resolve, ms))
 
 export default function JalonBudgetaire({
   campagneId,
@@ -452,27 +71,75 @@ export default function JalonBudgetaire({
   busy = false,
   onJalonTermine
 }: Props) {
+
   const router = useRouter()
   const searchParams = useSearchParams()
 
-  const [jalonConsulte, setJalonConsulte] = useState<number | null>(null)
-  const [validationEnCours, setValidationEnCours] = useState(false)
-  const [erreurValidation, setErreurValidation] = useState("")
-  const [jalonsValides, setJalonsValides] = useState<number[]>([])
+  const traitementRef = useRef(false)
 
-  const jalonsTries = [...jalons].sort((a, b) => a.ordre - b.ordre)
+  const [jalonConsulte, setJalonConsulte] =
+    useState<number | null>(null)
 
-  const prerequisTermines = ["IMPORTATION", "GENERATION"].every(code =>
-    jalons.some(j =>
-      j.code?.toUpperCase() === code &&
-      j.statut?.toUpperCase() === "TERMINE"
-    )
+  const [validationEnCours, setValidationEnCours] =
+    useState(false)
+
+  const [actualisationEnCours, setActualisationEnCours] =
+    useState(false)
+
+  const [erreurValidation, setErreurValidation] =
+    useState("")
+
+  const [avertissement, setAvertissement] =
+    useState("")
+
+  const [jalonsLocaux, setJalonsLocaux] =
+    useState<Jalon[]>(jalons)
+
+  // Synchronisation avec les données du parent
+  useEffect(() => {
+    setJalonsLocaux(jalons)
+  }, [jalons])
+
+  const jalonsTries = useMemo(
+    () =>
+      [...jalonsLocaux].sort(
+        (a, b) => a.ordre - b.ordre
+      ),
+    [jalonsLocaux]
   )
 
+  const prerequisTermines = useMemo(
+    () =>
+      ["IMPORTATION", "GENERATION"].every(code =>
+        jalonsLocaux.some(
+          j =>
+            j.code?.toUpperCase() === code &&
+            j.statut?.toUpperCase() === "TERMINE"
+        )
+      ),
+    [jalonsLocaux]
+  )
+
+  const verificationTerminee = useMemo(
+    () =>
+      jalonsLocaux.some(
+        j =>
+          j.code?.toUpperCase() === "VERIFICATION" &&
+          j.statut?.toUpperCase() === "TERMINE"
+      ),
+    [jalonsLocaux]
+  )
+
+  // Retour depuis la consultation du budget
   useEffect(() => {
-    const retour = searchParams.get("retourVerification") === "1"
-    const campagneRetour = searchParams.get("campagneId")
-    const jalonRetour = Number(searchParams.get("jalonId"))
+    const retour =
+      searchParams.get("retourVerification") === "1"
+
+    const campagneRetour =
+      searchParams.get("campagneId")
+
+    const jalonRetour =
+      Number(searchParams.get("jalonId"))
 
     if (
       retour &&
@@ -488,17 +155,18 @@ export default function JalonBudgetaire({
   }, [searchParams, campagneId])
 
   function consulterBudget(jalonId: number) {
+
     const id = Number(exerciceId)
 
     if (!Number.isInteger(id) || id <= 0) {
       setErreurValidation(
         "Impossible d'ouvrir le budget : identifiant de l'exercice manquant."
       )
-      console.error("Exercice ID invalide :", exerciceId)
       return
     }
 
     setErreurValidation("")
+    setAvertissement("")
 
     const params = new URLSearchParams({
       exerciceId: String(id),
@@ -507,184 +175,261 @@ export default function JalonBudgetaire({
       verification: "1"
     })
 
-    router.push(`/dashboard/budgets?${params.toString()}`)
-  }
-
-  // async function validerVerification(jalonId: number) {
-  //   if (validationEnCours || busy) return
-
-  //   if (typeof terminerJalon !== "function") {
-  //     setErreurValidation(
-  //       "La fonction terminerJalon n'est pas disponible. Vérifiez sa transmission depuis CampagneBudgetaire."
-  //     )
-  //     return
-  //   }
-
-  //   if (!prerequisTermines) {
-  //     setErreurValidation(
-  //       "L'importation et la génération doivent être terminées avant la validation."
-  //     )
-  //     return
-  //   }
-
-  //   try {
-  //     setValidationEnCours(true)
-  //     setErreurValidation("")
-
-  //     const resultat = await terminerJalon(campagneId, jalonId)
-
-  //     if (
-  //       resultat &&
-  //       typeof resultat === "object" &&
-  //       "success" in resultat &&
-  //       resultat.success === false
-  //     ) {
-  //       throw new Error(
-  //         "message" in resultat && typeof resultat.message === "string"
-  //           ? resultat.message
-  //           : "La validation du jalon a échoué."
-  //       )
-  //     }
-
-  //     sessionStorage.removeItem(
-  //       `verification-consultee-${campagneId}-${jalonId}`
-  //     )
-
-  //     setJalonConsulte(null)
-  //     setJalonsValides(anciens =>
-  //       anciens.includes(jalonId) ? anciens : [...anciens, jalonId]
-  //     )
-
-  //     if (onJalonTermine) await onJalonTermine()
-  //     router.refresh()
-  //   } catch (error) {
-  //     console.error("Erreur validation du jalon :", error)
-  //     setErreurValidation(
-  //       error instanceof Error
-  //         ? error.message
-  //         : "Impossible de terminer la vérification."
-  //     )
-  //   } finally {
-  //     setValidationEnCours(false)
-  //   }
-  // }
-
-
-
-async function validerVerification(jalonId: number) {
-  if (validationEnCours || busy) return
-
-  if (!prerequisTermines) {
-    setErreurValidation(
-      "L'importation et la génération doivent être terminées avant la validation."
+    router.push(
+      `/dashboard/budgets?${params.toString()}`
     )
-    return
   }
 
-  try {
-    setValidationEnCours(true)
-    setErreurValidation("")
+  async function validerVerification(jalonId: number) {
 
-    const resultat = await terminerJalon(campagneId, jalonId)
+    if (traitementRef.current || busy) return
 
-    if (
-      resultat &&
-      typeof resultat === "object" &&
-      "success" in resultat &&
-      resultat.success === false
-    ) {
-      throw new Error(
-        "message" in resultat && typeof resultat.message === "string"
-          ? resultat.message
-          : "La validation du jalon a échoué."
+    if (!prerequisTermines) {
+      setErreurValidation(
+        "L'importation et la génération doivent être terminées avant la vérification."
       )
+      return
     }
 
-    sessionStorage.removeItem(
-      `verification-consultee-${campagneId}-${jalonId}`
-    )
+    traitementRef.current = true
 
-    setJalonConsulte(null)
+    const debut = Date.now()
+    let verificationEnregistree = false
 
-    setJalonsValides(anciens =>
-      anciens.includes(jalonId) ? anciens : [...anciens, jalonId]
-    )
+    setValidationEnCours(true)
+    setActualisationEnCours(false)
+    setErreurValidation("")
+    setAvertissement("")
 
-    if (onJalonTermine) await onJalonTermine()
-    router.refresh()
-  } catch (error) {
-    console.error("Erreur validation du jalon :", error)
-    setErreurValidation(
-      error instanceof Error
-        ? error.message
-        : "Impossible de terminer la vérification."
-    )
-  } finally {
-    setValidationEnCours(false)
+    try {
+
+      // 1. Enregistrer la vérification
+      const resultat = await terminerJalon(
+        campagneId,
+        jalonId
+      )
+
+      if (
+        resultat &&
+        typeof resultat === "object" &&
+        "success" in resultat &&
+        resultat.success === false
+      ) {
+        throw new Error(
+          "message" in resultat &&
+          typeof resultat.message === "string"
+            ? resultat.message
+            : "La vérification a échoué."
+        )
+      }
+
+      verificationEnregistree = true
+
+      // 2. Mettre à jour immédiatement le jalon
+      const dateRealisation =
+        resultat &&
+        typeof resultat === "object" &&
+        "dateRealisation" in resultat &&
+        typeof resultat.dateRealisation === "string"
+          ? resultat.dateRealisation
+          : new Date().toISOString()
+
+      setJalonsLocaux(anciens =>
+        anciens.map(j =>
+          j.id === jalonId
+            ? {
+                ...j,
+                statut: "TERMINE",
+                dateRealisation
+              }
+            : j
+        )
+      )
+
+      // 3. Nettoyer l'état de consultation
+      sessionStorage.removeItem(
+        `verification-consultee-${campagneId}-${jalonId}`
+      )
+
+      setJalonConsulte(null)
+
+      // 4. Recharger les données du parent
+      setValidationEnCours(false)
+      setActualisationEnCours(true)
+
+      if (onJalonTermine) {
+        try {
+          await onJalonTermine()
+        } catch (erreur) {
+          console.error(
+            "Erreur d'actualisation de la campagne :",
+            erreur
+          )
+
+          setAvertissement(
+            "La vérification a été enregistrée, mais l'actualisation des statistiques a échoué. Actualisez la page."
+          )
+        }
+      } else {
+        setAvertissement(
+          "La vérification est enregistrée. Le composant parent doit fournir onJalonTermine pour actualiser les statistiques et activer la validation."
+        )
+      }
+
+      router.refresh()
+
+    } catch (error) {
+
+      console.error(
+        "Erreur de vérification :",
+        error
+      )
+
+      if (!verificationEnregistree) {
+        setErreurValidation(
+          error instanceof Error
+            ? error.message
+            : "Impossible de terminer la vérification."
+        )
+      }
+
+    } finally {
+
+      // Loader visible au moins 2 secondes
+      const tempsEcoule = Date.now() - debut
+      const restant = Math.max(
+        0,
+        2000 - tempsEcoule
+      )
+
+      if (restant > 0) {
+        await attendre(restant)
+      }
+
+      setValidationEnCours(false)
+      setActualisationEnCours(false)
+      traitementRef.current = false
+    }
   }
-}
 
+  const chargement =
+    validationEnCours ||
+    actualisationEnCours ||
+    busy
 
   return (
     <Card>
+
       <CardHeader>
         <CardTitle className="text-base">
           Jalons budgétaires
         </CardTitle>
+
         <p className="text-sm text-muted-foreground">
           Suivi des étapes de la campagne budgétaire
         </p>
       </CardHeader>
 
       <CardContent className="space-y-3">
+
         {erreurValidation && (
-          <div role="alert" className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/20 dark:text-red-300">
+          <div
+            role="alert"
+            className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/20 dark:text-red-300"
+          >
             {erreurValidation}
           </div>
         )}
 
+        {avertissement && (
+          <div
+            role="status"
+            className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950/20 dark:text-amber-300"
+          >
+            {avertissement}
+          </div>
+        )}
+
+        {chargement && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="flex items-center gap-3 rounded-lg border bg-muted/40 p-4"
+          >
+            <Loader2 className="h-5 w-5 animate-spin" />
+
+            <div className="space-y-1">
+              <p className="text-sm font-medium">
+                {validationEnCours
+                  ? "Enregistrement de la vérification..."
+                  : "Actualisation de la campagne..."}
+              </p>
+
+              <p className="text-xs text-muted-foreground">
+                Mise à jour des jalons et des statistiques
+              </p>
+            </div>
+          </div>
+        )}
+
         {jalonsTries.map(j => {
+
           const code = j.code?.toUpperCase()
-          const Icone = icones[code as keyof typeof icones] ?? CalendarDays
+
+          const Icone =
+            icones[code as keyof typeof icones] ??
+            CalendarDays
 
           const termine =
-            j.statut?.toUpperCase() === "TERMINE" ||
-            jalonsValides.includes(j.id)
+            j.statut?.toUpperCase() === "TERMINE"
 
-          const estVerification = code === "VERIFICATION"
-          const peutVerifier = prerequisTermines && !termine
-          const consultationEffectuee = jalonConsulte === j.id
+          const estVerification =
+            code === "VERIFICATION"
+
+          const consultationEffectuee =
+            jalonConsulte === j.id
+
+          const peutVerifier =
+            prerequisTermines && !termine
 
           return (
             <div
               key={j.id}
               className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between"
             >
+
               <div className="flex items-start gap-3">
+
                 <div className="rounded-lg bg-muted p-2.5">
                   <Icone className="h-5 w-5 text-muted-foreground" />
                 </div>
 
                 <div className="space-y-1">
+
                   <div className="flex flex-wrap items-center gap-2">
+
                     <p className="font-medium">
                       {j.ordre}. {j.nom}
                     </p>
 
-                    <span className={`rounded-full px-2 py-0.5 text-xs ${
-                      termine
-                        ? "bg-emerald-100 text-emerald-700"
-                        : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-                    }`}>
+                    <span
+                      className={`rounded-full px-2 py-0.5 text-xs ${
+                        termine
+                          ? "bg-emerald-100 text-emerald-700"
+                          : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                      }`}
+                    >
                       {termine
                         ? "Terminé"
                         : j.statut?.toUpperCase() === "EN_ATTENTE"
                           ? "En attente"
                           : j.statut}
                     </span>
+
                   </div>
 
                   <div className="flex flex-wrap gap-3 text-xs text-muted-foreground">
+
                     <span className="inline-flex items-center gap-1">
                       <CalendarDays className="h-3.5 w-3.5" />
                       Échéance : {dateFR(j.dateLimite)}
@@ -696,20 +441,24 @@ async function validerVerification(jalonId: number) {
                         Réalisé le {dateFR(j.dateRealisation)}
                       </span>
                     )}
+
                   </div>
+
                 </div>
               </div>
 
               <div className="flex shrink-0 flex-wrap items-center gap-2">
+
                 {termine ? (
                   <CheckCircle2 className="h-5 w-5 text-emerald-600" />
                 ) : estVerification ? (
                   <>
+
                     <Button
                       type="button"
                       size="sm"
                       variant="outline"
-                      disabled={busy || validationEnCours}
+                      disabled={chargement}
                       onClick={() => consulterBudget(j.id)}
                     >
                       <ClipboardCheck className="mr-2 h-4 w-4" />
@@ -720,13 +469,18 @@ async function validerVerification(jalonId: number) {
                       <Button
                         type="button"
                         size="sm"
-                        disabled={busy || validationEnCours || !peutVerifier}
-                        onClick={() => validerVerification(j.id)}
+                        disabled={
+                          chargement ||
+                          !peutVerifier
+                        }
+                        onClick={() =>
+                          validerVerification(j.id)
+                        }
                       >
-                        {validationEnCours ? (
+                        {chargement ? (
                           <>
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            Validation...
+                            Traitement...
                           </>
                         ) : (
                           <>
@@ -736,15 +490,20 @@ async function validerVerification(jalonId: number) {
                         )}
                       </Button>
                     )}
+
                   </>
                 ) : (
                   <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
                     <Clock3 className="h-4 w-4" />
+
                     {code === "VALIDATION"
-                      ? "En attente de validation"
+                      ? verificationTerminee
+                        ? "Prêt pour validation"
+                        : "En attente de validation"
                       : "Étape enregistrée"}
                   </span>
                 )}
+
               </div>
             </div>
           )
@@ -755,8 +514,8 @@ async function validerVerification(jalonId: number) {
             Aucun jalon disponible.
           </p>
         )}
+
       </CardContent>
     </Card>
   )
 }
-

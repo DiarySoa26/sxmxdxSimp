@@ -13,10 +13,10 @@ OUTPUT = BASE / "output" / "metriques_modeles.csv"
 df = pd.read_csv(INPUT).sort_values(["annee", "mois"]).reset_index(drop=True)
 ANNEE_TEST = int(df["annee"].max())
 
-CIBLES = ["ventes", "ca_export", "production_reelle", "charges_exploitation", "frais_export", "masse_salariale"]
+CIBLES = ["ventes", "ca_export", "production_reelle", "charges_exploitation", "frais_export", "masse_salariale", "amortissements"]
 PREFIXE_LAG = {"ventes": "ventes", "ca_export": "ca_export", "production_reelle": "production",
                "charges_exploitation": "charges", "frais_export": "frais_export",
-               "masse_salariale": "masse_salariale"}
+               "masse_salariale": "masse_salariale", "amortissements": "amortissements"}
 
 
 def plis_ancien_modele(cible):

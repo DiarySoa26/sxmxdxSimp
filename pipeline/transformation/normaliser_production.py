@@ -30,7 +30,7 @@ MAPPING_MOIS = {
 
 
 JDBC_URL = (
-    "jdbc:postgresql://postgres:5432/sxmxdx2"
+    "jdbc:postgresql://postgres:5432/sxmxdx3"
 )
 
 

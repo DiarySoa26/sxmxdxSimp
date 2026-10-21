@@ -20,7 +20,7 @@ MAPPING_MOIS = {
     for index, mois in enumerate(MOIS)
 }
 
-JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx2"
+JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx3"
 
 JDBC_PROPERTIES = {
     "user": "sxmxdx",

@@ -12,13 +12,7 @@ CANDIDATS = {
     "EWM_0.7": 0.7,
     "DERNIERE_ANNEE": 1.0,
 }
-ALPHA_PAR_DEFAUT = 0.5  # utilisé si l'historique est trop court pour un backtest
-
-# Modèles imposés par raison métier (le backtest reste calculé et affiché).
-# La masse salariale est un coût "en escalier" piloté par des décisions RH (embauches,
-# augmentations) : le point de départ logique d'un budget est la reconduction de la dernière
-# année. Sur le backtest elle est statistiquement à égalité avec EWM_0.5 (4 plis seulement).
-# Les variations prévues (recrutements, revalorisations) doivent être ajoutées comme hypothèses.
+ALPHA_PAR_DEFAUT = 0.5  
 MODELES_IMPOSES = {"masse_salariale": "DERNIERE_ANNEE"}
 
 
@@ -111,8 +105,8 @@ def backtest_resultat(df, alphas):
         test = df[df["annee"] == annee].sort_values("mois")
         m = test["mois"].to_numpy()
         p = {c: prevoir(train, c, m, a) for c, a in alphas.items()}
-        pred = p["ca_export"].sum() - p["charges_exploitation"].sum() - p["frais_export"].sum() - p["masse_salariale"].sum()
-        reel = (test["ca_export"] - test["charges_exploitation"] - test["frais_export"] - test["masse_salariale"]).sum()
+        pred = p["ca_export"].sum() - p["charges_exploitation"].sum() - p["frais_export"].sum() - p["masse_salariale"].sum() - p["amortissements"].sum()
+        reel = (test["ca_export"] - test["charges_exploitation"] - test["frais_export"] - test["masse_salariale"] - test["amortissements"]).sum()
         erreurs.append((pred - reel) / abs(reel) * 100)
     return erreurs
 
@@ -122,9 +116,6 @@ def borne_80(valeur, erreur_rms_pct):
     return valeur * (1 - marge), valeur * (1 + marge)
 
 
-# ---------------------------------------------------------------------------
-# Charges par catégorie (utilisé par predire_charges_categories.py)
-# ---------------------------------------------------------------------------
 def prevoir_categories(charges, budget, annee_reference):
     """
     charges : DataFrame [annee, mois, categorie, montant] (historique)

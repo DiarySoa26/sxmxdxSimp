@@ -13,7 +13,7 @@ print("="*80)
 df = pd.read_csv(INPUT)
 
 requises = ["annee","mois","ventes","ca_export","production_reelle","charges_exploitation",
-            "frais_export","masse_salariale","resultat_operationnel","marge_operationnelle"]
+            "frais_export","masse_salariale","amortissements","resultat_operationnel","marge_operationnelle"]
 manquantes = [c for c in requises if c not in df.columns]
 if manquantes: raise ValueError(f"Colonnes manquantes : {manquantes}")
 
@@ -52,7 +52,7 @@ df["mois_cos"] = np.cos(2*np.pi*df["mois"]/12)
 
 for cible,prefixe in [
     ("ventes","ventes"),("ca_export","ca_export"),("production_reelle","production"),
-    ("charges_exploitation","charges"),("frais_export","frais_export"),("masse_salariale","masse_salariale")
+    ("charges_exploitation","charges"),("frais_export","frais_export"),("masse_salariale","masse_salariale"),("amortissements","amortissements")
 ]:
     df[f"{prefixe}_lag_1"] = df[cible].shift(1)
     df[f"{prefixe}_lag_12"] = df[cible].shift(12)

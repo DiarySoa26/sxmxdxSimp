@@ -66,3 +66,4 @@ public class LoginResponse {
         return role;
     }
 }
+

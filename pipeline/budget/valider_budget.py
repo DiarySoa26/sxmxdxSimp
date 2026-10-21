@@ -24,7 +24,7 @@
 # DB_CONFIG = {
 #     "host": "localhost",
 #     "port": 5434,
-#     "dbname": "sxmxdx2",
+#     "dbname": "sxmxdx3",
 #     "user": "sxmxdx",
 #     "password": "diary",
 # }
@@ -918,7 +918,7 @@ if str(PROJECT_ROOT) not in sys.path:
 DB_CONFIG = {
     "host": "postgres",
     "port": 5432,
-    "dbname": "sxmxdx2",
+    "dbname": "sxmxdx3",
     "user": "sxmxdx",
     "password": "diary",
 }

@@ -1,0 +1,320 @@
+{
+    "fichier": "f95d9cfd_SOMIDA_2022.xlsx",
+    "nombre_feuilles": 9,
+    "feuilles": {
+        "Donnees SOMIDA": {
+            "etat": "visible",
+            "lignes": 16,
+            "colonnes": 4,
+            "formules": 0,
+            "textes": 46,
+            "nombres": 6,
+            "mois_detectes": [],
+            "mise_en_page": null
+        },
+        "Employes": {
+            "etat": "visible",
+            "lignes": 101,
+            "colonnes": 10,
+            "formules": 93,
+            "textes": 568,
+            "nombres": 279,
+            "mois_detectes": [],
+            "mise_en_page": null
+        },
+        "Production": {
+            "etat": "visible",
+            "lignes": 11,
+            "colonnes": 16,
+            "formules": 0,
+            "textes": 46,
+            "nombres": 130,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "4": 1,
+                    "5": 2,
+                    "6": 3,
+                    "7": 4,
+                    "8": 5,
+                    "9": 6,
+                    "10": 7,
+                    "11": 8,
+                    "12": 9,
+                    "13": 10,
+                    "14": 11,
+                    "15": 12
+                },
+                "annuelle": 16,
+                "origine": "DETECTEE"
+            }
+        },
+        "Charges": {
+            "etat": "visible",
+            "lignes": 27,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 69,
+            "nombres": 169,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "5": 1,
+                    "6": 2,
+                    "7": 3,
+                    "8": 4,
+                    "9": 5,
+                    "10": 6,
+                    "11": 7,
+                    "12": 8,
+                    "13": 9,
+                    "14": 10,
+                    "15": 11,
+                    "16": 12
+                },
+                "annuelle": 17,
+                "origine": "DETECTEE"
+            }
+        },
+        "Exportations": {
+            "etat": "visible",
+            "lignes": 54,
+            "colonnes": 19,
+            "formules": 200,
+            "textes": 299,
+            "nombres": 390,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 9,
+                "positions": {
+                    "7": 1,
+                    "8": 2,
+                    "9": 3,
+                    "10": 4,
+                    "11": 5,
+                    "12": 6,
+                    "13": 7,
+                    "14": 8,
+                    "15": 9,
+                    "16": 10,
+                    "17": 11,
+                    "18": 12
+                },
+                "annuelle": 19,
+                "origine": "DETECTEE"
+            }
+        },
+        "Frais Export": {
+            "etat": "visible",
+            "lignes": 19,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 89,
+            "nombres": 234,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "5": 1,
+                    "6": 2,
+                    "7": 3,
+                    "8": 4,
+                    "9": 5,
+                    "10": 6,
+                    "11": 7,
+                    "12": 8,
+                    "13": 9,
+                    "14": 10,
+                    "15": 11,
+                    "16": 12
+                },
+                "annuelle": 17,
+                "origine": "DETECTEE"
+            }
+        },
+        "Synthese": {
+            "etat": "visible",
+            "lignes": 8,
+            "colonnes": 15,
+            "formules": 91,
+            "textes": 29,
+            "nombres": 0,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "3": 1,
+                    "4": 2,
+                    "5": 3,
+                    "6": 4,
+                    "7": 5,
+                    "8": 6,
+                    "9": 7,
+                    "10": 8,
+                    "11": 9,
+                    "12": 10,
+                    "13": 11,
+                    "14": 12
+                },
+                "annuelle": 15,
+                "origine": "DETECTEE"
+            }
+        },
+        "CR": {
+            "etat": "visible",
+            "lignes": 34,
+            "colonnes": 14,
+            "formules": 390,
+            "textes": 46,
+            "nombres": 0,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 4,
+                "positions": {
+                    "2": 1,
+                    "3": 2,
+                    "4": 3,
+                    "5": 4,
+                    "6": 5,
+                    "7": 6,
+                    "8": 7,
+                    "9": 8,
+                    "10": 9,
+                    "11": 10,
+                    "12": 11,
+                    "13": 12
+                },
+                "annuelle": 14,
+                "origine": "DETECTEE"
+            }
+        },
+        "Amortissements": {
+            "etat": "visible",
+            "lignes": 70,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 50,
+            "nombres": 143,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "5": 1,
+                    "6": 2,
+                    "7": 3,
+                    "8": 4,
+                    "9": 5,
+                    "10": 6,
+                    "11": 7,
+                    "12": 8,
+                    "13": 9,
+                    "14": 10,
+                    "15": 11,
+                    "16": 12
+                },
+                "annuelle": 17,
+                "origine": "DETECTEE"
+            }
+        }
+    }
+}

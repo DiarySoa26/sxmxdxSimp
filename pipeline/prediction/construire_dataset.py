@@ -63,6 +63,17 @@ GROUP BY di.annee, f.mois_id
 ORDER BY di.annee, f.mois_id
 """
 
+sql_amortissements = CTE + """
+SELECT di.annee, a.mois,
+       SUM(COALESCE(a.montant, 0)) AS amortissements
+FROM dernier_import di
+JOIN amortissement_mensuel a
+  ON a.import_id = di.import_id AND a.exercice_id = di.exercice_id
+WHERE a.mois BETWEEN 1 AND 12
+GROUP BY di.annee, a.mois
+ORDER BY di.annee, a.mois
+"""
+
 sql_salaires = CTE + """
 SELECT di.annee, SUM(COALESCE(emp.cout_total,0)) AS masse_salariale
 FROM dernier_import di
@@ -76,6 +87,7 @@ production  = pd.read_sql(sql_production, connexion)
 charges     = pd.read_sql(sql_charge, connexion)
 frais       = pd.read_sql(sql_frais, connexion)
 salaires    = pd.read_sql(sql_salaires, connexion)
+amortissements = pd.read_sql(sql_amortissements, connexion)
 connexion.close()
 
 print(f"[OK] Exportations : {len(exportation)} mois")
@@ -88,11 +100,17 @@ dataset = exportation.merge(production, on=["annee","mois"], how="inner")
 dataset = dataset.merge(charges, on=["annee","mois"], how="inner")
 dataset = dataset.merge(frais, on=["annee","mois"], how="inner")
 dataset = dataset.merge(salaires, on="annee", how="left")
+dataset = dataset.merge(amortissements, on=["annee", "mois"], how="left")
+nb_absents = int(dataset["amortissements"].isna().sum())
+if nb_absents:
+    print(f"[ATTENTION] {nb_absents} période(s) sans amortissements enregistrés : valeur 0 utilisée pour ces périodes.")
+    dataset["amortissements"] = dataset["amortissements"].fillna(0)
 
-colonnes = ["ventes","ca_export","production_reelle","charges_exploitation","frais_export","masse_salariale"]
+
+colonnes = ["ventes","ca_export","production_reelle","charges_exploitation","frais_export","masse_salariale","amortissements"]
 for c in colonnes: dataset[c] = pd.to_numeric(dataset[c], errors="coerce")
 
-dataset["resultat_operationnel"] = dataset["ca_export"]-dataset["charges_exploitation"]-dataset["frais_export"]-dataset["masse_salariale"]
+dataset["resultat_operationnel"] = dataset["ca_export"]-dataset["charges_exploitation"]-dataset["frais_export"]-dataset["masse_salariale"]-dataset["amortissements"]
 dataset["marge_operationnelle"] = dataset["resultat_operationnel"]/dataset["ca_export"].replace(0,pd.NA)
 dataset = dataset.sort_values(["annee","mois"]).reset_index(drop=True)
 

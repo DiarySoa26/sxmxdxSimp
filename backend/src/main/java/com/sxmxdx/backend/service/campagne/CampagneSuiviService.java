@@ -59,3 +59,7 @@ public class CampagneSuiviService {
         terminerEtape(campagneId, "GENERATION");
     }
 }
+
+
+
+
