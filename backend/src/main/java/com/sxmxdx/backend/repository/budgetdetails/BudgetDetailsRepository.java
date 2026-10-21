@@ -15,10 +15,6 @@ public class BudgetDetailsRepository {
     private EntityManager entityManager;
 
 
-    // =====================================================
-    // METHODE GENERIQUE
-    // =====================================================
-
     @SuppressWarnings("unchecked")
     private List<Map<String, Object>> executer(
             String sql,
@@ -64,9 +60,6 @@ public class BudgetDetailsRepository {
     }
 
 
-    // =====================================================
-    // CHARGES
-    // =====================================================
 
     public List<Map<String, Object>> getCharges(
             Integer exerciceId
@@ -84,10 +77,6 @@ public class BudgetDetailsRepository {
     }
 
 
-    // =====================================================
-    // EXPORTATIONS
-    // =====================================================
-
     public List<Map<String, Object>> getExportations(
             Integer exerciceId
     ) {
@@ -104,9 +93,6 @@ public class BudgetDetailsRepository {
     }
 
 
-    // =====================================================
-    // FRAIS EXPORT
-    // =====================================================
 
     public List<Map<String, Object>> getFraisExport(
             Integer exerciceId
@@ -124,9 +110,6 @@ public class BudgetDetailsRepository {
     }
 
 
-    // =====================================================
-    // PRODUCTION
-    // =====================================================
 
     public List<Map<String, Object>> getProduction(
             Integer exerciceId
@@ -144,9 +127,6 @@ public class BudgetDetailsRepository {
     }
 
 
-    // =====================================================
-    // EMPLOYES
-    // =====================================================
 
     public List<Map<String, Object>> getEmployes(
             Integer exerciceId
@@ -164,10 +144,6 @@ public class BudgetDetailsRepository {
         );
     }
 
-
-    // =====================================================
-    // BUDGET
-    // =====================================================
 
     public List<Map<String, Object>> getBudget(
             Integer exerciceId
@@ -199,4 +175,127 @@ public class BudgetDetailsRepository {
                 exerciceId
         );
     }
+
+
+    public List<Map<String, Object>> getAmortissements(
+            Integer exerciceId
+    ) {
+
+        return executer(
+                """
+                SELECT *
+                FROM view_amortissement_mois
+                WHERE exercice_id = :exerciceId
+                ORDER BY mois ASC, id ASC
+                """,
+                exerciceId
+        );
+    }
+
+
+    public List<Map<String, Object>> getAmortissementsTotaux(
+            Integer exerciceId
+    ) {
+
+        return executer(
+                """
+                SELECT
+                    mois,
+                    nom_mois,
+                    SUM(montant) AS total_amortissement
+                FROM view_amortissement_mois
+                WHERE exercice_id = :exerciceId
+                GROUP BY mois, nom_mois
+                ORDER BY mois ASC
+                """,
+                exerciceId
+        );
+    }
+
+    public List<Map<String, Object>> getAmortissementsAnnuel(
+            Integer exerciceId
+    ) {
+
+        return executer(
+                """
+                SELECT
+                    COALESCE(
+                        SUM(montant), 0
+                    ) AS total_annuel
+                FROM view_amortissement_mois
+                WHERE exercice_id = :exerciceId
+                """,
+                exerciceId
+        );
+    }
+
+//     public List<Map<String, Object>> getCRAmortissements(
+//             Integer exerciceId
+//     ) {
+//         return executer(
+//                 """
+//                 SELECT
+//                     mois,
+//                     COALESCE(SUM(montant), 0)
+//                         AS amortissements
+//                 FROM view_amortissement_mois
+//                 WHERE exercice_id = :exerciceId
+//                 GROUP BY mois
+//                 ORDER BY mois
+//                 """,
+//                 exerciceId
+//         );
+//     }
+
+
+
+    // =====================================================
+    // COMPTE DE RESULTAT - AMORTISSEMENTS
+    // =====================================================
+
+    public List<Map<String, Object>> getAmortissementsPourCR(
+            Integer exerciceId
+    ) {
+        return executer(
+                """
+                SELECT
+                    mois,
+                    COALESCE(SUM(montant), 0) AS montant
+                FROM amortissement_mensuel
+                WHERE exercice_id = :exerciceId
+                GROUP BY mois
+                ORDER BY mois ASC
+                """,
+                exerciceId
+        );
+    }
+
+    // =====================================================
+    // COMPTE DE RESULTAT - BUDGET MENSUEL
+    // =====================================================
+
+    public List<Map<String, Object>> getBudgetMensuelPourCR(
+            Integer exerciceId
+    ) {
+        return executer(
+                """
+                SELECT bm.*
+                FROM view_budget_mensuel_mois bm
+                JOIN budget b ON b.id = bm.budget_id
+                WHERE b.exercice_id = :exerciceId
+                  AND b.type_budget = 'GENERE'
+                  AND b.id = (
+                      SELECT MAX(b2.id)
+                      FROM budget b2
+                      WHERE b2.exercice_id = :exerciceId
+                        AND b2.type_budget = 'GENERE'
+                  )
+                ORDER BY bm.mois_id ASC
+                """,
+                exerciceId
+        );
+    }
+
+    
+
 }

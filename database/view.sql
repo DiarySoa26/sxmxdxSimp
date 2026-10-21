@@ -138,6 +138,12 @@ FROM budget_mensuel e
 JOIN mois m ON e.mois_id = m.id
 ;
 
+CREATE OR REPLACE VIEW view_amortissement_mois AS
+SELECT c.* , m.nom as nom_mois
+FROM amortissement_mensuel c
+JOIN mois m ON c.mois = m.id
+;
+
 
 CREATE OR REPLACE VIEW view_campagne_avancement AS
 SELECT

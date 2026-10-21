@@ -1,16 +1,3 @@
-"""
-SXMXDX - Module de prévision partagé.
-
-Principe (remplace la régression linéaire avec tendance index_temps + lag_12) :
-    prévision du mois m = NIVEAU ANNUEL LISSÉ x PROFIL SAISONNIER(m)
-
-- NIVEAU : moyenne mensuelle des années passées, lissée exponentiellement (EWM).
-  alpha élevé = on suit surtout la dernière année ; alpha faible = on lisse davantage.
-- PROFIL SAISONNIER : poids moyen de chaque mois dans l'année, ATTÉNUÉ de moitié
-  (sur 6 ans la saisonnalité est du même ordre que le bruit, on évite de la sur-ajuster).
-- Le paramètre alpha est choisi PAR CIBLE par backtest glissant (rolling origin) :
-  on prévoit chaque année N à partir des années < N, pour toutes les années possibles.
-"""
 import numpy as np
 import pandas as pd
 

@@ -41,6 +41,16 @@ type Exercice = {
   annee_exercice: number
 }
 
+// type OngletBudget =
+//   | "charges"
+//   | "exportations"
+//   | "frais-export"
+//   | "production"
+//   | "employes"
+//   | "budget"
+
+
+
 type OngletBudget =
   | "charges"
   | "exportations"
@@ -48,6 +58,9 @@ type OngletBudget =
   | "production"
   | "employes"
   | "budget"
+  | "amortissements"
+  | "compte-resultat"
+
 
 export default function BudgetDetails() {
   const router = useRouter()
