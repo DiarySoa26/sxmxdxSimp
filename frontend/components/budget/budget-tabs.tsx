@@ -1,8 +1,6 @@
 // "use client"
 
-// import {
-//   Loader2,
-// } from "lucide-react"
+// import { Loader2 } from "lucide-react"
 
 // import {
 //   Tabs,
@@ -20,9 +18,6 @@
 // import AmortissementsTable from "./tables/AmortissementsTable"
 // import CompteResultatTable from "./tables/CompteResultatTable"
 
-// // ======================================================
-// // TYPE
-// // ======================================================
 
 // export type OngletBudget =
 //   | "charges"
@@ -43,12 +38,15 @@
 
 //   data: any[]
 
+//   // Données brutes des charges du même exercice
+//   chargesData: any[]
+
 //   loading: boolean
+
+//   // Chargement des charges, si effectué séparément
+//   loadingCharges?: boolean
 // }
 
-// // ======================================================
-// // ONGLETS
-// // ======================================================
 
 // const onglets: {
 //   value: OngletBudget
@@ -105,20 +103,16 @@
 //   },
 // ]
 
-// // ======================================================
-// // COMPONENT
-// // ======================================================
 
 // export default function BudgetTabs({
 //   value,
 //   onValueChange,
 //   data,
+//   chargesData,
 //   loading,
+//   loadingCharges = false,
 // }: BudgetTabsProps) {
 
-//   // ====================================================
-//   // CHANGEMENT D'ONGLET
-//   // ====================================================
 
 //   function changerOnglet(
 //     nouvelleValeur: string | null
@@ -200,6 +194,7 @@
 //         return (
 //           <CompteResultatTable
 //             data={data}
+//             charges={chargesData}
 //           />
 //         )
 
@@ -208,6 +203,7 @@
 //     }
 //   }
 
+
 //   return (
 //     <Tabs
 //       value={value}
@@ -215,15 +211,13 @@
 //       className="w-full"
 //     >
 
-//       {/* ============================================== */}
 //       {/* NAVIGATION */}
-//       {/* ============================================== */}
 
 //       <div className="w-full overflow-x-auto">
 
 //         <TabsList className="mb-6 h-auto w-max min-w-full justify-start gap-1">
 
-//           {onglets.map((onglet) => (
+//           {onglets.map(onglet => (
 
 //             <TabsTrigger
 //               key={onglet.value}
@@ -239,67 +233,69 @@
 
 //       </div>
 
-//       {/* ============================================== */}
 //       {/* CONTENU */}
-//       {/* ============================================== */}
 
-//       {onglets.map((onglet) => (
+//       {onglets.map(onglet => {
 
-//         <TabsContent
-//           key={onglet.value}
-//           value={onglet.value}
-//           className="mt-0"
-//         >
+//         const chargement =
+//           loading ||
+//           (
+//             onglet.value === "compte-resultat" &&
+//             loadingCharges
+//           )
 
-//           {/* TITRE ET DESCRIPTION */}
+//         return (
+//           <TabsContent
+//             key={onglet.value}
+//             value={onglet.value}
+//             className="mt-0"
+//           >
 
-//           <div className="mb-4 space-y-1">
+//             {/* TITRE ET DESCRIPTION */}
 
-//             <h3 className="text-lg font-semibold">
-//               {onglet.label}
-//             </h3>
+//             <div className="mb-4 space-y-1">
 
-//             <p className="text-sm text-muted-foreground">
-//               {onglet.description}
-//             </p>
+//               <h3 className="text-lg font-semibold">
+//                 {onglet.label}
+//               </h3>
 
-//           </div>
-
-//           {/* CHARGEMENT */}
-
-//           {loading ? (
-
-//             <div className="flex min-h-[220px] items-center justify-center">
-
-//               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-
-//                 <Loader2 className="h-5 w-5 animate-spin" />
-
-//                 <span>
-//                   Chargement des données...
-//                 </span>
-
-//               </div>
+//               <p className="text-sm text-muted-foreground">
+//                 {onglet.description}
+//               </p>
 
 //             </div>
 
-//           ) : (
+//             {/* CHARGEMENT */}
 
-//             afficherTableau(onglet.value)
+//             {chargement ? (
 
-//           )}
+//               <div className="flex min-h-[220px] items-center justify-center">
 
-//         </TabsContent>
+//                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
 
-//       ))}
+//                   <Loader2 className="h-5 w-5 animate-spin" />
+
+//                   <span>
+//                     Chargement des données...
+//                   </span>
+
+//                 </div>
+
+//               </div>
+
+//             ) : (
+
+//               afficherTableau(onglet.value)
+
+//             )}
+
+//           </TabsContent>
+//         )
+//       })}
 
 //     </Tabs>
 //   )
 // }
-
-// // ======================================================
-// // VERIFICATION ONGLET
-// // ======================================================
 
 // function estOngletBudget(
 //   value: string
@@ -316,7 +312,6 @@
 //     "compte-resultat",
 //   ].includes(value)
 // }
-
 
 
 
@@ -344,10 +339,6 @@ import BudgetTable from "./tables/budget-table"
 import AmortissementsTable from "./tables/AmortissementsTable"
 import CompteResultatTable from "./tables/CompteResultatTable"
 
-// ======================================================
-// TYPE
-// ======================================================
-
 export type OngletBudget =
   | "charges"
   | "exportations"
@@ -360,25 +351,14 @@ export type OngletBudget =
 
 type BudgetTabsProps = {
   value: OngletBudget
-
-  onValueChange: (
-    value: OngletBudget
-  ) => void
-
+  onValueChange: (value: OngletBudget) => void
   data: any[]
-
-  // Données brutes des charges du même exercice
   chargesData: any[]
-
+  fraisExportData: any[]
   loading: boolean
-
-  // Chargement des charges, si effectué séparément
   loadingCharges?: boolean
+  loadingFraisExport?: boolean
 }
-
-// ======================================================
-// ONGLETS
-// ======================================================
 
 const onglets: {
   value: OngletBudget
@@ -435,43 +415,33 @@ const onglets: {
   },
 ]
 
-// ======================================================
-// COMPONENT
-// ======================================================
-
 export default function BudgetTabs({
   value,
   onValueChange,
   data,
   chargesData,
+  fraisExportData,
   loading,
   loadingCharges = false,
+  loadingFraisExport = false,
 }: BudgetTabsProps) {
-
-  // ====================================================
-  // CHANGEMENT D'ONGLET
-  // ====================================================
 
   function changerOnglet(
     nouvelleValeur: string | null
   ) {
-    if (nouvelleValeur === null) {
-      return
-    }
+    if (nouvelleValeur === null) return
 
     if (!estOngletBudget(nouvelleValeur)) {
       return
     }
 
-    if (nouvelleValeur === value) {
-      return
-    }
+    if (nouvelleValeur === value) return
 
     onValueChange(nouvelleValeur)
   }
 
   // ====================================================
-  // TABLEAU CORRESPONDANT
+  // AFFICHER LE TABLEAU CORRESPONDANT
   // ====================================================
 
   function afficherTableau(
@@ -481,51 +451,37 @@ export default function BudgetTabs({
 
       case "charges":
         return (
-          <ChargesTable
-            data={data}
-          />
+          <ChargesTable data={data} />
         )
 
       case "exportations":
         return (
-          <ExportationsTable
-            data={data}
-          />
+          <ExportationsTable data={data} />
         )
 
       case "frais-export":
         return (
-          <FraisExportTable
-            data={data}
-          />
+          <FraisExportTable data={data} />
         )
 
       case "production":
         return (
-          <ProductionTable
-            data={data}
-          />
+          <ProductionTable data={data} />
         )
 
       case "employes":
         return (
-          <EmployesTable
-            data={data}
-          />
+          <EmployesTable data={data} />
         )
 
       case "budget":
         return (
-          <BudgetTable
-            data={data}
-          />
+          <BudgetTable data={data} />
         )
 
       case "amortissements":
         return (
-          <AmortissementsTable
-            data={data}
-          />
+          <AmortissementsTable data={data} />
         )
 
       case "compte-resultat":
@@ -533,6 +489,7 @@ export default function BudgetTabs({
           <CompteResultatTable
             data={data}
             charges={chargesData}
+            fraisExport={fraisExportData}
           />
         )
 
@@ -582,7 +539,10 @@ export default function BudgetTabs({
           loading ||
           (
             onglet.value === "compte-resultat" &&
-            loadingCharges
+            (
+              loadingCharges ||
+              loadingFraisExport
+            )
           )
 
         return (
@@ -638,9 +598,9 @@ export default function BudgetTabs({
   )
 }
 
-// ======================================================
-// VERIFICATION ONGLET
-// ======================================================
+// ====================================================
+// VALIDATION DES ONGLETS
+// ====================================================
 
 function estOngletBudget(
   value: string

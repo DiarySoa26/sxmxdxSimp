@@ -2,6 +2,7 @@
 
 // import { useEffect, useState } from "react"
 // import { useRouter, useSearchParams } from "next/navigation"
+
 // import {
 //   CalendarDays,
 //   ClipboardCheck,
@@ -11,6 +12,7 @@
 // } from "lucide-react"
 
 // import { Button } from "@/components/ui/button"
+
 // import {
 //   Card,
 //   CardContent,
@@ -26,7 +28,10 @@
 //   SelectTrigger
 // } from "@/components/ui/select"
 
-// import BudgetTabs from "./budget-tabs"
+// import BudgetTabs, {
+//   type OngletBudget
+// } from "./budget-tabs"
+
 // import BudgetError from "./budget-error"
 
 // import {
@@ -41,68 +46,80 @@
 //   annee_exercice: number
 // }
 
-// // type OngletBudget =
-// //   | "charges"
-// //   | "exportations"
-// //   | "frais-export"
-// //   | "production"
-// //   | "employes"
-// //   | "budget"
-
-
-
-// type OngletBudget =
-//   | "charges"
-//   | "exportations"
-//   | "frais-export"
-//   | "production"
-//   | "employes"
-//   | "budget"
-//   | "amortissements"
-//   | "compte-resultat"
-
-
 // export default function BudgetDetails() {
+
 //   const router = useRouter()
 //   const searchParams = useSearchParams()
 
 //   const exerciceIdUrl = searchParams.get("exerciceId")
 //   const campagneIdUrl = searchParams.get("campagneId")
 //   const jalonIdUrl = searchParams.get("jalonId")
-//   const modeVerification = searchParams.get("verification") === "1"
+
+//   const modeVerification =
+//     searchParams.get("verification") === "1"
 
 //   const retourDisponible =
-//     modeVerification && !!campagneIdUrl && !!jalonIdUrl
+//     modeVerification &&
+//     !!campagneIdUrl &&
+//     !!jalonIdUrl
 
-//   const [exercices, setExercices] = useState<Exercice[]>([])
-//   const [exerciceId, setExerciceId] = useState("")
-//   const [anneeSelectionnee, setAnneeSelectionnee] = useState("")
-//   const [onglet, setOnglet] = useState<OngletBudget>("charges")
+//   const [exercices, setExercices] =
+//     useState<Exercice[]>([])
+
+//   const [exerciceId, setExerciceId] =
+//     useState("")
+
+//   const [anneeSelectionnee, setAnneeSelectionnee] =
+//     useState("")
+
+//   const [onglet, setOnglet] =
+//     useState<OngletBudget>("charges")
+
+//   // Données de l'onglet actif
 //   const [data, setData] = useState<any[]>([])
 
-//   const [loadingExercices, setLoadingExercices] = useState(true)
-//   const [loadingData, setLoadingData] = useState(false)
+//   // Données brutes des charges pour Achats consommés
+//   const [chargesData, setChargesData] =
+//     useState<any[]>([])
+
+//   const [loadingExercices, setLoadingExercices] =
+//     useState(true)
+
+//   const [loadingData, setLoadingData] =
+//     useState(false)
+
 //   const [error, setError] = useState("")
 
 //   const [exportEnCours, setExportEnCours] =
 //     useState<"pdf" | "excel" | null>(null)
 
-//   // Charger les exercices
+//   // ==================================================
+//   // CHARGER LES EXERCICES
+//   // ==================================================
+
 //   useEffect(() => {
+
 //     let actif = true
 
 //     async function chargerExercices() {
+
 //       try {
+
 //         setLoadingExercices(true)
 //         setError("")
 //         setExerciceId("")
 //         setAnneeSelectionnee("")
 //         setData([])
+//         setChargesData([])
 
 //         const liste = await getExercices()
+
 //         if (!actif) return
 
-//         if (!Array.isArray(liste) || liste.length === 0) {
+//         if (
+//           !Array.isArray(liste) ||
+//           liste.length === 0
+//         ) {
 //           setExercices([])
 //           return
 //         }
@@ -116,20 +133,29 @@
 //             )
 //           : null
 
-//         if (exerciceIdUrl && !exerciceCampagne) {
+//         if (
+//           exerciceIdUrl &&
+//           !exerciceCampagne
+//         ) {
 //           setError(
 //             "L'exercice associé à cette campagne est introuvable."
 //           )
 //           return
 //         }
 
-//         const selection = exerciceCampagne ?? liste[0]
+//         const selection =
+//           exerciceCampagne ?? liste[0]
 
-//         setExerciceId(String(selection.id_exercice))
+//         setExerciceId(
+//           String(selection.id_exercice)
+//         )
+
 //         setAnneeSelectionnee(
 //           String(selection.annee_exercice)
 //         )
+
 //       } catch (erreur) {
+
 //         if (!actif) return
 
 //         console.error(
@@ -146,8 +172,13 @@
 //             ? erreur.message
 //             : "Impossible de charger les exercices."
 //         )
+
 //       } finally {
-//         if (actif) setLoadingExercices(false)
+
+//         if (actif) {
+//           setLoadingExercices(false)
+//         }
+
 //       }
 //     }
 
@@ -156,28 +187,78 @@
 //     return () => {
 //       actif = false
 //     }
+
 //   }, [exerciceIdUrl])
 
-//   // Charger les données de l'exercice
+//   // ==================================================
+//   // CHARGER LES DONNÉES BUDGÉTAIRES
+//   // ==================================================
+
 //   useEffect(() => {
+
 //     if (!exerciceId) return
 
 //     let actif = true
 
 //     async function chargerDonnees() {
+
 //       const debut = Date.now()
+//       const id = Number(exerciceId)
 
 //       try {
+
 //         setLoadingData(true)
 //         setError("")
 //         setData([])
 
-//         const resultat = await getBudgetDetails(
-//           onglet,
-//           Number(exerciceId)
-//         )
+//         // Éviter les charges d'un ancien exercice
+//         setChargesData([])
 
-//         // Chargement minimum de 3 secondes
+//         let resultat: any[]
+//         let charges: any[] = []
+
+//         if (onglet === "compte-resultat") {
+
+//           // Charger simultanément le compte de résultat
+//           // et les charges du même exercice.
+//           const [resultatCR, resultatCharges] =
+//             await Promise.all([
+//               getBudgetDetails(
+//                 "compte-resultat",
+//                 id
+//               ),
+//               getBudgetDetails(
+//                 "charges",
+//                 id
+//               )
+//             ])
+
+//           resultat = Array.isArray(resultatCR)
+//             ? resultatCR
+//             : []
+
+//           charges = Array.isArray(resultatCharges)
+//             ? resultatCharges
+//             : []
+
+//         } else {
+
+//           const resultatOnglet =
+//             await getBudgetDetails(
+//               onglet,
+//               id
+//             )
+
+//           resultat = Array.isArray(resultatOnglet)
+//             ? resultatOnglet
+//             : []
+
+//           if (onglet === "charges") {
+//             charges = resultat
+//           }
+//         }
+
+//         // Loader minimum de 3 secondes
 //         const tempsRestant = Math.max(
 //           0,
 //           3000 - (Date.now() - debut)
@@ -189,12 +270,11 @@
 
 //         if (!actif) return
 
-//         setData(
-//           Array.isArray(resultat)
-//             ? resultat
-//             : []
-//         )
+//         setData(resultat)
+//         setChargesData(charges)
+
 //       } catch (erreur) {
+
 //         const tempsRestant = Math.max(
 //           0,
 //           3000 - (Date.now() - debut)
@@ -212,14 +292,20 @@
 //         )
 
 //         setData([])
+//         setChargesData([])
 
 //         setError(
 //           erreur instanceof Error
 //             ? erreur.message
 //             : "Impossible de charger les données."
 //         )
+
 //       } finally {
-//         if (actif) setLoadingData(false)
+
+//         if (actif) {
+//           setLoadingData(false)
+//         }
+
 //       }
 //     }
 
@@ -228,10 +314,15 @@
 //     return () => {
 //       actif = false
 //     }
+
 //   }, [exerciceId, onglet])
 
-//   // Changer l'exercice sélectionné
+//   // ==================================================
+//   // CHANGER L'EXERCICE
+//   // ==================================================
+
 //   function changerExercice(value: string | null) {
+
 //     if (value === null) return
 
 //     const exercice = exercices.find(
@@ -242,21 +333,38 @@
 
 //     setError("")
 //     setData([])
-//     setExerciceId(String(exercice.id_exercice))
+//     setChargesData([])
+
+//     setExerciceId(
+//       String(exercice.id_exercice)
+//     )
+
 //     setAnneeSelectionnee(
 //       String(exercice.annee_exercice)
 //     )
 //   }
 
-//   // Changer l'onglet budgétaire
+//   // ==================================================
+//   // CHANGER L'ONGLET
+//   // ==================================================
+
 //   function changerOnglet(value: OngletBudget) {
+
 //     setError("")
 //     setData([])
+//     setChargesData([])
 //     setOnglet(value)
+
 //   }
 
-//   // Export PDF ou Excel directement dans Next.js
-//   async function exporter(format: "pdf" | "excel") {
+//   // ==================================================
+//   // EXPORT PDF / EXCEL
+//   // ==================================================
+
+//   async function exporter(
+//     format: "pdf" | "excel"
+//   ) {
+
 //     if (
 //       !exerciceId ||
 //       !anneeSelectionnee ||
@@ -265,6 +373,7 @@
 //     ) return
 
 //     try {
+
 //       setExportEnCours(format)
 //       setError("")
 
@@ -273,7 +382,9 @@
 //         Number(anneeSelectionnee),
 //         format
 //       )
+
 //     } catch (erreur) {
+
 //       console.error(
 //         "Erreur exportation :",
 //         erreur
@@ -284,13 +395,20 @@
 //           ? erreur.message
 //           : "Impossible d'exporter le budget."
 //       )
+
 //     } finally {
+
 //       setExportEnCours(null)
+
 //     }
 //   }
 
-//   // Retour à la campagne budgétaire
+//   // ==================================================
+//   // RETOUR À LA CAMPAGNE
+//   // ==================================================
+
 //   function retournerAuxJalons() {
+
 //     if (
 //       !campagneIdUrl ||
 //       !jalonIdUrl ||
@@ -319,19 +437,29 @@
 //     )
 //   }
 
+//   // ==================================================
+//   // AFFICHAGE
+//   // ==================================================
+
 //   return (
 //     <div className="space-y-6">
+
 //       <BudgetError message={error} />
 
-//       {/* Sélection de l'exercice */}
+//       {/* SÉLECTION DE L'EXERCICE */}
+
 //       <Card>
+
 //         <CardHeader>
+
 //           <div className="flex items-center gap-3">
+
 //             <div className="flex h-10 w-10 items-center justify-center rounded-lg border bg-muted">
 //               <CalendarDays className="h-5 w-5" />
 //             </div>
 
 //             <div>
+
 //               <CardTitle className="text-base">
 //                 Exercice
 //               </CardTitle>
@@ -341,26 +469,37 @@
 //                   ? "Exercice associé à la campagne budgétaire."
 //                   : "Sélectionnez l'exercice à consulter."}
 //               </CardDescription>
+
 //             </div>
+
 //           </div>
+
 //         </CardHeader>
 
 //         <CardContent>
+
 //           <div className="w-full max-w-xs">
+
 //             {loadingExercices ? (
+
 //               <div className="flex h-10 items-center gap-2 text-sm text-muted-foreground">
 //                 <Loader2 className="h-4 w-4 animate-spin" />
 //                 Chargement des exercices...
 //               </div>
+
 //             ) : exercices.length === 0 ? (
+
 //               <div className="text-sm text-muted-foreground">
 //                 Aucun exercice disponible.
 //               </div>
+
 //             ) : (
+
 //               <Select
 //                 value={exerciceId}
 //                 onValueChange={changerExercice}
 //               >
+
 //                 <SelectTrigger className="w-full">
 //                   <span>
 //                     {anneeSelectionnee ||
@@ -369,63 +508,86 @@
 //                 </SelectTrigger>
 
 //                 <SelectContent>
+
 //                   {exercices.map(exercice => (
+
 //                     <SelectItem
 //                       key={exercice.id_exercice}
 //                       value={String(exercice.id_exercice)}
 //                     >
 //                       {exercice.annee_exercice}
 //                     </SelectItem>
+
 //                   ))}
+
 //                 </SelectContent>
+
 //               </Select>
+
 //             )}
+
 //           </div>
+
 //         </CardContent>
+
 //       </Card>
 
-//       {/* Données budgétaires */}
+//       {/* DONNÉES BUDGÉTAIRES */}
+
 //       {exerciceId && (
+
 //         <Card>
+
 //           <CardHeader>
+
 //             <div className="flex flex-wrap items-center justify-between gap-3">
-//               {/* <div>
-//                 <CardTitle>
-//                   Données de l&apos;exercice{" "}
-//                   {anneeSelectionnee}
-//                 </CardTitle>
 
-//                 <CardDescription className="mt-1">
-//                   Consultation des données financières et budgétaires. {anneeSelectionnee}
-//                 </CardDescription>
-//               </div> */}
-
-//               {/* Boutons d'exportation */}
 //               <div className="flex flex-wrap items-center gap-2">
+
+//                 {/* EXPORT PDF */}
 
 //                 <Button
 //                   size="sm"
 //                   variant="outline"
-//                   disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
+//                   disabled={
+//                     loadingData ||
+//                     !!exportEnCours ||
+//                     !anneeSelectionnee
+//                   }
 //                   onClick={() => exporter("pdf")}
 //                 >
-//                   <FileText className="mr-2 h-4 w-4" />
+//                   {exportEnCours === "pdf" ? (
+//                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+//                   ) : (
+//                     <FileText className="mr-2 h-4 w-4" />
+//                   )}
 //                   Exporter PDF
 //                 </Button>
 
+//                 {/* EXPORT EXCEL */}
+
 //                 <Button
 //                   size="sm"
 //                   variant="outline"
-//                   disabled={loadingData || !!exportEnCours || !anneeSelectionnee}
+//                   disabled={
+//                     loadingData ||
+//                     !!exportEnCours ||
+//                     !anneeSelectionnee
+//                   }
 //                   onClick={() => exporter("excel")}
 //                 >
-//                   <FileSpreadsheet className="mr-2 h-4 w-4" />
+//                   {exportEnCours === "excel" ? (
+//                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+//                   ) : (
+//                     <FileSpreadsheet className="mr-2 h-4 w-4" />
+//                   )}
 //                   Exporter Excel
 //                 </Button>
 
+//                 {/* VÉRIFICATION DE CAMPAGNE */}
 
-//                 {/* Vérification de campagne */}
 //                 {retourDisponible && (
+
 //                   <Button
 //                     size="sm"
 //                     disabled={
@@ -438,14 +600,21 @@
 //                     <ClipboardCheck className="mr-2 h-4 w-4" />
 //                     Vérifier
 //                   </Button>
+
 //                 )}
+
 //               </div>
+
 //             </div>
+
 //           </CardHeader>
 
 //           <CardContent>
+
 //             {loadingData ? (
+
 //               <div className="flex min-h-[300px] flex-col items-center justify-center gap-3">
+
 //                 <Loader2 className="h-8 w-8 animate-spin" />
 
 //                 <p className="text-sm text-muted-foreground">
@@ -453,18 +622,27 @@
 //                   l&apos;exercice{" "}
 //                   {anneeSelectionnee}...
 //                 </p>
+
 //               </div>
+
 //             ) : (
+
 //               <BudgetTabs
 //                 value={onglet}
 //                 onValueChange={changerOnglet}
 //                 data={data}
+//                 chargesData={chargesData}
 //                 loading={false}
 //               />
+
 //             )}
+
 //           </CardContent>
+
 //         </Card>
+
 //       )}
+
 //     </div>
 //   )
 // }
@@ -474,6 +652,7 @@
 //     resolve => setTimeout(resolve, millisecondes)
 //   )
 // }
+
 
 
 
@@ -490,7 +669,7 @@ import {
   ClipboardCheck,
   Loader2,
   FileText,
-  FileSpreadsheet
+  FileSpreadsheet,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -500,25 +679,25 @@ import {
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card"
 
 import {
   Select,
   SelectContent,
   SelectItem,
-  SelectTrigger
+  SelectTrigger,
 } from "@/components/ui/select"
 
 import BudgetTabs, {
-  type OngletBudget
+  type OngletBudget,
 } from "./budget-tabs"
 
 import BudgetError from "./budget-error"
 
 import {
   getBudgetDetails,
-  getExercices
+  getExercices,
 } from "@/services/budget-details-service"
 
 import { exporterBudget } from "@/services/budget-export-service"
@@ -545,6 +724,10 @@ export default function BudgetDetails() {
     !!campagneIdUrl &&
     !!jalonIdUrl
 
+  // ====================================================
+  // ÉTATS
+  // ====================================================
+
   const [exercices, setExercices] =
     useState<Exercice[]>([])
 
@@ -557,11 +740,13 @@ export default function BudgetDetails() {
   const [onglet, setOnglet] =
     useState<OngletBudget>("charges")
 
-  // Données de l'onglet actif
-  const [data, setData] = useState<any[]>([])
+  const [data, setData] =
+    useState<any[]>([])
 
-  // Données brutes des charges pour Achats consommés
   const [chargesData, setChargesData] =
+    useState<any[]>([])
+
+  const [fraisExportData, setFraisExportData] =
     useState<any[]>([])
 
   const [loadingExercices, setLoadingExercices] =
@@ -570,14 +755,25 @@ export default function BudgetDetails() {
   const [loadingData, setLoadingData] =
     useState(false)
 
-  const [error, setError] = useState("")
+  const [error, setError] =
+    useState("")
 
   const [exportEnCours, setExportEnCours] =
     useState<"pdf" | "excel" | null>(null)
 
-  // ==================================================
+  // ====================================================
+  // RÉINITIALISER LES DONNÉES
+  // ====================================================
+
+  function viderDonnees() {
+    setData([])
+    setChargesData([])
+    setFraisExportData([])
+  }
+
+  // ====================================================
   // CHARGER LES EXERCICES
-  // ==================================================
+  // ====================================================
 
   useEffect(() => {
 
@@ -586,13 +782,13 @@ export default function BudgetDetails() {
     async function chargerExercices() {
 
       try {
-
         setLoadingExercices(true)
         setError("")
         setExerciceId("")
         setAnneeSelectionnee("")
         setData([])
         setChargesData([])
+        setFraisExportData([])
 
         const liste = await getExercices()
 
@@ -660,7 +856,6 @@ export default function BudgetDetails() {
         if (actif) {
           setLoadingExercices(false)
         }
-
       }
     }
 
@@ -672,9 +867,9 @@ export default function BudgetDetails() {
 
   }, [exerciceIdUrl])
 
-  // ==================================================
+  // ====================================================
   // CHARGER LES DONNÉES BUDGÉTAIRES
-  // ==================================================
+  // ====================================================
 
   useEffect(() => {
 
@@ -691,29 +886,43 @@ export default function BudgetDetails() {
 
         setLoadingData(true)
         setError("")
+
         setData([])
-
-        // Éviter les charges d'un ancien exercice
         setChargesData([])
+        setFraisExportData([])
 
-        let resultat: any[]
+        let resultat: any[] = []
         let charges: any[] = []
+        let fraisExport: any[] = []
+
+        // ================================================
+        // COMPTE DE RÉSULTAT
+        // ================================================
 
         if (onglet === "compte-resultat") {
 
-          // Charger simultanément le compte de résultat
-          // et les charges du même exercice.
-          const [resultatCR, resultatCharges] =
-            await Promise.all([
-              getBudgetDetails(
-                "compte-resultat",
-                id
-              ),
-              getBudgetDetails(
-                "charges",
-                id
-              )
-            ])
+          const [
+            resultatCR,
+            resultatCharges,
+            resultatFraisExport,
+          ] = await Promise.all([
+
+            getBudgetDetails(
+              "compte-resultat",
+              id
+            ),
+
+            getBudgetDetails(
+              "charges",
+              id
+            ),
+
+            getBudgetDetails(
+              "frais-export",
+              id
+            ),
+
+          ])
 
           resultat = Array.isArray(resultatCR)
             ? resultatCR
@@ -723,7 +932,42 @@ export default function BudgetDetails() {
             ? resultatCharges
             : []
 
+          fraisExport = Array.isArray(
+            resultatFraisExport
+          )
+            ? resultatFraisExport
+            : []
+
+          // Diagnostic des données
+          console.log(
+            "[CR] Exercice :",
+            id
+          )
+
+          console.log(
+            "[CR] Charges :",
+            charges
+          )
+
+          console.log(
+            "[CR] Frais export :",
+            fraisExport
+          )
+
+          console.log(
+            "[CR] Total annuel des frais export :",
+            fraisExport.reduce(
+              (somme, ligne) =>
+                somme + Number(ligne.total || 0),
+              0
+            )
+          )
+
         } else {
+
+          // ==============================================
+          // AUTRES ONGLETS
+          // ==============================================
 
           const resultatOnglet =
             await getBudgetDetails(
@@ -738,9 +982,16 @@ export default function BudgetDetails() {
           if (onglet === "charges") {
             charges = resultat
           }
+
+          if (onglet === "frais-export") {
+            fraisExport = resultat
+          }
         }
 
-        // Loader minimum de 3 secondes
+        // ================================================
+        // LOADER DE 3 SECONDES
+        // ================================================
+
         const tempsRestant = Math.max(
           0,
           3000 - (Date.now() - debut)
@@ -754,6 +1005,7 @@ export default function BudgetDetails() {
 
         setData(resultat)
         setChargesData(charges)
+        setFraisExportData(fraisExport)
 
       } catch (erreur) {
 
@@ -775,6 +1027,7 @@ export default function BudgetDetails() {
 
         setData([])
         setChargesData([])
+        setFraisExportData([])
 
         setError(
           erreur instanceof Error
@@ -787,7 +1040,6 @@ export default function BudgetDetails() {
         if (actif) {
           setLoadingData(false)
         }
-
       }
     }
 
@@ -799,11 +1051,13 @@ export default function BudgetDetails() {
 
   }, [exerciceId, onglet])
 
-  // ==================================================
+  // ====================================================
   // CHANGER L'EXERCICE
-  // ==================================================
+  // ====================================================
 
-  function changerExercice(value: string | null) {
+  function changerExercice(
+    value: string | null
+  ) {
 
     if (value === null) return
 
@@ -814,8 +1068,7 @@ export default function BudgetDetails() {
     if (!exercice) return
 
     setError("")
-    setData([])
-    setChargesData([])
+    viderDonnees()
 
     setExerciceId(
       String(exercice.id_exercice)
@@ -826,22 +1079,19 @@ export default function BudgetDetails() {
     )
   }
 
-  // ==================================================
+  // ====================================================
   // CHANGER L'ONGLET
-  // ==================================================
+  // ====================================================
 
   function changerOnglet(value: OngletBudget) {
-
     setError("")
-    setData([])
-    setChargesData([])
+    viderDonnees()
     setOnglet(value)
-
   }
 
-  // ==================================================
+  // ====================================================
   // EXPORT PDF / EXCEL
-  // ==================================================
+  // ====================================================
 
   async function exporter(
     format: "pdf" | "excel"
@@ -852,7 +1102,9 @@ export default function BudgetDetails() {
       !anneeSelectionnee ||
       exportEnCours ||
       loadingData
-    ) return
+    ) {
+      return
+    }
 
     try {
 
@@ -879,15 +1131,13 @@ export default function BudgetDetails() {
       )
 
     } finally {
-
       setExportEnCours(null)
-
     }
   }
 
-  // ==================================================
+  // ====================================================
   // RETOUR À LA CAMPAGNE
-  // ==================================================
+  // ====================================================
 
   function retournerAuxJalons() {
 
@@ -895,13 +1145,17 @@ export default function BudgetDetails() {
       !campagneIdUrl ||
       !jalonIdUrl ||
       !exerciceIdUrl
-    ) return
+    ) {
+      return
+    }
 
     if (
       exerciceId !== exerciceIdUrl ||
       loadingData ||
       error
-    ) return
+    ) {
+      return
+    }
 
     sessionStorage.setItem(
       `verification-consultee-${campagneIdUrl}-${jalonIdUrl}`,
@@ -911,7 +1165,7 @@ export default function BudgetDetails() {
     const params = new URLSearchParams({
       campagneId: campagneIdUrl,
       jalonId: jalonIdUrl,
-      retourVerification: "1"
+      retourVerification: "1",
     })
 
     router.push(
@@ -919,9 +1173,9 @@ export default function BudgetDetails() {
     )
   }
 
-  // ==================================================
+  // ====================================================
   // AFFICHAGE
-  // ==================================================
+  // ====================================================
 
   return (
     <div className="space-y-6">
@@ -995,7 +1249,9 @@ export default function BudgetDetails() {
 
                     <SelectItem
                       key={exercice.id_exercice}
-                      value={String(exercice.id_exercice)}
+                      value={String(
+                        exercice.id_exercice
+                      )}
                     >
                       {exercice.annee_exercice}
                     </SelectItem>
@@ -1038,11 +1294,13 @@ export default function BudgetDetails() {
                   }
                   onClick={() => exporter("pdf")}
                 >
+
                   {exportEnCours === "pdf" ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   ) : (
                     <FileText className="mr-2 h-4 w-4" />
                   )}
+
                   Exporter PDF
                 </Button>
 
@@ -1058,11 +1316,13 @@ export default function BudgetDetails() {
                   }
                   onClick={() => exporter("excel")}
                 >
+
                   {exportEnCours === "excel" ? (
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   ) : (
                     <FileSpreadsheet className="mr-2 h-4 w-4" />
                   )}
+
                   Exporter Excel
                 </Button>
 
@@ -1114,6 +1374,7 @@ export default function BudgetDetails() {
                 onValueChange={changerOnglet}
                 data={data}
                 chargesData={chargesData}
+                fraisExportData={fraisExportData}
                 loading={false}
               />
 
@@ -1128,6 +1389,10 @@ export default function BudgetDetails() {
     </div>
   )
 }
+
+// ======================================================
+// ATTENTE
+// ======================================================
 
 function attendre(millisecondes: number) {
   return new Promise<void>(
