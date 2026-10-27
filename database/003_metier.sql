@@ -90,6 +90,9 @@ CREATE TABLE IF NOT EXISTS charge (
     montant NUMERIC(18,2) NOT NULL DEFAULT 0
 );
 
+ALTER TABLE charge
+ADD COLUMN IF NOT EXISTS rc VARCHAR(255);
+
 
 -- ============================================================
 -- EXPORTATIONS
