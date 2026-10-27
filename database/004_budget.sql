@@ -181,6 +181,18 @@ CREATE TABLE IF NOT EXISTS prediction_analyse (
 );
 
 
+CREATE TABLE IF NOT EXISTS public.prediction_charge_categorie (
+    id BIGSERIAL PRIMARY KEY,
+    budget_id BIGINT NOT NULL
+        REFERENCES public.budget(id) ON DELETE CASCADE,
+    mois_id INTEGER NOT NULL
+        CHECK (mois_id BETWEEN 1 AND 12),
+    categorie VARCHAR(150) NOT NULL,
+    montant_prevu NUMERIC(20,4) NOT NULL,
+    UNIQUE (budget_id, mois_id, categorie)
+);
+
+
 ALTER TABLE budget_mensuel
     ADD COLUMN IF NOT EXISTS ventes NUMERIC(20,3)
         NOT NULL DEFAULT 0,

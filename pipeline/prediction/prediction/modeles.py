@@ -26,7 +26,8 @@ def profil_saisonnier(hist, cible, intensite=INTENSITE_SAISON):
     rapport = hist[cible] / moyenne
     profil = rapport.groupby(hist["mois"]).mean().reindex(range(1, 13)).fillna(1.0)
     profil = 1 + (profil - 1) * intensite
-    return profil / profil.mean()  # moyenne 1 : la somme annuelle = 12 x niveau
+    moyenne_profil = profil.mean()
+    return profil / moyenne_profil if np.isfinite(moyenne_profil) and moyenne_profil != 0 else pd.Series(1.0, index=range(1, 13))
 
 
 def niveau(hist, cible, alpha):
@@ -57,18 +58,25 @@ def backtest(df, cible, alpha):
 
 
 def evaluer(plis):
-    """Métriques agrégées sur l'ensemble des plis."""
+    """Métriques calculées seulement sur des dénominateurs valides."""
     if not plis:
         return None
     mape, ecarts = [], []
     for p in plis:
-        masque = p["reel"] != 0
-        mape.append(np.mean(np.abs(p["reel"][masque] - p["pred"][masque]) / p["reel"][masque]) * 100)
-        ecarts.append((p["pred"].sum() - p["reel"].sum()) / p["reel"].sum() * 100)
-    ecarts = np.array(ecarts)
+        reel = np.asarray(p["reel"], dtype=float)
+        pred = np.asarray(p["pred"], dtype=float)
+        masque = np.isfinite(reel) & np.isfinite(pred) & (reel != 0)
+        if masque.any():
+            mape.append(float(np.mean(np.abs(reel[masque] - pred[masque]) / np.abs(reel[masque])) * 100))
+        total_reel = float(np.nansum(reel))
+        if np.isfinite(total_reel) and abs(total_reel) > 1e-9:
+            ecarts.append(float((np.nansum(pred) - total_reel) / abs(total_reel) * 100))
+    if not ecarts:
+        return None
+    ecarts = np.asarray(ecarts, dtype=float)
     return {
-        "nb_plis": len(plis),
-        "mape_moy": float(np.mean(mape)),
+        "nb_plis": len(ecarts),
+        "mape_moy": float(np.mean(mape)) if mape else np.nan,
         "ecart_annuel_moy": float(np.mean(np.abs(ecarts))),
         "ecart_annuel_rms": float(np.sqrt(np.mean(ecarts ** 2))),
         "ecart_annuel_dernier": float(ecarts[-1]),
@@ -107,7 +115,8 @@ def backtest_resultat(df, alphas):
         p = {c: prevoir(train, c, m, a) for c, a in alphas.items()}
         pred = p["ca_export"].sum() - p["charges_exploitation"].sum() - p["frais_export"].sum() - p["masse_salariale"].sum() - p["amortissements"].sum()
         reel = (test["ca_export"] - test["charges_exploitation"] - test["frais_export"] - test["masse_salariale"] - test["amortissements"]).sum()
-        erreurs.append((pred - reel) / abs(reel) * 100)
+        if np.isfinite(reel) and abs(reel) > 1e-9:
+            erreurs.append((pred - reel) / abs(reel) * 100)
     return erreurs
 
 

@@ -152,7 +152,7 @@ OUTPUT_DIR = BASE / "output"
 
 DB_HOST = os.getenv("DB_HOST", "postgres")
 DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "sxmxdx2")
+DB_NAME = os.getenv("DB_NAME", "sxmxdx3")
 DB_USER = os.getenv("DB_USER", "sxmxdx")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "diary")
 
@@ -198,7 +198,29 @@ def charger_predictions():
 
     annuel = pd.read_csv(fichier_annuel)
     mensuel = pd.read_csv(fichier_mensuel)
-    categories = pd.read_csv(fichier_categories) if fichier_categories.exists() else None
+    # categories = pd.read_csv(fichier_categories) if fichier_categories.exists() else None
+    if not fichier_categories.is_file():
+        raise FileNotFoundError(
+            f"Prévisions par catégorie introuvables : {fichier_categories}"
+        )
+
+    categories = pd.read_csv(fichier_categories)
+
+    colonnes = {"mois", "categorie", "charge_prevue"}
+    manquantes = colonnes - set(categories.columns)
+
+    if manquantes:
+        raise ValueError(
+            f"Colonnes manquantes dans le CSV : {sorted(manquantes)}"
+        )
+
+    if categories.empty:
+        raise ValueError(
+            "Le fichier des charges prévisionnelles est vide."
+        )
+
+    print(f"[OK] {len(categories)} lignes de charges à enregistrer.")
+
     derives = pd.read_csv(fichier_derives) if fichier_derives.exists() else None
     resume = fichier_resume.read_text(encoding="utf-8") if fichier_resume.exists() else None
 
@@ -236,11 +258,82 @@ def supprimer_prediction_existante(cursor, exercice_id):
         (exercice_id,)
     )
 
+# def enregistrer_budget_annuel(cursor, exercice_id, annee_prediction, annuel):
+#     if annuel.empty:
+#         raise ValueError("Le fichier annuel est vide.")
+
+#     row = annuel.iloc[0]
+
+#     cursor.execute(
+#         """
+#         INSERT INTO budget (
+#             exercice_id,
+#             import_id,
+#             type_budget,
+#             statut,
+#             ca_export,
+#             charges_exploitation,
+#             frais_export,
+#             masse_salariale,
+#             resultat_operationnel,
+#             marge_operationnelle,
+#             annee_reference,
+#             modele,
+#             version_modele
+#         )
+#         VALUES (
+#             %s, NULL, 'PREVISIONNEL', 'GENERE',
+#             %s, %s, %s, %s, %s, %s, %s, %s, %s
+#         )
+#         RETURNING id
+#         """,
+#         (
+#             exercice_id,
+#             valeur(row, "ca_export"),
+#             valeur(row, "charges_exploitation"),
+#             valeur(row, "frais_export"),
+#             valeur(row, "masse_salariale"),
+#             valeur(row, "resultat_operationnel"),
+#             valeur(row, "marge_operationnelle"),
+#             annee_prediction - 1,
+#             MODELE,
+#             VERSION_MODELE
+#         )
+#     )
+
+#     budget_id = cursor.fetchone()[0]
+#     print(f"[OK] Budget prévisionnel créé : id={budget_id}")
+#     return budget_id
+
+
+
+
 def enregistrer_budget_annuel(cursor, exercice_id, annee_prediction, annuel):
     if annuel.empty:
         raise ValueError("Le fichier annuel est vide.")
 
     row = annuel.iloc[0]
+
+    ca_export = valeur(row, "ca_export")
+    charges = valeur(row, "charges_exploitation")
+    frais = valeur(row, "frais_export")
+    masse = valeur(row, "masse_salariale")
+    amortissements = valeur(row, "amortissements")
+
+    # Recalcul du résultat en intégrant les amortissements
+    resultat = (
+        ca_export
+        - charges
+        - frais
+        - masse
+        - amortissements
+    )
+
+    marge = (
+        resultat / ca_export
+        if ca_export != 0
+        else 0
+    )
 
     cursor.execute(
         """
@@ -253,6 +346,7 @@ def enregistrer_budget_annuel(cursor, exercice_id, annee_prediction, annuel):
             charges_exploitation,
             frais_export,
             masse_salariale,
+            amortissements,
             resultat_operationnel,
             marge_operationnelle,
             annee_reference,
@@ -260,19 +354,23 @@ def enregistrer_budget_annuel(cursor, exercice_id, annee_prediction, annuel):
             version_modele
         )
         VALUES (
-            %s, NULL, 'PREVISIONNEL', 'GENERE',
-            %s, %s, %s, %s, %s, %s, %s, %s, %s
+            %s, %s, %s, %s, %s, %s, %s,
+            %s, %s, %s, %s, %s, %s, %s
         )
         RETURNING id
         """,
         (
             exercice_id,
-            valeur(row, "ca_export"),
-            valeur(row, "charges_exploitation"),
-            valeur(row, "frais_export"),
-            valeur(row, "masse_salariale"),
-            valeur(row, "resultat_operationnel"),
-            valeur(row, "marge_operationnelle"),
+            None,
+            "PREVISIONNEL",
+            "GENERE",
+            ca_export,
+            charges,
+            frais,
+            masse,
+            amortissements,
+            resultat,
+            marge,
             annee_prediction - 1,
             MODELE,
             VERSION_MODELE
@@ -280,34 +378,134 @@ def enregistrer_budget_annuel(cursor, exercice_id, annee_prediction, annuel):
     )
 
     budget_id = cursor.fetchone()[0]
-    print(f"[OK] Budget prévisionnel créé : id={budget_id}")
+
+    print(
+        f"[OK] Budget prévisionnel créé : id={budget_id}"
+    )
+    print(
+        f"[OK] Amortissements annuels : {amortissements:,.2f} MGA"
+    )
+    print(
+        f"[OK] Résultat opérationnel annuel : {resultat:,.2f} MGA"
+    )
+
     return budget_id
 
+
+# def enregistrer_budget_mensuel(cursor, budget_id, mensuel):
+#     nombre = 0
+
+#     for _, row in mensuel.iterrows():
+#         if "mois" in row.index:
+#             mois_id = int(row["mois"])
+#         elif "mois_id" in row.index:
+#             mois_id = int(row["mois_id"])
+#         else:
+#             raise ValueError("Colonne mois/mois_id absente du fichier mensuel.")
+
+#         ventes = valeur(row, "ventes")
+#         production = valeur(row, "production_reelle")
+#         ca_export = valeur(row, "ca_export")
+#         charges = valeur(row, "charges_exploitation")
+#         frais = valeur(row, "frais_export")
+#         masse = valeur(row, "masse_salariale")
+#         resultat = valeur(row, "resultat_operationnel")
+
+#         if "marge_operationnelle" in row.index and not pd.isna(row["marge_operationnelle"]):
+#             marge = float(row["marge_operationnelle"])
+#         elif ca_export != 0:
+#             marge = resultat / ca_export
+#         else:
+#             marge = 0
+
+#         cursor.execute(
+#             """
+#             INSERT INTO budget_mensuel (
+#                 budget_id,
+#                 mois_id,
+#                 ventes,
+#                 production,
+#                 ca_export,
+#                 charges_exploitation,
+#                 frais_export,
+#                 masse_salariale,
+#                 resultat_operationnel,
+#                 marge_operationnelle
+#             )
+#             VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+#             """,
+#             (
+#                 budget_id,
+#                 mois_id,
+#                 ventes,
+#                 production,
+#                 ca_export,
+#                 charges,
+#                 frais,
+#                 masse,
+#                 resultat,
+#                 marge
+#             )
+#         )
+#         nombre += 1
+
+#     print(f"[OK] {nombre} prévisions mensuelles enregistrées.")
+
+
+
+
 def enregistrer_budget_mensuel(cursor, budget_id, mensuel):
+    if mensuel.empty:
+        raise ValueError("Le fichier mensuel est vide.")
+
+    if "amortissements" not in mensuel.columns:
+        raise ValueError(
+            "La colonne 'amortissements' est absente "
+            "du fichier de prédiction mensuelle."
+        )
+
     nombre = 0
+    total_amortissements = 0
 
     for _, row in mensuel.iterrows():
+
         if "mois" in row.index:
             mois_id = int(row["mois"])
         elif "mois_id" in row.index:
             mois_id = int(row["mois_id"])
         else:
-            raise ValueError("Colonne mois/mois_id absente du fichier mensuel.")
+            raise ValueError(
+                "Colonne mois/mois_id absente du fichier mensuel."
+            )
+
+        if not 1 <= mois_id <= 12:
+            raise ValueError(
+                f"Mois invalide : {mois_id}"
+            )
 
         ventes = valeur(row, "ventes")
         production = valeur(row, "production_reelle")
+
         ca_export = valeur(row, "ca_export")
         charges = valeur(row, "charges_exploitation")
         frais = valeur(row, "frais_export")
         masse = valeur(row, "masse_salariale")
-        resultat = valeur(row, "resultat_operationnel")
+        amortissements = valeur(row, "amortissements")
 
-        if "marge_operationnelle" in row.index and not pd.isna(row["marge_operationnelle"]):
-            marge = float(row["marge_operationnelle"])
-        elif ca_export != 0:
-            marge = resultat / ca_export
-        else:
-            marge = 0
+        # Résultat opérationnel avec amortissements
+        resultat = (
+            ca_export
+            - charges
+            - frais
+            - masse
+            - amortissements
+        )
+
+        marge = (
+            resultat / ca_export
+            if ca_export != 0
+            else 0
+        )
 
         cursor.execute(
             """
@@ -320,10 +518,14 @@ def enregistrer_budget_mensuel(cursor, budget_id, mensuel):
                 charges_exploitation,
                 frais_export,
                 masse_salariale,
+                amortissements,
                 resultat_operationnel,
                 marge_operationnelle
             )
-            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            VALUES (
+                %s, %s, %s, %s, %s, %s,
+                %s, %s, %s, %s, %s
+            )
             """,
             (
                 budget_id,
@@ -334,13 +536,30 @@ def enregistrer_budget_mensuel(cursor, budget_id, mensuel):
                 charges,
                 frais,
                 masse,
+                amortissements,
                 resultat,
                 marge
             )
         )
-        nombre += 1
 
-    print(f"[OK] {nombre} prévisions mensuelles enregistrées.")
+        nombre += 1
+        total_amortissements += amortissements
+
+        print(
+            f"[OK] Mois {mois_id:02d} | "
+            f"Amortissements : {amortissements:,.2f} MGA | "
+            f"Résultat : {resultat:,.2f} MGA"
+        )
+
+    print(
+        f"\n[OK] {nombre} prévisions mensuelles enregistrées."
+    )
+
+    print(
+        f"[OK] Total amortissements : "
+        f"{total_amortissements:,.2f} MGA"
+    )
+
 
 def enregistrer_evolutions(cursor, budget_id, annuel):
     if annuel.empty:
@@ -456,6 +675,140 @@ def enregistrer_resume(cursor, budget_id, resume):
 
     print("[OK] Résumé automatique enregistré.")
 
+
+def enregistrer_categories(cursor, budget_id, categories):
+    """
+    Enregistre les charges prévisionnelles par catégorie.
+
+    Table : prediction_charge_categorie
+
+    Colonnes :
+        id
+        budget_id
+        mois_id
+        categorie
+        montant_prevu
+
+    CSV attendu :
+        mois, categorie, charge_prevue
+    """
+
+    import pandas as pd
+    import numpy as np
+    from psycopg2.extras import execute_values
+
+    if categories is None or categories.empty:
+        raise ValueError(
+            "Aucune charge prévisionnelle par catégorie à enregistrer."
+        )
+
+    colonnes_obligatoires = {
+        "mois",
+        "categorie",
+        "charge_prevue"
+    }
+
+    manquantes = colonnes_obligatoires - set(categories.columns)
+
+    if manquantes:
+        raise ValueError(
+            f"Colonnes manquantes : {sorted(manquantes)}"
+        )
+
+    df = categories.copy()
+
+    df["mois"] = pd.to_numeric(
+        df["mois"],
+        errors="coerce"
+    )
+
+    df["charge_prevue"] = pd.to_numeric(
+        df["charge_prevue"],
+        errors="coerce"
+    )
+
+    df["categorie"] = (
+        df["categorie"]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+        .str.upper()
+    )
+
+    if (
+        df["mois"].isna().any()
+        or (~df["mois"].between(1, 12)).any()
+        or (df["mois"] % 1 != 0).any()
+    ):
+        raise ValueError(
+            "Les mois doivent être des entiers de 1 à 12."
+        )
+
+    if (df["categorie"] == "").any():
+        raise ValueError(
+            "Certaines catégories sont vides."
+        )
+
+    if (
+        df["charge_prevue"].isna().any()
+        or (~np.isfinite(df["charge_prevue"])).any()
+    ):
+        raise ValueError(
+            "Certains montants prévisionnels sont invalides."
+        )
+
+    df["mois"] = df["mois"].astype(int)
+
+    # Consolidation des doublons mois / catégorie
+    df = (
+        df.groupby(
+            ["mois", "categorie"],
+            as_index=False
+        )["charge_prevue"]
+        .sum()
+    )
+
+    lignes = [
+        (
+            int(budget_id),
+            int(ligne.mois),
+            str(ligne.categorie),
+            float(ligne.charge_prevue)
+        )
+        for ligne in df.itertuples(index=False)
+    ]
+
+    # Réexécution possible pour le même budget
+    cursor.execute(
+        """
+        DELETE FROM prediction_charge_categorie
+        WHERE budget_id = %s
+        """,
+        (int(budget_id),)
+    )
+
+    execute_values(
+        cursor,
+        """
+        INSERT INTO prediction_charge_categorie
+        (
+            budget_id,
+            mois_id,
+            categorie,
+            montant_prevu
+        )
+        VALUES %s
+        """,
+        lignes,
+        page_size=500
+    )
+
+    print(
+        f"[OK] {len(lignes)} charges prévisionnelles "
+        f"par catégorie enregistrées pour le budget {budget_id}."
+    )
+
+
 def main():
     print("=" * 80)
     print("SXMXDX - ENREGISTREMENT DE LA PREDICTION")
@@ -485,6 +838,7 @@ def main():
         )
 
         enregistrer_budget_mensuel(cursor, budget_id, mensuel)
+        enregistrer_categories(cursor, budget_id, categories)
         enregistrer_evolutions(cursor, budget_id, annuel)
         enregistrer_derives(cursor, budget_id, derives)
         enregistrer_resume(cursor, budget_id, resume)

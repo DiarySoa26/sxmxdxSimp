@@ -11,8 +11,8 @@ ETAPES=[
     ("Construction du dataset",BASE/"construire_dataset.py"),
     ("Préparation du dataset ML",BASE/"prediction"/"preparer_dataset.py"),
     ("Backtest des modèles",BASE/"prediction"/"tester_modeles.py"),
-    ("Prédiction budgétaire",BASE/"prediction"/"predire_budget.py"),
     ("Prédiction charges par catégorie",BASE/"prediction"/"predire_charges_categories.py"),
+    ("Prédiction budgétaire",BASE/"prediction"/"predire_budget.py"),
     ("Détection des dérives",BASE/"prediction"/"detecter_derives_categories.py"),
     ("Génération du résumé",BASE/"prediction"/"generer_resume_analyse.py"),
     ("Enregistrement PostgreSQL",BASE/"enregistrer_prediction.py")
