@@ -20,7 +20,7 @@
 #     for index, mois in enumerate(MOIS)
 # }
 
-# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx4"
+# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx5"
 
 # JDBC_PROPERTIES = {
 #     "user": "sxmxdx",
@@ -493,6 +493,12 @@ import os
 import sys
 import unicodedata
 from pyspark.sql import SparkSession, functions as F
+from pathlib import Path as _Path
+import sys as _sys
+_RACINE_PROJET = str(_Path(__file__).resolve().parents[2])
+if _RACINE_PROJET not in _sys.path:
+    _sys.path.append(_RACINE_PROJET)
+from pipeline.config_db import jdbc_url, jdbc_properties  # noqa: E402
 
 MOIS = [
     "Janvier", "Février", "Mars", "Avril",
@@ -692,16 +698,8 @@ def valider(df):
 
 
 def inserer(df):
-    url = os.getenv(
-        "JDBC_URL",
-        "jdbc:postgresql://postgres:5432/sxmxdx4"
-    )
-
-    proprietes = {
-        "user": os.getenv("DB_USER", "sxmxdx"),
-        "password": os.getenv("DB_PASSWORD", "diary"),
-        "driver": "org.postgresql.Driver"
-    }
+    url = jdbc_url()
+    proprietes = jdbc_properties()
 
     (
         df.select(

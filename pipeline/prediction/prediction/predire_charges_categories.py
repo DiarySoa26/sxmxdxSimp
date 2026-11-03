@@ -85,6 +85,7 @@ WITH dernier_import AS (
     FROM import_fichier i
     JOIN exercice e
         ON e.id = i.exercice_id
+    WHERE i.statut = 'PRET_GENERATION'
     ORDER BY
         i.exercice_id,
         i.date_import DESC,

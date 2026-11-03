@@ -1,10 +1,10 @@
 {
-    "modele": "0A3CA8EA_SOMIDA_2015_CHARGES_INCLUSES",
+    "modele": "CB66A8B1_SOMIDA_2015",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
-        "regles_techniques": 141,
-        "regles_formalisees": 141,
-        "regles_a_valider": 0
+        "regles_techniques": 133,
+        "regles_formalisees": 123,
+        "regles_a_valider": 10
     },
     "regles": [
         {
@@ -2686,72 +2686,6 @@
         },
         {
             "id": "RG_METIER_064",
-            "regle_technique_source": "RG_CHARGES_004",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "CHARGES",
-            "nom": "ACHAT PRODUITS",
-            "cible": "achat_produits",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(E19:P19)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E19:P19"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E19:P19",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q19"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_065",
-            "regle_technique_source": "RG_CHARGES_005",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "CHARGES",
-            "nom": "ACHAT PRODUITS",
-            "cible": "achat_produits",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(E20:P20)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E20:P20"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E20:P20",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q20"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_066",
             "regle_technique_source": "RG_EMPLOYES_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2851,7 +2785,7 @@
             "nombre_occurrences": 68
         },
         {
-            "id": "RG_METIER_067",
+            "id": "RG_METIER_065",
             "regle_technique_source": "RG_EXPORTATIONS_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2894,7 +2828,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_068",
+            "id": "RG_METIER_066",
             "regle_technique_source": "RG_EXPORTATIONS_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2937,7 +2871,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_069",
+            "id": "RG_METIER_067",
             "regle_technique_source": "RG_EXPORTATIONS_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3001,7 +2935,7 @@
             "nombre_occurrences": 3
         },
         {
-            "id": "RG_METIER_070",
+            "id": "RG_METIER_068",
             "regle_technique_source": "RG_EXPORTATIONS_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3034,8 +2968,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D12",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3056,7 +2990,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G12",
@@ -3075,7 +3009,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_071",
+            "id": "RG_METIER_069",
             "regle_technique_source": "RG_EXPORTATIONS_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3108,7 +3042,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_072",
+            "id": "RG_METIER_070",
             "regle_technique_source": "RG_EXPORTATIONS_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3141,8 +3075,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D15",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3163,7 +3097,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G15",
@@ -3182,7 +3116,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_073",
+            "id": "RG_METIER_071",
             "regle_technique_source": "RG_EXPORTATIONS_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3215,115 +3149,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_074",
-            "regle_technique_source": "RG_EXPORTATIONS_008",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D18=\"USD\",G17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",G17*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G18",
-                "H18",
-                "I18",
-                "J18",
-                "K18",
-                "L18",
-                "M18",
-                "N18",
-                "O18",
-                "P18",
-                "Q18",
-                "R18"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_075",
+            "id": "RG_METIER_072",
             "regle_technique_source": "RG_EXPORTATIONS_009",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Japon",
-            "cible": "japon",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G18:R18)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G18:R18"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G18:R18",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S18"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_076",
-            "regle_technique_source": "RG_EXPORTATIONS_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3355,8 +3182,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D21",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3377,7 +3204,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G21",
@@ -3396,8 +3223,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_077",
-            "regle_technique_source": "RG_EXPORTATIONS_011",
+            "id": "RG_METIER_073",
+            "regle_technique_source": "RG_EXPORTATIONS_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3429,115 +3256,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_078",
+            "id": "RG_METIER_074",
             "regle_technique_source": "RG_EXPORTATIONS_012",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D24=\"USD\",G23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",G23*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G24",
-                "H24",
-                "I24",
-                "J24",
-                "K24",
-                "L24",
-                "M24",
-                "N24",
-                "O24",
-                "P24",
-                "Q24",
-                "R24"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_079",
-            "regle_technique_source": "RG_EXPORTATIONS_013",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Japon",
-            "cible": "japon",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G24:R24)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G24:R24"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G24:R24",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S24"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_080",
-            "regle_technique_source": "RG_EXPORTATIONS_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3569,8 +3289,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D27",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3591,7 +3311,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G27",
@@ -3610,8 +3330,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_081",
-            "regle_technique_source": "RG_EXPORTATIONS_015",
+            "id": "RG_METIER_075",
+            "regle_technique_source": "RG_EXPORTATIONS_013",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3643,8 +3363,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_082",
-            "regle_technique_source": "RG_EXPORTATIONS_016",
+            "id": "RG_METIER_076",
+            "regle_technique_source": "RG_EXPORTATIONS_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3676,8 +3396,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D30",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3698,7 +3418,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G30",
@@ -3717,8 +3437,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_083",
-            "regle_technique_source": "RG_EXPORTATIONS_017",
+            "id": "RG_METIER_077",
+            "regle_technique_source": "RG_EXPORTATIONS_015",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3750,115 +3470,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_084",
-            "regle_technique_source": "RG_EXPORTATIONS_018",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D33=\"USD\",G32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",G32*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G33",
-                "H33",
-                "I33",
-                "J33",
-                "K33",
-                "L33",
-                "M33",
-                "N33",
-                "O33",
-                "P33",
-                "Q33",
-                "R33"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_085",
-            "regle_technique_source": "RG_EXPORTATIONS_019",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Russie",
-            "cible": "russie",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G33:R33)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G33:R33"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G33:R33",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S33"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_086",
-            "regle_technique_source": "RG_EXPORTATIONS_020",
+            "id": "RG_METIER_078",
+            "regle_technique_source": "RG_EXPORTATIONS_017",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3890,8 +3503,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D36",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3912,7 +3525,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G36",
@@ -3931,8 +3544,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_087",
-            "regle_technique_source": "RG_EXPORTATIONS_021",
+            "id": "RG_METIER_079",
+            "regle_technique_source": "RG_EXPORTATIONS_018",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3964,115 +3577,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_088",
-            "regle_technique_source": "RG_EXPORTATIONS_022",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D39=\"USD\",G38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",G38*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G39",
-                "H39",
-                "I39",
-                "J39",
-                "K39",
-                "L39",
-                "M39",
-                "N39",
-                "O39",
-                "P39",
-                "Q39",
-                "R39"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_089",
-            "regle_technique_source": "RG_EXPORTATIONS_023",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Russie",
-            "cible": "russie",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G39:R39)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G39:R39"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G39:R39",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S39"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_090",
-            "regle_technique_source": "RG_EXPORTATIONS_024",
+            "id": "RG_METIER_080",
+            "regle_technique_source": "RG_EXPORTATIONS_020",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4104,8 +3610,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D42",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -4126,7 +3632,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G42",
@@ -4145,8 +3651,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_091",
-            "regle_technique_source": "RG_EXPORTATIONS_025",
+            "id": "RG_METIER_081",
+            "regle_technique_source": "RG_EXPORTATIONS_021",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4178,8 +3684,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_092",
-            "regle_technique_source": "RG_EXPORTATIONS_026",
+            "id": "RG_METIER_082",
+            "regle_technique_source": "RG_EXPORTATIONS_022",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4211,8 +3717,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D45",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -4233,7 +3739,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G45",
@@ -4252,8 +3758,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_093",
-            "regle_technique_source": "RG_EXPORTATIONS_027",
+            "id": "RG_METIER_083",
+            "regle_technique_source": "RG_EXPORTATIONS_023",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4285,115 +3791,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_094",
-            "regle_technique_source": "RG_EXPORTATIONS_028",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D48=\"USD\",G47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",G47*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G48",
-                "H48",
-                "I48",
-                "J48",
-                "K48",
-                "L48",
-                "M48",
-                "N48",
-                "O48",
-                "P48",
-                "Q48",
-                "R48"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_095",
-            "regle_technique_source": "RG_EXPORTATIONS_029",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chine",
-            "cible": "chine",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G48:R48)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G48:R48"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G48:R48",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S48"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_096",
-            "regle_technique_source": "RG_EXPORTATIONS_030",
+            "id": "RG_METIER_084",
+            "regle_technique_source": "RG_EXPORTATIONS_025",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4425,8 +3824,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D51",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -4447,7 +3846,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G51",
@@ -4466,8 +3865,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_097",
-            "regle_technique_source": "RG_EXPORTATIONS_031",
+            "id": "RG_METIER_085",
+            "regle_technique_source": "RG_EXPORTATIONS_026",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4499,114 +3898,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_098",
-            "regle_technique_source": "RG_EXPORTATIONS_032",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D54=\"USD\",G53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",G53*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G54",
-                "H54",
-                "I54",
-                "J54",
-                "K54",
-                "L54",
-                "M54",
-                "N54",
-                "O54",
-                "P54",
-                "Q54",
-                "R54"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_099",
-            "regle_technique_source": "RG_EXPORTATIONS_033",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chine",
-            "cible": "chine",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G54:R54)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G54:R54"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G54:R54",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S54"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_100",
+            "id": "RG_METIER_086",
             "regle_technique_source": "RG_FRAIS_EXPORT_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4639,7 +3931,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_101",
+            "id": "RG_METIER_087",
             "regle_technique_source": "RG_FRAIS_EXPORT_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4672,7 +3964,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_102",
+            "id": "RG_METIER_088",
             "regle_technique_source": "RG_FRAIS_EXPORT_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4705,7 +3997,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_103",
+            "id": "RG_METIER_089",
             "regle_technique_source": "RG_FRAIS_EXPORT_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4738,7 +4030,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_104",
+            "id": "RG_METIER_090",
             "regle_technique_source": "RG_FRAIS_EXPORT_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4771,7 +4063,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_105",
+            "id": "RG_METIER_091",
             "regle_technique_source": "RG_FRAIS_EXPORT_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4804,7 +4096,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_106",
+            "id": "RG_METIER_092",
             "regle_technique_source": "RG_FRAIS_EXPORT_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4837,7 +4129,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_107",
+            "id": "RG_METIER_093",
             "regle_technique_source": "RG_FRAIS_EXPORT_008",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4870,7 +4162,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_108",
+            "id": "RG_METIER_094",
             "regle_technique_source": "RG_FRAIS_EXPORT_009",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4903,7 +4195,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_109",
+            "id": "RG_METIER_095",
             "regle_technique_source": "RG_FRAIS_EXPORT_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4936,7 +4228,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_110",
+            "id": "RG_METIER_096",
             "regle_technique_source": "RG_FRAIS_EXPORT_011",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4969,7 +4261,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_111",
+            "id": "RG_METIER_097",
             "regle_technique_source": "RG_FRAIS_EXPORT_012",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5002,7 +4294,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_112",
+            "id": "RG_METIER_098",
             "regle_technique_source": "RG_FRAIS_EXPORT_013",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5035,7 +4327,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_113",
+            "id": "RG_METIER_099",
             "regle_technique_source": "RG_FRAIS_EXPORT_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5068,7 +4360,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_114",
+            "id": "RG_METIER_100",
             "regle_technique_source": "RG_FRAIS_EXPORT_015",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5101,7 +4393,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_115",
+            "id": "RG_METIER_101",
             "regle_technique_source": "RG_FRAIS_EXPORT_016",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5134,7 +4426,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_116",
+            "id": "RG_METIER_102",
             "regle_technique_source": "RG_FRAIS_EXPORT_017",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5167,7 +4459,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_117",
+            "id": "RG_METIER_103",
             "regle_technique_source": "RG_FRAIS_EXPORT_018",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5200,7 +4492,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_118",
+            "id": "RG_METIER_104",
             "regle_technique_source": "RG_PRODUCTION_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5221,11 +4513,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D2:O2",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 }
             ],
-            "expression_metier": "SUM(abr_coupe)",
+            "expression_metier": "SUM(abr_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P2"
@@ -5233,7 +4525,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_119",
+            "id": "RG_METIER_105",
             "regle_technique_source": "RG_PRODUCTION_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5254,11 +4546,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D3:O3",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 }
             ],
-            "expression_metier": "SUM(fp1_coupe)",
+            "expression_metier": "SUM(fp1_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P3"
@@ -5266,40 +4558,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_120",
-            "regle_technique_source": "RG_PRODUCTION_003",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "PRODUCTION",
-            "nom": "AMPANDRANDAVA",
-            "cible": "ampandrandava",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(D4:O4)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D4:O4"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D4:O4",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                }
-            ],
-            "expression_metier": "SUM(fp2_coupe)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P4"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_121",
+            "id": "RG_METIER_106",
             "regle_technique_source": "RG_PRODUCTION_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5320,11 +4579,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D5:O5",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 }
             ],
-            "expression_metier": "SUM(tra)",
+            "expression_metier": "SUM(tra_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P5"
@@ -5332,40 +4591,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_122",
-            "regle_technique_source": "RG_PRODUCTION_005",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "PRODUCTION",
-            "nom": "AMPANDRANDAVA",
-            "cible": "ampandrandava",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(D6:O6)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D6:O6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D6:O6",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                }
-            ],
-            "expression_metier": "SUM(bsa)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P6"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_123",
+            "id": "RG_METIER_107",
             "regle_technique_source": "RG_PRODUCTION_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5386,11 +4612,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D7:O7",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 }
             ],
-            "expression_metier": "SUM(abr_coupe)",
+            "expression_metier": "SUM(abr_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P7"
@@ -5398,7 +4624,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_124",
+            "id": "RG_METIER_108",
             "regle_technique_source": "RG_PRODUCTION_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5419,11 +4645,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D8:O8",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 }
             ],
-            "expression_metier": "SUM(fp1_coupe)",
+            "expression_metier": "SUM(fp1_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P8"
@@ -5431,40 +4657,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_125",
-            "regle_technique_source": "RG_PRODUCTION_008",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "PRODUCTION",
-            "nom": "FORT DAUPHIN",
-            "cible": "fort_dauphin",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(D9:O9)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D9:O9"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D9:O9",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                }
-            ],
-            "expression_metier": "SUM(fp2_coupe)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P9"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_126",
+            "id": "RG_METIER_109",
             "regle_technique_source": "RG_PRODUCTION_009",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5485,11 +4678,11 @@
                 {
                     "feuille": "Production",
                     "cellule": "D10:O10",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 }
             ],
-            "expression_metier": "SUM(tra)",
+            "expression_metier": "SUM(tra_gaz)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "P10"
@@ -5497,40 +4690,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_127",
-            "regle_technique_source": "RG_PRODUCTION_010",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "PRODUCTION",
-            "nom": "FORT DAUPHIN",
-            "cible": "fort_dauphin",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(D11:O11)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D11:O11"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D11:O11",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                }
-            ],
-            "expression_metier": "SUM(bsa)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P11"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_128",
+            "id": "RG_METIER_110",
             "regle_technique_source": "RG_SYNTHESE_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5629,7 +4789,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_129",
+            "id": "RG_METIER_111",
             "regle_technique_source": "RG_SYNTHESE_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5662,7 +4822,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_130",
+            "id": "RG_METIER_112",
             "regle_technique_source": "RG_SYNTHESE_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5706,7 +4866,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_131",
+            "id": "RG_METIER_113",
             "regle_technique_source": "RG_SYNTHESE_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5739,7 +4899,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_132",
+            "id": "RG_METIER_114",
             "regle_technique_source": "RG_SYNTHESE_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5783,7 +4943,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_133",
+            "id": "RG_METIER_115",
             "regle_technique_source": "RG_SYNTHESE_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5816,7 +4976,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_134",
+            "id": "RG_METIER_116",
             "regle_technique_source": "RG_SYNTHESE_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5860,7 +5020,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_135",
+            "id": "RG_METIER_117",
             "regle_technique_source": "RG_SYNTHESE_008",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5893,7 +5053,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_136",
+            "id": "RG_METIER_118",
             "regle_technique_source": "RG_SYNTHESE_009",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -5977,7 +5137,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_137",
+            "id": "RG_METIER_119",
             "regle_technique_source": "RG_SYNTHESE_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -6010,7 +5170,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_138",
+            "id": "RG_METIER_120",
             "regle_technique_source": "RG_SYNTHESE_011",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -6064,7 +5224,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_139",
+            "id": "RG_METIER_121",
             "regle_technique_source": "RG_SYNTHESE_012",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -6107,7 +5267,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_140",
+            "id": "RG_METIER_122",
             "regle_technique_source": "RG_SYNTHESE_013",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -6151,7 +5311,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_141",
+            "id": "RG_METIER_123",
             "regle_technique_source": "RG_SYNTHESE_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -6184,5 +5344,66 @@
             "nombre_occurrences": 1
         }
     ],
-    "a_valider": []
+    "a_valider": [
+        {
+            "regle_technique": "RG_EXPORTATIONS_008",
+            "feuille": "Exportations",
+            "cellule": "S18",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_011",
+            "feuille": "Exportations",
+            "cellule": "S24",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_016",
+            "feuille": "Exportations",
+            "cellule": "S33",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_019",
+            "feuille": "Exportations",
+            "cellule": "S39",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_024",
+            "feuille": "Exportations",
+            "cellule": "S48",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_027",
+            "feuille": "Exportations",
+            "cellule": "S54",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_PRODUCTION_003",
+            "feuille": "Production",
+            "cellule": "P4",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_PRODUCTION_005",
+            "feuille": "Production",
+            "cellule": "P6",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_PRODUCTION_008",
+            "feuille": "Production",
+            "cellule": "P9",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_PRODUCTION_010",
+            "feuille": "Production",
+            "cellule": "P11",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        }
+    ]
 }

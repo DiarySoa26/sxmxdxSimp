@@ -150,23 +150,18 @@ import psycopg2
 BASE = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE / "output"
 
-DB_HOST = os.getenv("DB_HOST", "postgres")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "sxmxdx4")
-DB_USER = os.getenv("DB_USER", "sxmxdx")
-DB_PASSWORD = os.getenv("DB_PASSWORD", "diary")
+from pathlib import Path as _Path
+import sys as _sys
+_RACINE_PROJET = str(_Path(__file__).resolve().parents[2])
+if _RACINE_PROJET not in _sys.path:
+    _sys.path.append(_RACINE_PROJET)
+from pipeline.config_db import get_connection as _connexion_commune  # noqa: E402
 
 MODELE = "REGRESSION"
 VERSION_MODELE = "1.0"
 
 def get_connection():
-    return psycopg2.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASSWORD
-    )
+    return _connexion_commune()
 
 def valeur(row, colonne, default=0):
     if colonne not in row.index:

@@ -1,38 +1,38 @@
-# Reverse engineering : d78b54d9_SOMIDA_2020.xlsx
+# Reverse engineering : 063c3b5b_SOMIDA_2019.xlsx
 
 ## Feuilles
 
 | Feuille | Formules | Mise en page temporelle |
 |---|---|---|
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
-| Employes | 94 | aucune mise en page temporelle détectée |
+| Employes | 90 | aucune mise en page temporelle détectée |
 | Production | 10 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
-| Charges | 18 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
-| Exportations | 200 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
+| Charges | 3 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
+| Exportations | 128 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
 | Frais Export | 18 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Synthese | 91 | mois en colonnes C:N (en-tête ligne 1), total en O [DETECTEE] |
-| Amortissements | 11 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
-| CR | 403 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
+| CR | 390 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
+| Amortissements | 0 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 
 ## Resultat
 
-- Formules Excel : 845
-- Regles uniques apres regroupement : 167
-- Regles formalisees (avec libelle metier) : 167
-- Regles a valider (libelle non identifie) : 0
+- Formules Excel : 730
+- Regles uniques apres regroupement : 133
+- Regles formalisees (avec libelle metier) : 123
+- Regles a valider (libelle non identifie) : 10
 
 ## Exemples de regles metier detectees
 
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
+- **chiffre_d_affaires** (MENSUELLE) = `IF(synthese.ca_export = "", 0, synthese.ca_export)`
+- **chiffre_d_affaires** (ANNUELLE) = `SUM(chiffre_d_affaires)`
+- **production_stockee** (MENSUELLE) = `0`
+- **production_stockee** (ANNUELLE) = `SUM(production_stockee)`
+- **production_immobilisee** (MENSUELLE) = `0`
+- **production_immobilisee** (ANNUELLE) = `SUM(production_immobilisee)`
+- **i_production_de_l_exercice** (MENSUELLE) = `SUM(chiffre_d_affaires)`
+- **i_production_de_l_exercice** (ANNUELLE) = `SUM(i_production_de_l_exercice)`
+- **achats_consommes_charges_directes_de_production** (MENSUELLE) = `SUMIF(charges.categorie, "PRODUCTION", charges.ampandrandava) + SUMIF(charges.categorie, "ACHAT PRODUITS", charges.ampandrandava)`
+- **achats_consommes_charges_directes_de_production** (ANNUELLE) = `SUM(achats_consommes_charges_directes_de_production)`
 
 ## Points d'attention : formules differentes dans un meme regroupement
 
@@ -42,3 +42,16 @@
 - RG_CR_039 (CR) : formule differente en C24, D24, E24, F24, G24, H24, I24, J24, K24, L24, M24
 - RG_EXPORTATIONS_003 (Exportations) : formule differente en J5, M5
 - RG_SYNTHESE_001 (Synthese) : formule differente en D2, E2, F2, G2, H2, I2, J2, K2, L2, M2, N2
+
+## Regles a valider manuellement
+
+- RG_EXPORTATIONS_008 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S18)
+- RG_EXPORTATIONS_011 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S24)
+- RG_EXPORTATIONS_016 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S33)
+- RG_EXPORTATIONS_019 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S39)
+- RG_EXPORTATIONS_024 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S48)
+- RG_EXPORTATIONS_027 : LIBELLE_METIER_NON_IDENTIFIE (Exportations!S54)
+- RG_PRODUCTION_003 : LIBELLE_METIER_NON_IDENTIFIE (Production!P4)
+- RG_PRODUCTION_005 : LIBELLE_METIER_NON_IDENTIFIE (Production!P6)
+- RG_PRODUCTION_008 : LIBELLE_METIER_NON_IDENTIFIE (Production!P9)
+- RG_PRODUCTION_010 : LIBELLE_METIER_NON_IDENTIFIE (Production!P11)

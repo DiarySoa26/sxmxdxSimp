@@ -12,18 +12,17 @@ import psycopg2
 #     # "port": 5434,
 #     "port": 5432,
 
-#     "database": "sxmxdx4",
+#     "database": "sxmxdx5",
 #     "user": "sxmxdx",
 #     "password": "diary"
 # }
 
-DB_CONFIG = {
-    "host": os.getenv("DB_HOST", "postgres"),
-    "port": int(os.getenv("DB_PORT", "5432")),
-    "dbname": os.getenv("DB_NAME", "sxmxdx4"),
-    "user": os.getenv("DB_USER", "sxmxdx"),
-    "password": os.getenv("DB_PASSWORD", "diary"),
-}
+from pathlib import Path as _Path
+import sys as _sys
+_RACINE_PROJET = str(_Path(__file__).resolve().parents[2])
+if _RACINE_PROJET not in _sys.path:
+    _sys.path.append(_RACINE_PROJET)
+from pipeline.config_db import DB_CONFIG  # noqa: E402
 
 
 def creer_import(fichier_excel, exercice):

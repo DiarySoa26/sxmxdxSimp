@@ -23,7 +23,7 @@
 # DB_CONFIG = {
 #     "host": "localhost",
 #     "port": 5434,
-#     "dbname": "sxmxdx4",
+#     "dbname": "sxmxdx5",
 #     "user": "sxmxdx",
 #     "password": "diary",
 # }
@@ -237,13 +237,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-DB_CONFIG = {
-    "host": "postgres",
-    "port": 5432,
-    "dbname": "sxmxdx4",
-    "user": "sxmxdx",
-    "password": "diary",
-}
+from pipeline.config_db import DB_CONFIG  # noqa: E402
 
 def connecter():
     return psycopg2.connect(**DB_CONFIG)

@@ -1,14 +1,377 @@
 {
-    "modele": "F95D9CFD_SOMIDA_2022",
+    "modele": "12DAFAD4_SOMIDA_2021",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
-        "regles_techniques": 108,
-        "regles_formalisees": 108,
-        "regles_a_valider": 0
+        "regles_techniques": 116,
+        "regles_formalisees": 110,
+        "regles_a_valider": 6
     },
     "regles": [
         {
             "id": "RG_METIER_001",
+            "regle_technique_source": "RG_AMORTISSEMENTS_001",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E2:P2)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E2:P2"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E2:P2",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q2"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_002",
+            "regle_technique_source": "RG_AMORTISSEMENTS_002",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E3:P3)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E3:P3"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E3:P3",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q3"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_003",
+            "regle_technique_source": "RG_AMORTISSEMENTS_003",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E4:P4)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E4:P4"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E4:P4",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q4"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_004",
+            "regle_technique_source": "RG_AMORTISSEMENTS_004",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E5:P5)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E5:P5"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E5:P5",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q5"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_005",
+            "regle_technique_source": "RG_AMORTISSEMENTS_005",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E6:P6)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E6:P6"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E6:P6",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q6"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_006",
+            "regle_technique_source": "RG_AMORTISSEMENTS_006",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E7:P7)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E7:P7"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E7:P7",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q7"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_007",
+            "regle_technique_source": "RG_AMORTISSEMENTS_007",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E8:P8)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E8:P8"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E8:P8",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q8"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_008",
+            "regle_technique_source": "RG_AMORTISSEMENTS_008",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E9:P9)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E9:P9"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E9:P9",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q9"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_009",
+            "regle_technique_source": "RG_AMORTISSEMENTS_009",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E10:P10)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E10:P10"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E10:P10",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q10"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_010",
+            "regle_technique_source": "RG_AMORTISSEMENTS_010",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E11:P11)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E11:P11"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E11:P11",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q11"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_011",
+            "regle_technique_source": "RG_AMORTISSEMENTS_011",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "AMORTISSEMENTS",
+            "nom": "AMORTISSEMENT",
+            "cible": "amortissement",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E12:P12)",
+            "dependances": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E12:P12"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Amortissements",
+                    "cellule": "E12:P12",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
+                }
+            ],
+            "expression_metier": "SUM(general)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q12"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_012",
             "regle_technique_source": "RG_CR_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -18,7 +381,7 @@
             "operation": "REFERENCE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF(Synthese!C2=\"\",0,Synthese!C2)",
+            "formule_excel_reference": "=Synthese!C2",
             "dependances": [
                 {
                     "feuille": "Synthese",
@@ -33,7 +396,7 @@
                     "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "IF(synthese.ca_export = \"\", 0, synthese.ca_export)",
+            "expression_metier": "synthese.ca_export",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B5",
@@ -52,7 +415,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_002",
+            "id": "RG_METIER_013",
             "regle_technique_source": "RG_CR_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -85,7 +448,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_003",
+            "id": "RG_METIER_014",
             "regle_technique_source": "RG_CR_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -117,7 +480,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_004",
+            "id": "RG_METIER_015",
             "regle_technique_source": "RG_CR_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -150,7 +513,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_005",
+            "id": "RG_METIER_016",
             "regle_technique_source": "RG_CR_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -182,7 +545,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_006",
+            "id": "RG_METIER_017",
             "regle_technique_source": "RG_CR_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -215,7 +578,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_007",
+            "id": "RG_METIER_018",
             "regle_technique_source": "RG_CR_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -259,7 +622,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_008",
+            "id": "RG_METIER_019",
             "regle_technique_source": "RG_CR_008",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -292,7 +655,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_009",
+            "id": "RG_METIER_020",
             "regle_technique_source": "RG_CR_009",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -302,76 +665,76 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$E$2:$E$27)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava)",
+            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ACHAT PRODUITS\", charges.ampandrandava)",
             "anomalies_regroupement": [
                 {
                     "cellule": "C9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$F$2:$F$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$F$2:$F$45)"
                 },
                 {
                     "cellule": "D9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$G$2:$G$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$G$2:$G$45)"
                 },
                 {
                     "cellule": "E9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$H$2:$H$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$H$2:$H$45)"
                 },
                 {
                     "cellule": "F9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$I$2:$I$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$I$2:$I$45)"
                 },
                 {
                     "cellule": "G9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$J$2:$J$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$J$2:$J$45)"
                 },
                 {
                     "cellule": "H9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$K$2:$K$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$K$2:$K$45)"
                 },
                 {
                     "cellule": "I9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$L$2:$L$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$L$2:$L$45)"
                 },
                 {
                     "cellule": "J9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$M$2:$M$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$M$2:$M$45)"
                 },
                 {
                     "cellule": "K9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$N$2:$N$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$N$2:$N$45)"
                 },
                 {
                     "cellule": "L9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$O$2:$O$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$O$2:$O$45)"
                 },
                 {
                     "cellule": "M9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"PRODUCTION\",Charges!$P$2:$P$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$P$2:$P$45)"
                 }
             ],
             "cellules_excel": [
@@ -391,7 +754,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_010",
+            "id": "RG_METIER_021",
             "regle_technique_source": "RG_CR_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -424,7 +787,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_011",
+            "id": "RG_METIER_022",
             "regle_technique_source": "RG_CR_011",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -434,19 +797,15 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$E$2:$E$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$E$2:$E$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$E$2:$E$27)+SUM('Frais Export'!$E$2:$E$50)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "B2:B27"
+                    "cellule": "E2:E45"
                 },
                 {
                     "feuille": "Frais Export",
@@ -456,21 +815,15 @@
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "B2:B27",
-                    "libelle": "Nature",
-                    "identifiant_semantique": "nature"
                 },
                 {
                     "feuille": "Frais Export",
@@ -479,51 +832,51 @@
                     "identifiant_semantique": "transport_local"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) - SUMIF(charges.nature, \"Salaires administratifs\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUM(frais_export.transport_local)",
+            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUM(frais_export.transport_local)",
             "anomalies_regroupement": [
                 {
                     "cellule": "C10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$F$2:$F$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$F$2:$F$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$F$2:$F$27)+SUM('Frais Export'!$F$2:$F$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$F$2:$F$45)+SUM('Frais Export'!$F$2:$F$50)"
                 },
                 {
                     "cellule": "D10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$G$2:$G$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$G$2:$G$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$G$2:$G$27)+SUM('Frais Export'!$G$2:$G$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$G$2:$G$45)+SUM('Frais Export'!$G$2:$G$50)"
                 },
                 {
                     "cellule": "E10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$H$2:$H$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$H$2:$H$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$H$2:$H$27)+SUM('Frais Export'!$H$2:$H$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$H$2:$H$45)+SUM('Frais Export'!$H$2:$H$50)"
                 },
                 {
                     "cellule": "F10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$I$2:$I$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$I$2:$I$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$I$2:$I$27)+SUM('Frais Export'!$I$2:$I$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$I$2:$I$45)+SUM('Frais Export'!$I$2:$I$50)"
                 },
                 {
                     "cellule": "G10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$J$2:$J$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$J$2:$J$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$J$2:$J$27)+SUM('Frais Export'!$J$2:$J$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$J$2:$J$45)+SUM('Frais Export'!$J$2:$J$50)"
                 },
                 {
                     "cellule": "H10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$K$2:$K$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$K$2:$K$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$K$2:$K$27)+SUM('Frais Export'!$K$2:$K$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$K$2:$K$45)+SUM('Frais Export'!$K$2:$K$50)"
                 },
                 {
                     "cellule": "I10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$L$2:$L$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$L$2:$L$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$L$2:$L$27)+SUM('Frais Export'!$L$2:$L$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$L$2:$L$45)+SUM('Frais Export'!$L$2:$L$50)"
                 },
                 {
                     "cellule": "J10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$M$2:$M$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$M$2:$M$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$M$2:$M$27)+SUM('Frais Export'!$M$2:$M$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$M$2:$M$45)+SUM('Frais Export'!$M$2:$M$50)"
                 },
                 {
                     "cellule": "K10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$N$2:$N$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$N$2:$N$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$N$2:$N$27)+SUM('Frais Export'!$N$2:$N$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$N$2:$N$45)+SUM('Frais Export'!$N$2:$N$50)"
                 },
                 {
                     "cellule": "L10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$O$2:$O$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$O$2:$O$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$O$2:$O$27)+SUM('Frais Export'!$O$2:$O$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$O$2:$O$45)+SUM('Frais Export'!$O$2:$O$50)"
                 },
                 {
                     "cellule": "M10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"ADMINISTRATION\",Charges!$P$2:$P$27)-SUMIF(Charges!$B$2:$B$27,\"Salaires administratifs\",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,\"LOGISTIQUE\",Charges!$P$2:$P$27)+SUMIF(Charges!$A$2:$A$27,\"SECURITE\",Charges!$P$2:$P$27)+SUM('Frais Export'!$P$2:$P$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$P$2:$P$45)+SUM('Frais Export'!$P$2:$P$50)"
                 }
             ],
             "cellules_excel": [
@@ -543,7 +896,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_012",
+            "id": "RG_METIER_023",
             "regle_technique_source": "RG_CR_012",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -576,7 +929,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_013",
+            "id": "RG_METIER_024",
             "regle_technique_source": "RG_CR_013",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -620,7 +973,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_014",
+            "id": "RG_METIER_025",
             "regle_technique_source": "RG_CR_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -653,7 +1006,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_015",
+            "id": "RG_METIER_026",
             "regle_technique_source": "RG_CR_015",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -707,7 +1060,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_016",
+            "id": "RG_METIER_027",
             "regle_technique_source": "RG_CR_016",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -740,7 +1093,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_017",
+            "id": "RG_METIER_028",
             "regle_technique_source": "RG_CR_017",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -772,7 +1125,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_018",
+            "id": "RG_METIER_029",
             "regle_technique_source": "RG_CR_018",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -805,7 +1158,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_019",
+            "id": "RG_METIER_030",
             "regle_technique_source": "RG_CR_019",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -815,27 +1168,27 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$E$2:$E$27)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -844,47 +1197,47 @@
             "anomalies_regroupement": [
                 {
                     "cellule": "C14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$F$2:$F$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$F$2:$F$45)"
                 },
                 {
                     "cellule": "D14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$G$2:$G$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$G$2:$G$45)"
                 },
                 {
                     "cellule": "E14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$H$2:$H$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$H$2:$H$45)"
                 },
                 {
                     "cellule": "F14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$I$2:$I$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$I$2:$I$45)"
                 },
                 {
                     "cellule": "G14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$J$2:$J$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$J$2:$J$45)"
                 },
                 {
                     "cellule": "H14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$K$2:$K$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$K$2:$K$45)"
                 },
                 {
                     "cellule": "I14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$L$2:$L$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$L$2:$L$45)"
                 },
                 {
                     "cellule": "J14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$M$2:$M$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$M$2:$M$45)"
                 },
                 {
                     "cellule": "K14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$N$2:$N$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$N$2:$N$45)"
                 },
                 {
                     "cellule": "L14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$O$2:$O$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$O$2:$O$45)"
                 },
                 {
                     "cellule": "M14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FISCAL\",Charges!$P$2:$P$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$P$2:$P$45)"
                 }
             ],
             "cellules_excel": [
@@ -904,7 +1257,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_020",
+            "id": "RG_METIER_031",
             "regle_technique_source": "RG_CR_020",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -937,7 +1290,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_021",
+            "id": "RG_METIER_032",
             "regle_technique_source": "RG_CR_021",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -947,7 +1300,7 @@
             "operation": "REFERENCE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
+            "formule_excel_reference": "=Synthese!C5",
             "dependances": [
                 {
                     "feuille": "Synthese",
@@ -962,7 +1315,7 @@
                     "identifiant_semantique": "masse_salariale"
                 }
             ],
-            "expression_metier": "IF(synthese.masse_salariale = \"\", 0, synthese.masse_salariale)",
+            "expression_metier": "synthese.masse_salariale",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B15",
@@ -981,7 +1334,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_022",
+            "id": "RG_METIER_033",
             "regle_technique_source": "RG_CR_022",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1014,7 +1367,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_023",
+            "id": "RG_METIER_034",
             "regle_technique_source": "RG_CR_023",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1088,7 +1441,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_024",
+            "id": "RG_METIER_035",
             "regle_technique_source": "RG_CR_024",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1121,7 +1474,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_025",
+            "id": "RG_METIER_036",
             "regle_technique_source": "RG_CR_025",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1153,7 +1506,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_026",
+            "id": "RG_METIER_037",
             "regle_technique_source": "RG_CR_026",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1186,7 +1539,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_027",
+            "id": "RG_METIER_038",
             "regle_technique_source": "RG_CR_027",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1218,7 +1571,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_028",
+            "id": "RG_METIER_039",
             "regle_technique_source": "RG_CR_028",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1251,7 +1604,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_029",
+            "id": "RG_METIER_040",
             "regle_technique_source": "RG_CR_029",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1261,22 +1614,22 @@
             "operation": "SOMME",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E40)",
             "dependances": [
                 {
                     "feuille": "Amortissements",
-                    "cellule": "E2:E80"
+                    "cellule": "E2:E40"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Amortissements",
-                    "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "cellule": "E2:E40",
+                    "libelle": "GENERAL",
+                    "identifiant_semantique": "general"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "SUM(amortissements.general)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B19",
@@ -1295,7 +1648,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_030",
+            "id": "RG_METIER_041",
             "regle_technique_source": "RG_CR_030",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1328,7 +1681,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_031",
+            "id": "RG_METIER_042",
             "regle_technique_source": "RG_CR_031",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1360,7 +1713,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_032",
+            "id": "RG_METIER_043",
             "regle_technique_source": "RG_CR_032",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1393,7 +1746,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_033",
+            "id": "RG_METIER_044",
             "regle_technique_source": "RG_CR_033",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1425,7 +1778,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_034",
+            "id": "RG_METIER_045",
             "regle_technique_source": "RG_CR_034",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1458,7 +1811,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_035",
+            "id": "RG_METIER_046",
             "regle_technique_source": "RG_CR_035",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1552,7 +1905,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_036",
+            "id": "RG_METIER_047",
             "regle_technique_source": "RG_CR_036",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1585,7 +1938,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_037",
+            "id": "RG_METIER_048",
             "regle_technique_source": "RG_CR_037",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1617,7 +1970,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_038",
+            "id": "RG_METIER_049",
             "regle_technique_source": "RG_CR_038",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1650,7 +2003,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_039",
+            "id": "RG_METIER_050",
             "regle_technique_source": "RG_CR_039",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1660,27 +2013,27 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$E$2:$E$40)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A40"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E40"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A40",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E40",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -1689,47 +2042,47 @@
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$F$2:$F$40)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$G$2:$G$40)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$H$2:$H$40)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$I$2:$I$40)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$J$2:$J$40)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$K$2:$K$40)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$L$2:$L$40)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$M$2:$M$40)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$N$2:$N$40)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$O$2:$O$40)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$P$2:$P$40)"
                 }
             ],
             "cellules_excel": [
@@ -1749,7 +2102,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_040",
+            "id": "RG_METIER_051",
             "regle_technique_source": "RG_CR_040",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1782,7 +2135,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_041",
+            "id": "RG_METIER_052",
             "regle_technique_source": "RG_CR_041",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1836,7 +2189,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_042",
+            "id": "RG_METIER_053",
             "regle_technique_source": "RG_CR_042",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1869,7 +2222,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_043",
+            "id": "RG_METIER_054",
             "regle_technique_source": "RG_CR_043",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1923,7 +2276,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_044",
+            "id": "RG_METIER_055",
             "regle_technique_source": "RG_CR_044",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -1956,7 +2309,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_045",
+            "id": "RG_METIER_056",
             "regle_technique_source": "RG_CR_045",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2000,7 +2353,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_046",
+            "id": "RG_METIER_057",
             "regle_technique_source": "RG_CR_046",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2033,7 +2386,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_047",
+            "id": "RG_METIER_058",
             "regle_technique_source": "RG_CR_047",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2065,7 +2418,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_048",
+            "id": "RG_METIER_059",
             "regle_technique_source": "RG_CR_048",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2098,7 +2451,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_049",
+            "id": "RG_METIER_060",
             "regle_technique_source": "RG_CR_049",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2162,7 +2515,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_050",
+            "id": "RG_METIER_061",
             "regle_technique_source": "RG_CR_050",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2195,7 +2548,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_051",
+            "id": "RG_METIER_062",
             "regle_technique_source": "RG_CR_051",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2227,7 +2580,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_052",
+            "id": "RG_METIER_063",
             "regle_technique_source": "RG_CR_052",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2260,7 +2613,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_053",
+            "id": "RG_METIER_064",
             "regle_technique_source": "RG_CR_053",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2292,7 +2645,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_054",
+            "id": "RG_METIER_065",
             "regle_technique_source": "RG_CR_054",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2325,7 +2678,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_055",
+            "id": "RG_METIER_066",
             "regle_technique_source": "RG_CR_055",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2379,7 +2732,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_056",
+            "id": "RG_METIER_067",
             "regle_technique_source": "RG_CR_056",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2412,7 +2765,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_057",
+            "id": "RG_METIER_068",
             "regle_technique_source": "RG_CR_057",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2466,7 +2819,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_058",
+            "id": "RG_METIER_069",
             "regle_technique_source": "RG_CR_058",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2499,7 +2852,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_059",
+            "id": "RG_METIER_070",
             "regle_technique_source": "RG_CR_059",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2553,7 +2906,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_060",
+            "id": "RG_METIER_071",
             "regle_technique_source": "RG_CR_060",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2596,7 +2949,203 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_061",
+            "id": "RG_METIER_072",
+            "regle_technique_source": "RG_CR_061",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "CR",
+            "nom": "Taux de résultat opérationnel (%)",
+            "cible": "taux_de_resultat_operationnel",
+            "operation": "DIVISION",
+            "periodicite_technique": "MENSUELLE",
+            "periodicite": "MENSUELLE",
+            "formule_excel_reference": "=IFERROR(B22/B5,0)",
+            "dependances": [
+                {
+                    "feuille": "CR",
+                    "cellule": "B22"
+                },
+                {
+                    "feuille": "CR",
+                    "cellule": "B5"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "CR",
+                    "cellule": "B22",
+                    "libelle": "V. RÉSULTAT OPÉRATIONNEL",
+                    "identifiant_semantique": "v_resultat_operationnel"
+                },
+                {
+                    "feuille": "CR",
+                    "cellule": "B5",
+                    "libelle": "Chiffre d'affaires",
+                    "identifiant_semantique": "chiffre_d_affaires"
+                }
+            ],
+            "expression_metier": "IFERROR(v_resultat_operationnel / chiffre_d_affaires, 0)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "B35",
+                "C35",
+                "D35",
+                "E35",
+                "F35",
+                "G35",
+                "H35",
+                "I35",
+                "J35",
+                "K35",
+                "L35",
+                "M35"
+            ],
+            "nombre_occurrences": 12
+        },
+        {
+            "id": "RG_METIER_073",
+            "regle_technique_source": "RG_CR_062",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "CR",
+            "nom": "Taux de résultat opérationnel (%)",
+            "cible": "taux_de_resultat_operationnel",
+            "operation": "DIVISION",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=IFERROR(N22/N5,0)",
+            "dependances": [
+                {
+                    "feuille": "CR",
+                    "cellule": "N22"
+                },
+                {
+                    "feuille": "CR",
+                    "cellule": "N5"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "CR",
+                    "cellule": "N22",
+                    "libelle": "V. RÉSULTAT OPÉRATIONNEL",
+                    "identifiant_semantique": "v_resultat_operationnel"
+                },
+                {
+                    "feuille": "CR",
+                    "cellule": "N5",
+                    "libelle": "Chiffre d'affaires",
+                    "identifiant_semantique": "chiffre_d_affaires"
+                }
+            ],
+            "expression_metier": "IFERROR(v_resultat_operationnel / chiffre_d_affaires, 0)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "N35"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_074",
+            "regle_technique_source": "RG_CHARGES_001",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "CHARGES",
+            "nom": "ACHAT PRODUITS",
+            "cible": "achat_produits",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E16:P16)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q16"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_075",
+            "regle_technique_source": "RG_CHARGES_002",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "CHARGES",
+            "nom": "ACHAT PRODUITS",
+            "cible": "achat_produits",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E17:P17)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q17"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_076",
+            "regle_technique_source": "RG_CHARGES_003",
+            "type": "REGLE_METIER",
+            "origine": "REVERSE_ENGINEERING_EXCEL",
+            "domaine": "CHARGES",
+            "nom": "ACHAT PRODUITS",
+            "cible": "achat_produits",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "formule_excel_reference": "=SUM(E18:P18)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q18"
+            ],
+            "nombre_occurrences": 1
+        },
+        {
+            "id": "RG_METIER_077",
             "regle_technique_source": "RG_EMPLOYES_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2716,12 +3265,13 @@
                 "I91",
                 "I92",
                 "I93",
-                "I94"
+                "I94",
+                "I95"
             ],
-            "nombre_occurrences": 93
+            "nombre_occurrences": 94
         },
         {
-            "id": "RG_METIER_062",
+            "id": "RG_METIER_078",
             "regle_technique_source": "RG_EXPORTATIONS_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2764,7 +3314,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_063",
+            "id": "RG_METIER_079",
             "regle_technique_source": "RG_EXPORTATIONS_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2807,7 +3357,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_064",
+            "id": "RG_METIER_080",
             "regle_technique_source": "RG_EXPORTATIONS_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2871,7 +3421,7 @@
             "nombre_occurrences": 3
         },
         {
-            "id": "RG_METIER_065",
+            "id": "RG_METIER_081",
             "regle_technique_source": "RG_EXPORTATIONS_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2904,8 +3454,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D12",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2926,7 +3476,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G12",
@@ -2945,7 +3495,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_066",
+            "id": "RG_METIER_082",
             "regle_technique_source": "RG_EXPORTATIONS_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -2978,7 +3528,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_067",
+            "id": "RG_METIER_083",
             "regle_technique_source": "RG_EXPORTATIONS_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3011,8 +3561,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D15",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3033,7 +3583,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G15",
@@ -3052,7 +3602,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_068",
+            "id": "RG_METIER_084",
             "regle_technique_source": "RG_EXPORTATIONS_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -3085,115 +3635,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_069",
-            "regle_technique_source": "RG_EXPORTATIONS_008",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D18=\"USD\",G17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",G17*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G18",
-                "H18",
-                "I18",
-                "J18",
-                "K18",
-                "L18",
-                "M18",
-                "N18",
-                "O18",
-                "P18",
-                "Q18",
-                "R18"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_070",
+            "id": "RG_METIER_085",
             "regle_technique_source": "RG_EXPORTATIONS_009",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Japon",
-            "cible": "japon",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G18:R18)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G18:R18"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G18:R18",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S18"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_071",
-            "regle_technique_source": "RG_EXPORTATIONS_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3225,8 +3668,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D21",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3247,7 +3690,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G21",
@@ -3266,8 +3709,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_072",
-            "regle_technique_source": "RG_EXPORTATIONS_011",
+            "id": "RG_METIER_086",
+            "regle_technique_source": "RG_EXPORTATIONS_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3299,115 +3742,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_073",
+            "id": "RG_METIER_087",
             "regle_technique_source": "RG_EXPORTATIONS_012",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D24=\"USD\",G23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",G23*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G24",
-                "H24",
-                "I24",
-                "J24",
-                "K24",
-                "L24",
-                "M24",
-                "N24",
-                "O24",
-                "P24",
-                "Q24",
-                "R24"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_074",
-            "regle_technique_source": "RG_EXPORTATIONS_013",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Japon",
-            "cible": "japon",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G24:R24)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G24:R24"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G24:R24",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S24"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_075",
-            "regle_technique_source": "RG_EXPORTATIONS_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3439,8 +3775,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D27",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3461,7 +3797,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G27",
@@ -3480,8 +3816,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_076",
-            "regle_technique_source": "RG_EXPORTATIONS_015",
+            "id": "RG_METIER_088",
+            "regle_technique_source": "RG_EXPORTATIONS_013",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3513,8 +3849,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_077",
-            "regle_technique_source": "RG_EXPORTATIONS_016",
+            "id": "RG_METIER_089",
+            "regle_technique_source": "RG_EXPORTATIONS_014",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3546,8 +3882,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D30",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3568,7 +3904,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G30",
@@ -3587,8 +3923,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_078",
-            "regle_technique_source": "RG_EXPORTATIONS_017",
+            "id": "RG_METIER_090",
+            "regle_technique_source": "RG_EXPORTATIONS_015",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3620,115 +3956,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_079",
-            "regle_technique_source": "RG_EXPORTATIONS_018",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D33=\"USD\",G32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",G32*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G33",
-                "H33",
-                "I33",
-                "J33",
-                "K33",
-                "L33",
-                "M33",
-                "N33",
-                "O33",
-                "P33",
-                "Q33",
-                "R33"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_080",
-            "regle_technique_source": "RG_EXPORTATIONS_019",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Russie",
-            "cible": "russie",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G33:R33)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G33:R33"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G33:R33",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S33"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_081",
-            "regle_technique_source": "RG_EXPORTATIONS_020",
+            "id": "RG_METIER_091",
+            "regle_technique_source": "RG_EXPORTATIONS_017",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3760,8 +3989,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D36",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3782,7 +4011,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G36",
@@ -3801,8 +4030,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_082",
-            "regle_technique_source": "RG_EXPORTATIONS_021",
+            "id": "RG_METIER_092",
+            "regle_technique_source": "RG_EXPORTATIONS_018",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3834,115 +4063,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_083",
-            "regle_technique_source": "RG_EXPORTATIONS_022",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D39=\"USD\",G38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",G38*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G39",
-                "H39",
-                "I39",
-                "J39",
-                "K39",
-                "L39",
-                "M39",
-                "N39",
-                "O39",
-                "P39",
-                "Q39",
-                "R39"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_084",
-            "regle_technique_source": "RG_EXPORTATIONS_023",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Russie",
-            "cible": "russie",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G39:R39)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G39:R39"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G39:R39",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S39"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_085",
-            "regle_technique_source": "RG_EXPORTATIONS_024",
+            "id": "RG_METIER_093",
+            "regle_technique_source": "RG_EXPORTATIONS_020",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -3974,8 +4096,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D42",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3996,7 +4118,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G42",
@@ -4015,8 +4137,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_086",
-            "regle_technique_source": "RG_EXPORTATIONS_025",
+            "id": "RG_METIER_094",
+            "regle_technique_source": "RG_EXPORTATIONS_021",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4048,8 +4170,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_087",
-            "regle_technique_source": "RG_EXPORTATIONS_026",
+            "id": "RG_METIER_095",
+            "regle_technique_source": "RG_EXPORTATIONS_022",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4081,8 +4203,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D45",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -4103,7 +4225,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G45",
@@ -4122,8 +4244,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_088",
-            "regle_technique_source": "RG_EXPORTATIONS_027",
+            "id": "RG_METIER_096",
+            "regle_technique_source": "RG_EXPORTATIONS_023",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4155,115 +4277,8 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_089",
-            "regle_technique_source": "RG_EXPORTATIONS_028",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D48=\"USD\",G47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",G47*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G48",
-                "H48",
-                "I48",
-                "J48",
-                "K48",
-                "L48",
-                "M48",
-                "N48",
-                "O48",
-                "P48",
-                "Q48",
-                "R48"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_090",
-            "regle_technique_source": "RG_EXPORTATIONS_029",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chine",
-            "cible": "chine",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G48:R48)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G48:R48"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G48:R48",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S48"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_091",
-            "regle_technique_source": "RG_EXPORTATIONS_030",
+            "id": "RG_METIER_097",
+            "regle_technique_source": "RG_EXPORTATIONS_025",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4295,8 +4310,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D51",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -4317,7 +4332,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "G51",
@@ -4336,8 +4351,8 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_092",
-            "regle_technique_source": "RG_EXPORTATIONS_031",
+            "id": "RG_METIER_098",
+            "regle_technique_source": "RG_EXPORTATIONS_026",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "EXPORTATION",
@@ -4369,114 +4384,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_093",
-            "regle_technique_source": "RG_EXPORTATIONS_032",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chiffre d'affaires MGA",
-            "cible": "chiffre_d_affaires_mga",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=IF($D54=\"USD\",G53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",G53*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G54",
-                "H54",
-                "I54",
-                "J54",
-                "K54",
-                "L54",
-                "M54",
-                "N54",
-                "O54",
-                "P54",
-                "Q54",
-                "R54"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_094",
-            "regle_technique_source": "RG_EXPORTATIONS_033",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "EXPORTATION",
-            "nom": "Chine",
-            "cible": "chine",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(G54:R54)",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G54:R54"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G54:R54",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
-                }
-            ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "S54"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_095",
+            "id": "RG_METIER_099",
             "regle_technique_source": "RG_SYNTHESE_001",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4575,7 +4483,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_096",
+            "id": "RG_METIER_100",
             "regle_technique_source": "RG_SYNTHESE_002",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4608,88 +4516,33 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_097",
+            "id": "RG_METIER_101",
             "regle_technique_source": "RG_SYNTHESE_003",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
             "nom": "Charges exploitation",
             "cible": "charges_exploitation",
-            "operation": "SOMME_CONDITIONNELLE",
+            "operation": "SOMME",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+            "formule_excel_reference": "=SUM(Charges!E2:E45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
-                    "libelle": "Catégorie",
-                    "identifiant_semantique": "categorie"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUMIF(charges.categorie, \"FISCAL\", charges.ampandrandava)",
-            "anomalies_regroupement": [
-                {
-                    "cellule": "D3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$F$2:$F$40)"
-                },
-                {
-                    "cellule": "E3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$G$2:$G$40)"
-                },
-                {
-                    "cellule": "F3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$H$2:$H$40)"
-                },
-                {
-                    "cellule": "G3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$I$2:$I$40)"
-                },
-                {
-                    "cellule": "H3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$J$2:$J$40)"
-                },
-                {
-                    "cellule": "I3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$K$2:$K$40)"
-                },
-                {
-                    "cellule": "J3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$L$2:$L$40)"
-                },
-                {
-                    "cellule": "K3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$M$2:$M$40)"
-                },
-                {
-                    "cellule": "L3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$N$2:$N$40)"
-                },
-                {
-                    "cellule": "M3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$O$2:$O$40)"
-                },
-                {
-                    "cellule": "N3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$P$2:$P$40)"
-                }
-            ],
+            "expression_metier": "SUM(charges.ampandrandava)",
+            "anomalies_regroupement": [],
             "cellules_excel": [
                 "C3",
                 "D3",
@@ -4707,7 +4560,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_098",
+            "id": "RG_METIER_102",
             "regle_technique_source": "RG_SYNTHESE_004",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4740,7 +4593,7 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_099",
+            "id": "RG_METIER_103",
             "regle_technique_source": "RG_SYNTHESE_005",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4829,7 +4682,7 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_100",
+            "id": "RG_METIER_104",
             "regle_technique_source": "RG_SYNTHESE_006",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
@@ -4862,90 +4715,13 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_101",
+            "id": "RG_METIER_105",
             "regle_technique_source": "RG_SYNTHESE_007",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Masse salariale",
-            "cible": "masse_salariale",
-            "operation": "SOMME",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
-            "dependances": [
-                {
-                    "feuille": "Employes",
-                    "cellule": "I2:I61"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Employes",
-                    "cellule": "I2:I61",
-                    "libelle": "Coût mensuel total (MGA)",
-                    "identifiant_semantique": "cout_mensuel_total_mga"
-                }
-            ],
-            "expression_metier": "SUM(employes.cout_mensuel_total_mga)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "C5",
-                "D5",
-                "E5",
-                "F5",
-                "G5",
-                "H5",
-                "I5",
-                "J5",
-                "K5",
-                "L5",
-                "M5",
-                "N5"
-            ],
-            "nombre_occurrences": 12
-        },
-        {
-            "id": "RG_METIER_102",
-            "regle_technique_source": "RG_SYNTHESE_008",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "BUDGET",
-            "nom": "Masse salariale",
-            "cible": "masse_salariale",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(C5:N5)",
-            "dependances": [
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5:N5"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5:N5",
-                    "libelle": "Masse salariale",
-                    "identifiant_semantique": "masse_salariale"
-                }
-            ],
-            "expression_metier": "SUM(masse_salariale)",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "O5"
-            ],
-            "nombre_occurrences": 1
-        },
-        {
-            "id": "RG_METIER_103",
-            "regle_technique_source": "RG_SYNTHESE_009",
-            "type": "REGLE_METIER",
-            "origine": "REVERSE_ENGINEERING_EXCEL",
-            "domaine": "BUDGET",
-            "nom": "Résultat opérationnel",
-            "cible": "resultat_operationnel",
+            "nom": "Amortissements",
+            "cible": "amortissements",
             "operation": "SOUSTRACTION",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
@@ -5000,11 +4776,11 @@
                 {
                     "feuille": "Synthese",
                     "cellule": "C8",
-                    "libelle": "Amortissements",
-                    "identifiant_semantique": "amortissements"
+                    "libelle": "Marge opérationnelle",
+                    "identifiant_semantique": "marge_operationnelle"
                 }
             ],
-            "expression_metier": "ca_export - charges_exploitation - frais_export - masse_salariale - amortissements",
+            "expression_metier": "ca_export - charges_exploitation - frais_export - masse_salariale - marge_operationnelle",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "C6",
@@ -5023,13 +4799,13 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_104",
-            "regle_technique_source": "RG_SYNTHESE_010",
+            "id": "RG_METIER_106",
+            "regle_technique_source": "RG_SYNTHESE_008",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Résultat opérationnel",
-            "cible": "resultat_operationnel",
+            "nom": "Amortissements",
+            "cible": "amortissements",
             "operation": "SOMME",
             "periodicite_technique": "UNIQUE",
             "periodicite": "ANNUELLE",
@@ -5044,11 +4820,11 @@
                 {
                     "feuille": "Synthese",
                     "cellule": "C6:N6",
-                    "libelle": "Résultat opérationnel",
-                    "identifiant_semantique": "resultat_operationnel"
+                    "libelle": "Amortissements",
+                    "identifiant_semantique": "amortissements"
                 }
             ],
-            "expression_metier": "SUM(resultat_operationnel)",
+            "expression_metier": "SUM(amortissements)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "O6"
@@ -5056,13 +4832,13 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_105",
-            "regle_technique_source": "RG_SYNTHESE_011",
+            "id": "RG_METIER_107",
+            "regle_technique_source": "RG_SYNTHESE_009",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Marge opérationnelle",
-            "cible": "marge_operationnelle",
+            "nom": "Résultat opérationnel",
+            "cible": "resultat_operationnel",
             "operation": "DIVISION",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
@@ -5081,8 +4857,8 @@
                 {
                     "feuille": "Synthese",
                     "cellule": "C6",
-                    "libelle": "Résultat opérationnel",
-                    "identifiant_semantique": "resultat_operationnel"
+                    "libelle": "Amortissements",
+                    "identifiant_semantique": "amortissements"
                 },
                 {
                     "feuille": "Synthese",
@@ -5091,7 +4867,7 @@
                     "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "IFERROR(resultat_operationnel / ca_export, 0)",
+            "expression_metier": "IFERROR(amortissements / ca_export, 0)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "C7",
@@ -5110,42 +4886,32 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_106",
-            "regle_technique_source": "RG_SYNTHESE_012",
+            "id": "RG_METIER_108",
+            "regle_technique_source": "RG_SYNTHESE_010",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Marge opérationnelle",
-            "cible": "marge_operationnelle",
-            "operation": "DIVISION",
+            "nom": "Résultat opérationnel",
+            "cible": "resultat_operationnel",
+            "operation": "SOMME",
             "periodicite_technique": "UNIQUE",
             "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=IFERROR(O6/O2,0)",
+            "formule_excel_reference": "=SUM(C7:N7)",
             "dependances": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "O6"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "O2"
+                    "cellule": "C7:N7"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "O6",
+                    "cellule": "C7:N7",
                     "libelle": "Résultat opérationnel",
                     "identifiant_semantique": "resultat_operationnel"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "O2",
-                    "libelle": "CA export",
-                    "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "IFERROR(resultat_operationnel / ca_export, 0)",
+            "expression_metier": "SUM(resultat_operationnel)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "O7"
@@ -5153,32 +4919,42 @@
             "nombre_occurrences": 1
         },
         {
-            "id": "RG_METIER_107",
-            "regle_technique_source": "RG_SYNTHESE_013",
+            "id": "RG_METIER_109",
+            "regle_technique_source": "RG_SYNTHESE_011",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Amortissements",
-            "cible": "amortissements",
-            "operation": "SOMME",
+            "nom": "Marge opérationnelle",
+            "cible": "marge_operationnelle",
+            "operation": "DIVISION",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
+            "formule_excel_reference": "=IFERROR(C7/C2,0)",
             "dependances": [
                 {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:E80"
+                    "feuille": "Synthese",
+                    "cellule": "C7"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
                 }
             ],
             "dependances_semantiques": [
                 {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "feuille": "Synthese",
+                    "cellule": "C7",
+                    "libelle": "Résultat opérationnel",
+                    "identifiant_semantique": "resultat_operationnel"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2",
+                    "libelle": "CA export",
+                    "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "IFERROR(resultat_operationnel / ca_export, 0)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "C8",
@@ -5197,32 +4973,42 @@
             "nombre_occurrences": 12
         },
         {
-            "id": "RG_METIER_108",
-            "regle_technique_source": "RG_SYNTHESE_014",
+            "id": "RG_METIER_110",
+            "regle_technique_source": "RG_SYNTHESE_012",
             "type": "REGLE_METIER",
             "origine": "REVERSE_ENGINEERING_EXCEL",
             "domaine": "BUDGET",
-            "nom": "Amortissements",
-            "cible": "amortissements",
-            "operation": "SOMME",
+            "nom": "Marge opérationnelle",
+            "cible": "marge_operationnelle",
+            "operation": "DIVISION",
             "periodicite_technique": "UNIQUE",
             "periodicite": "ANNUELLE",
-            "formule_excel_reference": "=SUM(C8:N8)",
+            "formule_excel_reference": "=IFERROR(O7/O2,0)",
             "dependances": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C8:N8"
+                    "cellule": "O7"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C8:N8",
-                    "libelle": "Amortissements",
-                    "identifiant_semantique": "amortissements"
+                    "cellule": "O7",
+                    "libelle": "Résultat opérationnel",
+                    "identifiant_semantique": "resultat_operationnel"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2",
+                    "libelle": "CA export",
+                    "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "SUM(amortissements)",
+            "expression_metier": "IFERROR(resultat_operationnel / ca_export, 0)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "O8"
@@ -5230,5 +5016,42 @@
             "nombre_occurrences": 1
         }
     ],
-    "a_valider": []
+    "a_valider": [
+        {
+            "regle_technique": "RG_EXPORTATIONS_008",
+            "feuille": "Exportations",
+            "cellule": "S18",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_011",
+            "feuille": "Exportations",
+            "cellule": "S24",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_016",
+            "feuille": "Exportations",
+            "cellule": "S33",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_019",
+            "feuille": "Exportations",
+            "cellule": "S39",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_024",
+            "feuille": "Exportations",
+            "cellule": "S48",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        },
+        {
+            "regle_technique": "RG_EXPORTATIONS_027",
+            "feuille": "Exportations",
+            "cellule": "S54",
+            "raison": "LIBELLE_METIER_NON_IDENTIFIE"
+        }
+    ]
 }

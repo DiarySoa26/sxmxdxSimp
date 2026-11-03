@@ -153,59 +153,7 @@
 #         process=subprocess.run(
 #             ["python3",IMPORT_SCRIPT,file_path],
 #             capture_output=True,
-#             text=True,
-#             timeout=1800
-#         )
 
-#         if process.returncode!=0:
-#             return jsonify({
-#                 "success":False,
-#                 "message":"Le workflow d'importation a échoué.",
-#                 "output":process.stdout,
-#                 "error":process.stderr
-#             }),500
-
-#         return jsonify({
-#             "success":True,
-#             "message":"Importation terminée avec succès.",
-#             "filePath":file_path,
-#             "output":process.stdout
-#         }),200
-
-#     except subprocess.TimeoutExpired:
-#         return jsonify({
-#             "success":False,
-#             "message":"Le traitement a dépassé le temps maximal autorisé."
-#         }),504
-#     except Exception as e:
-#         return jsonify({"success":False,"message":str(e)}),500
-
-# @app.post("/api/predictions/generer")
-# def generer_prediction():
-#     try:
-#         resultats=executer_prediction()
-#         return jsonify({
-#             "success":True,
-#             "message":"Prévision budgétaire générée avec succès.",
-#             "annee_reference":resultats["annee_reference"],
-#             "annee_prediction":resultats["annee_prediction"],
-#             "duree_secondes":resultats["duree_secondes"],
-#             "budget_annuel":resultats["budget_annuel"],
-#             "budget_mensuel":resultats["budget_mensuel"],
-#             "evolutions":resultats["evolutions"],
-#             "derives":resultats["derives"],
-#             "resume":resultats["resume"]
-#         }),200
-#     except Exception as e:
-#         traceback.print_exc()
-#         return jsonify({
-#             "success":False,
-#             "message":"La génération de la prévision a échoué.",
-#             "error":str(e)
-#         }),500
-
-# if __name__=="__main__":
-#     app.run(host="0.0.0.0",port=5000)
 
 
 

@@ -57,25 +57,25 @@ WHERE import_id = 31;
 
 -- 2. Supprimer les campagnes budgétaires
 DELETE FROM charge
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 -- 3. Supprimer les exportations
 DELETE FROM exportation
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 -- 4. Supprimer la production
 DELETE FROM production
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 -- 6. Supprimer les frais d'exportation
 DELETE FROM frais_export
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 DELETE FROM employe
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 DELETE FROM amortissement_mensuel
-WHERE import_id = 31;
+WHERE import_id = 1;
 
 
 
@@ -90,7 +90,7 @@ WHERE exercice_id = 33;
 
 
 DELETE FROM import_fichier
-WHERE exercice_id = 33;
+WHERE exercice_id = 1;
 
 DELETE FROM exercice
-WHERE id = 33;
+WHERE id = 1;

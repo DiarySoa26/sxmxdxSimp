@@ -1,5 +1,5 @@
 {
-    "fichier": "d78b54d9_SOMIDA_2020.xlsx",
+    "fichier": "063c3b5b_SOMIDA_2019.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -14,11 +14,11 @@
         },
         "Employes": {
             "etat": "visible",
-            "lignes": 95,
+            "lignes": 101,
             "colonnes": 10,
-            "formules": 94,
-            "textes": 574,
-            "nombres": 282,
+            "formules": 90,
+            "textes": 550,
+            "nombres": 270,
             "mois_detectes": [],
             "mise_en_page": null
         },
@@ -27,8 +27,8 @@
             "lignes": 11,
             "colonnes": 16,
             "formules": 10,
-            "textes": 46,
-            "nombres": 120,
+            "textes": 34,
+            "nombres": 72,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -66,11 +66,11 @@
         },
         "Charges": {
             "etat": "visible",
-            "lignes": 20,
+            "lignes": 27,
             "colonnes": 18,
-            "formules": 18,
-            "textes": 108,
-            "nombres": 216,
+            "formules": 3,
+            "textes": 98,
+            "nombres": 205,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -110,9 +110,9 @@
             "etat": "visible",
             "lignes": 54,
             "colonnes": 19,
-            "formules": 200,
-            "textes": 299,
-            "nombres": 390,
+            "formules": 128,
+            "textes": 191,
+            "nombres": 246,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -232,54 +232,12 @@
                 "origine": "DETECTEE"
             }
         },
-        "Amortissements": {
-            "etat": "visible",
-            "lignes": 35,
-            "colonnes": 17,
-            "formules": 11,
-            "textes": 61,
-            "nombres": 132,
-            "mois_detectes": [
-                "Janvier",
-                "Février",
-                "Mars",
-                "Avril",
-                "Mai",
-                "Juin",
-                "Juillet",
-                "Août",
-                "Septembre",
-                "Octobre",
-                "Novembre",
-                "Décembre"
-            ],
-            "mise_en_page": {
-                "orientation": "COLONNES",
-                "axe_en_tete": 1,
-                "positions": {
-                    "5": 1,
-                    "6": 2,
-                    "7": 3,
-                    "8": 4,
-                    "9": 5,
-                    "10": 6,
-                    "11": 7,
-                    "12": 8,
-                    "13": 9,
-                    "14": 10,
-                    "15": 11,
-                    "16": 12
-                },
-                "annuelle": 17,
-                "origine": "DETECTEE"
-            }
-        },
         "CR": {
             "etat": "visible",
-            "lignes": 35,
+            "lignes": 34,
             "colonnes": 14,
-            "formules": 403,
-            "textes": 47,
+            "formules": 390,
+            "textes": 46,
             "nombres": 0,
             "mois_detectes": [
                 "Janvier",
@@ -313,6 +271,48 @@
                     "13": 12
                 },
                 "annuelle": 14,
+                "origine": "DETECTEE"
+            }
+        },
+        "Amortissements": {
+            "etat": "visible",
+            "lignes": 70,
+            "colonnes": 17,
+            "formules": 0,
+            "textes": 50,
+            "nombres": 143,
+            "mois_detectes": [
+                "Janvier",
+                "Février",
+                "Mars",
+                "Avril",
+                "Mai",
+                "Juin",
+                "Juillet",
+                "Août",
+                "Septembre",
+                "Octobre",
+                "Novembre",
+                "Décembre"
+            ],
+            "mise_en_page": {
+                "orientation": "COLONNES",
+                "axe_en_tete": 1,
+                "positions": {
+                    "5": 1,
+                    "6": 2,
+                    "7": 3,
+                    "8": 4,
+                    "9": 5,
+                    "10": 6,
+                    "11": 7,
+                    "12": 8,
+                    "13": 9,
+                    "14": 10,
+                    "15": 11,
+                    "16": 12
+                },
+                "annuelle": 17,
                 "origine": "DETECTEE"
             }
         }

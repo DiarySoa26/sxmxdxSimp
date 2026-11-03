@@ -1,5 +1,5 @@
 {
-    "fichier": "da82a4f1_SOMIDA_2021.xlsx",
+    "fichier": "f05ef025_SOMIDA_2020.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -14,7 +14,7 @@
         },
         "Employes": {
             "etat": "visible",
-            "lignes": 101,
+            "lignes": 95,
             "colonnes": 10,
             "formules": 94,
             "textes": 574,
@@ -26,9 +26,9 @@
             "etat": "visible",
             "lignes": 11,
             "colonnes": 16,
-            "formules": 0,
-            "textes": 46,
-            "nombres": 130,
+            "formules": 10,
+            "textes": 34,
+            "nombres": 72,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -66,11 +66,11 @@
         },
         "Charges": {
             "etat": "visible",
-            "lignes": 15,
-            "colonnes": 17,
-            "formules": 0,
-            "textes": 69,
-            "nombres": 169,
+            "lignes": 20,
+            "colonnes": 18,
+            "formules": 16,
+            "textes": 98,
+            "nombres": 192,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -110,9 +110,9 @@
             "etat": "visible",
             "lignes": 54,
             "colonnes": 19,
-            "formules": 200,
-            "textes": 299,
-            "nombres": 390,
+            "formules": 128,
+            "textes": 191,
+            "nombres": 246,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -152,9 +152,9 @@
             "etat": "visible",
             "lignes": 19,
             "colonnes": 17,
-            "formules": 0,
+            "formules": 18,
             "textes": 89,
-            "nombres": 234,
+            "nombres": 216,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -194,9 +194,9 @@
             "etat": "visible",
             "lignes": 8,
             "colonnes": 15,
-            "formules": 78,
+            "formules": 91,
             "textes": 29,
-            "nombres": 13,
+            "nombres": 0,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -234,7 +234,7 @@
         },
         "Amortissements": {
             "etat": "visible",
-            "lignes": 70,
+            "lignes": 35,
             "colonnes": 17,
             "formules": 11,
             "textes": 61,

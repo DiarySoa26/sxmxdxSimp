@@ -9,13 +9,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from pipeline.budget.moteur_regles import calculer_budget_mensuel, calculer_budget_annuel, verifier_regles_re
 
-DB_CONFIG = {
-    "host": "postgres",
-    "port": 5432,
-    "dbname": "sxmxdx4",
-    "user": "sxmxdx",
-    "password": "diary",
-}
+# Connexion commune (variables DB_*), plus de paramètres écrits en dur.
+from pipeline.config_db import DB_CONFIG  # noqa: E402
 
 def connecter():
     return psycopg2.connect(**DB_CONFIG)
@@ -247,12 +242,13 @@ def finaliser_budget(connexion, budget_id, resultat):
 def generer_budget():
     connexion = None
     try:
-        verifier_regles_re()
         connexion = connecter()
         import_fichier = recuperer_dernier_import_pret(connexion)
         verifier_import(import_fichier)
         import_id = import_fichier["id"]
         exercice_id = import_fichier["exercice_id"]
+        # Règles RE de l'import sélectionné (et non d'un fichier global).
+        verifier_regles_re(import_id)
         mois = recuperer_mois(connexion)
         employes = recuperer_employes(connexion, import_id)
         if not employes:

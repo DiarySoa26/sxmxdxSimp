@@ -14,13 +14,15 @@ print("=" * 80)
 connexion = get_connection()
 print("[OK] Connexion PostgreSQL")
 
-# Dernier import de chaque exercice pour éviter de mélanger plusieurs imports.
+# Dernier import VALIDE (statut PRET_GENERATION) de chaque exercice :
+# un import en ERREUR ou EN_COURS n'alimente jamais le modèle.
 CTE = """
 WITH dernier_import AS (
     SELECT DISTINCT ON (i.exercice_id)
            i.id AS import_id, i.exercice_id, e.annee
     FROM import_fichier i
     JOIN exercice e ON e.id = i.exercice_id
+    WHERE i.statut = 'PRET_GENERATION'
     ORDER BY i.exercice_id, i.date_import DESC, i.id DESC
 )
 """

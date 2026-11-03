@@ -1,437 +1,40 @@
 {
-    "modele": "D78B54D9_SOMIDA_2020",
-    "version": "D78B54D9_SOMIDA_2020_V1",
-    "fichier_source": "d78b54d9_SOMIDA_2020.xlsx",
+    "modele": "063C3B5B_SOMIDA_2019",
+    "version": "063C3B5B_SOMIDA_2019_V1",
+    "fichier_source": "063c3b5b_SOMIDA_2019.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_6/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_6/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 845,
-        "nombre_regles_uniques": 167,
-        "nombre_repetitions_regroupees": 678,
+        "nombre_formules_excel": 730,
+        "nombre_regles_uniques": 133,
+        "nombre_repetitions_regroupees": 597,
         "operations": {
-            "SOMME": 116,
             "REFERENCE": 13,
+            "SOMME": 91,
             "SOMME_CONDITIONNELLE": 8,
             "SOUSTRACTION": 7,
-            "MULTIPLICATION": 16,
-            "DIVISION": 7
+            "MULTIPLICATION": 10,
+            "DIVISION": 4
         },
         "domaines": {
-            "AMORTISSEMENTS": 11,
-            "CR": 62,
-            "CHARGES": 18,
+            "CR": 60,
+            "CHARGES": 3,
             "SALAIRES": 1,
-            "EXPORTATION": 51,
+            "EXPORTATION": 45,
             "PRODUCTION": 10,
             "BUDGET": 14
         },
         "periodicites": {
-            "UNIQUE": 112,
-            "MENSUELLE": 53,
+            "MENSUELLE": 46,
+            "UNIQUE": 85,
             "REPETEE": 2
         },
         "regroupements_irreguliers": 6
     },
     "regles": [
-        {
-            "id": "RG_AMORTISSEMENTS_001",
-            "nom": "Calcul Excel Amortissements!Q2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q2",
-            "formule_excel_reference": "=SUM(E2:P2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q2",
-                    "formule": "=SUM(E2:P2)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E2:P2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_002",
-            "nom": "Calcul Excel Amortissements!Q3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q3",
-            "formule_excel_reference": "=SUM(E3:P3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q3",
-                    "formule": "=SUM(E3:P3)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E3:P3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_003",
-            "nom": "Calcul Excel Amortissements!Q4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q4",
-            "formule_excel_reference": "=SUM(E4:P4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q4",
-                    "formule": "=SUM(E4:P4)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E4:P4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_004",
-            "nom": "Calcul Excel Amortissements!Q5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q5",
-            "formule_excel_reference": "=SUM(E5:P5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q5",
-                    "formule": "=SUM(E5:P5)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E5:P5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_005",
-            "nom": "Calcul Excel Amortissements!Q6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q6",
-            "formule_excel_reference": "=SUM(E6:P6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q6",
-                    "formule": "=SUM(E6:P6)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E6:P6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_006",
-            "nom": "Calcul Excel Amortissements!Q7",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q7",
-            "formule_excel_reference": "=SUM(E7:P7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q7"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E7:P7"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q7",
-                    "formule": "=SUM(E7:P7)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E7:P7"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_007",
-            "nom": "Calcul Excel Amortissements!Q8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q8",
-            "formule_excel_reference": "=SUM(E8:P8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q8",
-                    "formule": "=SUM(E8:P8)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E8:P8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_008",
-            "nom": "Calcul Excel Amortissements!Q9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q9",
-            "formule_excel_reference": "=SUM(E9:P9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q9",
-                    "formule": "=SUM(E9:P9)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E9:P9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_009",
-            "nom": "Calcul Excel Amortissements!Q10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q10",
-            "formule_excel_reference": "=SUM(E10:P10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q10",
-                    "formule": "=SUM(E10:P10)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E10:P10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_010",
-            "nom": "Calcul Excel Amortissements!Q11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q11",
-            "formule_excel_reference": "=SUM(E11:P11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q11",
-                    "formule": "=SUM(E11:P11)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E11:P11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_011",
-            "nom": "Calcul Excel Amortissements!Q12",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q12",
-            "formule_excel_reference": "=SUM(E12:P12)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q12"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q12",
-                    "formule": "=SUM(E12:P12)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E12:P12"
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "id": "RG_CR_001",
             "nom": "Calcul Excel CR!B5",
@@ -440,9 +43,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B5",
-            "formule_excel_reference": "=Synthese!C2",
+            "formule_excel_reference": "=IF(Synthese!C2=\"\",0,Synthese!C2)",
             "operation": "REFERENCE",
-            "signature_structurelle": "=SYNTHESE!CELL(COL[1],ROW[-3])",
+            "signature_structurelle": "=IF(SYNTHESE!CELL(COL[1],ROW[-3])=\"\",0,SYNTHESE!CELL(COL[1],ROW[-3]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -469,7 +72,7 @@
             "occurrences_excel": [
                 {
                     "cellule": "B5",
-                    "formule": "=Synthese!C2",
+                    "formule": "=IF(Synthese!C2=\"\",0,Synthese!C2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -479,7 +82,7 @@
                 },
                 {
                     "cellule": "C5",
-                    "formule": "=Synthese!D2",
+                    "formule": "=IF(Synthese!D2=\"\",0,Synthese!D2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -489,7 +92,7 @@
                 },
                 {
                     "cellule": "D5",
-                    "formule": "=Synthese!E2",
+                    "formule": "=IF(Synthese!E2=\"\",0,Synthese!E2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -499,7 +102,7 @@
                 },
                 {
                     "cellule": "E5",
-                    "formule": "=Synthese!F2",
+                    "formule": "=IF(Synthese!F2=\"\",0,Synthese!F2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -509,7 +112,7 @@
                 },
                 {
                     "cellule": "F5",
-                    "formule": "=Synthese!G2",
+                    "formule": "=IF(Synthese!G2=\"\",0,Synthese!G2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -519,7 +122,7 @@
                 },
                 {
                     "cellule": "G5",
-                    "formule": "=Synthese!H2",
+                    "formule": "=IF(Synthese!H2=\"\",0,Synthese!H2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -529,7 +132,7 @@
                 },
                 {
                     "cellule": "H5",
-                    "formule": "=Synthese!I2",
+                    "formule": "=IF(Synthese!I2=\"\",0,Synthese!I2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -539,7 +142,7 @@
                 },
                 {
                     "cellule": "I5",
-                    "formule": "=Synthese!J2",
+                    "formule": "=IF(Synthese!J2=\"\",0,Synthese!J2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -549,7 +152,7 @@
                 },
                 {
                     "cellule": "J5",
-                    "formule": "=Synthese!K2",
+                    "formule": "=IF(Synthese!K2=\"\",0,Synthese!K2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -559,7 +162,7 @@
                 },
                 {
                     "cellule": "K5",
-                    "formule": "=Synthese!L2",
+                    "formule": "=IF(Synthese!L2=\"\",0,Synthese!L2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -569,7 +172,7 @@
                 },
                 {
                     "cellule": "L5",
-                    "formule": "=Synthese!M2",
+                    "formule": "=IF(Synthese!M2=\"\",0,Synthese!M2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -579,7 +182,7 @@
                 },
                 {
                     "cellule": "M5",
-                    "formule": "=Synthese!N2",
+                    "formule": "=IF(Synthese!N2=\"\",0,Synthese!N2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2570,9 +2173,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B15",
-            "formule_excel_reference": "=Synthese!C5",
+            "formule_excel_reference": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
             "operation": "REFERENCE",
-            "signature_structurelle": "=SYNTHESE!CELL(COL[1],ROW[-10])",
+            "signature_structurelle": "=IF(SYNTHESE!CELL(COL[1],ROW[-10])=\"\",0,SYNTHESE!CELL(COL[1],ROW[-10]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -2599,7 +2202,7 @@
             "occurrences_excel": [
                 {
                     "cellule": "B15",
-                    "formule": "=Synthese!C5",
+                    "formule": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2609,7 +2212,7 @@
                 },
                 {
                     "cellule": "C15",
-                    "formule": "=Synthese!D5",
+                    "formule": "=IF(Synthese!D5=\"\",0,Synthese!D5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2619,7 +2222,7 @@
                 },
                 {
                     "cellule": "D15",
-                    "formule": "=Synthese!E5",
+                    "formule": "=IF(Synthese!E5=\"\",0,Synthese!E5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2629,7 +2232,7 @@
                 },
                 {
                     "cellule": "E15",
-                    "formule": "=Synthese!F5",
+                    "formule": "=IF(Synthese!F5=\"\",0,Synthese!F5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2639,7 +2242,7 @@
                 },
                 {
                     "cellule": "F15",
-                    "formule": "=Synthese!G5",
+                    "formule": "=IF(Synthese!G5=\"\",0,Synthese!G5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2649,7 +2252,7 @@
                 },
                 {
                     "cellule": "G15",
-                    "formule": "=Synthese!H5",
+                    "formule": "=IF(Synthese!H5=\"\",0,Synthese!H5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2659,7 +2262,7 @@
                 },
                 {
                     "cellule": "H15",
-                    "formule": "=Synthese!I5",
+                    "formule": "=IF(Synthese!I5=\"\",0,Synthese!I5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2669,7 +2272,7 @@
                 },
                 {
                     "cellule": "I15",
-                    "formule": "=Synthese!J5",
+                    "formule": "=IF(Synthese!J5=\"\",0,Synthese!J5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2679,7 +2282,7 @@
                 },
                 {
                     "cellule": "J15",
-                    "formule": "=Synthese!K5",
+                    "formule": "=IF(Synthese!K5=\"\",0,Synthese!K5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2689,7 +2292,7 @@
                 },
                 {
                     "cellule": "K15",
-                    "formule": "=Synthese!L5",
+                    "formule": "=IF(Synthese!L5=\"\",0,Synthese!L5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2699,7 +2302,7 @@
                 },
                 {
                     "cellule": "L15",
-                    "formule": "=Synthese!M5",
+                    "formule": "=IF(Synthese!M5=\"\",0,Synthese!M5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2709,7 +2312,7 @@
                 },
                 {
                     "cellule": "M15",
-                    "formule": "=Synthese!N5",
+                    "formule": "=IF(Synthese!N5=\"\",0,Synthese!N5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -3368,9 +2971,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B19",
-            "formule_excel_reference": "=SUM(Amortissements!E2:E40)",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
             "operation": "SOMME",
-            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[3],ROW[-17],COL[3],ROW[21]))",
+            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[3],ROW[-17],COL[3],ROW[61]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -3391,127 +2994,127 @@
             "dependances_reference": [
                 {
                     "feuille": "Amortissements",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E80"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B19",
-                    "formule": "=SUM(Amortissements!E2:E40)",
+                    "formule": "=SUM(Amortissements!E2:E80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E80"
                         }
                     ]
                 },
                 {
                     "cellule": "C19",
-                    "formule": "=SUM(Amortissements!F2:F40)",
+                    "formule": "=SUM(Amortissements!F2:F80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F80"
                         }
                     ]
                 },
                 {
                     "cellule": "D19",
-                    "formule": "=SUM(Amortissements!G2:G40)",
+                    "formule": "=SUM(Amortissements!G2:G80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G80"
                         }
                     ]
                 },
                 {
                     "cellule": "E19",
-                    "formule": "=SUM(Amortissements!H2:H40)",
+                    "formule": "=SUM(Amortissements!H2:H80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H80"
                         }
                     ]
                 },
                 {
                     "cellule": "F19",
-                    "formule": "=SUM(Amortissements!I2:I40)",
+                    "formule": "=SUM(Amortissements!I2:I80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I80"
                         }
                     ]
                 },
                 {
                     "cellule": "G19",
-                    "formule": "=SUM(Amortissements!J2:J40)",
+                    "formule": "=SUM(Amortissements!J2:J80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J80"
                         }
                     ]
                 },
                 {
                     "cellule": "H19",
-                    "formule": "=SUM(Amortissements!K2:K40)",
+                    "formule": "=SUM(Amortissements!K2:K80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K80"
                         }
                     ]
                 },
                 {
                     "cellule": "I19",
-                    "formule": "=SUM(Amortissements!L2:L40)",
+                    "formule": "=SUM(Amortissements!L2:L80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L80"
                         }
                     ]
                 },
                 {
                     "cellule": "J19",
-                    "formule": "=SUM(Amortissements!M2:M40)",
+                    "formule": "=SUM(Amortissements!M2:M80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M80"
                         }
                     ]
                 },
                 {
                     "cellule": "K19",
-                    "formule": "=SUM(Amortissements!N2:N40)",
+                    "formule": "=SUM(Amortissements!N2:N80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N80"
                         }
                     ]
                 },
                 {
                     "cellule": "L19",
-                    "formule": "=SUM(Amortissements!O2:O40)",
+                    "formule": "=SUM(Amortissements!O2:O80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O80"
                         }
                     ]
                 },
                 {
                     "cellule": "M19",
-                    "formule": "=SUM(Amortissements!P2:P40)",
+                    "formule": "=SUM(Amortissements!P2:P80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P80"
                         }
                     ]
                 }
@@ -4398,55 +4001,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B24",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$E$2:$E$40)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[27]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[27]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$F$2:$F$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$G$2:$G$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$H$2:$H$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$I$2:$I$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$J$2:$J$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$K$2:$K$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$L$2:$L$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$M$2:$M$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$N$2:$N$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$O$2:$O$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$P$2:$P$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
                 }
             ],
             "cellules_excel": [
@@ -4466,179 +4069,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A27"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E27"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$E$2:$E$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E27"
                         }
                     ]
                 },
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$F$2:$F$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F27"
                         }
                     ]
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$G$2:$G$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G27"
                         }
                     ]
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$H$2:$H$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H27"
                         }
                     ]
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$I$2:$I$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I27"
                         }
                     ]
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$J$2:$J$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J27"
                         }
                     ]
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$K$2:$K$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K27"
                         }
                     ]
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$L$2:$L$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L27"
                         }
                     ]
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$M$2:$M$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M27"
                         }
                     ]
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$N$2:$N$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N27"
                         }
                     ]
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$O$2:$O$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O27"
                         }
                     ]
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$P$2:$P$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P27"
                         }
                     ]
                 }
@@ -6788,728 +6391,7 @@
             ]
         },
         {
-            "id": "RG_CR_061",
-            "nom": "Calcul Excel CR!B35",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CR",
-            "feuille": "CR",
-            "cellule_cible_reference": "B35",
-            "formule_excel_reference": "=IFERROR(B22/B5,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-13])/CELL(COL[0],ROW[-30]),0)",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "B35",
-                "C35",
-                "D35",
-                "E35",
-                "F35",
-                "G35",
-                "H35",
-                "I35",
-                "J35",
-                "K35",
-                "L35",
-                "M35"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "CR",
-                    "cellule": "B22"
-                },
-                {
-                    "feuille": "CR",
-                    "cellule": "B5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "B35",
-                    "formule": "=IFERROR(B22/B5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "B22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "B5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "C35",
-                    "formule": "=IFERROR(C22/C5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "C22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "C5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "D35",
-                    "formule": "=IFERROR(D22/D5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "D22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "D5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "E35",
-                    "formule": "=IFERROR(E22/E5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "E22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "E5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "F35",
-                    "formule": "=IFERROR(F22/F5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "F22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "F5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "G35",
-                    "formule": "=IFERROR(G22/G5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "G22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "G5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H35",
-                    "formule": "=IFERROR(H22/H5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "H22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "H5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I35",
-                    "formule": "=IFERROR(I22/I5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "I22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "I5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J35",
-                    "formule": "=IFERROR(J22/J5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "J22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "J5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K35",
-                    "formule": "=IFERROR(K22/K5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "K22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "K5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L35",
-                    "formule": "=IFERROR(L22/L5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "L22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "L5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M35",
-                    "formule": "=IFERROR(M22/M5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "M22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "M5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CR_062",
-            "nom": "Calcul Excel CR!N35",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CR",
-            "feuille": "CR",
-            "cellule_cible_reference": "N35",
-            "formule_excel_reference": "=IFERROR(N22/N5,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-13])/CELL(COL[0],ROW[-30]),0)",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "N35"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "CR",
-                    "cellule": "N22"
-                },
-                {
-                    "feuille": "CR",
-                    "cellule": "N5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "N35",
-                    "formule": "=IFERROR(N22/N5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "N22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "N5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "RG_CHARGES_001",
-            "nom": "Calcul Excel Charges!Q2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q2",
-            "formule_excel_reference": "=SUM(E2:P2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q2",
-                    "formule": "=SUM(E2:P2)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E2:P2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_002",
-            "nom": "Calcul Excel Charges!Q3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q3",
-            "formule_excel_reference": "=SUM(E3:P3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q3",
-                    "formule": "=SUM(E3:P3)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E3:P3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_003",
-            "nom": "Calcul Excel Charges!Q4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q4",
-            "formule_excel_reference": "=SUM(E4:P4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q4",
-                    "formule": "=SUM(E4:P4)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E4:P4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_004",
-            "nom": "Calcul Excel Charges!Q5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q5",
-            "formule_excel_reference": "=SUM(E5:P5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q5",
-                    "formule": "=SUM(E5:P5)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E5:P5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_005",
-            "nom": "Calcul Excel Charges!Q6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q6",
-            "formule_excel_reference": "=SUM(E6:P6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q6",
-                    "formule": "=SUM(E6:P6)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E6:P6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_006",
-            "nom": "Calcul Excel Charges!Q8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q8",
-            "formule_excel_reference": "=SUM(E8:P8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q8",
-                    "formule": "=SUM(E8:P8)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E8:P8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_007",
-            "nom": "Calcul Excel Charges!Q9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q9",
-            "formule_excel_reference": "=SUM(E9:P9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q9",
-                    "formule": "=SUM(E9:P9)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E9:P9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_008",
-            "nom": "Calcul Excel Charges!Q10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q10",
-            "formule_excel_reference": "=SUM(E10:P10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q10",
-                    "formule": "=SUM(E10:P10)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E10:P10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_009",
-            "nom": "Calcul Excel Charges!Q11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q11",
-            "formule_excel_reference": "=SUM(E11:P11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q11",
-                    "formule": "=SUM(E11:P11)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E11:P11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_010",
-            "nom": "Calcul Excel Charges!Q12",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q12",
-            "formule_excel_reference": "=SUM(E12:P12)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q12"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q12",
-                    "formule": "=SUM(E12:P12)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E12:P12"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_011",
-            "nom": "Calcul Excel Charges!Q13",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q13",
-            "formule_excel_reference": "=SUM(E13:P13)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q13"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E13:P13"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q13",
-                    "formule": "=SUM(E13:P13)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E13:P13"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_012",
-            "nom": "Calcul Excel Charges!Q14",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q14",
-            "formule_excel_reference": "=SUM(E14:P14)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q14"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E14:P14"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q14",
-                    "formule": "=SUM(E14:P14)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E14:P14"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_013",
-            "nom": "Calcul Excel Charges!Q15",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q15",
-            "formule_excel_reference": "=SUM(E15:P15)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q15"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E15:P15"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q15",
-                    "formule": "=SUM(E15:P15)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E15:P15"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_014",
             "nom": "Calcul Excel Charges!Q16",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -7545,7 +6427,7 @@
             ]
         },
         {
-            "id": "RG_CHARGES_015",
+            "id": "RG_CHARGES_002",
             "nom": "Calcul Excel Charges!Q17",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -7581,7 +6463,7 @@
             ]
         },
         {
-            "id": "RG_CHARGES_016",
+            "id": "RG_CHARGES_003",
             "nom": "Calcul Excel Charges!Q18",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -7617,78 +6499,6 @@
             ]
         },
         {
-            "id": "RG_CHARGES_017",
-            "nom": "Calcul Excel Charges!Q19",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q19",
-            "formule_excel_reference": "=SUM(E19:P19)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q19"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E19:P19"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q19",
-                    "formule": "=SUM(E19:P19)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E19:P19"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_018",
-            "nom": "Calcul Excel Charges!Q20",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q20",
-            "formule_excel_reference": "=SUM(E20:P20)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q20"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E20:P20"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q20",
-                    "formule": "=SUM(E20:P20)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E20:P20"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "RG_EMPLOYES_001",
             "nom": "Calcul Excel Employes!I2",
             "type": "CALCUL_EXCEL",
@@ -7699,7 +6509,7 @@
             "formule_excel_reference": "=SUM(F2:H2)",
             "operation": "SOMME",
             "signature_structurelle": "=SUM(RANGE(COL[-3],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 94,
+            "nombre_occurrences": 90,
             "periodicite": "REPETEE",
             "anomalies_regroupement": [],
             "cellules_excel": [
@@ -7792,11 +6602,7 @@
                 "I88",
                 "I89",
                 "I90",
-                "I91",
-                "I92",
-                "I93",
-                "I94",
-                "I95"
+                "I91"
             ],
             "dependances_reference": [
                 {
@@ -8704,46 +7510,6 @@
                             "cellule": "F91:H91"
                         }
                     ]
-                },
-                {
-                    "cellule": "I92",
-                    "formule": "=SUM(F92:H92)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F92:H92"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I93",
-                    "formule": "=SUM(F93:H93)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F93:H93"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I94",
-                    "formule": "=SUM(F94:H94)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F94:H94"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I95",
-                    "formule": "=SUM(F95:H95)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F95:H95"
-                        }
-                    ]
                 }
             ]
         },
@@ -9634,319 +8400,6 @@
         },
         {
             "id": "RG_EXPORTATIONS_008",
-            "nom": "Calcul Excel Exportations!G18",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G18",
-            "formule_excel_reference": "=IF($D18=\"USD\",G17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",G17*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G18",
-                "H18",
-                "I18",
-                "J18",
-                "K18",
-                "L18",
-                "M18",
-                "N18",
-                "O18",
-                "P18",
-                "Q18",
-                "R18"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G18",
-                    "formule": "=IF($D18=\"USD\",G17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",G17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H18",
-                    "formule": "=IF($D18=\"USD\",H17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",H17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I18",
-                    "formule": "=IF($D18=\"USD\",I17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",I17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J18",
-                    "formule": "=IF($D18=\"USD\",J17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",J17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K18",
-                    "formule": "=IF($D18=\"USD\",K17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",K17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L18",
-                    "formule": "=IF($D18=\"USD\",L17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",L17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M18",
-                    "formule": "=IF($D18=\"USD\",M17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",M17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N18",
-                    "formule": "=IF($D18=\"USD\",N17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",N17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O18",
-                    "formule": "=IF($D18=\"USD\",O17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",O17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P18",
-                    "formule": "=IF($D18=\"USD\",P17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",P17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q18",
-                    "formule": "=IF($D18=\"USD\",Q17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",Q17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R18",
-                    "formule": "=IF($D18=\"USD\",R17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",R17*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D18"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R17"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_009",
             "nom": "Calcul Excel Exportations!S18",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -9982,7 +8435,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_010",
+            "id": "RG_EXPORTATIONS_009",
             "nom": "Calcul Excel Exportations!G21",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -10295,7 +8748,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_011",
+            "id": "RG_EXPORTATIONS_010",
             "nom": "Calcul Excel Exportations!S21",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -10331,320 +8784,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_012",
-            "nom": "Calcul Excel Exportations!G24",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G24",
-            "formule_excel_reference": "=IF($D24=\"USD\",G23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",G23*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G24",
-                "H24",
-                "I24",
-                "J24",
-                "K24",
-                "L24",
-                "M24",
-                "N24",
-                "O24",
-                "P24",
-                "Q24",
-                "R24"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G24",
-                    "formule": "=IF($D24=\"USD\",G23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",G23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H24",
-                    "formule": "=IF($D24=\"USD\",H23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",H23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I24",
-                    "formule": "=IF($D24=\"USD\",I23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",I23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J24",
-                    "formule": "=IF($D24=\"USD\",J23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",J23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K24",
-                    "formule": "=IF($D24=\"USD\",K23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",K23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L24",
-                    "formule": "=IF($D24=\"USD\",L23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",L23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M24",
-                    "formule": "=IF($D24=\"USD\",M23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",M23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N24",
-                    "formule": "=IF($D24=\"USD\",N23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",N23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O24",
-                    "formule": "=IF($D24=\"USD\",O23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",O23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P24",
-                    "formule": "=IF($D24=\"USD\",P23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",P23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q24",
-                    "formule": "=IF($D24=\"USD\",Q23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",Q23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R24",
-                    "formule": "=IF($D24=\"USD\",R23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",R23*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D24"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R23"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_013",
+            "id": "RG_EXPORTATIONS_011",
             "nom": "Calcul Excel Exportations!S24",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -10680,7 +8820,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_014",
+            "id": "RG_EXPORTATIONS_012",
             "nom": "Calcul Excel Exportations!G27",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -10993,7 +9133,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_015",
+            "id": "RG_EXPORTATIONS_013",
             "nom": "Calcul Excel Exportations!S27",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -11029,7 +9169,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_016",
+            "id": "RG_EXPORTATIONS_014",
             "nom": "Calcul Excel Exportations!G30",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -11342,7 +9482,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_017",
+            "id": "RG_EXPORTATIONS_015",
             "nom": "Calcul Excel Exportations!S30",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -11378,320 +9518,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_018",
-            "nom": "Calcul Excel Exportations!G33",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G33",
-            "formule_excel_reference": "=IF($D33=\"USD\",G32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",G32*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G33",
-                "H33",
-                "I33",
-                "J33",
-                "K33",
-                "L33",
-                "M33",
-                "N33",
-                "O33",
-                "P33",
-                "Q33",
-                "R33"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G33",
-                    "formule": "=IF($D33=\"USD\",G32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",G32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H33",
-                    "formule": "=IF($D33=\"USD\",H32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",H32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I33",
-                    "formule": "=IF($D33=\"USD\",I32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",I32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J33",
-                    "formule": "=IF($D33=\"USD\",J32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",J32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K33",
-                    "formule": "=IF($D33=\"USD\",K32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",K32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L33",
-                    "formule": "=IF($D33=\"USD\",L32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",L32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M33",
-                    "formule": "=IF($D33=\"USD\",M32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",M32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N33",
-                    "formule": "=IF($D33=\"USD\",N32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",N32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O33",
-                    "formule": "=IF($D33=\"USD\",O32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",O32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P33",
-                    "formule": "=IF($D33=\"USD\",P32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",P32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q33",
-                    "formule": "=IF($D33=\"USD\",Q32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",Q32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R33",
-                    "formule": "=IF($D33=\"USD\",R32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",R32*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D33"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R32"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_019",
+            "id": "RG_EXPORTATIONS_016",
             "nom": "Calcul Excel Exportations!S33",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -11727,7 +9554,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_020",
+            "id": "RG_EXPORTATIONS_017",
             "nom": "Calcul Excel Exportations!G36",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12040,7 +9867,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_021",
+            "id": "RG_EXPORTATIONS_018",
             "nom": "Calcul Excel Exportations!S36",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12076,320 +9903,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_022",
-            "nom": "Calcul Excel Exportations!G39",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G39",
-            "formule_excel_reference": "=IF($D39=\"USD\",G38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",G38*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G39",
-                "H39",
-                "I39",
-                "J39",
-                "K39",
-                "L39",
-                "M39",
-                "N39",
-                "O39",
-                "P39",
-                "Q39",
-                "R39"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G39",
-                    "formule": "=IF($D39=\"USD\",G38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",G38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H39",
-                    "formule": "=IF($D39=\"USD\",H38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",H38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I39",
-                    "formule": "=IF($D39=\"USD\",I38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",I38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J39",
-                    "formule": "=IF($D39=\"USD\",J38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",J38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K39",
-                    "formule": "=IF($D39=\"USD\",K38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",K38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L39",
-                    "formule": "=IF($D39=\"USD\",L38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",L38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M39",
-                    "formule": "=IF($D39=\"USD\",M38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",M38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N39",
-                    "formule": "=IF($D39=\"USD\",N38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",N38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O39",
-                    "formule": "=IF($D39=\"USD\",O38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",O38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P39",
-                    "formule": "=IF($D39=\"USD\",P38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",P38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q39",
-                    "formule": "=IF($D39=\"USD\",Q38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",Q38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R39",
-                    "formule": "=IF($D39=\"USD\",R38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",R38*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D39"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R38"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_023",
+            "id": "RG_EXPORTATIONS_019",
             "nom": "Calcul Excel Exportations!S39",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12425,7 +9939,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_024",
+            "id": "RG_EXPORTATIONS_020",
             "nom": "Calcul Excel Exportations!G42",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12738,7 +10252,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_025",
+            "id": "RG_EXPORTATIONS_021",
             "nom": "Calcul Excel Exportations!S42",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12774,7 +10288,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_026",
+            "id": "RG_EXPORTATIONS_022",
             "nom": "Calcul Excel Exportations!G45",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13087,7 +10601,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_027",
+            "id": "RG_EXPORTATIONS_023",
             "nom": "Calcul Excel Exportations!S45",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13123,320 +10637,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_028",
-            "nom": "Calcul Excel Exportations!G48",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G48",
-            "formule_excel_reference": "=IF($D48=\"USD\",G47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",G47*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G48",
-                "H48",
-                "I48",
-                "J48",
-                "K48",
-                "L48",
-                "M48",
-                "N48",
-                "O48",
-                "P48",
-                "Q48",
-                "R48"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G48",
-                    "formule": "=IF($D48=\"USD\",G47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",G47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H48",
-                    "formule": "=IF($D48=\"USD\",H47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",H47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I48",
-                    "formule": "=IF($D48=\"USD\",I47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",I47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J48",
-                    "formule": "=IF($D48=\"USD\",J47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",J47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K48",
-                    "formule": "=IF($D48=\"USD\",K47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",K47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L48",
-                    "formule": "=IF($D48=\"USD\",L47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",L47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M48",
-                    "formule": "=IF($D48=\"USD\",M47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",M47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N48",
-                    "formule": "=IF($D48=\"USD\",N47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",N47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O48",
-                    "formule": "=IF($D48=\"USD\",O47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",O47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P48",
-                    "formule": "=IF($D48=\"USD\",P47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",P47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q48",
-                    "formule": "=IF($D48=\"USD\",Q47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",Q47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R48",
-                    "formule": "=IF($D48=\"USD\",R47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",R47*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D48"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R47"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_029",
+            "id": "RG_EXPORTATIONS_024",
             "nom": "Calcul Excel Exportations!S48",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13472,7 +10673,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_030",
+            "id": "RG_EXPORTATIONS_025",
             "nom": "Calcul Excel Exportations!G51",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13785,7 +10986,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_031",
+            "id": "RG_EXPORTATIONS_026",
             "nom": "Calcul Excel Exportations!S51",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13821,320 +11022,7 @@
             ]
         },
         {
-            "id": "RG_EXPORTATIONS_032",
-            "nom": "Calcul Excel Exportations!G54",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_cible_reference": "G54",
-            "formule_excel_reference": "=IF($D54=\"USD\",G53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",G53*'Donnees SOMIDA'!$B$6,0))",
-            "operation": "MULTIPLICATION",
-            "signature_structurelle": "=IF(CELL(ABS_COL[D],ROW[0])=\"USD\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[5]),IF(CELL(ABS_COL[D],ROW[0])=\"JPY\",CELL(COL[0],ROW[-1])*DONNEESSOMIDA!CELL(ABS_COL[B],ABS_ROW[6]),0))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "G54",
-                "H54",
-                "I54",
-                "J54",
-                "K54",
-                "L54",
-                "M54",
-                "N54",
-                "O54",
-                "P54",
-                "Q54",
-                "R54"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "G54",
-                    "formule": "=IF($D54=\"USD\",G53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",G53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "G53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H54",
-                    "formule": "=IF($D54=\"USD\",H53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",H53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "H53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I54",
-                    "formule": "=IF($D54=\"USD\",I53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",I53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "I53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J54",
-                    "formule": "=IF($D54=\"USD\",J53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",J53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "J53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K54",
-                    "formule": "=IF($D54=\"USD\",K53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",K53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "K53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L54",
-                    "formule": "=IF($D54=\"USD\",L53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",L53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "L53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M54",
-                    "formule": "=IF($D54=\"USD\",M53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",M53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "M53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N54",
-                    "formule": "=IF($D54=\"USD\",N53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",N53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "N53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "O54",
-                    "formule": "=IF($D54=\"USD\",O53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",O53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "O53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "P54",
-                    "formule": "=IF($D54=\"USD\",P53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",P53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "P53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "Q54",
-                    "formule": "=IF($D54=\"USD\",Q53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",Q53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "Q53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "R54",
-                    "formule": "=IF($D54=\"USD\",R53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",R53*'Donnees SOMIDA'!$B$6,0))",
-                    "dependances": [
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "D54"
-                        },
-                        {
-                            "feuille": "Exportations",
-                            "cellule": "R53"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B5"
-                        },
-                        {
-                            "feuille": "Donnees SOMIDA",
-                            "cellule": "B6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_EXPORTATIONS_033",
+            "id": "RG_EXPORTATIONS_027",
             "nom": "Calcul Excel Exportations!S54",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -15185,55 +12073,55 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C2",
-            "formule_excel_reference": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$54)",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$80)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[10],ABS_COL[G],ABS_ROW[54]))",
+            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[80]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[10],ABS_COL[G],ABS_ROW[80]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$80)"
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$80)"
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$80)"
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$80)"
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$80)"
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$80)"
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$80)"
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$80)"
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$80)"
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$80)"
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$54)"
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$80)"
                 }
             ],
             "cellules_excel": [
@@ -15253,179 +12141,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E10:E54"
+                    "cellule": "E10:E80"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G10:G54"
+                    "cellule": "G10:G80"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "G10:G54"
+                            "cellule": "G10:G80"
                         }
                     ]
                 },
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "H10:H54"
+                            "cellule": "H10:H80"
                         }
                     ]
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "I10:I54"
+                            "cellule": "I10:I80"
                         }
                     ]
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "J10:J54"
+                            "cellule": "J10:J80"
                         }
                     ]
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "K10:K54"
+                            "cellule": "K10:K80"
                         }
                     ]
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "L10:L54"
+                            "cellule": "L10:L80"
                         }
                     ]
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "M10:M54"
+                            "cellule": "M10:M80"
                         }
                     ]
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "N10:N54"
+                            "cellule": "N10:N80"
                         }
                     ]
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "O10:O54"
+                            "cellule": "O10:O80"
                         }
                     ]
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "P10:P54"
+                            "cellule": "P10:P80"
                         }
                     ]
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "Q10:Q54"
+                            "cellule": "Q10:Q80"
                         }
                     ]
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$54)",
+                    "formule": "=SUMIF(Exportations!$E$10:$E$80,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$80)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E10:E80"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "R10:R54"
+                            "cellule": "R10:R80"
                         }
                     ]
                 }
@@ -15668,9 +12556,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C4",
-            "formule_excel_reference": "=SUM('Frais Export'!E2:E19)",
+            "formule_excel_reference": "=SUM('Frais Export'!E2:E50)",
             "operation": "SOMME",
-            "signature_structurelle": "=SUM(FRAISEXPORT!RANGE(COL[2],ROW[-2],COL[2],ROW[15]))",
+            "signature_structurelle": "=SUM(FRAISEXPORT!RANGE(COL[2],ROW[-2],COL[2],ROW[46]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -15691,127 +12579,127 @@
             "dependances_reference": [
                 {
                     "feuille": "Frais Export",
-                    "cellule": "E2:E19"
+                    "cellule": "E2:E50"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C4",
-                    "formule": "=SUM('Frais Export'!E2:E19)",
+                    "formule": "=SUM('Frais Export'!E2:E50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "E2:E19"
+                            "cellule": "E2:E50"
                         }
                     ]
                 },
                 {
                     "cellule": "D4",
-                    "formule": "=SUM('Frais Export'!F2:F19)",
+                    "formule": "=SUM('Frais Export'!F2:F50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "F2:F19"
+                            "cellule": "F2:F50"
                         }
                     ]
                 },
                 {
                     "cellule": "E4",
-                    "formule": "=SUM('Frais Export'!G2:G19)",
+                    "formule": "=SUM('Frais Export'!G2:G50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "G2:G19"
+                            "cellule": "G2:G50"
                         }
                     ]
                 },
                 {
                     "cellule": "F4",
-                    "formule": "=SUM('Frais Export'!H2:H19)",
+                    "formule": "=SUM('Frais Export'!H2:H50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "H2:H19"
+                            "cellule": "H2:H50"
                         }
                     ]
                 },
                 {
                     "cellule": "G4",
-                    "formule": "=SUM('Frais Export'!I2:I19)",
+                    "formule": "=SUM('Frais Export'!I2:I50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "I2:I19"
+                            "cellule": "I2:I50"
                         }
                     ]
                 },
                 {
                     "cellule": "H4",
-                    "formule": "=SUM('Frais Export'!J2:J19)",
+                    "formule": "=SUM('Frais Export'!J2:J50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "J2:J19"
+                            "cellule": "J2:J50"
                         }
                     ]
                 },
                 {
                     "cellule": "I4",
-                    "formule": "=SUM('Frais Export'!K2:K19)",
+                    "formule": "=SUM('Frais Export'!K2:K50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "K2:K19"
+                            "cellule": "K2:K50"
                         }
                     ]
                 },
                 {
                     "cellule": "J4",
-                    "formule": "=SUM('Frais Export'!L2:L19)",
+                    "formule": "=SUM('Frais Export'!L2:L50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "L2:L19"
+                            "cellule": "L2:L50"
                         }
                     ]
                 },
                 {
                     "cellule": "K4",
-                    "formule": "=SUM('Frais Export'!M2:M19)",
+                    "formule": "=SUM('Frais Export'!M2:M50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "M2:M19"
+                            "cellule": "M2:M50"
                         }
                     ]
                 },
                 {
                     "cellule": "L4",
-                    "formule": "=SUM('Frais Export'!N2:N19)",
+                    "formule": "=SUM('Frais Export'!N2:N50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "N2:N19"
+                            "cellule": "N2:N50"
                         }
                     ]
                 },
                 {
                     "cellule": "M4",
-                    "formule": "=SUM('Frais Export'!O2:O19)",
+                    "formule": "=SUM('Frais Export'!O2:O50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "O2:O19"
+                            "cellule": "O2:O50"
                         }
                     ]
                 },
                 {
                     "cellule": "N4",
-                    "formule": "=SUM('Frais Export'!P2:P19)",
+                    "formule": "=SUM('Frais Export'!P2:P50)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
-                            "cellule": "P2:P19"
+                            "cellule": "P2:P50"
                         }
                     ]
                 }
@@ -15861,9 +12749,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C5",
-            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
+            "formule_excel_reference": "=SUM(Employes!$I$2:$I$100)",
             "operation": "SOMME",
-            "signature_structurelle": "=SUM(EMPLOYES!RANGE(ABS_COL[I],ABS_ROW[2],ABS_COL[I],ABS_ROW[61]))",
+            "signature_structurelle": "=SUM(EMPLOYES!RANGE(ABS_COL[I],ABS_ROW[2],ABS_COL[I],ABS_ROW[100]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -15884,127 +12772,127 @@
             "dependances_reference": [
                 {
                     "feuille": "Employes",
-                    "cellule": "I2:I61"
+                    "cellule": "I2:I100"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "D5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "E5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "F5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "G5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "H5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "I5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "J5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "K5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "L5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "M5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 },
                 {
                     "cellule": "N5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "formule": "=SUM(Employes!$I$2:$I$100)",
                     "dependances": [
                         {
                             "feuille": "Employes",
-                            "cellule": "I2:I61"
+                            "cellule": "I2:I100"
                         }
                     ]
                 }
@@ -16664,9 +13552,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "O7",
-            "formule_excel_reference": "=SUM(C7:N7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "formule_excel_reference": "=IFERROR(O6/O2,0)",
+            "operation": "DIVISION",
+            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-5]),0)",
             "nombre_occurrences": 1,
             "periodicite": "UNIQUE",
             "anomalies_regroupement": [],
@@ -16676,17 +13564,25 @@
             "dependances_reference": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C7:N7"
+                    "cellule": "O6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "O7",
-                    "formule": "=SUM(C7:N7)",
+                    "formule": "=IFERROR(O6/O2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "C7:N7"
+                            "cellule": "O6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "O2"
                         }
                     ]
                 }
@@ -16700,9 +13596,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C8",
-            "formule_excel_reference": "=IFERROR(C7/C2,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-6]),0)",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[2],ROW[-6],COL[2],ROW[72]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -16722,180 +13618,128 @@
             ],
             "dependances_reference": [
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C7"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C2"
+                    "feuille": "Amortissements",
+                    "cellule": "E2:E80"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C8",
-                    "formule": "=IFERROR(C7/C2,0)",
+                    "formule": "=SUM(Amortissements!E2:E80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "C7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C2"
+                            "feuille": "Amortissements",
+                            "cellule": "E2:E80"
                         }
                     ]
                 },
                 {
                     "cellule": "D8",
-                    "formule": "=IFERROR(D7/D2,0)",
+                    "formule": "=SUM(Amortissements!F2:F80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "D7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "D2"
+                            "feuille": "Amortissements",
+                            "cellule": "F2:F80"
                         }
                     ]
                 },
                 {
                     "cellule": "E8",
-                    "formule": "=IFERROR(E7/E2,0)",
+                    "formule": "=SUM(Amortissements!G2:G80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "E7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "E2"
+                            "feuille": "Amortissements",
+                            "cellule": "G2:G80"
                         }
                     ]
                 },
                 {
                     "cellule": "F8",
-                    "formule": "=IFERROR(F7/F2,0)",
+                    "formule": "=SUM(Amortissements!H2:H80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "F7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "F2"
+                            "feuille": "Amortissements",
+                            "cellule": "H2:H80"
                         }
                     ]
                 },
                 {
                     "cellule": "G8",
-                    "formule": "=IFERROR(G7/G2,0)",
+                    "formule": "=SUM(Amortissements!I2:I80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "G7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "G2"
+                            "feuille": "Amortissements",
+                            "cellule": "I2:I80"
                         }
                     ]
                 },
                 {
                     "cellule": "H8",
-                    "formule": "=IFERROR(H7/H2,0)",
+                    "formule": "=SUM(Amortissements!J2:J80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "H7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "H2"
+                            "feuille": "Amortissements",
+                            "cellule": "J2:J80"
                         }
                     ]
                 },
                 {
                     "cellule": "I8",
-                    "formule": "=IFERROR(I7/I2,0)",
+                    "formule": "=SUM(Amortissements!K2:K80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "I7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "I2"
+                            "feuille": "Amortissements",
+                            "cellule": "K2:K80"
                         }
                     ]
                 },
                 {
                     "cellule": "J8",
-                    "formule": "=IFERROR(J7/J2,0)",
+                    "formule": "=SUM(Amortissements!L2:L80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "J7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "J2"
+                            "feuille": "Amortissements",
+                            "cellule": "L2:L80"
                         }
                     ]
                 },
                 {
                     "cellule": "K8",
-                    "formule": "=IFERROR(K7/K2,0)",
+                    "formule": "=SUM(Amortissements!M2:M80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "K7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "K2"
+                            "feuille": "Amortissements",
+                            "cellule": "M2:M80"
                         }
                     ]
                 },
                 {
                     "cellule": "L8",
-                    "formule": "=IFERROR(L7/L2,0)",
+                    "formule": "=SUM(Amortissements!N2:N80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "L7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "L2"
+                            "feuille": "Amortissements",
+                            "cellule": "N2:N80"
                         }
                     ]
                 },
                 {
                     "cellule": "M8",
-                    "formule": "=IFERROR(M7/M2,0)",
+                    "formule": "=SUM(Amortissements!O2:O80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "M7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "M2"
+                            "feuille": "Amortissements",
+                            "cellule": "O2:O80"
                         }
                     ]
                 },
                 {
                     "cellule": "N8",
-                    "formule": "=IFERROR(N7/N2,0)",
+                    "formule": "=SUM(Amortissements!P2:P80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "N7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "N2"
+                            "feuille": "Amortissements",
+                            "cellule": "P2:P80"
                         }
                     ]
                 }
@@ -16909,9 +13753,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "O8",
-            "formule_excel_reference": "=IFERROR(O7/O2,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-6]),0)",
+            "formule_excel_reference": "=SUM(C8:N8)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
             "nombre_occurrences": 1,
             "periodicite": "UNIQUE",
             "anomalies_regroupement": [],
@@ -16921,25 +13765,17 @@
             "dependances_reference": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "O7"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "O2"
+                    "cellule": "C8:N8"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "O8",
-                    "formule": "=IFERROR(O7/O2,0)",
+                    "formule": "=SUM(C8:N8)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "O7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "O2"
+                            "cellule": "C8:N8"
                         }
                     ]
                 }

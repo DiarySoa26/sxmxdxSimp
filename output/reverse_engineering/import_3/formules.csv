@@ -73,12 +73,6 @@ Employes,I72,=SUM(F72:H72)
 Employes,I73,=SUM(F73:H73)
 Employes,I74,=SUM(F74:H74)
 Employes,I75,=SUM(F75:H75)
-Employes,I76,=SUM(F76:H76)
-Employes,I77,=SUM(F77:H77)
-Employes,I78,=SUM(F78:H78)
-Employes,I79,=SUM(F79:H79)
-Employes,I80,=SUM(F80:H80)
-Employes,I81,=SUM(F81:H81)
 Production,P2,=SUM(D2:O2)
 Production,P3,=SUM(D3:O3)
 Production,P4,=SUM(D4:O4)
@@ -92,8 +86,6 @@ Production,P11,=SUM(D11:O11)
 Charges,Q16,=SUM(E16:P16)
 Charges,Q17,=SUM(E17:P17)
 Charges,Q18,=SUM(E18:P18)
-Charges,Q19,=SUM(E19:P19)
-Charges,Q20,=SUM(E20:P20)
 Exportations,A5,"=SUMIF($E$10:$E$54,""Quantité exportée"",$S$10:$S$54)"
 Exportations,D5,"=SUMIF($E$10:$E$54,""Chiffre d'affaires MGA"",$S$10:$S$54)"
 Exportations,G5,"=SUMIFS($S$10:$S$54,$A$10:$A$54,""Japon"",$E$10:$E$54,""Chiffre d'affaires MGA"")"
@@ -125,18 +117,6 @@ Exportations,P15,"=IF($D15=""USD"",P14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",P14
 Exportations,Q15,"=IF($D15=""USD"",Q14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",Q14*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R15,"=IF($D15=""USD"",R14*'Donnees SOMIDA'!$B$5,IF($D15=""JPY"",R14*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S15,=SUM(G15:R15)
-Exportations,G18,"=IF($D18=""USD"",G17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",G17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H18,"=IF($D18=""USD"",H17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",H17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I18,"=IF($D18=""USD"",I17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",I17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J18,"=IF($D18=""USD"",J17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",J17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K18,"=IF($D18=""USD"",K17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",K17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L18,"=IF($D18=""USD"",L17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",L17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M18,"=IF($D18=""USD"",M17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",M17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N18,"=IF($D18=""USD"",N17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",N17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O18,"=IF($D18=""USD"",O17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",O17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P18,"=IF($D18=""USD"",P17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",P17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q18,"=IF($D18=""USD"",Q17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",Q17*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R18,"=IF($D18=""USD"",R17*'Donnees SOMIDA'!$B$5,IF($D18=""JPY"",R17*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S18,=SUM(G18:R18)
 Exportations,G21,"=IF($D21=""USD"",G20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",G20*'Donnees SOMIDA'!$B$6,0))"
 Exportations,H21,"=IF($D21=""USD"",H20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",H20*'Donnees SOMIDA'!$B$6,0))"
@@ -151,18 +131,6 @@ Exportations,P21,"=IF($D21=""USD"",P20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",P20
 Exportations,Q21,"=IF($D21=""USD"",Q20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",Q20*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R21,"=IF($D21=""USD"",R20*'Donnees SOMIDA'!$B$5,IF($D21=""JPY"",R20*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S21,=SUM(G21:R21)
-Exportations,G24,"=IF($D24=""USD"",G23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",G23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H24,"=IF($D24=""USD"",H23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",H23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I24,"=IF($D24=""USD"",I23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",I23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J24,"=IF($D24=""USD"",J23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",J23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K24,"=IF($D24=""USD"",K23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",K23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L24,"=IF($D24=""USD"",L23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",L23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M24,"=IF($D24=""USD"",M23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",M23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N24,"=IF($D24=""USD"",N23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",N23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O24,"=IF($D24=""USD"",O23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",O23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P24,"=IF($D24=""USD"",P23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",P23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q24,"=IF($D24=""USD"",Q23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",Q23*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R24,"=IF($D24=""USD"",R23*'Donnees SOMIDA'!$B$5,IF($D24=""JPY"",R23*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S24,=SUM(G24:R24)
 Exportations,G27,"=IF($D27=""USD"",G26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",G26*'Donnees SOMIDA'!$B$6,0))"
 Exportations,H27,"=IF($D27=""USD"",H26*'Donnees SOMIDA'!$B$5,IF($D27=""JPY"",H26*'Donnees SOMIDA'!$B$6,0))"
@@ -190,18 +158,6 @@ Exportations,P30,"=IF($D30=""USD"",P29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",P29
 Exportations,Q30,"=IF($D30=""USD"",Q29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",Q29*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R30,"=IF($D30=""USD"",R29*'Donnees SOMIDA'!$B$5,IF($D30=""JPY"",R29*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S30,=SUM(G30:R30)
-Exportations,G33,"=IF($D33=""USD"",G32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",G32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H33,"=IF($D33=""USD"",H32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",H32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I33,"=IF($D33=""USD"",I32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",I32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J33,"=IF($D33=""USD"",J32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",J32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K33,"=IF($D33=""USD"",K32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",K32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L33,"=IF($D33=""USD"",L32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",L32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M33,"=IF($D33=""USD"",M32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",M32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N33,"=IF($D33=""USD"",N32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",N32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O33,"=IF($D33=""USD"",O32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",O32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P33,"=IF($D33=""USD"",P32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",P32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q33,"=IF($D33=""USD"",Q32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",Q32*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R33,"=IF($D33=""USD"",R32*'Donnees SOMIDA'!$B$5,IF($D33=""JPY"",R32*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S33,=SUM(G33:R33)
 Exportations,G36,"=IF($D36=""USD"",G35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",G35*'Donnees SOMIDA'!$B$6,0))"
 Exportations,H36,"=IF($D36=""USD"",H35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",H35*'Donnees SOMIDA'!$B$6,0))"
@@ -216,18 +172,6 @@ Exportations,P36,"=IF($D36=""USD"",P35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",P35
 Exportations,Q36,"=IF($D36=""USD"",Q35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",Q35*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R36,"=IF($D36=""USD"",R35*'Donnees SOMIDA'!$B$5,IF($D36=""JPY"",R35*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S36,=SUM(G36:R36)
-Exportations,G39,"=IF($D39=""USD"",G38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",G38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H39,"=IF($D39=""USD"",H38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",H38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I39,"=IF($D39=""USD"",I38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",I38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J39,"=IF($D39=""USD"",J38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",J38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K39,"=IF($D39=""USD"",K38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",K38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L39,"=IF($D39=""USD"",L38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",L38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M39,"=IF($D39=""USD"",M38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",M38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N39,"=IF($D39=""USD"",N38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",N38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O39,"=IF($D39=""USD"",O38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",O38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P39,"=IF($D39=""USD"",P38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",P38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q39,"=IF($D39=""USD"",Q38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",Q38*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R39,"=IF($D39=""USD"",R38*'Donnees SOMIDA'!$B$5,IF($D39=""JPY"",R38*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S39,=SUM(G39:R39)
 Exportations,G42,"=IF($D42=""USD"",G41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",G41*'Donnees SOMIDA'!$B$6,0))"
 Exportations,H42,"=IF($D42=""USD"",H41*'Donnees SOMIDA'!$B$5,IF($D42=""JPY"",H41*'Donnees SOMIDA'!$B$6,0))"
@@ -255,18 +199,6 @@ Exportations,P45,"=IF($D45=""USD"",P44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",P44
 Exportations,Q45,"=IF($D45=""USD"",Q44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",Q44*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R45,"=IF($D45=""USD"",R44*'Donnees SOMIDA'!$B$5,IF($D45=""JPY"",R44*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S45,=SUM(G45:R45)
-Exportations,G48,"=IF($D48=""USD"",G47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",G47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H48,"=IF($D48=""USD"",H47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",H47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I48,"=IF($D48=""USD"",I47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",I47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J48,"=IF($D48=""USD"",J47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",J47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K48,"=IF($D48=""USD"",K47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",K47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L48,"=IF($D48=""USD"",L47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",L47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M48,"=IF($D48=""USD"",M47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",M47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N48,"=IF($D48=""USD"",N47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",N47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O48,"=IF($D48=""USD"",O47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",O47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P48,"=IF($D48=""USD"",P47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",P47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q48,"=IF($D48=""USD"",Q47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",Q47*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R48,"=IF($D48=""USD"",R47*'Donnees SOMIDA'!$B$5,IF($D48=""JPY"",R47*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S48,=SUM(G48:R48)
 Exportations,G51,"=IF($D51=""USD"",G50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",G50*'Donnees SOMIDA'!$B$6,0))"
 Exportations,H51,"=IF($D51=""USD"",H50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",H50*'Donnees SOMIDA'!$B$6,0))"
@@ -281,18 +213,6 @@ Exportations,P51,"=IF($D51=""USD"",P50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",P50
 Exportations,Q51,"=IF($D51=""USD"",Q50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",Q50*'Donnees SOMIDA'!$B$6,0))"
 Exportations,R51,"=IF($D51=""USD"",R50*'Donnees SOMIDA'!$B$5,IF($D51=""JPY"",R50*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S51,=SUM(G51:R51)
-Exportations,G54,"=IF($D54=""USD"",G53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",G53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,H54,"=IF($D54=""USD"",H53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",H53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,I54,"=IF($D54=""USD"",I53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",I53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,J54,"=IF($D54=""USD"",J53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",J53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,K54,"=IF($D54=""USD"",K53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",K53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,L54,"=IF($D54=""USD"",L53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",L53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,M54,"=IF($D54=""USD"",M53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",M53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,N54,"=IF($D54=""USD"",N53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",N53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,O54,"=IF($D54=""USD"",O53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",O53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,P54,"=IF($D54=""USD"",P53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",P53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,Q54,"=IF($D54=""USD"",Q53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",Q53*'Donnees SOMIDA'!$B$6,0))"
-Exportations,R54,"=IF($D54=""USD"",R53*'Donnees SOMIDA'!$B$5,IF($D54=""JPY"",R53*'Donnees SOMIDA'!$B$6,0))"
 Exportations,S54,=SUM(G54:R54)
 Frais Export,Q2,=SUM(E2:P2)
 Frais Export,Q3,=SUM(E3:P3)

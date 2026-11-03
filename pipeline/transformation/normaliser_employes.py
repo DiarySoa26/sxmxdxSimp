@@ -3,16 +3,15 @@ from pyspark.sql import functions as F
 import sys
 
 
-JDBC_URL = (
-    "jdbc:postgresql://postgres:5432/sxmxdx4"
-)
+from pathlib import Path as _Path
+import sys as _sys
+_RACINE_PROJET = str(_Path(__file__).resolve().parents[2])
+if _RACINE_PROJET not in _sys.path:
+    _sys.path.append(_RACINE_PROJET)
+from pipeline.config_db import jdbc_url, jdbc_properties  # noqa: E402
 
-
-JDBC_PROPERTIES = {
-    "user": "sxmxdx",
-    "password": "diary",
-    "driver": "org.postgresql.Driver"
-}
+JDBC_URL = jdbc_url()
+JDBC_PROPERTIES = jdbc_properties()
 
 
 def creer_spark():

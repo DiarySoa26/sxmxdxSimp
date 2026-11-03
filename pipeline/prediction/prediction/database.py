@@ -1,11 +1,9 @@
-import os
-import psycopg2
+from pathlib import Path as _Path
+import sys as _sys
+_RACINE_PROJET = str(_Path(__file__).resolve().parents[3])
+if _RACINE_PROJET not in _sys.path:
+    _sys.path.append(_RACINE_PROJET)
 
-def get_connection():
-    return psycopg2.connect(
-        host=os.getenv("DB_HOST", "localhost"),
-        port=os.getenv("DB_PORT", "5434"),
-        database=os.getenv("DB_NAME", "sxmxdx4"),
-        user=os.getenv("DB_USER", "sxmxdx"),
-        password=os.getenv("DB_PASSWORD", "diary")
-    )
+# Même configuration que le reste du pipeline (pipeline/config_db.py) :
+# la prédiction lit et écrit désormais dans la même base.
+from pipeline.config_db import get_connection  # noqa: E402,F401

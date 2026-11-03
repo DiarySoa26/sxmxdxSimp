@@ -1,5 +1,5 @@
 {
-    "fichier": "3b052b88_SOMIDA_2018.xlsx",
+    "fichier": "ae5d81f3_SOMIDA_2017.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -16,9 +16,9 @@
             "etat": "visible",
             "lignes": 101,
             "colonnes": 10,
-            "formules": 85,
-            "textes": 520,
-            "nombres": 255,
+            "formules": 80,
+            "textes": 490,
+            "nombres": 240,
             "mois_detectes": [],
             "mise_en_page": null
         },
@@ -27,8 +27,8 @@
             "lignes": 11,
             "colonnes": 16,
             "formules": 10,
-            "textes": 46,
-            "nombres": 120,
+            "textes": 34,
+            "nombres": 72,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -68,9 +68,9 @@
             "etat": "visible",
             "lignes": 27,
             "colonnes": 18,
-            "formules": 5,
-            "textes": 108,
-            "nombres": 229,
+            "formules": 3,
+            "textes": 98,
+            "nombres": 205,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -110,9 +110,9 @@
             "etat": "visible",
             "lignes": 54,
             "colonnes": 19,
-            "formules": 200,
-            "textes": 299,
-            "nombres": 390,
+            "formules": 128,
+            "textes": 191,
+            "nombres": 246,
             "mois_detectes": [
                 "Janvier",
                 "Février",

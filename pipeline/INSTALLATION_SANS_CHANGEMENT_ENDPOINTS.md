@@ -21,7 +21,7 @@ L'import existant exécute le Reverse Engineering V2, extrait les CSV, lance les
 
 ## Limites importantes
 - Les normaliseurs historiques des exportations, charges, production, employés et frais export **n'ont pas été validés** sur la nouvelle structure Excel ; un import complet peut échouer avant le chargement des amortissements.
-- La table d'amortissements n'est pas encore prise en compte dans les calculs de résultat du moteur budgétaire.
+- La table d'amortissements est déduite du résultat opérationnel par le moteur budgétaire (`moteur_regles.py`).
 - Les scripts RE V2 n'ont pas été testés de bout en bout en Docker dans cette livraison.
 - Ce ZIP n'inclut pas ton backend Spring Boot, le frontend Next.js ni le fichier docker-compose.
 - Ne pas appliquer sur la base de production avant un test intégral.
