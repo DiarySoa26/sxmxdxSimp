@@ -152,7 +152,7 @@ OUTPUT_DIR = BASE / "output"
 
 DB_HOST = os.getenv("DB_HOST", "postgres")
 DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "sxmxdx3")
+DB_NAME = os.getenv("DB_NAME", "sxmxdx4")
 DB_USER = os.getenv("DB_USER", "sxmxdx")
 DB_PASSWORD = os.getenv("DB_PASSWORD", "diary")
 

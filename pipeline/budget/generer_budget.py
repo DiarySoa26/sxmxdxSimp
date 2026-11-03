@@ -12,7 +12,7 @@ from pipeline.budget.moteur_regles import calculer_budget_mensuel, calculer_budg
 DB_CONFIG = {
     "host": "postgres",
     "port": 5432,
-    "dbname": "sxmxdx3",
+    "dbname": "sxmxdx4",
     "user": "sxmxdx",
     "password": "diary",
 }

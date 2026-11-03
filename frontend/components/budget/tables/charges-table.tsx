@@ -1,9 +1,12 @@
+"use client"
+
+import { Fragment } from "react"
+
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table"
 
@@ -16,6 +19,7 @@ type LigneCharge = {
   sous_categorie: string
   site: string
   unite: string
+  rc: string
   mois: Record<string, number>
   total: number
 }
@@ -61,23 +65,19 @@ export default function ChargesTable({
                 calculerTotalCategorie(lignesCategorie)
 
               return (
-                <>
-                  <TableRow
-  key={`categorie-${categorie}`}
-  className="border-y-2 bg-primary/10 hover:bg-primary/10"
->
-  <TableCell
-    colSpan={mois.length + 4}
-    className="py-4 text-base font-bold uppercase tracking-wide"
-  >
-    {categorie}
-  </TableCell>
-</TableRow>
+                <Fragment key={categorie}>
+                  {/* CATÉGORIE */}
+                  <TableRow className="border-y-2 bg-primary/10 hover:bg-primary/10">
+                    <TableCell
+                      colSpan={mois.length + 5}
+                      className="py-4 text-base font-bold uppercase tracking-wide"
+                    >
+                      {categorie}
+                    </TableCell>
+                  </TableRow>
 
-                  <TableRow
-                    key={`header-${categorie}`}
-                    className="bg-muted/70 hover:bg-muted/70"
-                  >
+                  {/* EN-TÊTES */}
+                  <TableRow className="bg-muted/70 hover:bg-muted/70">
                     <TableHead className="min-w-[190px] font-semibold text-foreground">
                       Sous-catégorie
                     </TableHead>
@@ -88,6 +88,11 @@ export default function ChargesTable({
 
                     <TableHead className="min-w-[100px] font-semibold text-foreground">
                       Unité
+                    </TableHead>
+
+                    {/* NOUVELLE COLONNE RC */}
+                    <TableHead className="min-w-[110px] font-semibold text-foreground">
+                      RC
                     </TableHead>
 
                     {mois.map((nomMois) => (
@@ -104,12 +109,15 @@ export default function ChargesTable({
                     </TableHead>
                   </TableRow>
 
+                  {/* LIGNES DES CHARGES */}
                   {lignesCategorie.map((ligne, index) => (
                     <TableRow
-                      key={`${categorie}-${ligne.sous_categorie}-${ligne.site}-${ligne.unite}-${index}`}
+                      key={`${categorie}-${ligne.sous_categorie}-${ligne.site}-${ligne.unite}-${ligne.rc}-${index}`}
                     >
                       <TableCell className="font-medium">
-                        {afficherValeur(ligne.sous_categorie)}
+                        {afficherValeur(
+                          ligne.sous_categorie
+                        )}
                       </TableCell>
 
                       <TableCell>
@@ -118,6 +126,11 @@ export default function ChargesTable({
 
                       <TableCell>
                         {afficherValeur(ligne.unite)}
+                      </TableCell>
+
+                      {/* VALEUR RC */}
+                      <TableCell>
+                        {afficherValeur(ligne.rc)}
                       </TableCell>
 
                       {mois.map((nomMois) => (
@@ -137,12 +150,10 @@ export default function ChargesTable({
                     </TableRow>
                   ))}
 
-                  <TableRow
-                    key={`total-${categorie}`}
-                    className="border-b-4 bg-muted/40 hover:bg-muted/40"
-                  >
+                  {/* TOTAL PAR CATÉGORIE */}
+                  <TableRow className="border-b-4 bg-muted/40 hover:bg-muted/40">
                     <TableCell
-                      colSpan={3}
+                      colSpan={4}
                       className="font-bold"
                     >
                       Total {categorie}
@@ -165,7 +176,7 @@ export default function ChargesTable({
                       )}
                     </TableCell>
                   </TableRow>
-                </>
+                </Fragment>
               )
             }
           )}
@@ -175,41 +186,52 @@ export default function ChargesTable({
   )
 }
 
+
 function regrouperCharges(
   data: any[]
 ): LigneCharge[] {
-  const resultat =
-    new Map<string, LigneCharge>()
+  const resultat = new Map<string, LigneCharge>()
 
   data.forEach((ligne) => {
-    const categorie =
-      afficherValeur(ligne?.categorie)
+    const categorie = afficherValeur(
+      ligne?.categorie
+    )
 
-    const sousCategorie =
-      afficherValeur(ligne?.sous_categorie)
+    const sousCategorie = afficherValeur(
+      ligne?.sous_categorie
+    )
 
-    const site =
-      afficherValeur(ligne?.site)
+    const site = afficherValeur(
+      ligne?.site
+    )
 
-    const unite =
-      afficherValeur(ligne?.unite)
+    const unite = afficherValeur(
+      ligne?.unite
+    )
 
-    const nomMois =
-      normaliserMois(ligne?.nom_mois)
+    // Récupération de RC
+    const rc = afficherValeur(
+      ligne?.rc
+    )
 
-    const montant =
-      Number(ligne?.montant ?? 0)
+    const nomMois = normaliserMois(
+      ligne?.nom_mois
+    )
 
-    const cle = [
+    const montant = Number(
+      ligne?.montant ?? 0
+    )
+
+    const cle = JSON.stringify([
       categorie,
       sousCategorie,
       site,
       unite,
-    ].join("|")
+      rc,
+    ])
 
     if (!resultat.has(cle)) {
-      const valeursMois:
-        Record<string, number> = {}
+      const valeursMois: Record<string, number> = {}
 
       mois.forEach((m) => {
         valeursMois[m] = 0
@@ -220,91 +242,101 @@ function regrouperCharges(
         sous_categorie: sousCategorie,
         site,
         unite,
+        rc,
         mois: valeursMois,
         total: 0,
       })
     }
 
-    const ligneGroupee =
-      resultat.get(cle)
+    const ligneGroupee = resultat.get(cle)
 
     if (!ligneGroupee) {
       return
     }
 
-    const montantValide =
-      Number.isNaN(montant)
-        ? 0
-        : montant
+    const montantValide = Number.isFinite(montant)
+      ? montant
+      : 0
 
     if (
       nomMois &&
       mois.includes(nomMois)
     ) {
-      ligneGroupee.mois[nomMois] +=
-        montantValide
+      ligneGroupee.mois[nomMois] += montantValide
     }
 
-    ligneGroupee.total +=
-      montantValide
+    ligneGroupee.total += montantValide
   })
 
-  return Array.from(
-    resultat.values()
-  ).sort((a, b) => {
-    const comparaisonCategorie =
-      a.categorie.localeCompare(
-        b.categorie,
-        "fr"
-      )
+  return Array.from(resultat.values()).sort(
+    (a, b) => {
+      const comparaisonCategorie =
+        a.categorie.localeCompare(
+          b.categorie,
+          "fr"
+        )
 
-    if (comparaisonCategorie !== 0) {
-      return comparaisonCategorie
+      if (comparaisonCategorie !== 0) {
+        return comparaisonCategorie
+      }
+
+      const comparaisonSousCategorie =
+        a.sous_categorie.localeCompare(
+          b.sous_categorie,
+          "fr"
+        )
+
+      if (comparaisonSousCategorie !== 0) {
+        return comparaisonSousCategorie
+      }
+
+      const comparaisonSite =
+        a.site.localeCompare(
+          b.site,
+          "fr"
+        )
+
+      if (comparaisonSite !== 0) {
+        return comparaisonSite
+      }
+
+      const comparaisonUnite =
+        a.unite.localeCompare(
+          b.unite,
+          "fr"
+        )
+
+      if (comparaisonUnite !== 0) {
+        return comparaisonUnite
+      }
+
+      return a.rc.localeCompare(b.rc, "fr")
     }
-
-    const comparaisonSousCategorie =
-      a.sous_categorie.localeCompare(
-        b.sous_categorie,
-        "fr"
-      )
-
-    if (
-      comparaisonSousCategorie !== 0
-    ) {
-      return comparaisonSousCategorie
-    }
-
-    return a.site.localeCompare(
-      b.site,
-      "fr"
-    )
-  })
+  )
 }
+
 
 function regrouperParCategorie(
   lignes: LigneCharge[]
 ) {
-  const resultat:
-    Record<string, LigneCharge[]> = {}
+  const resultat: Record<string, LigneCharge[]> = {}
 
   lignes.forEach((ligne) => {
     if (!resultat[ligne.categorie]) {
       resultat[ligne.categorie] = []
     }
 
-    resultat[ligne.categorie].push(
-      ligne
-    )
+    resultat[ligne.categorie].push(ligne)
   })
 
   return resultat
 }
 
+
 function calculerTotalCategorie(
   lignes: LigneCharge[]
 ) {
-  const valeursMois:
-    Record<string, number> = {}
+  const valeursMois: Record<string, number> = {}
 
   mois.forEach((nomMois) => {
     valeursMois[nomMois] = 0
@@ -327,36 +359,33 @@ function calculerTotalCategorie(
   }
 }
 
-function normaliserMois(
-  valeur: any
-) {
+
+function normaliserMois(valeur: any) {
   if (!valeur) {
     return ""
   }
 
-  const valeurNormalisee =
-    String(valeur)
-      .trim()
-      .toLowerCase()
+  const valeurNormalisee = String(valeur)
+    .trim()
+    .toLowerCase()
 
-  const correspondances:
-    Record<string, string> = {
-      janvier: "Janvier",
-      fevrier: "Février",
-      février: "Février",
-      mars: "Mars",
-      avril: "Avril",
-      mai: "Mai",
-      juin: "Juin",
-      juillet: "Juillet",
-      aout: "Août",
-      août: "Août",
-      septembre: "Septembre",
-      octobre: "Octobre",
-      novembre: "Novembre",
-      decembre: "Décembre",
-      décembre: "Décembre",
-    }
+  const correspondances: Record<string, string> = {
+    janvier: "Janvier",
+    fevrier: "Février",
+    février: "Février",
+    mars: "Mars",
+    avril: "Avril",
+    mai: "Mai",
+    juin: "Juin",
+    juillet: "Juillet",
+    aout: "Août",
+    août: "Août",
+    septembre: "Septembre",
+    octobre: "Octobre",
+    novembre: "Novembre",
+    decembre: "Décembre",
+    décembre: "Décembre",
+  }
 
   return (
     correspondances[valeurNormalisee] ??
@@ -364,9 +393,7 @@ function normaliserMois(
   )
 }
 
-function afficherValeur(
-  valeur: any
-) {
+function afficherValeur(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -378,20 +405,15 @@ function afficherValeur(
   return String(valeur)
 }
 
-function formatMontant(
-  valeur: any
-) {
-  const nombre =
-    Number(valeur ?? 0)
 
-  if (Number.isNaN(nombre)) {
+function formatMontant(valeur: any) {
+  const nombre = Number(valeur ?? 0)
+
+  if (!Number.isFinite(nombre)) {
     return "-"
   }
 
-  return nombre.toLocaleString(
-    "fr-FR",
-    {
-      maximumFractionDigits: 2,
-    }
-  )
+  return nombre.toLocaleString("fr-FR", {
+    maximumFractionDigits: 2,
+  })
 }

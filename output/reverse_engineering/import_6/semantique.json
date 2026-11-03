@@ -1,16 +1,16 @@
 {
-    "modele": "3D981E01_SOMIDA_2020",
-    "version": "3D981E01_SOMIDA_2020_V1",
+    "modele": "D78B54D9_SOMIDA_2020",
+    "version": "D78B54D9_SOMIDA_2020_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/3d981e01_SOMIDA_2020.xlsx",
+    "source_excel": "/app/data/uploads/d78b54d9_SOMIDA_2020.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_6/regles_metier.json",
     "statistiques": {
-        "nombre_regles": 162,
-        "semantique_detectee": 162,
+        "nombre_regles": 167,
+        "semantique_detectee": 167,
         "a_valider": 0,
         "periodicites": {
             "MENSUELLE": 54,
-            "ANNUELLE": 105,
+            "ANNUELLE": 110,
             "UNIQUE": 2,
             "REPETEE": 1
         }
@@ -59,6 +59,17 @@
             "regles": [
                 "RG_CHARGES_009",
                 "RG_CHARGES_010"
+            ]
+        },
+        {
+            "identifiant_semantique": "achat_produits",
+            "periodicite": "ANNUELLE",
+            "regles": [
+                "RG_CHARGES_014",
+                "RG_CHARGES_015",
+                "RG_CHARGES_016",
+                "RG_CHARGES_017",
+                "RG_CHARGES_018"
             ]
         },
         {
@@ -750,32 +761,32 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava)",
+            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ACHAT PRODUITS\", charges.ampandrandava)",
             "libelle_excel": "Achats consommés / charges directes de production",
             "identifiant_semantique": "achats_consommes_charges_directes_de_production",
             "position_libelle": "GAUCHE",
@@ -824,15 +835,15 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUM('Frais Export'!$E$2:$E$50)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 },
                 {
                     "feuille": "Frais Export",
@@ -842,13 +853,13 @@
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 },
@@ -1098,27 +1109,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -3012,6 +3023,166 @@
             "expression_metier": "SUM(ampandrandava)",
             "libelle_excel": "SECURITE",
             "identifiant_semantique": "securite",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_014",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q16",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E16:P16)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_015",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q17",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E17:P17)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_016",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q18",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E18:P18)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_017",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q19",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E19:P19)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E19:P19"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E19:P19",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_018",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q20",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E20:P20)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E20:P20"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E20:P20",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
             "position_libelle": "DEBUT_LIGNE",
             "distance_libelle": 16,
             "type_semantique": "MESURE_ANNUELLE",
@@ -5570,36 +5741,26 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C3",
-            "operation": "SOMME_CONDITIONNELLE",
+            "operation": "SOMME",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+            "formule": "=SUM(Charges!E2:E45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
-                    "libelle": "Catégorie",
-                    "identifiant_semantique": "categorie"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUMIF(charges.categorie, \"FISCAL\", charges.ampandrandava)",
+            "expression_metier": "SUM(charges.ampandrandava)",
             "libelle_excel": "Charges exploitation",
             "identifiant_semantique": "charges_exploitation",
             "position_libelle": "GAUCHE",
@@ -5772,26 +5933,66 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C6",
-            "operation": "SOMME",
+            "operation": "SOUSTRACTION",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUM(Amortissements!E2:E40)",
+            "formule": "=C2-C3-C4-C5-C8",
             "dependances": [
                 {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:E40"
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C8"
                 }
             ],
             "dependances_semantiques": [
                 {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:E40",
-                    "libelle": "GENERAL",
-                    "identifiant_semantique": "general"
+                    "feuille": "Synthese",
+                    "cellule": "C2",
+                    "libelle": "CA export",
+                    "identifiant_semantique": "ca_export"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3",
+                    "libelle": "Charges exploitation",
+                    "identifiant_semantique": "charges_exploitation"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4",
+                    "libelle": "Frais export",
+                    "identifiant_semantique": "frais_export"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5",
+                    "libelle": "Masse salariale",
+                    "identifiant_semantique": "masse_salariale"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C8",
+                    "libelle": "Marge opérationnelle",
+                    "identifiant_semantique": "marge_operationnelle"
                 }
             ],
-            "expression_metier": "SUM(amortissements.general)",
+            "expression_metier": "ca_export - charges_exploitation - frais_export - masse_salariale - marge_operationnelle",
             "libelle_excel": "Amortissements",
             "identifiant_semantique": "amortissements",
             "position_libelle": "GAUCHE",
@@ -5836,66 +6037,36 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C7",
-            "operation": "SOUSTRACTION",
+            "operation": "DIVISION",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=C2-C3-C4-C5-C6",
+            "formule": "=IFERROR(C6/C2,0)",
             "dependances": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C2"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C3"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C4"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5"
-                },
-                {
-                    "feuille": "Synthese",
                     "cellule": "C6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C2",
-                    "libelle": "CA export",
-                    "identifiant_semantique": "ca_export"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C3",
-                    "libelle": "Charges exploitation",
-                    "identifiant_semantique": "charges_exploitation"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C4",
-                    "libelle": "Frais export",
-                    "identifiant_semantique": "frais_export"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5",
-                    "libelle": "Masse salariale",
-                    "identifiant_semantique": "masse_salariale"
-                },
-                {
-                    "feuille": "Synthese",
                     "cellule": "C6",
                     "libelle": "Amortissements",
                     "identifiant_semantique": "amortissements"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2",
+                    "libelle": "CA export",
+                    "identifiant_semantique": "ca_export"
                 }
             ],
-            "expression_metier": "ca_export - charges_exploitation - frais_export - masse_salariale - amortissements",
+            "expression_metier": "IFERROR(amortissements / ca_export, 0)",
             "libelle_excel": "Résultat opérationnel",
             "identifiant_semantique": "resultat_operationnel",
             "position_libelle": "GAUCHE",

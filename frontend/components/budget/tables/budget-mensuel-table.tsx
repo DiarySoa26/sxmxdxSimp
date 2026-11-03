@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Table,
   TableBody,
@@ -45,6 +47,11 @@ const indicateurs = [
   {
     key: "masse_salariale",
     label: "Masse salariale",
+    type: "montant",
+  },
+  {
+    key: "amortissements",
+    label: "Amortissements",
     type: "montant",
   },
   {
@@ -102,33 +109,18 @@ export default function BudgetMensuelTable({
               </TableCell>
 
               {mois.map((nomMois) => {
-                const ligne =
-                  donneesParMois[nomMois]
+                const ligne = donneesParMois[nomMois]
 
-                const valeur =
-                  ligne?.[indicateur.key]
+                const valeur = ligne?.[indicateur.key]
 
                 return (
                   <TableCell
                     key={`${indicateur.key}-${nomMois}`}
-                    className={
-                      indicateur.key ===
-                      "resultat_operationnel"
-                        ? "text-right"
-                        : indicateur.key ===
-                            "marge_operationnelle"
-                          ? "text-right"
-                          : "text-right"
-                    }
+                    className="text-right"
                   >
-                    {indicateur.type ===
-                    "pourcentage"
-                      ? formatPourcentage(
-                          valeur
-                        )
-                      : formatMontant(
-                          valeur
-                        )}
+                    {indicateur.type === "pourcentage"
+                      ? formatPourcentage(valeur)
+                      : formatMontant(valeur)}
                   </TableCell>
                 )
               })}
@@ -140,48 +132,34 @@ export default function BudgetMensuelTable({
   )
 }
 
-function construireDonneesParMois(
-  data: any[]
-) {
-  const resultat: Record<
-    string,
-    any
-  > = {}
+function construireDonneesParMois(data: any[]) {
+  const resultat: Record<string, any> = {}
 
   data.forEach((ligne) => {
-    const nomMois =
-      normaliserMois(
-        ligne?.nom_mois ??
-          ligne?.mois
-      )
+    const nomMois = normaliserMois(
+      ligne?.nom_mois ?? ligne?.mois
+    )
 
     if (!nomMois) {
       return
     }
 
-    resultat[nomMois] =
-      ligne
+    resultat[nomMois] = ligne
   })
 
   return resultat
 }
 
-function normaliserMois(
-  valeur: any
-) {
-  if (!valeur) {
+function normaliserMois(valeur: any) {
+  if (valeur === null || valeur === undefined || valeur === "") {
     return ""
   }
 
-  const valeurNormalisee =
-    String(valeur)
-      .trim()
-      .toLowerCase()
+  const valeurNormalisee = String(valeur)
+    .trim()
+    .toLowerCase()
 
-  const correspondances: Record<
-    string,
-    string
-  > = {
+  const correspondances: Record<string, string> = {
     janvier: "Janvier",
     fevrier: "Février",
     février: "Février",
@@ -199,16 +177,10 @@ function normaliserMois(
     décembre: "Décembre",
   }
 
-  return (
-    correspondances[
-      valeurNormalisee
-    ] ?? ""
-  )
+  return correspondances[valeurNormalisee] ?? ""
 }
 
-function formatMontant(
-  valeur: any
-) {
+function formatMontant(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -217,24 +189,18 @@ function formatMontant(
     return "-"
   }
 
-  const nombre =
-    Number(valeur)
+  const nombre = Number(valeur)
 
-  if (Number.isNaN(nombre)) {
+  if (!Number.isFinite(nombre)) {
     return "-"
   }
 
-  return `${nombre.toLocaleString(
-    "fr-FR",
-    {
-      maximumFractionDigits: 2,
-    }
-  )} MGA`
+  return `${nombre.toLocaleString("fr-FR", {
+    maximumFractionDigits: 2,
+  })} MGA`
 }
 
-function formatPourcentage(
-  valeur: any
-) {
+function formatPourcentage(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -243,17 +209,13 @@ function formatPourcentage(
     return "-"
   }
 
-  const nombre =
-    Number(valeur)
+  const nombre = Number(valeur)
 
-  if (Number.isNaN(nombre)) {
+  if (!Number.isFinite(nombre)) {
     return "-"
   }
 
-  return `${nombre.toLocaleString(
-    "fr-FR",
-    {
-      maximumFractionDigits: 2,
-    }
-  )} %`
+  return `${nombre.toLocaleString("fr-FR", {
+    maximumFractionDigits: 2,
+  })} %`
 }

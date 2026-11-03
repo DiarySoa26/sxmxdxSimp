@@ -1,9 +1,6 @@
 "use client"
 
-import {
-  useEffect,
-  useState,
-} from "react"
+import { useEffect, useState } from "react"
 
 import {
   Table,
@@ -27,24 +24,12 @@ type BudgetTableProps = {
 export default function BudgetTable({
   data,
 }: BudgetTableProps) {
-  const [
-    budgetMensuel,
-    setBudgetMensuel,
-  ] = useState<any[]>([])
-
-  const [
-    loadingBudgetMensuel,
-    setLoadingBudgetMensuel,
-  ] = useState(false)
-
-  const [
-    errorBudgetMensuel,
-    setErrorBudgetMensuel,
-  ] = useState("")
+  const [budgetMensuel, setBudgetMensuel] = useState<any[]>([])
+  const [loadingBudgetMensuel, setLoadingBudgetMensuel] = useState(false)
+  const [errorBudgetMensuel, setErrorBudgetMensuel] = useState("")
 
   const budgetAnnuel =
-    Array.isArray(data) &&
-    data.length > 0
+    Array.isArray(data) && data.length > 0
       ? data[0]
       : null
 
@@ -63,31 +48,19 @@ export default function BudgetTable({
     let actif = true
 
     async function chargerBudgetMensuel() {
-      setLoadingBudgetMensuel(
-        true
-      )
-
+      setLoadingBudgetMensuel(true)
       setErrorBudgetMensuel("")
 
       try {
-        const resultat =
-          await getBudgetMensuel(
-            budgetId
-          )
+        const resultat = await getBudgetMensuel(budgetId)
 
-        if (!actif) {
-          return
-        }
+        if (!actif) return
 
         setBudgetMensuel(
-          Array.isArray(resultat)
-            ? resultat
-            : []
+          Array.isArray(resultat) ? resultat : []
         )
       } catch (error: any) {
-        if (!actif) {
-          return
-        }
+        if (!actif) return
 
         setBudgetMensuel([])
 
@@ -97,9 +70,7 @@ export default function BudgetTable({
         )
       } finally {
         if (actif) {
-          setLoadingBudgetMensuel(
-            false
-          )
+          setLoadingBudgetMensuel(false)
         }
       }
     }
@@ -123,6 +94,7 @@ export default function BudgetTable({
 
   return (
     <div className="space-y-10">
+      {/* BUDGET ANNUEL */}
       <section className="space-y-4">
         <div>
           <h3 className="text-lg font-semibold">
@@ -162,6 +134,11 @@ export default function BudgetTable({
                   Masse salariale
                 </TableHead>
 
+                {/* NOUVELLE COLONNE */}
+                <TableHead className="text-right">
+                  Amortissements
+                </TableHead>
+
                 <TableHead className="text-right">
                   Résultat opérationnel
                 </TableHead>
@@ -169,87 +146,68 @@ export default function BudgetTable({
                 <TableHead className="text-right">
                   Marge opérationnelle
                 </TableHead>
-{/* 
-                <TableHead>
-                  Date génération
-                </TableHead> */}
               </TableRow>
             </TableHeader>
 
             <TableBody>
-              {data.map(
-                (
-                  ligne,
-                  index
-                ) => (
-                  <TableRow
-                    key={
-                      ligne?.id ??
-                      ligne?.id_budget ??
-                      `budget-${index}`
-                    }
-                  >
-                    <TableCell>
-                      {afficherValeur(
-                        ligne?.type_budget
-                      )}
-                    </TableCell>
+              {data.map((ligne, index) => (
+                <TableRow
+                  key={
+                    ligne?.id ??
+                    ligne?.id_budget ??
+                    `budget-${index}`
+                  }
+                >
+                  <TableCell>
+                    {afficherValeur(ligne?.type_budget)}
+                  </TableCell>
 
-                    <TableCell>
-                      {afficherValeur(
-                        ligne?.statut
-                      )}
-                    </TableCell>
+                  <TableCell>
+                    {afficherValeur(ligne?.statut)}
+                  </TableCell>
 
-                    <TableCell className="text-right">
-                      {formatMontant(
-                        ligne?.ca_export
-                      )}
-                    </TableCell>
+                  <TableCell className="text-right">
+                    {formatMontant(ligne?.ca_export)}
+                  </TableCell>
 
-                    <TableCell className="text-right">
-                      {formatMontant(
-                        ligne?.charges_exploitation
-                      )}
-                    </TableCell>
+                  <TableCell className="text-right">
+                    {formatMontant(
+                      ligne?.charges_exploitation
+                    )}
+                  </TableCell>
 
-                    <TableCell className="text-right">
-                      {formatMontant(
-                        ligne?.frais_export
-                      )}
-                    </TableCell>
+                  <TableCell className="text-right">
+                    {formatMontant(ligne?.frais_export)}
+                  </TableCell>
 
-                    <TableCell className="text-right">
-                      {formatMontant(
-                        ligne?.masse_salariale
-                      )}
-                    </TableCell>
+                  <TableCell className="text-right">
+                    {formatMontant(ligne?.masse_salariale)}
+                  </TableCell>
 
-                    <TableCell className="text-right font-semibold">
-                      {formatMontant(
-                        ligne?.resultat_operationnel
-                      )}
-                    </TableCell>
+                  {/* MONTANT ANNUEL DES AMORTISSEMENTS */}
+                  <TableCell className="text-right">
+                    {formatMontant(ligne?.amortissements)}
+                  </TableCell>
 
-                    <TableCell className="text-right font-semibold">
-                      {formatPourcentage(
-                        ligne?.marge_operationnelle
-                      )}
-                    </TableCell>
+                  <TableCell className="text-right font-semibold">
+                    {formatMontant(
+                      ligne?.resultat_operationnel
+                    )}
+                  </TableCell>
 
-                    {/* <TableCell>
-                      {formatDate(
-                        ligne?.date_generation
-                      )}
-                    </TableCell> */}
-                  </TableRow>
-                )
-              )}
+                  <TableCell className="text-right font-semibold">
+                    {formatPourcentage(
+                      ligne?.marge_operationnelle
+                    )}
+                  </TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </div>
       </section>
 
+      {/* BUDGET MENSUEL */}
       <section className="space-y-4 border-t pt-8">
         <div>
           <h3 className="text-lg font-semibold">
@@ -269,31 +227,23 @@ export default function BudgetTable({
           </div>
         )}
 
-        {!loadingBudgetMensuel &&
-          errorBudgetMensuel && (
-            <div className="rounded-md border border-destructive/50 p-4">
-              <p className="text-sm text-destructive">
-                {errorBudgetMensuel}
-              </p>
-            </div>
-          )}
+        {!loadingBudgetMensuel && errorBudgetMensuel && (
+          <div className="rounded-md border border-destructive/50 p-4">
+            <p className="text-sm text-destructive">
+              {errorBudgetMensuel}
+            </p>
+          </div>
+        )}
 
-        {!loadingBudgetMensuel &&
-          !errorBudgetMensuel && (
-            <BudgetMensuelTable
-              data={
-                budgetMensuel
-              }
-            />
-          )}
+        {!loadingBudgetMensuel && !errorBudgetMensuel && (
+          <BudgetMensuelTable data={budgetMensuel} />
+        )}
       </section>
     </div>
   )
 }
 
-function afficherValeur(
-  valeur: any
-) {
+function afficherValeur(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -305,9 +255,7 @@ function afficherValeur(
   return String(valeur)
 }
 
-function formatMontant(
-  valeur: any
-) {
+function formatMontant(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -316,26 +264,18 @@ function formatMontant(
     return "-"
   }
 
-  const nombre =
-    Number(valeur)
+  const nombre = Number(valeur)
 
-  if (
-    Number.isNaN(nombre)
-  ) {
+  if (!Number.isFinite(nombre)) {
     return "-"
   }
 
-  return `${nombre.toLocaleString(
-    "fr-FR",
-    {
-      maximumFractionDigits: 2,
-    }
-  )} MGA`
+  return `${nombre.toLocaleString("fr-FR", {
+    maximumFractionDigits: 2,
+  })} MGA`
 }
 
-function formatPourcentage(
-  valeur: any
-) {
+function formatPourcentage(valeur: any) {
   if (
     valeur === null ||
     valeur === undefined ||
@@ -344,42 +284,27 @@ function formatPourcentage(
     return "-"
   }
 
-  const nombre =
-    Number(valeur)
+  const nombre = Number(valeur)
 
-  if (
-    Number.isNaN(nombre)
-  ) {
+  if (!Number.isFinite(nombre)) {
     return "-"
   }
 
-  return `${nombre.toLocaleString(
-    "fr-FR",
-    {
-      maximumFractionDigits: 2,
-    }
-  )} %`
+  return `${nombre.toLocaleString("fr-FR", {
+    maximumFractionDigits: 2,
+  })} %`
 }
 
-function formatDate(
-  valeur: any
-) {
+function formatDate(valeur: any) {
   if (!valeur) {
     return "-"
   }
 
-  const date =
-    new Date(valeur)
+  const date = new Date(valeur)
 
-  if (
-    Number.isNaN(
-      date.getTime()
-    )
-  ) {
+  if (Number.isNaN(date.getTime())) {
     return String(valeur)
   }
 
-  return date.toLocaleString(
-    "fr-FR"
-  )
+  return date.toLocaleString("fr-FR")
 }

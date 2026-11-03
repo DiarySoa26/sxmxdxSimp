@@ -1256,27 +1256,6 @@ export default function ComparaisonHistorique() {
             hauteur={360}
           />
 
-          {/* COMPOSITION DES AUTRES CHARGES */}
-          {resultat.autresCategories?.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">
-                  Composition des autres charges
-                </CardTitle>
-
-                <CardDescription>
-                  Catégories non affectées aux trois rubriques principales.
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {resultat.autresCategories.join(", ")}
-                </p>
-              </CardContent>
-            </Card>
-          )}
-
           {/* INTERPRÉTATIONS */}
           <Card>
             <CardHeader>
@@ -1317,12 +1296,6 @@ export default function ComparaisonHistorique() {
                         : "Les dotations restent stables."}
                 </p>
               )}
-
-              <p className="text-xs text-muted-foreground">
-                Les résultats et marges provenant du backend
-                peuvent nécessiter une mise à jour pour
-                refléter les frais export intégrés aux charges.
-              </p>
             </CardContent>
           </Card>
 

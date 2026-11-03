@@ -1,5 +1,5 @@
 {
-    "fichier": "d94d613a_SOMIDA_2015.xlsx",
+    "fichier": "0a3ca8ea_SOMIDA_2015_CHARGES_INCLUSES.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -67,10 +67,10 @@
         "Charges": {
             "etat": "visible",
             "lignes": 27,
-            "colonnes": 17,
-            "formules": 0,
-            "textes": 69,
-            "nombres": 169,
+            "colonnes": 18,
+            "formules": 5,
+            "textes": 108,
+            "nombres": 229,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -279,7 +279,7 @@
             "lignes": 70,
             "colonnes": 17,
             "formules": 0,
-            "textes": 61,
+            "textes": 50,
             "nombres": 143,
             "mois_detectes": [
                 "Janvier",

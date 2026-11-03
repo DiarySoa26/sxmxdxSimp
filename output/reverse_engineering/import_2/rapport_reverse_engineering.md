@@ -1,4 +1,4 @@
-# Reverse engineering : 44cebcce_SOMIDA_2016.xlsx
+# Reverse engineering : 7c4fc6eb_SOMIDA_2016.xlsx
 
 ## Feuilles
 
@@ -7,7 +7,7 @@
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
 | Employes | 74 | aucune mise en page temporelle détectée |
 | Production | 10 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
-| Charges | 0 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
+| Charges | 5 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Exportations | 200 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
 | Frais Export | 18 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Synthese | 91 | mois en colonnes C:N (en-tête ligne 1), total en O [DETECTEE] |
@@ -16,14 +16,14 @@
 
 ## Resultat
 
-- Formules Excel : 783
-- Regles uniques apres regroupement : 136
-- Regles formalisees (avec libelle metier) : 136
+- Formules Excel : 788
+- Regles uniques apres regroupement : 141
+- Regles formalisees (avec libelle metier) : 141
 - Regles a valider (libelle non identifie) : 0
 
 ## Exemples de regles metier detectees
 
-- **chiffre_d_affaires** (MENSUELLE) = `synthese.ca_export`
+- **chiffre_d_affaires** (MENSUELLE) = `IF(synthese.ca_export = "", 0, synthese.ca_export)`
 - **chiffre_d_affaires** (ANNUELLE) = `SUM(chiffre_d_affaires)`
 - **production_stockee** (MENSUELLE) = `0`
 - **production_stockee** (ANNUELLE) = `SUM(production_stockee)`
@@ -31,7 +31,7 @@
 - **production_immobilisee** (ANNUELLE) = `SUM(production_immobilisee)`
 - **i_production_de_l_exercice** (MENSUELLE) = `SUM(chiffre_d_affaires)`
 - **i_production_de_l_exercice** (ANNUELLE) = `SUM(i_production_de_l_exercice)`
-- **achats_consommes_charges_directes_de_production** (MENSUELLE) = `SUMIF(charges.categorie, "PRODUCTION", charges.ampandrandava)`
+- **achats_consommes_charges_directes_de_production** (MENSUELLE) = `SUMIF(charges.categorie, "PRODUCTION", charges.ampandrandava) + SUMIF(charges.categorie, "ACHAT PRODUITS", charges.ampandrandava)`
 - **achats_consommes_charges_directes_de_production** (ANNUELLE) = `SUM(achats_consommes_charges_directes_de_production)`
 
 ## Points d'attention : formules differentes dans un meme regroupement

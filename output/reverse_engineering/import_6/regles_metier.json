@@ -1,39 +1,39 @@
 {
-    "modele": "3D981E01_SOMIDA_2020",
-    "version": "3D981E01_SOMIDA_2020_V1",
-    "fichier_source": "3d981e01_SOMIDA_2020.xlsx",
+    "modele": "D78B54D9_SOMIDA_2020",
+    "version": "D78B54D9_SOMIDA_2020_V1",
+    "fichier_source": "d78b54d9_SOMIDA_2020.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_6/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_6/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 840,
-        "nombre_regles_uniques": 162,
+        "nombre_formules_excel": 845,
+        "nombre_regles_uniques": 167,
         "nombre_repetitions_regroupees": 678,
         "operations": {
-            "SOMME": 111,
+            "SOMME": 116,
             "REFERENCE": 13,
-            "SOMME_CONDITIONNELLE": 9,
+            "SOMME_CONDITIONNELLE": 8,
             "SOUSTRACTION": 7,
             "MULTIPLICATION": 16,
-            "DIVISION": 6
+            "DIVISION": 7
         },
         "domaines": {
             "AMORTISSEMENTS": 11,
             "CR": 62,
-            "CHARGES": 13,
+            "CHARGES": 18,
             "SALAIRES": 1,
             "EXPORTATION": 51,
             "PRODUCTION": 10,
             "BUDGET": 14
         },
         "periodicites": {
-            "UNIQUE": 107,
+            "UNIQUE": 112,
             "MENSUELLE": 53,
             "REPETEE": 2
         },
-        "regroupements_irreguliers": 7
+        "regroupements_irreguliers": 6
     },
     "regles": [
         {
@@ -1082,55 +1082,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B9",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$E$2:$E$45)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"PRODUCTION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"PRODUCTION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"ACHATPRODUITS\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$F$2:$F$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$F$2:$F$45)"
                 },
                 {
                     "cellule": "D9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$G$2:$G$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$G$2:$G$45)"
                 },
                 {
                     "cellule": "E9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$H$2:$H$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$H$2:$H$45)"
                 },
                 {
                     "cellule": "F9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$I$2:$I$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$I$2:$I$45)"
                 },
                 {
                     "cellule": "G9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$J$2:$J$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$J$2:$J$45)"
                 },
                 {
                     "cellule": "H9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$K$2:$K$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$K$2:$K$45)"
                 },
                 {
                     "cellule": "I9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$L$2:$L$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$L$2:$L$45)"
                 },
                 {
                     "cellule": "J9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$M$2:$M$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$M$2:$M$45)"
                 },
                 {
                     "cellule": "K9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$N$2:$N$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$N$2:$N$45)"
                 },
                 {
                     "cellule": "L9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$O$2:$O$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$O$2:$O$45)"
                 },
                 {
                     "cellule": "M9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$P$2:$P$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$P$2:$P$45)"
                 }
             ],
             "cellules_excel": [
@@ -1150,179 +1150,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$E$2:$E$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E45"
                         }
                     ]
                 },
                 {
                     "cellule": "C9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$F$2:$F$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$F$2:$F$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F45"
                         }
                     ]
                 },
                 {
                     "cellule": "D9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$G$2:$G$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$G$2:$G$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G45"
                         }
                     ]
                 },
                 {
                     "cellule": "E9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$H$2:$H$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$H$2:$H$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H45"
                         }
                     ]
                 },
                 {
                     "cellule": "F9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$I$2:$I$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$I$2:$I$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I45"
                         }
                     ]
                 },
                 {
                     "cellule": "G9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$J$2:$J$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$J$2:$J$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J45"
                         }
                     ]
                 },
                 {
                     "cellule": "H9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$K$2:$K$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$K$2:$K$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K45"
                         }
                     ]
                 },
                 {
                     "cellule": "I9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$L$2:$L$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$L$2:$L$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L45"
                         }
                     ]
                 },
                 {
                     "cellule": "J9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$M$2:$M$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$M$2:$M$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M45"
                         }
                     ]
                 },
                 {
                     "cellule": "K9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$N$2:$N$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$N$2:$N$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N45"
                         }
                     ]
                 },
                 {
                     "cellule": "L9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$O$2:$O$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$O$2:$O$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O45"
                         }
                     ]
                 },
                 {
                     "cellule": "M9",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$P$2:$P$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$P$2:$P$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P45"
                         }
                     ]
                 }
@@ -1372,55 +1372,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B10",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUM('Frais Export'!$E$2:$E$50)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"ADMINISTRATION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"LOGISTIQUE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"SECURITE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUM(FRAISEXPORT!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[50]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"ADMINISTRATION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"LOGISTIQUE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"SECURITE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))+SUM(FRAISEXPORT!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[50]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$F$2:$F$40)+SUM('Frais Export'!$F$2:$F$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$F$2:$F$45)+SUM('Frais Export'!$F$2:$F$50)"
                 },
                 {
                     "cellule": "D10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$G$2:$G$40)+SUM('Frais Export'!$G$2:$G$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$G$2:$G$45)+SUM('Frais Export'!$G$2:$G$50)"
                 },
                 {
                     "cellule": "E10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$H$2:$H$40)+SUM('Frais Export'!$H$2:$H$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$H$2:$H$45)+SUM('Frais Export'!$H$2:$H$50)"
                 },
                 {
                     "cellule": "F10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$I$2:$I$40)+SUM('Frais Export'!$I$2:$I$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$I$2:$I$45)+SUM('Frais Export'!$I$2:$I$50)"
                 },
                 {
                     "cellule": "G10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$J$2:$J$40)+SUM('Frais Export'!$J$2:$J$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$J$2:$J$45)+SUM('Frais Export'!$J$2:$J$50)"
                 },
                 {
                     "cellule": "H10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$K$2:$K$40)+SUM('Frais Export'!$K$2:$K$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$K$2:$K$45)+SUM('Frais Export'!$K$2:$K$50)"
                 },
                 {
                     "cellule": "I10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$L$2:$L$40)+SUM('Frais Export'!$L$2:$L$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$L$2:$L$45)+SUM('Frais Export'!$L$2:$L$50)"
                 },
                 {
                     "cellule": "J10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$M$2:$M$40)+SUM('Frais Export'!$M$2:$M$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$M$2:$M$45)+SUM('Frais Export'!$M$2:$M$50)"
                 },
                 {
                     "cellule": "K10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$N$2:$N$40)+SUM('Frais Export'!$N$2:$N$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$N$2:$N$45)+SUM('Frais Export'!$N$2:$N$50)"
                 },
                 {
                     "cellule": "L10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$O$2:$O$40)+SUM('Frais Export'!$O$2:$O$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$O$2:$O$45)+SUM('Frais Export'!$O$2:$O$50)"
                 },
                 {
                     "cellule": "M10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$P$2:$P$40)+SUM('Frais Export'!$P$2:$P$50)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$P$2:$P$45)+SUM('Frais Export'!$P$2:$P$50)"
                 }
             ],
             "cellules_excel": [
@@ -1440,11 +1440,11 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 },
                 {
                     "feuille": "Frais Export",
@@ -1454,15 +1454,15 @@
             "occurrences_excel": [
                 {
                     "cellule": "B10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUM('Frais Export'!$E$2:$E$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1472,15 +1472,15 @@
                 },
                 {
                     "cellule": "C10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$F$2:$F$40)+SUM('Frais Export'!$F$2:$F$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$F$2:$F$45)+SUM('Frais Export'!$F$2:$F$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1490,15 +1490,15 @@
                 },
                 {
                     "cellule": "D10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$G$2:$G$40)+SUM('Frais Export'!$G$2:$G$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$G$2:$G$45)+SUM('Frais Export'!$G$2:$G$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1508,15 +1508,15 @@
                 },
                 {
                     "cellule": "E10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$H$2:$H$40)+SUM('Frais Export'!$H$2:$H$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$H$2:$H$45)+SUM('Frais Export'!$H$2:$H$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1526,15 +1526,15 @@
                 },
                 {
                     "cellule": "F10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$I$2:$I$40)+SUM('Frais Export'!$I$2:$I$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$I$2:$I$45)+SUM('Frais Export'!$I$2:$I$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1544,15 +1544,15 @@
                 },
                 {
                     "cellule": "G10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$J$2:$J$40)+SUM('Frais Export'!$J$2:$J$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$J$2:$J$45)+SUM('Frais Export'!$J$2:$J$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1562,15 +1562,15 @@
                 },
                 {
                     "cellule": "H10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$K$2:$K$40)+SUM('Frais Export'!$K$2:$K$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$K$2:$K$45)+SUM('Frais Export'!$K$2:$K$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1580,15 +1580,15 @@
                 },
                 {
                     "cellule": "I10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$L$2:$L$40)+SUM('Frais Export'!$L$2:$L$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$L$2:$L$45)+SUM('Frais Export'!$L$2:$L$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1598,15 +1598,15 @@
                 },
                 {
                     "cellule": "J10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$M$2:$M$40)+SUM('Frais Export'!$M$2:$M$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$M$2:$M$45)+SUM('Frais Export'!$M$2:$M$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1616,15 +1616,15 @@
                 },
                 {
                     "cellule": "K10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$N$2:$N$40)+SUM('Frais Export'!$N$2:$N$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$N$2:$N$45)+SUM('Frais Export'!$N$2:$N$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1634,15 +1634,15 @@
                 },
                 {
                     "cellule": "L10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$O$2:$O$40)+SUM('Frais Export'!$O$2:$O$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$O$2:$O$45)+SUM('Frais Export'!$O$2:$O$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -1652,15 +1652,15 @@
                 },
                 {
                     "cellule": "M10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$P$2:$P$40)+SUM('Frais Export'!$P$2:$P$50)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$P$2:$P$45)+SUM('Frais Export'!$P$2:$P$50)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P45"
                         },
                         {
                             "feuille": "Frais Export",
@@ -2280,55 +2280,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B14",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$E$2:$E$45)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"FISCAL\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[45]),\"FISCAL\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[45]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$F$2:$F$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$F$2:$F$45)"
                 },
                 {
                     "cellule": "D14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$G$2:$G$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$G$2:$G$45)"
                 },
                 {
                     "cellule": "E14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$H$2:$H$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$H$2:$H$45)"
                 },
                 {
                     "cellule": "F14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$I$2:$I$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$I$2:$I$45)"
                 },
                 {
                     "cellule": "G14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$J$2:$J$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$J$2:$J$45)"
                 },
                 {
                     "cellule": "H14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$K$2:$K$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$K$2:$K$45)"
                 },
                 {
                     "cellule": "I14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$L$2:$L$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$L$2:$L$45)"
                 },
                 {
                     "cellule": "J14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$M$2:$M$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$M$2:$M$45)"
                 },
                 {
                     "cellule": "K14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$N$2:$N$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$N$2:$N$45)"
                 },
                 {
                     "cellule": "L14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$O$2:$O$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$O$2:$O$45)"
                 },
                 {
                     "cellule": "M14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$P$2:$P$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$P$2:$P$45)"
                 }
             ],
             "cellules_excel": [
@@ -2348,179 +2348,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$E$2:$E$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E45"
                         }
                     ]
                 },
                 {
                     "cellule": "C14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$F$2:$F$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$F$2:$F$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F45"
                         }
                     ]
                 },
                 {
                     "cellule": "D14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$G$2:$G$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$G$2:$G$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G45"
                         }
                     ]
                 },
                 {
                     "cellule": "E14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$H$2:$H$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$H$2:$H$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H45"
                         }
                     ]
                 },
                 {
                     "cellule": "F14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$I$2:$I$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$I$2:$I$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I45"
                         }
                     ]
                 },
                 {
                     "cellule": "G14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$J$2:$J$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$J$2:$J$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J45"
                         }
                     ]
                 },
                 {
                     "cellule": "H14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$K$2:$K$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$K$2:$K$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K45"
                         }
                     ]
                 },
                 {
                     "cellule": "I14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$L$2:$L$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$L$2:$L$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L45"
                         }
                     ]
                 },
                 {
                     "cellule": "J14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$M$2:$M$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$M$2:$M$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M45"
                         }
                     ]
                 },
                 {
                     "cellule": "K14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$N$2:$N$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$N$2:$N$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N45"
                         }
                     ]
                 },
                 {
                     "cellule": "L14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$O$2:$O$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$O$2:$O$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O45"
                         }
                     ]
                 },
                 {
                     "cellule": "M14",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$P$2:$P$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$P$2:$P$45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A45"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P45"
                         }
                     ]
                 }
@@ -7503,6 +7503,186 @@
                         {
                             "feuille": "Charges",
                             "cellule": "E15:P15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_CHARGES_014",
+            "nom": "Calcul Excel Charges!Q16",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_cible_reference": "Q16",
+            "formule_excel_reference": "=SUM(E16:P16)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q16"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "Q16",
+                    "formule": "=SUM(E16:P16)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E16:P16"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_CHARGES_015",
+            "nom": "Calcul Excel Charges!Q17",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_cible_reference": "Q17",
+            "formule_excel_reference": "=SUM(E17:P17)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q17"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "Q17",
+                    "formule": "=SUM(E17:P17)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E17:P17"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_CHARGES_016",
+            "nom": "Calcul Excel Charges!Q18",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_cible_reference": "Q18",
+            "formule_excel_reference": "=SUM(E18:P18)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q18"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "Q18",
+                    "formule": "=SUM(E18:P18)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E18:P18"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_CHARGES_017",
+            "nom": "Calcul Excel Charges!Q19",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_cible_reference": "Q19",
+            "formule_excel_reference": "=SUM(E19:P19)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q19"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E19:P19"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "Q19",
+                    "formule": "=SUM(E19:P19)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E19:P19"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_CHARGES_018",
+            "nom": "Calcul Excel Charges!Q20",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_cible_reference": "Q20",
+            "formule_excel_reference": "=SUM(E20:P20)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "Q20"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E20:P20"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "Q20",
+                    "formule": "=SUM(E20:P20)",
+                    "dependances": [
+                        {
+                            "feuille": "Charges",
+                            "cellule": "E20:P20"
                         }
                     ]
                 }
@@ -15295,57 +15475,12 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C3",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
-            "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"PRODUCTION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"ADMINISTRATION\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"LOGISTIQUE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"SECURITE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))+SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"FISCAL\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))",
+            "formule_excel_reference": "=SUM(Charges!E2:E45)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(CHARGES!RANGE(COL[2],ROW[-1],COL[2],ROW[42]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [
-                {
-                    "cellule": "D3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$F$2:$F$40)"
-                },
-                {
-                    "cellule": "E3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$G$2:$G$40)"
-                },
-                {
-                    "cellule": "F3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$H$2:$H$40)"
-                },
-                {
-                    "cellule": "G3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$I$2:$I$40)"
-                },
-                {
-                    "cellule": "H3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$J$2:$J$40)"
-                },
-                {
-                    "cellule": "I3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$K$2:$K$40)"
-                },
-                {
-                    "cellule": "J3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$L$2:$L$40)"
-                },
-                {
-                    "cellule": "K3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$M$2:$M$40)"
-                },
-                {
-                    "cellule": "L3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$N$2:$N$40)"
-                },
-                {
-                    "cellule": "M3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$O$2:$O$40)"
-                },
-                {
-                    "cellule": "N3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$P$2:$P$40)"
-                }
-            ],
+            "anomalies_regroupement": [],
             "cellules_excel": [
                 "C3",
                 "D3",
@@ -15363,179 +15498,127 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+                    "formule": "=SUM(Charges!E2:E45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E45"
                         }
                     ]
                 },
                 {
                     "cellule": "D3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$F$2:$F$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$F$2:$F$40)",
+                    "formule": "=SUM(Charges!F2:F45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F45"
                         }
                     ]
                 },
                 {
                     "cellule": "E3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$G$2:$G$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$G$2:$G$40)",
+                    "formule": "=SUM(Charges!G2:G45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G45"
                         }
                     ]
                 },
                 {
                     "cellule": "F3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$H$2:$H$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$H$2:$H$40)",
+                    "formule": "=SUM(Charges!H2:H45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H45"
                         }
                     ]
                 },
                 {
                     "cellule": "G3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$I$2:$I$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$I$2:$I$40)",
+                    "formule": "=SUM(Charges!I2:I45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I45"
                         }
                     ]
                 },
                 {
                     "cellule": "H3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$J$2:$J$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$J$2:$J$40)",
+                    "formule": "=SUM(Charges!J2:J45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J45"
                         }
                     ]
                 },
                 {
                     "cellule": "I3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$K$2:$K$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$K$2:$K$40)",
+                    "formule": "=SUM(Charges!K2:K45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K45"
                         }
                     ]
                 },
                 {
                     "cellule": "J3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$L$2:$L$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$L$2:$L$40)",
+                    "formule": "=SUM(Charges!L2:L45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L45"
                         }
                     ]
                 },
                 {
                     "cellule": "K3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$M$2:$M$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$M$2:$M$40)",
+                    "formule": "=SUM(Charges!M2:M45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M45"
                         }
                     ]
                 },
                 {
                     "cellule": "L3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$N$2:$N$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$N$2:$N$40)",
+                    "formule": "=SUM(Charges!N2:N45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N45"
                         }
                     ]
                 },
                 {
                     "cellule": "M3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$O$2:$O$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$O$2:$O$40)",
+                    "formule": "=SUM(Charges!O2:O45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O45"
                         }
                     ]
                 },
                 {
                     "cellule": "N3",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$P$2:$P$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$P$2:$P$40)",
+                    "formule": "=SUM(Charges!P2:P45)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
-                        },
-                        {
-                            "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P45"
                         }
                     ]
                 }
@@ -15971,9 +16054,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C6",
-            "formule_excel_reference": "=SUM(Amortissements!E2:E40)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[2],ROW[-4],COL[2],ROW[34]))",
+            "formule_excel_reference": "=C2-C3-C4-C5-C8",
+            "operation": "SOUSTRACTION",
+            "signature_structurelle": "=CELL(COL[0],ROW[-4])-CELL(COL[0],ROW[-3])-CELL(COL[0],ROW[-2])-CELL(COL[0],ROW[-1])-CELL(COL[0],ROW[2])",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -15993,128 +16076,336 @@
             ],
             "dependances_reference": [
                 {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:E40"
+                    "feuille": "Synthese",
+                    "cellule": "C2"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C3"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C4"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C8"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C6",
-                    "formule": "=SUM(Amortissements!E2:E40)",
+                    "formule": "=C2-C3-C4-C5-C8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "E2:E40"
+                            "feuille": "Synthese",
+                            "cellule": "C2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C8"
                         }
                     ]
                 },
                 {
                     "cellule": "D6",
-                    "formule": "=SUM(Amortissements!F2:F40)",
+                    "formule": "=D2-D3-D4-D5-D8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "F2:F40"
+                            "feuille": "Synthese",
+                            "cellule": "D2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D8"
                         }
                     ]
                 },
                 {
                     "cellule": "E6",
-                    "formule": "=SUM(Amortissements!G2:G40)",
+                    "formule": "=E2-E3-E4-E5-E8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "G2:G40"
+                            "feuille": "Synthese",
+                            "cellule": "E2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E8"
                         }
                     ]
                 },
                 {
                     "cellule": "F6",
-                    "formule": "=SUM(Amortissements!H2:H40)",
+                    "formule": "=F2-F3-F4-F5-F8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "H2:H40"
+                            "feuille": "Synthese",
+                            "cellule": "F2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F8"
                         }
                     ]
                 },
                 {
                     "cellule": "G6",
-                    "formule": "=SUM(Amortissements!I2:I40)",
+                    "formule": "=G2-G3-G4-G5-G8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "I2:I40"
+                            "feuille": "Synthese",
+                            "cellule": "G2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G8"
                         }
                     ]
                 },
                 {
                     "cellule": "H6",
-                    "formule": "=SUM(Amortissements!J2:J40)",
+                    "formule": "=H2-H3-H4-H5-H8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "J2:J40"
+                            "feuille": "Synthese",
+                            "cellule": "H2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H8"
                         }
                     ]
                 },
                 {
                     "cellule": "I6",
-                    "formule": "=SUM(Amortissements!K2:K40)",
+                    "formule": "=I2-I3-I4-I5-I8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "K2:K40"
+                            "feuille": "Synthese",
+                            "cellule": "I2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I8"
                         }
                     ]
                 },
                 {
                     "cellule": "J6",
-                    "formule": "=SUM(Amortissements!L2:L40)",
+                    "formule": "=J2-J3-J4-J5-J8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "L2:L40"
+                            "feuille": "Synthese",
+                            "cellule": "J2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J8"
                         }
                     ]
                 },
                 {
                     "cellule": "K6",
-                    "formule": "=SUM(Amortissements!M2:M40)",
+                    "formule": "=K2-K3-K4-K5-K8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "M2:M40"
+                            "feuille": "Synthese",
+                            "cellule": "K2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K8"
                         }
                     ]
                 },
                 {
                     "cellule": "L6",
-                    "formule": "=SUM(Amortissements!N2:N40)",
+                    "formule": "=L2-L3-L4-L5-L8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "N2:N40"
+                            "feuille": "Synthese",
+                            "cellule": "L2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L8"
                         }
                     ]
                 },
                 {
                     "cellule": "M6",
-                    "formule": "=SUM(Amortissements!O2:O40)",
+                    "formule": "=M2-M3-M4-M5-M8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "O2:O40"
+                            "feuille": "Synthese",
+                            "cellule": "M2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M8"
                         }
                     ]
                 },
                 {
                     "cellule": "N6",
-                    "formule": "=SUM(Amortissements!P2:P40)",
+                    "formule": "=N2-N3-N4-N5-N8",
                     "dependances": [
                         {
-                            "feuille": "Amortissements",
-                            "cellule": "P2:P40"
+                            "feuille": "Synthese",
+                            "cellule": "N2"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N3"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N4"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N5"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N8"
                         }
                     ]
                 }
@@ -16164,9 +16455,9 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C7",
-            "formule_excel_reference": "=C2-C3-C4-C5-C6",
-            "operation": "SOUSTRACTION",
-            "signature_structurelle": "=CELL(COL[0],ROW[-5])-CELL(COL[0],ROW[-4])-CELL(COL[0],ROW[-3])-CELL(COL[0],ROW[-2])-CELL(COL[0],ROW[-1])",
+            "formule_excel_reference": "=IFERROR(C6/C2,0)",
+            "operation": "DIVISION",
+            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-5]),0)",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -16187,335 +16478,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C2"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C3"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C4"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5"
-                },
-                {
-                    "feuille": "Synthese",
                     "cellule": "C6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C2"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C7",
-                    "formule": "=C2-C3-C4-C5-C6",
+                    "formule": "=IFERROR(C6/C2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "C2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "C6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C2"
                         }
                     ]
                 },
                 {
                     "cellule": "D7",
-                    "formule": "=D2-D3-D4-D5-D6",
+                    "formule": "=IFERROR(D6/D2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "D2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "D3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "D4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "D5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "D6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "D2"
                         }
                     ]
                 },
                 {
                     "cellule": "E7",
-                    "formule": "=E2-E3-E4-E5-E6",
+                    "formule": "=IFERROR(E6/E2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "E2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "E3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "E4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "E5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "E6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "E2"
                         }
                     ]
                 },
                 {
                     "cellule": "F7",
-                    "formule": "=F2-F3-F4-F5-F6",
+                    "formule": "=IFERROR(F6/F2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "F2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "F3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "F4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "F5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "F6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "F2"
                         }
                     ]
                 },
                 {
                     "cellule": "G7",
-                    "formule": "=G2-G3-G4-G5-G6",
+                    "formule": "=IFERROR(G6/G2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "G2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "G3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "G4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "G5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "G6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "G2"
                         }
                     ]
                 },
                 {
                     "cellule": "H7",
-                    "formule": "=H2-H3-H4-H5-H6",
+                    "formule": "=IFERROR(H6/H2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "H2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "H3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "H4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "H5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "H6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "H2"
                         }
                     ]
                 },
                 {
                     "cellule": "I7",
-                    "formule": "=I2-I3-I4-I5-I6",
+                    "formule": "=IFERROR(I6/I2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "I2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "I3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "I4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "I5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "I6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "I2"
                         }
                     ]
                 },
                 {
                     "cellule": "J7",
-                    "formule": "=J2-J3-J4-J5-J6",
+                    "formule": "=IFERROR(J6/J2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "J2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "J3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "J4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "J5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "J6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "J2"
                         }
                     ]
                 },
                 {
                     "cellule": "K7",
-                    "formule": "=K2-K3-K4-K5-K6",
+                    "formule": "=IFERROR(K6/K2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "K2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "K3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "K4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "K5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "K6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "K2"
                         }
                     ]
                 },
                 {
                     "cellule": "L7",
-                    "formule": "=L2-L3-L4-L5-L6",
+                    "formule": "=IFERROR(L6/L2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "L2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "L3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "L4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "L5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "L6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "L2"
                         }
                     ]
                 },
                 {
                     "cellule": "M7",
-                    "formule": "=M2-M3-M4-M5-M6",
+                    "formule": "=IFERROR(M6/M2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "M2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "M3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "M4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "M5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "M6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "M2"
                         }
                     ]
                 },
                 {
                     "cellule": "N7",
-                    "formule": "=N2-N3-N4-N5-N6",
+                    "formule": "=IFERROR(N6/N2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "N2"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "N3"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "N4"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "N5"
-                        },
-                        {
-                            "feuille": "Synthese",
                             "cellule": "N6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "N2"
                         }
                     ]
                 }

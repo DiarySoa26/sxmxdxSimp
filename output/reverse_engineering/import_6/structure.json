@@ -1,5 +1,5 @@
 {
-    "fichier": "3d981e01_SOMIDA_2020.xlsx",
+    "fichier": "d78b54d9_SOMIDA_2020.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -14,7 +14,7 @@
         },
         "Employes": {
             "etat": "visible",
-            "lignes": 101,
+            "lignes": 95,
             "colonnes": 10,
             "formules": 94,
             "textes": 574,
@@ -66,11 +66,11 @@
         },
         "Charges": {
             "etat": "visible",
-            "lignes": 15,
-            "colonnes": 17,
-            "formules": 13,
-            "textes": 69,
-            "nombres": 156,
+            "lignes": 20,
+            "colonnes": 18,
+            "formules": 18,
+            "textes": 108,
+            "nombres": 216,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -234,7 +234,7 @@
         },
         "Amortissements": {
             "etat": "visible",
-            "lignes": 70,
+            "lignes": 35,
             "colonnes": 17,
             "formules": 11,
             "textes": 61,

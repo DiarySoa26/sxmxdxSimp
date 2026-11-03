@@ -72,12 +72,12 @@ const data = {
       icon: <GitCompareArrowsIcon />,
       roles: ["ADMIN", "DAF", "LECTEUR"],
     },
-    {
-      title: "Reverse Engineering",
-      url: "/dashboard/reverse-engineering",
-      icon: <FileSearchIcon />,
-      roles: ["ADMIN"],
-    },
+    // {
+    //   title: "Reverse Engineering",
+    //   url: "/dashboard/reverse-engineering",
+    //   icon: <FileSearchIcon />,
+    //   roles: ["ADMIN"],
+    // },
   ],
 
   navSecondary: [
