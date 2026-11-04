@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import subprocess
 import sys
 import time
@@ -10,7 +11,7 @@ OUTPUT_DIR=BASE/"output"
 ETAPES=[
     ("Construction du dataset",BASE/"construire_dataset.py"),
     ("Préparation du dataset ML",BASE/"prediction"/"preparer_dataset.py"),
-    ("Backtest des modèles",BASE/"prediction"/"tester_modeles.py"),
+    ("Test des modèles (entraînement / test)",BASE/"prediction"/"tester_modeles.py"),
     ("Prédiction charges par catégorie",BASE/"prediction"/"predire_charges_categories.py"),
     ("Prédiction budgétaire",BASE/"prediction"/"predire_budget.py"),
     ("Détection des dérives",BASE/"prediction"/"detecter_derives_categories.py"),
@@ -18,7 +19,7 @@ ETAPES=[
     ("Enregistrement PostgreSQL",BASE/"enregistrer_prediction.py")
 ]
 
-def executer_etape(numero,nom,script):
+def executer_etape(numero,nom,script,env=None):
     print("\n"+"="*80)
     print(f"[ETAPE {numero}/{len(ETAPES)}] {nom}")
     print("="*80)
@@ -26,6 +27,7 @@ def executer_etape(numero,nom,script):
     resultat=subprocess.run(
         [sys.executable,str(script)],
         cwd=str(BASE),
+        env=env,
         capture_output=True,
         text=True
     )
@@ -73,7 +75,19 @@ def lire_resultats():
         "resume":resume
     }
 
-def executer_prediction():
+def executer_prediction(hypothese_masse_salariale=None):
+    """
+    hypothese_masse_salariale : None (valeur de l'environnement, TENDANCE par
+    défaut), "TENDANCE" (la masse salariale suit sa tendance) ou "STABLE"
+    (reconduite au niveau de l'année de référence).
+    """
+    env=os.environ.copy()
+    if hypothese_masse_salariale:
+        hypothese=str(hypothese_masse_salariale).strip().upper()
+        if hypothese not in ("TENDANCE","STABLE"):
+            raise ValueError("hypotheseMasseSalariale doit valoir TENDANCE ou STABLE.")
+        env["HYPOTHESE_MASSE_SALARIALE"]=hypothese
+
     print("\n"+"="*80)
     print("SXMXDX - PIPELINE COMPLET DE PREDICTION")
     print("="*80)
@@ -83,7 +97,7 @@ def executer_prediction():
     for numero,(nom,script) in enumerate(ETAPES,start=1):
         if not script.exists():
             raise FileNotFoundError(f"Script introuvable : {script}")
-        executer_etape(numero,nom,script)
+        executer_etape(numero,nom,script,env)
 
     resultats=lire_resultats()
     resultats["duree_secondes"]=round(time.time()-debut,2)

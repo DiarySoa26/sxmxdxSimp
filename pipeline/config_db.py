@@ -11,7 +11,7 @@ import os
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "postgres"),
     "port": int(os.getenv("DB_PORT", "5432")),
-    "dbname": os.getenv("DB_NAME", "sxmxdx5"),
+    "dbname": os.getenv("DB_NAME", "sxmxdx6"),
     "user": os.getenv("DB_USER", "sxmxdx"),
     "password": os.getenv("DB_PASSWORD", "diary"),
 }

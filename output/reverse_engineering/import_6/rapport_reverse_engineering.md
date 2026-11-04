@@ -1,38 +1,38 @@
-# Reverse engineering : 063c3b5b_SOMIDA_2019.xlsx
+# Reverse engineering : f47343e6_SOMIDA_2020.xlsx
 
 ## Feuilles
 
 | Feuille | Formules | Mise en page temporelle |
 |---|---|---|
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
-| Employes | 90 | aucune mise en page temporelle détectée |
+| Employes | 94 | aucune mise en page temporelle détectée |
 | Production | 10 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
-| Charges | 3 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
+| Charges | 16 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Exportations | 128 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
 | Frais Export | 18 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Synthese | 91 | mois en colonnes C:N (en-tête ligne 1), total en O [DETECTEE] |
-| CR | 390 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
-| Amortissements | 0 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
+| Amortissements | 11 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
+| CR | 403 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
 
 ## Resultat
 
-- Formules Excel : 730
-- Regles uniques apres regroupement : 133
-- Regles formalisees (avec libelle metier) : 123
+- Formules Excel : 771
+- Regles uniques apres regroupement : 159
+- Regles formalisees (avec libelle metier) : 149
 - Regles a valider (libelle non identifie) : 10
 
 ## Exemples de regles metier detectees
 
-- **chiffre_d_affaires** (MENSUELLE) = `IF(synthese.ca_export = "", 0, synthese.ca_export)`
-- **chiffre_d_affaires** (ANNUELLE) = `SUM(chiffre_d_affaires)`
-- **production_stockee** (MENSUELLE) = `0`
-- **production_stockee** (ANNUELLE) = `SUM(production_stockee)`
-- **production_immobilisee** (MENSUELLE) = `0`
-- **production_immobilisee** (ANNUELLE) = `SUM(production_immobilisee)`
-- **i_production_de_l_exercice** (MENSUELLE) = `SUM(chiffre_d_affaires)`
-- **i_production_de_l_exercice** (ANNUELLE) = `SUM(i_production_de_l_exercice)`
-- **achats_consommes_charges_directes_de_production** (MENSUELLE) = `SUMIF(charges.categorie, "PRODUCTION", charges.ampandrandava) + SUMIF(charges.categorie, "ACHAT PRODUITS", charges.ampandrandava)`
-- **achats_consommes_charges_directes_de_production** (ANNUELLE) = `SUM(achats_consommes_charges_directes_de_production)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
+- **amortissement** (ANNUELLE) = `SUM(general)`
 
 ## Points d'attention : formules differentes dans un meme regroupement
 

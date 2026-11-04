@@ -1,18 +1,18 @@
 {
-    "modele": "F05EF025_SOMIDA_2020",
-    "version": "F05EF025_SOMIDA_2020_V1",
-    "fichier_source": "f05ef025_SOMIDA_2020.xlsx",
+    "modele": "8DC420C2_SOMIDA_2021",
+    "version": "8DC420C2_SOMIDA_2021_V1",
+    "fichier_source": "8dc420c2_SOMIDA_2021.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_7/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_7/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 771,
-        "nombre_regles_uniques": 159,
-        "nombre_repetitions_regroupees": 612,
+        "nombre_formules_excel": 717,
+        "nombre_regles_uniques": 116,
+        "nombre_repetitions_regroupees": 601,
         "operations": {
-            "SOMME": 114,
+            "SOMME": 71,
             "REFERENCE": 13,
             "SOMME_CONDITIONNELLE": 8,
             "SOUSTRACTION": 7,
@@ -22,18 +22,17 @@
         "domaines": {
             "AMORTISSEMENTS": 11,
             "CR": 62,
-            "CHARGES": 16,
+            "CHARGES": 3,
             "SALAIRES": 1,
-            "EXPORTATION": 45,
-            "PRODUCTION": 10,
-            "BUDGET": 14
+            "EXPORTATION": 27,
+            "BUDGET": 12
         },
         "periodicites": {
-            "UNIQUE": 110,
-            "MENSUELLE": 47,
+            "UNIQUE": 68,
+            "MENSUELLE": 46,
             "REPETEE": 2
         },
-        "regroupements_irreguliers": 6
+        "regroupements_irreguliers": 7
     },
     "regles": [
         {
@@ -7042,474 +7041,6 @@
         },
         {
             "id": "RG_CHARGES_001",
-            "nom": "Calcul Excel Charges!Q2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q2",
-            "formule_excel_reference": "=SUM(E2:P2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q2",
-                    "formule": "=SUM(E2:P2)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E2:P2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_002",
-            "nom": "Calcul Excel Charges!Q3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q3",
-            "formule_excel_reference": "=SUM(E3:P3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q3",
-                    "formule": "=SUM(E3:P3)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E3:P3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_003",
-            "nom": "Calcul Excel Charges!Q4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q4",
-            "formule_excel_reference": "=SUM(E4:P4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q4",
-                    "formule": "=SUM(E4:P4)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E4:P4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_004",
-            "nom": "Calcul Excel Charges!Q5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q5",
-            "formule_excel_reference": "=SUM(E5:P5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q5",
-                    "formule": "=SUM(E5:P5)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E5:P5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_005",
-            "nom": "Calcul Excel Charges!Q6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q6",
-            "formule_excel_reference": "=SUM(E6:P6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q6",
-                    "formule": "=SUM(E6:P6)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E6:P6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_006",
-            "nom": "Calcul Excel Charges!Q8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q8",
-            "formule_excel_reference": "=SUM(E8:P8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q8",
-                    "formule": "=SUM(E8:P8)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E8:P8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_007",
-            "nom": "Calcul Excel Charges!Q9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q9",
-            "formule_excel_reference": "=SUM(E9:P9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q9",
-                    "formule": "=SUM(E9:P9)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E9:P9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_008",
-            "nom": "Calcul Excel Charges!Q10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q10",
-            "formule_excel_reference": "=SUM(E10:P10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q10",
-                    "formule": "=SUM(E10:P10)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E10:P10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_009",
-            "nom": "Calcul Excel Charges!Q11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q11",
-            "formule_excel_reference": "=SUM(E11:P11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q11",
-                    "formule": "=SUM(E11:P11)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E11:P11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_010",
-            "nom": "Calcul Excel Charges!Q12",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q12",
-            "formule_excel_reference": "=SUM(E12:P12)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q12"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q12",
-                    "formule": "=SUM(E12:P12)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E12:P12"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_011",
-            "nom": "Calcul Excel Charges!Q13",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q13",
-            "formule_excel_reference": "=SUM(E13:P13)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q13"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E13:P13"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q13",
-                    "formule": "=SUM(E13:P13)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E13:P13"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_012",
-            "nom": "Calcul Excel Charges!Q14",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q14",
-            "formule_excel_reference": "=SUM(E14:P14)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q14"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E14:P14"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q14",
-                    "formule": "=SUM(E14:P14)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E14:P14"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_013",
-            "nom": "Calcul Excel Charges!Q15",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_cible_reference": "Q15",
-            "formule_excel_reference": "=SUM(E15:P15)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q15"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E15:P15"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q15",
-                    "formule": "=SUM(E15:P15)",
-                    "dependances": [
-                        {
-                            "feuille": "Charges",
-                            "cellule": "E15:P15"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CHARGES_014",
             "nom": "Calcul Excel Charges!Q16",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -7545,7 +7076,7 @@
             ]
         },
         {
-            "id": "RG_CHARGES_015",
+            "id": "RG_CHARGES_002",
             "nom": "Calcul Excel Charges!Q17",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -7581,7 +7112,7 @@
             ]
         },
         {
-            "id": "RG_CHARGES_016",
+            "id": "RG_CHARGES_003",
             "nom": "Calcul Excel Charges!Q18",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12220,1014 +11751,6 @@
             ]
         },
         {
-            "id": "RG_FRAIS_EXPORT_001",
-            "nom": "Calcul Excel Frais Export!Q2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q2",
-            "formule_excel_reference": "=SUM(E2:P2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q2",
-                    "formule": "=SUM(E2:P2)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E2:P2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_002",
-            "nom": "Calcul Excel Frais Export!Q3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q3",
-            "formule_excel_reference": "=SUM(E3:P3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q3",
-                    "formule": "=SUM(E3:P3)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E3:P3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_003",
-            "nom": "Calcul Excel Frais Export!Q4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q4",
-            "formule_excel_reference": "=SUM(E4:P4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q4",
-                    "formule": "=SUM(E4:P4)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E4:P4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_004",
-            "nom": "Calcul Excel Frais Export!Q5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q5",
-            "formule_excel_reference": "=SUM(E5:P5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q5",
-                    "formule": "=SUM(E5:P5)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E5:P5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_005",
-            "nom": "Calcul Excel Frais Export!Q6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q6",
-            "formule_excel_reference": "=SUM(E6:P6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q6",
-                    "formule": "=SUM(E6:P6)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E6:P6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_006",
-            "nom": "Calcul Excel Frais Export!Q7",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q7",
-            "formule_excel_reference": "=SUM(E7:P7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q7"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E7:P7"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q7",
-                    "formule": "=SUM(E7:P7)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E7:P7"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_007",
-            "nom": "Calcul Excel Frais Export!Q8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q8",
-            "formule_excel_reference": "=SUM(E8:P8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q8",
-                    "formule": "=SUM(E8:P8)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E8:P8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_008",
-            "nom": "Calcul Excel Frais Export!Q9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q9",
-            "formule_excel_reference": "=SUM(E9:P9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q9",
-                    "formule": "=SUM(E9:P9)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E9:P9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_009",
-            "nom": "Calcul Excel Frais Export!Q10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q10",
-            "formule_excel_reference": "=SUM(E10:P10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q10",
-                    "formule": "=SUM(E10:P10)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E10:P10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_010",
-            "nom": "Calcul Excel Frais Export!Q11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q11",
-            "formule_excel_reference": "=SUM(E11:P11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q11",
-                    "formule": "=SUM(E11:P11)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E11:P11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_011",
-            "nom": "Calcul Excel Frais Export!Q12",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q12",
-            "formule_excel_reference": "=SUM(E12:P12)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q12"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q12",
-                    "formule": "=SUM(E12:P12)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E12:P12"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_012",
-            "nom": "Calcul Excel Frais Export!Q13",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q13",
-            "formule_excel_reference": "=SUM(E13:P13)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q13"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E13:P13"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q13",
-                    "formule": "=SUM(E13:P13)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E13:P13"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_013",
-            "nom": "Calcul Excel Frais Export!Q14",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q14",
-            "formule_excel_reference": "=SUM(E14:P14)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q14"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E14:P14"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q14",
-                    "formule": "=SUM(E14:P14)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E14:P14"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_014",
-            "nom": "Calcul Excel Frais Export!Q15",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q15",
-            "formule_excel_reference": "=SUM(E15:P15)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q15"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E15:P15"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q15",
-                    "formule": "=SUM(E15:P15)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E15:P15"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_015",
-            "nom": "Calcul Excel Frais Export!Q16",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q16",
-            "formule_excel_reference": "=SUM(E16:P16)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q16"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E16:P16"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q16",
-                    "formule": "=SUM(E16:P16)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E16:P16"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_016",
-            "nom": "Calcul Excel Frais Export!Q17",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q17",
-            "formule_excel_reference": "=SUM(E17:P17)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q17"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E17:P17"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q17",
-                    "formule": "=SUM(E17:P17)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E17:P17"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_017",
-            "nom": "Calcul Excel Frais Export!Q18",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q18",
-            "formule_excel_reference": "=SUM(E18:P18)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q18"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E18:P18"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q18",
-                    "formule": "=SUM(E18:P18)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E18:P18"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_FRAIS_EXPORT_018",
-            "nom": "Calcul Excel Frais Export!Q19",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_cible_reference": "Q19",
-            "formule_excel_reference": "=SUM(E19:P19)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q19"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E19:P19"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q19",
-                    "formule": "=SUM(E19:P19)",
-                    "dependances": [
-                        {
-                            "feuille": "Frais Export",
-                            "cellule": "E19:P19"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_001",
-            "nom": "Calcul Excel Production!P2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P2",
-            "formule_excel_reference": "=SUM(D2:O2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D2:O2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P2",
-                    "formule": "=SUM(D2:O2)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D2:O2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_002",
-            "nom": "Calcul Excel Production!P3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P3",
-            "formule_excel_reference": "=SUM(D3:O3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D3:O3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P3",
-                    "formule": "=SUM(D3:O3)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D3:O3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_003",
-            "nom": "Calcul Excel Production!P4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P4",
-            "formule_excel_reference": "=SUM(D4:O4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D4:O4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P4",
-                    "formule": "=SUM(D4:O4)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D4:O4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_004",
-            "nom": "Calcul Excel Production!P5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P5",
-            "formule_excel_reference": "=SUM(D5:O5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D5:O5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P5",
-                    "formule": "=SUM(D5:O5)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D5:O5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_005",
-            "nom": "Calcul Excel Production!P6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P6",
-            "formule_excel_reference": "=SUM(D6:O6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D6:O6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P6",
-                    "formule": "=SUM(D6:O6)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D6:O6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_006",
-            "nom": "Calcul Excel Production!P7",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P7",
-            "formule_excel_reference": "=SUM(D7:O7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P7"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D7:O7"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P7",
-                    "formule": "=SUM(D7:O7)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D7:O7"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_007",
-            "nom": "Calcul Excel Production!P8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P8",
-            "formule_excel_reference": "=SUM(D8:O8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D8:O8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P8",
-                    "formule": "=SUM(D8:O8)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D8:O8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_008",
-            "nom": "Calcul Excel Production!P9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P9",
-            "formule_excel_reference": "=SUM(D9:O9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D9:O9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P9",
-                    "formule": "=SUM(D9:O9)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D9:O9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_009",
-            "nom": "Calcul Excel Production!P10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P10",
-            "formule_excel_reference": "=SUM(D10:O10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D10:O10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P10",
-                    "formule": "=SUM(D10:O10)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D10:O10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_PRODUCTION_010",
-            "nom": "Calcul Excel Production!P11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_cible_reference": "P11",
-            "formule_excel_reference": "=SUM(D11:O11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "P11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D11:O11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "P11",
-                    "formule": "=SUM(D11:O11)",
-                    "dependances": [
-                        {
-                            "feuille": "Production",
-                            "cellule": "D11:O11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "RG_SYNTHESE_001",
             "nom": "Calcul Excel Synthese!C2",
             "type": "CALCUL_EXCEL",
@@ -13235,55 +11758,55 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C2",
-            "formule_excel_reference": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$54)",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[10],ABS_COL[E],ABS_ROW[54]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[10],ABS_COL[G],ABS_ROW[54]))",
+            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[46]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[2],ABS_COL[G],ABS_ROW[46]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)"
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)"
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)"
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)"
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)"
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)"
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)"
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)"
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)"
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)"
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$54)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)"
                 }
             ],
             "cellules_excel": [
@@ -13303,179 +11826,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E10:E54"
+                    "cellule": "E2:E46"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G10:G54"
+                    "cellule": "G2:G46"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "G10:G54"
+                            "cellule": "G2:G46"
                         }
                     ]
                 },
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$H$10:$H$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "H10:H54"
+                            "cellule": "H2:H46"
                         }
                     ]
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$I$10:$I$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "I10:I54"
+                            "cellule": "I2:I46"
                         }
                     ]
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$J$10:$J$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "J10:J54"
+                            "cellule": "J2:J46"
                         }
                     ]
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$K$10:$K$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "K10:K54"
+                            "cellule": "K2:K46"
                         }
                     ]
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$L$10:$L$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "L10:L54"
+                            "cellule": "L2:L46"
                         }
                     ]
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$M$10:$M$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "M10:M54"
+                            "cellule": "M2:M46"
                         }
                     ]
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$N$10:$N$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "N10:N54"
+                            "cellule": "N2:N46"
                         }
                     ]
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$O$10:$O$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "O10:O54"
+                            "cellule": "O2:O46"
                         }
                     ]
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$P$10:$P$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "P10:P54"
+                            "cellule": "P2:P46"
                         }
                     ]
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$Q$10:$Q$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "Q10:Q54"
+                            "cellule": "Q2:Q46"
                         }
                     ]
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$R$10:$R$54)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E10:E54"
+                            "cellule": "E2:E46"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "R10:R54"
+                            "cellule": "R2:R46"
                         }
                     ]
                 }
@@ -13718,12 +12241,57 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C4",
-            "formule_excel_reference": "=SUM('Frais Export'!E2:E19)",
+            "formule_excel_reference": "=SUM('Frais Export'!$E$2:$E$19)",
             "operation": "SOMME",
-            "signature_structurelle": "=SUM(FRAISEXPORT!RANGE(COL[2],ROW[-2],COL[2],ROW[15]))",
+            "signature_structurelle": "=SUM(FRAISEXPORT!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[19]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
+            "anomalies_regroupement": [
+                {
+                    "cellule": "D4",
+                    "formule": "=SUM('Frais Export'!$F$2:$F$19)"
+                },
+                {
+                    "cellule": "E4",
+                    "formule": "=SUM('Frais Export'!$G$2:$G$19)"
+                },
+                {
+                    "cellule": "F4",
+                    "formule": "=SUM('Frais Export'!$H$2:$H$19)"
+                },
+                {
+                    "cellule": "G4",
+                    "formule": "=SUM('Frais Export'!$I$2:$I$19)"
+                },
+                {
+                    "cellule": "H4",
+                    "formule": "=SUM('Frais Export'!$J$2:$J$19)"
+                },
+                {
+                    "cellule": "I4",
+                    "formule": "=SUM('Frais Export'!$K$2:$K$19)"
+                },
+                {
+                    "cellule": "J4",
+                    "formule": "=SUM('Frais Export'!$L$2:$L$19)"
+                },
+                {
+                    "cellule": "K4",
+                    "formule": "=SUM('Frais Export'!$M$2:$M$19)"
+                },
+                {
+                    "cellule": "L4",
+                    "formule": "=SUM('Frais Export'!$N$2:$N$19)"
+                },
+                {
+                    "cellule": "M4",
+                    "formule": "=SUM('Frais Export'!$O$2:$O$19)"
+                },
+                {
+                    "cellule": "N4",
+                    "formule": "=SUM('Frais Export'!$P$2:$P$19)"
+                }
+            ],
             "cellules_excel": [
                 "C4",
                 "D4",
@@ -13747,7 +12315,7 @@
             "occurrences_excel": [
                 {
                     "cellule": "C4",
-                    "formule": "=SUM('Frais Export'!E2:E19)",
+                    "formule": "=SUM('Frais Export'!$E$2:$E$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13757,7 +12325,7 @@
                 },
                 {
                     "cellule": "D4",
-                    "formule": "=SUM('Frais Export'!F2:F19)",
+                    "formule": "=SUM('Frais Export'!$F$2:$F$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13767,7 +12335,7 @@
                 },
                 {
                     "cellule": "E4",
-                    "formule": "=SUM('Frais Export'!G2:G19)",
+                    "formule": "=SUM('Frais Export'!$G$2:$G$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13777,7 +12345,7 @@
                 },
                 {
                     "cellule": "F4",
-                    "formule": "=SUM('Frais Export'!H2:H19)",
+                    "formule": "=SUM('Frais Export'!$H$2:$H$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13787,7 +12355,7 @@
                 },
                 {
                     "cellule": "G4",
-                    "formule": "=SUM('Frais Export'!I2:I19)",
+                    "formule": "=SUM('Frais Export'!$I$2:$I$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13797,7 +12365,7 @@
                 },
                 {
                     "cellule": "H4",
-                    "formule": "=SUM('Frais Export'!J2:J19)",
+                    "formule": "=SUM('Frais Export'!$J$2:$J$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13807,7 +12375,7 @@
                 },
                 {
                     "cellule": "I4",
-                    "formule": "=SUM('Frais Export'!K2:K19)",
+                    "formule": "=SUM('Frais Export'!$K$2:$K$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13817,7 +12385,7 @@
                 },
                 {
                     "cellule": "J4",
-                    "formule": "=SUM('Frais Export'!L2:L19)",
+                    "formule": "=SUM('Frais Export'!$L$2:$L$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13827,7 +12395,7 @@
                 },
                 {
                     "cellule": "K4",
-                    "formule": "=SUM('Frais Export'!M2:M19)",
+                    "formule": "=SUM('Frais Export'!$M$2:$M$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13837,7 +12405,7 @@
                 },
                 {
                     "cellule": "L4",
-                    "formule": "=SUM('Frais Export'!N2:N19)",
+                    "formule": "=SUM('Frais Export'!$N$2:$N$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13847,7 +12415,7 @@
                 },
                 {
                     "cellule": "M4",
-                    "formule": "=SUM('Frais Export'!O2:O19)",
+                    "formule": "=SUM('Frais Export'!$O$2:$O$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13857,7 +12425,7 @@
                 },
                 {
                     "cellule": "N4",
-                    "formule": "=SUM('Frais Export'!P2:P19)",
+                    "formule": "=SUM('Frais Export'!$P$2:$P$19)",
                     "dependances": [
                         {
                             "feuille": "Frais Export",
@@ -13905,199 +12473,6 @@
         },
         {
             "id": "RG_SYNTHESE_007",
-            "nom": "Calcul Excel Synthese!C5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "BUDGET",
-            "feuille": "Synthese",
-            "cellule_cible_reference": "C5",
-            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(EMPLOYES!RANGE(ABS_COL[I],ABS_ROW[2],ABS_COL[I],ABS_ROW[61]))",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "C5",
-                "D5",
-                "E5",
-                "F5",
-                "G5",
-                "H5",
-                "I5",
-                "J5",
-                "K5",
-                "L5",
-                "M5",
-                "N5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Employes",
-                    "cellule": "I2:I61"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "C5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "D5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "E5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "F5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "G5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "N5",
-                    "formule": "=SUM(Employes!$I$2:$I$61)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "I2:I61"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_SYNTHESE_008",
-            "nom": "Calcul Excel Synthese!O5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "BUDGET",
-            "feuille": "Synthese",
-            "cellule_cible_reference": "O5",
-            "formule_excel_reference": "=SUM(C5:N5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "O5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5:N5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "O5",
-                    "formule": "=SUM(C5:N5)",
-                    "dependances": [
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C5:N5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_SYNTHESE_009",
             "nom": "Calcul Excel Synthese!C6",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -14462,7 +12837,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_010",
+            "id": "RG_SYNTHESE_008",
             "nom": "Calcul Excel Synthese!O6",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -14498,7 +12873,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_011",
+            "id": "RG_SYNTHESE_009",
             "nom": "Calcul Excel Synthese!C7",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -14707,7 +13082,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_012",
+            "id": "RG_SYNTHESE_010",
             "nom": "Calcul Excel Synthese!O7",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -14743,7 +13118,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_013",
+            "id": "RG_SYNTHESE_011",
             "nom": "Calcul Excel Synthese!C8",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -14952,7 +13327,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_014",
+            "id": "RG_SYNTHESE_012",
             "nom": "Calcul Excel Synthese!O8",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",

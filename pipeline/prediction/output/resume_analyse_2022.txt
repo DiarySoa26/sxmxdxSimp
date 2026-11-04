@@ -1,0 +1,89 @@
+BUDGET PRÉVISIONNEL 2022 — RÉSUMÉ DE L'ANALYSE
+Prévision établie le 04/11/2026. Modèle entraîné sur les exercices 2015 à 2020, testé sur 2021, puis réentraîné sur 2015–2021. Comparaisons faites avec l'exercice 2021.
+
+EN BREF
+
+En 2022, le chiffre d'affaires à l'exportation atteindrait 20,49 milliards MGA, en hausse de 7,7 % par rapport à 2021. L'ensemble des dépenses d'exploitation (charges, frais d'exportation, masse salariale et amortissements) s'élèverait à 12,48 milliards MGA, en hausse de 7,3 %.
+
+L'exercice 2022 dégagerait un bénéfice d'exploitation de 8,01 milliards MGA, soit une marge de 39,1 % : sur 100 MGA de chiffre d'affaires, il resterait environ 39 MGA après toutes les dépenses. Pour comparaison, l'exercice 2021 s'est terminé sur un bénéfice d'exploitation de 7,39 milliards MGA.
+
+Points d'attention : certains postes de dépenses s'écartent nettement de ce que l'activité prévue justifie (partie 6).
+
+1. PRÉVISIONS POUR 2022
+
+- Ventes à l'exportation : 3 184 unités (2021 : 3 161 unités ; +0,7 %)
+- Production : 3 184 unités (2021 : 3 161 unités ; +0,7 %)
+- Chiffre d'affaires à l'exportation : 20,49 milliards MGA (2021 : 19,02 milliards MGA ; +7,7 %)
+- Charges d'exploitation : 5,68 milliards MGA (2021 : 5,25 milliards MGA ; +8,2 %)
+- Frais d'exportation : 3,75 milliards MGA (2021 : 3,28 milliards MGA ; +14,5 %)
+- Masse salariale : 2,92 milliards MGA (2021 : 2,99 milliards MGA ; −2,3 %)
+- Dotations aux amortissements : 132,7 millions MGA (2021 : 121,8 millions MGA ; +9,0 %)
+- Résultat opérationnel : 8,01 milliards MGA (2021 : 7,39 milliards MGA)
+- Marge opérationnelle : +39,1 % (2021 : +38,9 %)
+
+2. CE QUI FAIT ÉVOLUER LE RÉSULTAT
+
+Le résultat opérationnel passe de 7,39 milliards MGA à 8,01 milliards MGA, soit une amélioration de 615,4 millions MGA. Contribution de chaque poste (un montant positif améliore le résultat) :
+- Hausse du chiffre d'affaires : +1,46 milliard MGA
+- Hausse des frais d'exportation : −474,7 millions MGA
+- Hausse des charges d'exploitation : −429,2 millions MGA
+- Baisse de la masse salariale : +69,1 millions MGA
+- Hausse des amortissements : −10,9 millions MGA
+
+3. CHARGES D'EXPLOITATION PAR POSTE
+
+Les charges d'exploitation sont la somme de prévisions établies poste par poste (5,68 milliards MGA au total) :
+- Production : 3,84 milliards MGA (68 % du total ; +7,8 % par rapport à 2021)
+- Logistique : 701,1 millions MGA (12 % du total ; +7,8 % par rapport à 2021)
+- Achats de produits : 520,7 millions MGA (9 % du total ; +11,7 % par rapport à 2021)
+- Fiscalité : 314,2 millions MGA (6 % du total ; +8,0 % par rapport à 2021)
+- Sécurité : 172,0 millions MGA (3 % du total ; +7,9 % par rapport à 2021)
+- Finance : 129,8 millions MGA (2 % du total ; +8,0 % par rapport à 2021)
+Le poste « administration » n'est pas inclus dans ces charges.
+
+4. MOIS PAR MOIS
+
+Le chiffre d'affaires le plus élevé est attendu en décembre (1,76 milliard MGA) et le plus faible en janvier (1,68 milliard MGA), soit un écart de 5 % : l'activité serait assez régulière sur l'année.
+Le résultat opérationnel serait positif chaque mois.
+
+5. MÉTHODE ET FIABILITÉ
+
+Chaque indicateur est prévu par une régression linéaire qui combine une tendance (l'évolution moyenne d'une année sur l'autre) et un profil saisonnier (les mois habituellement plus forts ou plus faibles). Les charges d'exploitation sont la somme de régressions établies poste par poste.
+
+Pour vérifier le modèle avant de l'utiliser, les données sont séparées en deux : les exercices 2015 à 2020 servent à l'entraînement, l'exercice 2021 sert de test. Le modèle « prévoit » 2021 sans le connaître, puis la prévision est comparée au réel. Plusieurs périodes d'apprentissage sont essayées (les 3, 5 ou 8 dernières années, ou toutes) et la plus juste sur l'année de test est retenue. Le modèle retenu est enfin réentraîné sur toutes les années, 2021 comprise, pour prévoir 2022.
+
+Écart entre la prévision et le réel de 2021 (année de test) :
+- Ventes : −0,4 % sur l'année, 3,5 % en moyenne par mois (5 dernières années) ; recopier 2020 aurait donné 0,0 %
+- Chiffre d'affaires : −0,0 % sur l'année, 2,9 % en moyenne par mois (3 dernières années) ; recopier 2020 aurait donné −7,6 %
+- Production : −0,4 % sur l'année, 3,5 % en moyenne par mois (5 dernières années) ; recopier 2020 aurait donné 0,0 %
+- Charges d'exploitation : +2,2 % sur l'année, 2,6 % en moyenne par mois (somme des postes) ; recopier 2020 aurait donné −3,4 %
+- Frais d'exportation : −3,8 % sur l'année, 4,0 % en moyenne par mois (3 dernières années) ; recopier 2020 aurait donné −15,0 %
+- Masse salariale : −0,4 % sur l'année, 0,4 % en moyenne par mois (3 dernières années) ; recopier 2020 aurait donné −3,9 %
+- Amortissements : −0,1 % sur l'année, 8,6 % en moyenne par mois (5 dernières années) ; recopier 2020 aurait donné −8,3 %
+- Résultat opérationnel : +0,3 % sur l'année, 7,3 % en moyenne par mois (combinaison des postes)
+Sur 2021, la régression a été plus juste que la simple reconduction pour 5 indicateur(s) sur 7.
+Ce test ne porte que sur une année : il donne un ordre de grandeur de la précision, pas une garantie.
+
+Fourchettes probables pour 2022 (environ 8 chances sur 10, d'après l'erreur constatée sur 2021) :
+- Chiffre d'affaires : entre 20,23 milliards MGA et 20,74 milliards MGA
+- Charges d'exploitation : entre 5,50 milliards MGA et 5,85 milliards MGA
+- Résultat opérationnel : entre 7,72 milliards MGA et 8,29 milliards MGA
+
+6. SURVEILLANCE DES DÉPENSES
+
+Pour chaque poste, la dépense prévue est comparée à ce que le niveau de production prévu justifie, d'après la relation entre ce poste et la production observée sur les 5 dernières années.
+Sur 72 contrôles (postes × mois) : 12 sans anomalie, 51 à surveiller, 9 à examiner en priorité.
+Le plus grand écart concerne « sécurité » en mars : 14,8 millions MGA prévus contre 11,7 millions MGA attendus (+3,1 millions MGA, +27,0 %) — à examiner en priorité.
+
+Poste par poste, sur l'année :
+- Production : 740,1 millions MGA au-dessus du niveau attendu (+23,9 %) — à examiner en priorité
+- Logistique : 133,4 millions MGA au-dessus du niveau attendu (+23,5 %) — à examiner en priorité
+- Sécurité : 31,3 millions MGA au-dessus du niveau attendu (+22,3 %) — à examiner en priorité
+- Finance : 25,8 millions MGA au-dessus du niveau attendu (+24,8 %) — à examiner en priorité
+- Fiscalité : 56,9 millions MGA au-dessus du niveau attendu (+22,1 %) — à surveiller
+- Achats de produits : 42,2 millions MGA au-dessus du niveau attendu (+8,8 %) — rien d'anormal
+
+7. HYPOTHÈSES ET POINTS D'ATTENTION
+
+- Masse salariale : elle prolonge l'évolution des années passées (−2,3 %). Elle doit être remplacée par les décisions réelles d'embauche et d'augmentation dès qu'elles sont connues.
+- Les prévisions prolongent les tendances observées : elles n'anticipent pas une rupture (nouveau contrat, perte d'un client, variation brutale du taux de change).

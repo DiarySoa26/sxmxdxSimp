@@ -7,7 +7,7 @@ import sys
 # DB_CONFIG = {
 #     "host": "localhost",
 #     "port": 5434,
-#     "database": "sxmxdx5",
+#     "database": "sxmxdx6",
 #     "user": "sxmxdx",
 #     "password": "diary"
 # }

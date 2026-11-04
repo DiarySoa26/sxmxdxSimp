@@ -1,11 +1,11 @@
-# Reverse engineering : ae5d81f3_SOMIDA_2017.xlsx
+# Reverse engineering : 4cdee00a_SOMIDA_2018.xlsx
 
 ## Feuilles
 
 | Feuille | Formules | Mise en page temporelle |
 |---|---|---|
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
-| Employes | 80 | aucune mise en page temporelle détectée |
+| Employes | 85 | aucune mise en page temporelle détectée |
 | Production | 10 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
 | Charges | 3 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Exportations | 128 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
@@ -16,7 +16,7 @@
 
 ## Resultat
 
-- Formules Excel : 720
+- Formules Excel : 725
 - Regles uniques apres regroupement : 133
 - Regles formalisees (avec libelle metier) : 123
 - Regles a valider (libelle non identifie) : 10

@@ -1,16 +1,16 @@
 {
-    "modele": "CE56BF02_SOMIDA_2018",
-    "version": "CE56BF02_SOMIDA_2018_V1",
-    "fichier_source": "ce56bf02_SOMIDA_2018.xlsx",
+    "modele": "24D6996A_SOMIDA_2019",
+    "version": "24D6996A_SOMIDA_2019_V1",
+    "fichier_source": "24d6996a_SOMIDA_2019.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_5/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_5/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 725,
+        "nombre_formules_excel": 730,
         "nombre_regles_uniques": 133,
-        "nombre_repetitions_regroupees": 592,
+        "nombre_repetitions_regroupees": 597,
         "operations": {
             "REFERENCE": 13,
             "SOMME": 91,
@@ -6509,7 +6509,7 @@
             "formule_excel_reference": "=SUM(F2:H2)",
             "operation": "SOMME",
             "signature_structurelle": "=SUM(RANGE(COL[-3],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 85,
+            "nombre_occurrences": 90,
             "periodicite": "REPETEE",
             "anomalies_regroupement": [],
             "cellules_excel": [
@@ -6597,7 +6597,12 @@
                 "I83",
                 "I84",
                 "I85",
-                "I86"
+                "I86",
+                "I87",
+                "I88",
+                "I89",
+                "I90",
+                "I91"
             ],
             "dependances_reference": [
                 {
@@ -7453,6 +7458,56 @@
                         {
                             "feuille": "Employes",
                             "cellule": "F86:H86"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I87",
+                    "formule": "=SUM(F87:H87)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "F87:H87"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I88",
+                    "formule": "=SUM(F88:H88)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "F88:H88"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I89",
+                    "formule": "=SUM(F89:H89)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "F89:H89"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I90",
+                    "formule": "=SUM(F90:H90)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "F90:H90"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I91",
+                    "formule": "=SUM(F91:H91)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "F91:H91"
                         }
                     ]
                 }

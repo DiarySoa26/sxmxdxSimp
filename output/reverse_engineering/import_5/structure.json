@@ -1,5 +1,5 @@
 {
-    "fichier": "ce56bf02_SOMIDA_2018.xlsx",
+    "fichier": "24d6996a_SOMIDA_2019.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -16,9 +16,9 @@
             "etat": "visible",
             "lignes": 101,
             "colonnes": 10,
-            "formules": 85,
-            "textes": 520,
-            "nombres": 255,
+            "formules": 90,
+            "textes": 550,
+            "nombres": 270,
             "mois_detectes": [],
             "mise_en_page": null
         },

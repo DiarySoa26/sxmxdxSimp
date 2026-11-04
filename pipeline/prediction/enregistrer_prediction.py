@@ -157,8 +157,9 @@ if _RACINE_PROJET not in _sys.path:
     _sys.path.append(_RACINE_PROJET)
 from pipeline.config_db import get_connection as _connexion_commune  # noqa: E402
 
+# Régression linéaire tendance + saisonnalité, fenêtre choisie par backtest
 MODELE = "REGRESSION"
-VERSION_MODELE = "1.0"
+VERSION_MODELE = "2.0"
 
 def get_connection():
     return _connexion_commune()
@@ -568,7 +569,8 @@ def enregistrer_evolutions(cursor, budget_id, annuel):
         "PRODUCTION": ("production", "evolution_production_pct"),
         "CHARGES_EXPLOITATION": ("charges_exploitation", "evolution_charges_pct"),
         "FRAIS_EXPORT": ("frais_export", "evolution_frais_export_pct"),
-        "MASSE_SALARIALE": ("masse_salariale", "evolution_masse_salariale_pct")
+        "MASSE_SALARIALE": ("masse_salariale", "evolution_masse_salariale_pct"),
+        "AMORTISSEMENTS": ("amortissements", "evolution_amortissements_pct")
     }
 
     nombre = 0

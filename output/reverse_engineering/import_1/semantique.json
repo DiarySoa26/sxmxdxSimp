@@ -1,8 +1,8 @@
 {
-    "modele": "CB66A8B1_SOMIDA_2015",
-    "version": "CB66A8B1_SOMIDA_2015_V1",
+    "modele": "FF0913BB_SOMIDA_2015",
+    "version": "FF0913BB_SOMIDA_2015_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/cb66a8b1_SOMIDA_2015.xlsx",
+    "source_excel": "/app/data/uploads/ff0913bb_SOMIDA_2015.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_1/regles_metier.json",
     "statistiques": {
         "nombre_regles": 133,

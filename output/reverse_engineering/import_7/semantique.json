@@ -1,16 +1,16 @@
 {
-    "modele": "F05EF025_SOMIDA_2020",
-    "version": "F05EF025_SOMIDA_2020_V1",
+    "modele": "8DC420C2_SOMIDA_2021",
+    "version": "8DC420C2_SOMIDA_2021_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/f05ef025_SOMIDA_2020.xlsx",
+    "source_excel": "/app/data/uploads/8dc420c2_SOMIDA_2021.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_7/regles_metier.json",
     "statistiques": {
-        "nombre_regles": 159,
-        "semantique_detectee": 149,
-        "a_valider": 10,
+        "nombre_regles": 116,
+        "semantique_detectee": 110,
+        "a_valider": 6,
         "periodicites": {
-            "MENSUELLE": 48,
-            "ANNUELLE": 108,
+            "MENSUELLE": 47,
+            "ANNUELLE": 66,
             "UNIQUE": 2,
             "REPETEE": 1
         }
@@ -34,40 +34,12 @@
             ]
         },
         {
-            "identifiant_semantique": "production",
+            "identifiant_semantique": "achat_produits",
             "periodicite": "ANNUELLE",
             "regles": [
                 "RG_CHARGES_001",
                 "RG_CHARGES_002",
-                "RG_CHARGES_003",
-                "RG_CHARGES_004",
-                "RG_CHARGES_005"
-            ]
-        },
-        {
-            "identifiant_semantique": "administration",
-            "periodicite": "ANNUELLE",
-            "regles": [
-                "RG_CHARGES_006",
-                "RG_CHARGES_007",
-                "RG_CHARGES_008"
-            ]
-        },
-        {
-            "identifiant_semantique": "logistique",
-            "periodicite": "ANNUELLE",
-            "regles": [
-                "RG_CHARGES_009",
-                "RG_CHARGES_010"
-            ]
-        },
-        {
-            "identifiant_semantique": "achat_produits",
-            "periodicite": "ANNUELLE",
-            "regles": [
-                "RG_CHARGES_014",
-                "RG_CHARGES_015",
-                "RG_CHARGES_016"
+                "RG_CHARGES_003"
             ]
         },
         {
@@ -91,13 +63,7 @@
             "regles": [
                 "RG_EXPORTATIONS_005",
                 "RG_EXPORTATIONS_007",
-                "RG_EXPORTATIONS_010",
-                "RG_FRAIS_EXPORT_001",
-                "RG_FRAIS_EXPORT_002",
-                "RG_FRAIS_EXPORT_003",
-                "RG_FRAIS_EXPORT_004",
-                "RG_FRAIS_EXPORT_005",
-                "RG_FRAIS_EXPORT_006"
+                "RG_EXPORTATIONS_010"
             ]
         },
         {
@@ -106,13 +72,7 @@
             "regles": [
                 "RG_EXPORTATIONS_013",
                 "RG_EXPORTATIONS_015",
-                "RG_EXPORTATIONS_018",
-                "RG_FRAIS_EXPORT_007",
-                "RG_FRAIS_EXPORT_008",
-                "RG_FRAIS_EXPORT_009",
-                "RG_FRAIS_EXPORT_010",
-                "RG_FRAIS_EXPORT_011",
-                "RG_FRAIS_EXPORT_012"
+                "RG_EXPORTATIONS_018"
             ]
         },
         {
@@ -121,31 +81,7 @@
             "regles": [
                 "RG_EXPORTATIONS_021",
                 "RG_EXPORTATIONS_023",
-                "RG_EXPORTATIONS_026",
-                "RG_FRAIS_EXPORT_013",
-                "RG_FRAIS_EXPORT_014",
-                "RG_FRAIS_EXPORT_015",
-                "RG_FRAIS_EXPORT_016",
-                "RG_FRAIS_EXPORT_017",
-                "RG_FRAIS_EXPORT_018"
-            ]
-        },
-        {
-            "identifiant_semantique": "ampandrandava",
-            "periodicite": "ANNUELLE",
-            "regles": [
-                "RG_PRODUCTION_001",
-                "RG_PRODUCTION_002",
-                "RG_PRODUCTION_004"
-            ]
-        },
-        {
-            "identifiant_semantique": "fort_dauphin",
-            "periodicite": "ANNUELLE",
-            "regles": [
-                "RG_PRODUCTION_006",
-                "RG_PRODUCTION_007",
-                "RG_PRODUCTION_009"
+                "RG_EXPORTATIONS_026"
             ]
         }
     ],
@@ -2598,422 +2534,6 @@
             "regle_technique": "RG_CHARGES_001",
             "domaine": "CHARGES",
             "feuille": "Charges",
-            "cellule_reference": "Q2",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E2:P2)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:P2",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "libelle_excel": "PRODUCTION",
-            "identifiant_semantique": "production",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_002",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q3",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E3:P3)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E3:P3",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "libelle_excel": "PRODUCTION",
-            "identifiant_semantique": "production",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_003",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q4",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E4:P4)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E4:P4",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "libelle_excel": "PRODUCTION",
-            "identifiant_semantique": "production",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_004",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q5",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E5:P5)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E5:P5",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "libelle_excel": "PRODUCTION",
-            "identifiant_semantique": "production",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_005",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q6",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E6:P6)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E6:P6",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "PRODUCTION",
-            "identifiant_semantique": "production",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_006",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q8",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E8:P8)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E8:P8",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "ADMINISTRATION",
-            "identifiant_semantique": "administration",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_007",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q9",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E9:P9)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E9:P9",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "ADMINISTRATION",
-            "identifiant_semantique": "administration",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_008",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q10",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E10:P10)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E10:P10",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "ADMINISTRATION",
-            "identifiant_semantique": "administration",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_009",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q11",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E11:P11)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E11:P11",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "LOGISTIQUE",
-            "identifiant_semantique": "logistique",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_010",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q12",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E12:P12)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E12:P12",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "LOGISTIQUE",
-            "identifiant_semantique": "logistique",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_011",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q13",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E13:P13)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E13:P13"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E13:P13",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "FISCAL",
-            "identifiant_semantique": "fiscal",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_012",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q14",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E14:P14)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E14:P14"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E14:P14",
-                    "libelle": "FORT DAUPHIN",
-                    "identifiant_semantique": "fort_dauphin"
-                }
-            ],
-            "expression_metier": "SUM(fort_dauphin)",
-            "libelle_excel": "FINANCE",
-            "identifiant_semantique": "finance",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_013",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
-            "cellule_reference": "Q15",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E15:P15)",
-            "dependances": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E15:P15"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Charges",
-                    "cellule": "E15:P15",
-                    "libelle": "AMPANDRANDAVA",
-                    "identifiant_semantique": "ampandrandava"
-                }
-            ],
-            "expression_metier": "SUM(ampandrandava)",
-            "libelle_excel": "SECURITE",
-            "identifiant_semantique": "securite",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_CHARGES_014",
-            "domaine": "CHARGES",
-            "feuille": "Charges",
             "cellule_reference": "Q16",
             "operation": "SOMME",
             "periodicite_technique": "UNIQUE",
@@ -3043,7 +2563,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_CHARGES_015",
+            "regle_technique": "RG_CHARGES_002",
             "domaine": "CHARGES",
             "feuille": "Charges",
             "cellule_reference": "Q17",
@@ -3075,7 +2595,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_CHARGES_016",
+            "regle_technique": "RG_CHARGES_003",
             "domaine": "CHARGES",
             "feuille": "Charges",
             "cellule_reference": "Q18",
@@ -4295,890 +3815,6 @@
             "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_FRAIS_EXPORT_001",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q2",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E2:P2)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E2:P2",
-                    "libelle": "Transport local",
-                    "identifiant_semantique": "transport_local"
-                }
-            ],
-            "expression_metier": "SUM(transport_local)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_002",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q3",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E3:P3)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E3:P3",
-                    "libelle": "Transit & documents",
-                    "identifiant_semantique": "transit_documents"
-                }
-            ],
-            "expression_metier": "SUM(transit_documents)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_003",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q4",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E4:P4)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E4:P4",
-                    "libelle": "Manutention portuaire",
-                    "identifiant_semantique": "manutention_portuaire"
-                }
-            ],
-            "expression_metier": "SUM(manutention_portuaire)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_004",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q5",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E5:P5)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E5:P5",
-                    "libelle": "Fret international",
-                    "identifiant_semantique": "fret_international"
-                }
-            ],
-            "expression_metier": "SUM(fret_international)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_005",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q6",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E6:P6)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E6:P6",
-                    "libelle": "Assurance transport",
-                    "identifiant_semantique": "assurance_transport"
-                }
-            ],
-            "expression_metier": "SUM(assurance_transport)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_006",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q7",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E7:P7)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E7:P7"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E7:P7",
-                    "libelle": "Frais bancaires export",
-                    "identifiant_semantique": "frais_bancaires_export"
-                }
-            ],
-            "expression_metier": "SUM(frais_bancaires_export)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_007",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q8",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E8:P8)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E8:P8",
-                    "libelle": "Transport local",
-                    "identifiant_semantique": "transport_local"
-                }
-            ],
-            "expression_metier": "SUM(transport_local)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_008",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q9",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E9:P9)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E9:P9",
-                    "libelle": "Transit & documents",
-                    "identifiant_semantique": "transit_documents"
-                }
-            ],
-            "expression_metier": "SUM(transit_documents)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_009",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q10",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E10:P10)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E10:P10",
-                    "libelle": "Manutention portuaire",
-                    "identifiant_semantique": "manutention_portuaire"
-                }
-            ],
-            "expression_metier": "SUM(manutention_portuaire)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_010",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q11",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E11:P11)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E11:P11",
-                    "libelle": "Fret international",
-                    "identifiant_semantique": "fret_international"
-                }
-            ],
-            "expression_metier": "SUM(fret_international)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_011",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q12",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E12:P12)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E12:P12",
-                    "libelle": "Assurance transport",
-                    "identifiant_semantique": "assurance_transport"
-                }
-            ],
-            "expression_metier": "SUM(assurance_transport)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_012",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q13",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E13:P13)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E13:P13"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E13:P13",
-                    "libelle": "Frais bancaires export",
-                    "identifiant_semantique": "frais_bancaires_export"
-                }
-            ],
-            "expression_metier": "SUM(frais_bancaires_export)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_013",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q14",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E14:P14)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E14:P14"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E14:P14",
-                    "libelle": "Transport local",
-                    "identifiant_semantique": "transport_local"
-                }
-            ],
-            "expression_metier": "SUM(transport_local)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_014",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q15",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E15:P15)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E15:P15"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E15:P15",
-                    "libelle": "Transit & documents",
-                    "identifiant_semantique": "transit_documents"
-                }
-            ],
-            "expression_metier": "SUM(transit_documents)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_015",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q16",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E16:P16)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E16:P16"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E16:P16",
-                    "libelle": "Manutention portuaire",
-                    "identifiant_semantique": "manutention_portuaire"
-                }
-            ],
-            "expression_metier": "SUM(manutention_portuaire)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_016",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q17",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E17:P17)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E17:P17"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E17:P17",
-                    "libelle": "Fret international",
-                    "identifiant_semantique": "fret_international"
-                }
-            ],
-            "expression_metier": "SUM(fret_international)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_017",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q18",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E18:P18)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E18:P18"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E18:P18",
-                    "libelle": "Assurance transport",
-                    "identifiant_semantique": "assurance_transport"
-                }
-            ],
-            "expression_metier": "SUM(assurance_transport)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_FRAIS_EXPORT_018",
-            "domaine": "EXPORTATION",
-            "feuille": "Frais Export",
-            "cellule_reference": "Q19",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(E19:P19)",
-            "dependances": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E19:P19"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Frais Export",
-                    "cellule": "E19:P19",
-                    "libelle": "Frais bancaires export",
-                    "identifiant_semantique": "frais_bancaires_export"
-                }
-            ],
-            "expression_metier": "SUM(frais_bancaires_export)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 16,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_001",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P2",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D2:O2)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D2:O2"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D2:O2",
-                    "libelle": "ABR GAZ",
-                    "identifiant_semantique": "abr_gaz"
-                }
-            ],
-            "expression_metier": "SUM(abr_gaz)",
-            "libelle_excel": "AMPANDRANDAVA",
-            "identifiant_semantique": "ampandrandava",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_002",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P3",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D3:O3)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D3:O3"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D3:O3",
-                    "libelle": "FP1 GAZ",
-                    "identifiant_semantique": "fp1_gaz"
-                }
-            ],
-            "expression_metier": "SUM(fp1_gaz)",
-            "libelle_excel": "AMPANDRANDAVA",
-            "identifiant_semantique": "ampandrandava",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_003",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P4",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D4:O4)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D4:O4"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D4:O4",
-                    "libelle": null,
-                    "identifiant_semantique": null
-                }
-            ],
-            "expression_metier": null,
-            "libelle_excel": null,
-            "identifiant_semantique": null,
-            "statut": "A_VALIDER"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_004",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P5",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D5:O5)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D5:O5"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D5:O5",
-                    "libelle": "TRA GAZ",
-                    "identifiant_semantique": "tra_gaz"
-                }
-            ],
-            "expression_metier": "SUM(tra_gaz)",
-            "libelle_excel": "AMPANDRANDAVA",
-            "identifiant_semantique": "ampandrandava",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_005",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P6",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D6:O6)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D6:O6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D6:O6",
-                    "libelle": null,
-                    "identifiant_semantique": null
-                }
-            ],
-            "expression_metier": null,
-            "libelle_excel": null,
-            "identifiant_semantique": null,
-            "statut": "A_VALIDER"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_006",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P7",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D7:O7)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D7:O7"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D7:O7",
-                    "libelle": "ABR GAZ",
-                    "identifiant_semantique": "abr_gaz"
-                }
-            ],
-            "expression_metier": "SUM(abr_gaz)",
-            "libelle_excel": "FORT DAUPHIN",
-            "identifiant_semantique": "fort_dauphin",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_007",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P8",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D8:O8)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D8:O8"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D8:O8",
-                    "libelle": "FP1 GAZ",
-                    "identifiant_semantique": "fp1_gaz"
-                }
-            ],
-            "expression_metier": "SUM(fp1_gaz)",
-            "libelle_excel": "FORT DAUPHIN",
-            "identifiant_semantique": "fort_dauphin",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_008",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P9",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D9:O9)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D9:O9"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D9:O9",
-                    "libelle": null,
-                    "identifiant_semantique": null
-                }
-            ],
-            "expression_metier": null,
-            "libelle_excel": null,
-            "identifiant_semantique": null,
-            "statut": "A_VALIDER"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_009",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P10",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D10:O10)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D10:O10"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D10:O10",
-                    "libelle": "TRA GAZ",
-                    "identifiant_semantique": "tra_gaz"
-                }
-            ],
-            "expression_metier": "SUM(tra_gaz)",
-            "libelle_excel": "FORT DAUPHIN",
-            "identifiant_semantique": "fort_dauphin",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 15,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_PRODUCTION_010",
-            "domaine": "PRODUCTION",
-            "feuille": "Production",
-            "cellule_reference": "P11",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(D11:O11)",
-            "dependances": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D11:O11"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Production",
-                    "cellule": "D11:O11",
-                    "libelle": null,
-                    "identifiant_semantique": null
-                }
-            ],
-            "expression_metier": null,
-            "libelle_excel": null,
-            "identifiant_semantique": null,
-            "statut": "A_VALIDER"
-        },
-        {
             "regle_technique": "RG_SYNTHESE_001",
             "domaine": "BUDGET",
             "feuille": "Synthese",
@@ -5187,32 +3823,32 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Exportations!$E$10:$E$54,\"Chiffre d'affaires MGA\",Exportations!$G$10:$G$54)",
+            "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
             "dependances": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E10:E54"
+                    "cellule": "E2:E46"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G10:G54"
+                    "cellule": "G2:G46"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E10:E54",
-                    "libelle": "Indicateur",
-                    "identifiant_semantique": "indicateur"
+                    "cellule": "E2:E46",
+                    "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
+                    "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G10:G54",
-                    "libelle": "Quantité exportée",
-                    "identifiant_semantique": "quantite_exportee"
+                    "cellule": "G2:G46",
+                    "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
+                    "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 }
             ],
-            "expression_metier": "SUMIF(exportations.indicateur, \"Chiffre d'affaires MGA\", exportations.quantite_exportee)",
+            "expression_metier": "SUMIF(exportations.pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires, \"Chiffre d'affaires MGA\", exportations.pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires)",
             "libelle_excel": "CA export",
             "identifiant_semantique": "ca_export",
             "position_libelle": "GAUCHE",
@@ -5325,7 +3961,7 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUM('Frais Export'!E2:E19)",
+            "formule": "=SUM('Frais Export'!$E$2:$E$19)",
             "dependances": [
                 {
                     "feuille": "Frais Export",
@@ -5382,70 +4018,6 @@
         },
         {
             "regle_technique": "RG_SYNTHESE_007",
-            "domaine": "BUDGET",
-            "feuille": "Synthese",
-            "cellule_reference": "C5",
-            "operation": "SOMME",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=SUM(Employes!$I$2:$I$61)",
-            "dependances": [
-                {
-                    "feuille": "Employes",
-                    "cellule": "I2:I61"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Employes",
-                    "cellule": "I2:I61",
-                    "libelle": "Coût mensuel total (MGA)",
-                    "identifiant_semantique": "cout_mensuel_total_mga"
-                }
-            ],
-            "expression_metier": "SUM(employes.cout_mensuel_total_mga)",
-            "libelle_excel": "Masse salariale",
-            "identifiant_semantique": "masse_salariale",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_SYNTHESE_008",
-            "domaine": "BUDGET",
-            "feuille": "Synthese",
-            "cellule_reference": "O5",
-            "operation": "SOMME",
-            "periodicite_technique": "UNIQUE",
-            "periodicite": "ANNUELLE",
-            "nombre_occurrences": 1,
-            "formule": "=SUM(C5:N5)",
-            "dependances": [
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5:N5"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C5:N5",
-                    "libelle": "Masse salariale",
-                    "identifiant_semantique": "masse_salariale"
-                }
-            ],
-            "expression_metier": "SUM(masse_salariale)",
-            "libelle_excel": "Masse salariale",
-            "identifiant_semantique": "masse_salariale",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 14,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_SYNTHESE_009",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C6",
@@ -5517,7 +4089,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_SYNTHESE_010",
+            "regle_technique": "RG_SYNTHESE_008",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "O6",
@@ -5549,7 +4121,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_SYNTHESE_011",
+            "regle_technique": "RG_SYNTHESE_009",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C7",
@@ -5591,7 +4163,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_SYNTHESE_012",
+            "regle_technique": "RG_SYNTHESE_010",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "O7",
@@ -5623,7 +4195,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_SYNTHESE_013",
+            "regle_technique": "RG_SYNTHESE_011",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C8",
@@ -5665,7 +4237,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_SYNTHESE_014",
+            "regle_technique": "RG_SYNTHESE_012",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "O8",

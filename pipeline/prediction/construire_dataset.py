@@ -76,6 +76,19 @@ GROUP BY di.annee, a.mois
 ORDER BY di.annee, a.mois
 """
 
+# Historique des charges par catégorie (hors ADMINISTRATION, comme le total) :
+# utilisé par la prévision par catégorie et la détection des dérives.
+sql_charges_categories = CTE + """
+SELECT di.annee, c.mois_id AS mois,
+       UPPER(TRIM(c.categorie)) AS categorie,
+       SUM(COALESCE(c.montant,0)) AS montant
+FROM dernier_import di
+JOIN charge c ON c.import_id=di.import_id AND c.exercice_id=di.exercice_id
+WHERE UPPER(TRIM(COALESCE(c.categorie,''))) <> 'ADMINISTRATION'
+GROUP BY di.annee, c.mois_id, UPPER(TRIM(c.categorie))
+ORDER BY di.annee, c.mois_id, categorie
+"""
+
 sql_salaires = CTE + """
 SELECT di.annee, SUM(COALESCE(emp.cout_total,0)) AS masse_salariale
 FROM dernier_import di
@@ -90,7 +103,12 @@ charges     = pd.read_sql(sql_charge, connexion)
 frais       = pd.read_sql(sql_frais, connexion)
 salaires    = pd.read_sql(sql_salaires, connexion)
 amortissements = pd.read_sql(sql_amortissements, connexion)
+charges_categories = pd.read_sql(sql_charges_categories, connexion)
 connexion.close()
+
+charges_categories["montant"] = pd.to_numeric(charges_categories["montant"], errors="coerce")
+charges_categories.to_csv(OUTPUT / "charges_categories_historique.csv", index=False)
+print(f"[OK] Charges par catégorie : {charges_categories['categorie'].nunique()} catégorie(s)")
 
 print(f"[OK] Exportations : {len(exportation)} mois")
 print(f"[OK] Production   : {len(production)} mois")

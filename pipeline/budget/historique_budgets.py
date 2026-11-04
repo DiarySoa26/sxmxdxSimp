@@ -23,7 +23,7 @@
 # DB_CONFIG = {
 #     "host": "localhost",
 #     "port": 5434,
-#     "dbname": "sxmxdx5",
+#     "dbname": "sxmxdx6",
 #     "user": "sxmxdx",
 #     "password": "diary",
 # }

@@ -1,5 +1,5 @@
 {
-    "fichier": "ad026ed8_SOMIDA_2016.xlsx",
+    "fichier": "d43aa7e7_SOMIDA_2017.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -16,9 +16,9 @@
             "etat": "visible",
             "lignes": 101,
             "colonnes": 10,
-            "formules": 74,
-            "textes": 454,
-            "nombres": 222,
+            "formules": 80,
+            "textes": 490,
+            "nombres": 240,
             "mois_detectes": [],
             "mise_en_page": null
         },

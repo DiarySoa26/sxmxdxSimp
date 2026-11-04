@@ -1,40 +1,43 @@
 {
-    "modele": "FFEF06D8_SOMIDA_2023",
-    "version": "FFEF06D8_SOMIDA_2023_V1",
+    "modele": "11D364D0_SOMIDA_2022",
+    "version": "11D364D0_SOMIDA_2022_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/ffef06d8_SOMIDA_2023.xlsx",
+    "source_excel": "/app/data/uploads/11d364d0_SOMIDA_2022.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_9/regles_metier.json",
     "statistiques": {
-        "nombre_regles": 108,
-        "semantique_detectee": 108,
-        "a_valider": 0,
+        "nombre_regles": 105,
+        "semantique_detectee": 99,
+        "a_valider": 6,
         "periodicites": {
-            "MENSUELLE": 53,
-            "ANNUELLE": 52,
+            "MENSUELLE": 47,
+            "ANNUELLE": 55,
             "UNIQUE": 2,
             "REPETEE": 1
         }
     },
     "doublons_semantiques": [
         {
+            "identifiant_semantique": "achat_produits",
+            "periodicite": "ANNUELLE",
+            "regles": [
+                "RG_CHARGES_001",
+                "RG_CHARGES_002",
+                "RG_CHARGES_003"
+            ]
+        },
+        {
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "periodicite": "MENSUELLE",
             "regles": [
                 "RG_EXPORTATIONS_004",
                 "RG_EXPORTATIONS_006",
-                "RG_EXPORTATIONS_008",
-                "RG_EXPORTATIONS_010",
+                "RG_EXPORTATIONS_009",
                 "RG_EXPORTATIONS_012",
                 "RG_EXPORTATIONS_014",
-                "RG_EXPORTATIONS_016",
-                "RG_EXPORTATIONS_018",
+                "RG_EXPORTATIONS_017",
                 "RG_EXPORTATIONS_020",
                 "RG_EXPORTATIONS_022",
-                "RG_EXPORTATIONS_024",
-                "RG_EXPORTATIONS_026",
-                "RG_EXPORTATIONS_028",
-                "RG_EXPORTATIONS_030",
-                "RG_EXPORTATIONS_032"
+                "RG_EXPORTATIONS_025"
             ]
         },
         {
@@ -43,31 +46,25 @@
             "regles": [
                 "RG_EXPORTATIONS_005",
                 "RG_EXPORTATIONS_007",
-                "RG_EXPORTATIONS_009",
-                "RG_EXPORTATIONS_011",
-                "RG_EXPORTATIONS_013"
+                "RG_EXPORTATIONS_010"
             ]
         },
         {
             "identifiant_semantique": "russie",
             "periodicite": "ANNUELLE",
             "regles": [
+                "RG_EXPORTATIONS_013",
                 "RG_EXPORTATIONS_015",
-                "RG_EXPORTATIONS_017",
-                "RG_EXPORTATIONS_019",
-                "RG_EXPORTATIONS_021",
-                "RG_EXPORTATIONS_023"
+                "RG_EXPORTATIONS_018"
             ]
         },
         {
             "identifiant_semantique": "chine",
             "periodicite": "ANNUELLE",
             "regles": [
-                "RG_EXPORTATIONS_025",
-                "RG_EXPORTATIONS_027",
-                "RG_EXPORTATIONS_029",
-                "RG_EXPORTATIONS_031",
-                "RG_EXPORTATIONS_033"
+                "RG_EXPORTATIONS_021",
+                "RG_EXPORTATIONS_023",
+                "RG_EXPORTATIONS_026"
             ]
         }
     ],
@@ -313,32 +310,32 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$26,\"PRODUCTION\",Charges!$E$2:$E$26)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"PRODUCTION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"ACHAT PRODUITS\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava)",
+            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ACHAT PRODUITS\", charges.ampandrandava)",
             "libelle_excel": "Achats consommés / charges directes de production",
             "identifiant_semantique": "achats_consommes_charges_directes_de_production",
             "position_libelle": "GAUCHE",
@@ -387,19 +384,15 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$26,\"ADMINISTRATION\",Charges!$E$2:$E$26)-SUMIF(Charges!$B$2:$B$26,\"Salaires administratifs\",Charges!$E$2:$E$26)+SUMIF(Charges!$A$2:$A$26,\"LOGISTIQUE\",Charges!$E$2:$E$26)+SUMIF(Charges!$A$2:$A$26,\"SECURITE\",Charges!$E$2:$E$26)+SUM('Frais Export'!$E$2:$E$50)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "B2:B26"
+                    "cellule": "E2:E45"
                 },
                 {
                     "feuille": "Frais Export",
@@ -409,21 +402,15 @@
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "B2:B26",
-                    "libelle": "Nature",
-                    "identifiant_semantique": "nature"
                 },
                 {
                     "feuille": "Frais Export",
@@ -432,7 +419,7 @@
                     "identifiant_semantique": "transport_local"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) - SUMIF(charges.nature, \"Salaires administratifs\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUM(frais_export.transport_local)",
+            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUM(frais_export.transport_local)",
             "libelle_excel": "Services extérieurs et autres consommations",
             "identifiant_semantique": "services_exterieurs_et_autres_consommations",
             "position_libelle": "GAUCHE",
@@ -671,27 +658,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$26,\"FISCAL\",Charges!$E$2:$E$26)",
+            "formule": "=SUMIF(Charges!$A$2:$A$45,\"FISCAL\",Charges!$E$2:$E$45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26"
+                    "cellule": "A2:A45"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26",
+                    "cellule": "A2:A45",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -1018,11 +1005,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
-                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
+                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
+                    "identifiant_semantique": "dot_amort_mat_outillage"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
+            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
             "libelle_excel": "Dotations aux amortissements",
             "identifiant_semantique": "dotations_aux_amortissements",
             "position_libelle": "GAUCHE",
@@ -1341,27 +1328,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$E$2:$E$26)",
+            "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26"
+                    "cellule": "A2:A27"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26"
+                    "cellule": "E2:E27"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A26",
+                    "cellule": "A2:A27",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E26",
+                    "cellule": "E2:E27",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -2091,6 +2078,102 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
+            "regle_technique": "RG_CHARGES_001",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q16",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E16:P16)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E16:P16",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_002",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q17",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E17:P17)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E17:P17",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
+            "regle_technique": "RG_CHARGES_003",
+            "domaine": "CHARGES",
+            "feuille": "Charges",
+            "cellule_reference": "Q18",
+            "operation": "SOMME",
+            "periodicite_technique": "UNIQUE",
+            "periodicite": "ANNUELLE",
+            "nombre_occurrences": 1,
+            "formule": "=SUM(E18:P18)",
+            "dependances": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18"
+                }
+            ],
+            "dependances_semantiques": [
+                {
+                    "feuille": "Charges",
+                    "cellule": "E18:P18",
+                    "libelle": "AMPANDRANDAVA",
+                    "identifiant_semantique": "ampandrandava"
+                }
+            ],
+            "expression_metier": "SUM(ampandrandava)",
+            "libelle_excel": "ACHAT PRODUITS",
+            "identifiant_semantique": "achat_produits",
+            "position_libelle": "DEBUT_LIGNE",
+            "distance_libelle": 16,
+            "type_semantique": "MESURE_ANNUELLE",
+            "statut": "SEMANTIQUE_DETECTEE"
+        },
+        {
             "regle_technique": "RG_EMPLOYES_001",
             "domaine": "SALAIRES",
             "feuille": "Employes",
@@ -2098,7 +2181,7 @@
             "operation": "SOMME",
             "periodicite_technique": "REPETEE",
             "periodicite": "REPETEE",
-            "nombre_occurrences": 91,
+            "nombre_occurrences": 93,
             "formule": "=SUM(F2:H2)",
             "dependances": [
                 {
@@ -2290,8 +2373,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D12",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2312,7 +2395,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -2384,8 +2467,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D15",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2406,7 +2489,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -2450,68 +2533,6 @@
             "regle_technique": "RG_EXPORTATIONS_008",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
-            "cellule_reference": "G18",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D18=\"USD\",G17*'Donnees SOMIDA'!$B$5,IF($D18=\"JPY\",G17*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D18",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G17",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_009",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
             "cellule_reference": "S18",
             "operation": "SOMME",
             "periodicite_technique": "UNIQUE",
@@ -2528,20 +2549,17 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G18:R18",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_010",
+            "regle_technique": "RG_EXPORTATIONS_009",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G21",
@@ -2572,8 +2590,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D21",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2594,7 +2612,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -2603,7 +2621,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_011",
+            "regle_technique": "RG_EXPORTATIONS_010",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S21",
@@ -2635,69 +2653,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_012",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_reference": "G24",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D24=\"USD\",G23*'Donnees SOMIDA'!$B$5,IF($D24=\"JPY\",G23*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D24",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G23",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_013",
+            "regle_technique": "RG_EXPORTATIONS_011",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S24",
@@ -2716,20 +2672,17 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G24:R24",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Japon",
-            "identifiant_semantique": "japon",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_014",
+            "regle_technique": "RG_EXPORTATIONS_012",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G27",
@@ -2760,8 +2713,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D27",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2782,7 +2735,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -2791,7 +2744,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_015",
+            "regle_technique": "RG_EXPORTATIONS_013",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S27",
@@ -2823,7 +2776,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_016",
+            "regle_technique": "RG_EXPORTATIONS_014",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G30",
@@ -2854,8 +2807,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D30",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -2876,7 +2829,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -2885,7 +2838,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_017",
+            "regle_technique": "RG_EXPORTATIONS_015",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S30",
@@ -2917,69 +2870,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_018",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_reference": "G33",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D33=\"USD\",G32*'Donnees SOMIDA'!$B$5,IF($D33=\"JPY\",G32*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D33",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G32",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_019",
+            "regle_technique": "RG_EXPORTATIONS_016",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S33",
@@ -2998,20 +2889,17 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G33:R33",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_020",
+            "regle_technique": "RG_EXPORTATIONS_017",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G36",
@@ -3042,8 +2930,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D36",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3064,7 +2952,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -3073,7 +2961,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_021",
+            "regle_technique": "RG_EXPORTATIONS_018",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S36",
@@ -3105,69 +2993,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_022",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_reference": "G39",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D39=\"USD\",G38*'Donnees SOMIDA'!$B$5,IF($D39=\"JPY\",G38*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D39",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G38",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_023",
+            "regle_technique": "RG_EXPORTATIONS_019",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S39",
@@ -3186,20 +3012,17 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G39:R39",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Russie",
-            "identifiant_semantique": "russie",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_024",
+            "regle_technique": "RG_EXPORTATIONS_020",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G42",
@@ -3230,8 +3053,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D42",
-                    "libelle": "ABR COUPE",
-                    "identifiant_semantique": "abr_coupe"
+                    "libelle": "ABR GAZ",
+                    "identifiant_semantique": "abr_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3252,7 +3075,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(abr_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(abr_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(abr_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -3261,7 +3084,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_025",
+            "regle_technique": "RG_EXPORTATIONS_021",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S42",
@@ -3293,7 +3116,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_026",
+            "regle_technique": "RG_EXPORTATIONS_022",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G45",
@@ -3324,8 +3147,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D45",
-                    "libelle": "FP1 COUPE",
-                    "identifiant_semantique": "fp1_coupe"
+                    "libelle": "FP1 GAZ",
+                    "identifiant_semantique": "fp1_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3346,7 +3169,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(fp1_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(fp1_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp1_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -3355,7 +3178,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_027",
+            "regle_technique": "RG_EXPORTATIONS_023",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S45",
@@ -3387,69 +3210,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_028",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_reference": "G48",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D48=\"USD\",G47*'Donnees SOMIDA'!$B$5,IF($D48=\"JPY\",G47*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D48",
-                    "libelle": "FP2 COUPE",
-                    "identifiant_semantique": "fp2_coupe"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G47",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(fp2_coupe = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(fp2_coupe = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_029",
+            "regle_technique": "RG_EXPORTATIONS_024",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S48",
@@ -3468,20 +3229,17 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G48:R48",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_030",
+            "regle_technique": "RG_EXPORTATIONS_025",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "G51",
@@ -3512,8 +3270,8 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "D51",
-                    "libelle": "TRA",
-                    "identifiant_semantique": "tra"
+                    "libelle": "TRA GAZ",
+                    "identifiant_semantique": "tra_gaz"
                 },
                 {
                     "feuille": "Exportations",
@@ -3534,7 +3292,7 @@
                     "identifiant_semantique": "taux_jpy_mga"
                 }
             ],
-            "expression_metier": "IF(tra = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
+            "expression_metier": "IF(tra_gaz = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(tra_gaz = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
             "libelle_excel": "Chiffre d'affaires MGA",
             "identifiant_semantique": "chiffre_d_affaires_mga",
             "position_libelle": "GAUCHE",
@@ -3543,7 +3301,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_031",
+            "regle_technique": "RG_EXPORTATIONS_026",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S51",
@@ -3575,69 +3333,7 @@
             "statut": "SEMANTIQUE_DETECTEE"
         },
         {
-            "regle_technique": "RG_EXPORTATIONS_032",
-            "domaine": "EXPORTATION",
-            "feuille": "Exportations",
-            "cellule_reference": "G54",
-            "operation": "MULTIPLICATION",
-            "periodicite_technique": "MENSUELLE",
-            "periodicite": "MENSUELLE",
-            "nombre_occurrences": 12,
-            "formule": "=IF($D54=\"USD\",G53*'Donnees SOMIDA'!$B$5,IF($D54=\"JPY\",G53*'Donnees SOMIDA'!$B$6,0))",
-            "dependances": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6"
-                }
-            ],
-            "dependances_semantiques": [
-                {
-                    "feuille": "Exportations",
-                    "cellule": "D54",
-                    "libelle": "BSA",
-                    "identifiant_semantique": "bsa"
-                },
-                {
-                    "feuille": "Exportations",
-                    "cellule": "G53",
-                    "libelle": "Chiffre d'affaires devise",
-                    "identifiant_semantique": "chiffre_d_affaires_devise"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B5",
-                    "libelle": "Taux USD/MGA",
-                    "identifiant_semantique": "taux_usd_mga"
-                },
-                {
-                    "feuille": "Donnees SOMIDA",
-                    "cellule": "B6",
-                    "libelle": "Taux JPY/MGA",
-                    "identifiant_semantique": "taux_jpy_mga"
-                }
-            ],
-            "expression_metier": "IF(bsa = \"USD\", chiffre_d_affaires_devise * donnees_somida.taux_usd_mga, IF(bsa = \"JPY\", chiffre_d_affaires_devise * donnees_somida.taux_jpy_mga, 0))",
-            "libelle_excel": "Chiffre d'affaires MGA",
-            "identifiant_semantique": "chiffre_d_affaires_mga",
-            "position_libelle": "GAUCHE",
-            "distance_libelle": 2,
-            "type_semantique": "MESURE_MENSUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
-        },
-        {
-            "regle_technique": "RG_EXPORTATIONS_033",
+            "regle_technique": "RG_EXPORTATIONS_027",
             "domaine": "EXPORTATION",
             "feuille": "Exportations",
             "cellule_reference": "S54",
@@ -3656,17 +3352,14 @@
                 {
                     "feuille": "Exportations",
                     "cellule": "G54:R54",
-                    "libelle": "Chiffre d'affaires MGA",
-                    "identifiant_semantique": "chiffre_d_affaires_mga"
+                    "libelle": null,
+                    "identifiant_semantique": null
                 }
             ],
-            "expression_metier": "SUM(chiffre_d_affaires_mga)",
-            "libelle_excel": "Chine",
-            "identifiant_semantique": "chine",
-            "position_libelle": "DEBUT_LIGNE",
-            "distance_libelle": 18,
-            "type_semantique": "MESURE_ANNUELLE",
-            "statut": "SEMANTIQUE_DETECTEE"
+            "expression_metier": null,
+            "libelle_excel": null,
+            "identifiant_semantique": null,
+            "statut": "A_VALIDER"
         },
         {
             "regle_technique": "RG_SYNTHESE_001",
@@ -3677,27 +3370,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$59)",
+            "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
             "dependances": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E59"
+                    "cellule": "E2:E46"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G59"
+                    "cellule": "G2:G46"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E59",
+                    "cellule": "E2:E46",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G59",
+                    "cellule": "G2:G46",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 }
@@ -3747,36 +3440,26 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_reference": "C3",
-            "operation": "SOMME_CONDITIONNELLE",
+            "operation": "SOMME",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$40,\"PRODUCTION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"ADMINISTRATION\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"LOGISTIQUE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"SECURITE\",Charges!$E$2:$E$40)+SUMIF(Charges!$A$2:$A$40,\"FISCAL\",Charges!$E$2:$E$40)",
+            "formule": "=SUM(Charges!E2:E45)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E45"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40",
-                    "libelle": "Catégorie",
-                    "identifiant_semantique": "categorie"
-                },
-                {
-                    "feuille": "Charges",
-                    "cellule": "E2:E40",
+                    "cellule": "E2:E45",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"PRODUCTION\", charges.ampandrandava) + SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUMIF(charges.categorie, \"FISCAL\", charges.ampandrandava)",
+            "expression_metier": "SUM(charges.ampandrandava)",
             "libelle_excel": "Charges exploitation",
             "identifiant_semantique": "charges_exploitation",
             "position_libelle": "GAUCHE",
@@ -4152,11 +3835,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
-                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
+                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
+                    "identifiant_semantique": "dot_amort_mat_outillage"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
+            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
             "libelle_excel": "Amortissements",
             "identifiant_semantique": "amortissements",
             "position_libelle": "GAUCHE",

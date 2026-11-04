@@ -1,5 +1,5 @@
 {
-    "modele": "AD026ED8_SOMIDA_2016",
+    "modele": "D43AA7E7_SOMIDA_2017",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
         "regles_techniques": 133,
@@ -2786,9 +2786,15 @@
                 "I72",
                 "I73",
                 "I74",
-                "I75"
+                "I75",
+                "I76",
+                "I77",
+                "I78",
+                "I79",
+                "I80",
+                "I81"
             ],
-            "nombre_occurrences": 74
+            "nombre_occurrences": 80
         },
         {
             "id": "RG_METIER_065",

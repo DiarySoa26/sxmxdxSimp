@@ -12,7 +12,7 @@ import psycopg2
 #     # "port": 5434,
 #     "port": 5432,
 
-#     "database": "sxmxdx5",
+#     "database": "sxmxdx6",
 #     "user": "sxmxdx",
 #     "password": "diary"
 # }

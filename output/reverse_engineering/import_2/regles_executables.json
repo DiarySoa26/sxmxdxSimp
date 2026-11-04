@@ -1,5 +1,5 @@
 {
-    "modele": "C9D71E7A_SOMIDA_2015",
+    "modele": "27F6ABFC_SOMIDA_2016",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
         "regles_techniques": 133,
@@ -434,7 +434,7 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+Synthese!C4",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$E$2:$E$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$E$2:$E$45)+SUM('Frais Export'!$E$2:$E$50)",
             "dependances": [
                 {
                     "feuille": "Charges",
@@ -445,8 +445,8 @@
                     "cellule": "E2:E45"
                 },
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C4"
+                    "feuille": "Frais Export",
+                    "cellule": "E2:E50"
                 }
             ],
             "dependances_semantiques": [
@@ -463,57 +463,57 @@
                     "identifiant_semantique": "ampandrandava"
                 },
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C4",
-                    "libelle": "Frais export",
-                    "identifiant_semantique": "frais_export"
+                    "feuille": "Frais Export",
+                    "cellule": "E2:E50",
+                    "libelle": "Transport local",
+                    "identifiant_semantique": "transport_local"
                 }
             ],
-            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + synthese.frais_export",
+            "expression_metier": "SUMIF(charges.categorie, \"ADMINISTRATION\", charges.ampandrandava) + SUMIF(charges.categorie, \"LOGISTIQUE\", charges.ampandrandava) + SUMIF(charges.categorie, \"SECURITE\", charges.ampandrandava) + SUM(frais_export.transport_local)",
             "anomalies_regroupement": [
                 {
                     "cellule": "C10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$F$2:$F$45)+Synthese!D4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$F$2:$F$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$F$2:$F$45)+SUM('Frais Export'!$F$2:$F$50)"
                 },
                 {
                     "cellule": "D10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$G$2:$G$45)+Synthese!E4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$G$2:$G$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$G$2:$G$45)+SUM('Frais Export'!$G$2:$G$50)"
                 },
                 {
                     "cellule": "E10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$H$2:$H$45)+Synthese!F4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$H$2:$H$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$H$2:$H$45)+SUM('Frais Export'!$H$2:$H$50)"
                 },
                 {
                     "cellule": "F10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$I$2:$I$45)+Synthese!G4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$I$2:$I$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$I$2:$I$45)+SUM('Frais Export'!$I$2:$I$50)"
                 },
                 {
                     "cellule": "G10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$J$2:$J$45)+Synthese!H4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$J$2:$J$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$J$2:$J$45)+SUM('Frais Export'!$J$2:$J$50)"
                 },
                 {
                     "cellule": "H10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$K$2:$K$45)+Synthese!I4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$K$2:$K$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$K$2:$K$45)+SUM('Frais Export'!$K$2:$K$50)"
                 },
                 {
                     "cellule": "I10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$L$2:$L$45)+Synthese!J4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$L$2:$L$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$L$2:$L$45)+SUM('Frais Export'!$L$2:$L$50)"
                 },
                 {
                     "cellule": "J10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$M$2:$M$45)+Synthese!K4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$M$2:$M$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$M$2:$M$45)+SUM('Frais Export'!$M$2:$M$50)"
                 },
                 {
                     "cellule": "K10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$N$2:$N$45)+Synthese!L4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$N$2:$N$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$N$2:$N$45)+SUM('Frais Export'!$N$2:$N$50)"
                 },
                 {
                     "cellule": "L10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$O$2:$O$45)+Synthese!M4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$O$2:$O$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$O$2:$O$45)+SUM('Frais Export'!$O$2:$O$50)"
                 },
                 {
                     "cellule": "M10",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$P$2:$P$45)+Synthese!N4"
+                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"ADMINISTRATION\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"LOGISTIQUE\",Charges!$P$2:$P$45)+SUMIF(Charges!$A$2:$A$45,\"SECURITE\",Charges!$P$2:$P$45)+SUM('Frais Export'!$P$2:$P$50)"
                 }
             ],
             "cellules_excel": [
@@ -937,7 +937,7 @@
             "operation": "REFERENCE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=Synthese!C5",
+            "formule_excel_reference": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
             "dependances": [
                 {
                     "feuille": "Synthese",
@@ -952,7 +952,7 @@
                     "identifiant_semantique": "masse_salariale"
                 }
             ],
-            "expression_metier": "synthese.masse_salariale",
+            "expression_metier": "IF(synthese.masse_salariale = \"\", 0, synthese.masse_salariale)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B15",
@@ -1248,25 +1248,25 @@
             "domaine": "CR",
             "nom": "Dotations aux amortissements",
             "cible": "dotations_aux_amortissements",
-            "operation": "REFERENCE",
+            "operation": "SOMME",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=Synthese!C8",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
             "dependances": [
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C8"
+                    "feuille": "Amortissements",
+                    "cellule": "E2:E80"
                 }
             ],
             "dependances_semantiques": [
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C8",
-                    "libelle": "Amortissements",
-                    "identifiant_semantique": "amortissements"
+                    "feuille": "Amortissements",
+                    "cellule": "E2:E80",
+                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
+                    "identifiant_semantique": "dot_amort_mat_outillage"
                 }
             ],
-            "expression_metier": "synthese.amortissements",
+            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B19",
@@ -1650,27 +1650,27 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$E$2:$E$45)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A45"
+                    "cellule": "A2:A27"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E45"
+                    "cellule": "E2:E27"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A45",
+                    "cellule": "A2:A27",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E45",
+                    "cellule": "E2:E27",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -1679,47 +1679,47 @@
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$F$2:$F$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$G$2:$G$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$H$2:$H$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$I$2:$I$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$J$2:$J$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$K$2:$K$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$L$2:$L$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$M$2:$M$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$N$2:$N$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$O$2:$O$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$45,\"FINANCE\",Charges!$P$2:$P$45)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
                 }
             ],
             "cellules_excel": [
@@ -2780,9 +2780,15 @@
                 "I66",
                 "I67",
                 "I68",
-                "I69"
+                "I69",
+                "I70",
+                "I71",
+                "I72",
+                "I73",
+                "I74",
+                "I75"
             ],
-            "nombre_occurrences": 68
+            "nombre_occurrences": 74
         },
         {
             "id": "RG_METIER_065",

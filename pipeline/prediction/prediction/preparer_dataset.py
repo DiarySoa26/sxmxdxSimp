@@ -29,7 +29,9 @@ print("\nMois par année :")
 print(df.groupby("annee")["mois"].nunique())
 
 # --- Contrôle qualité : années identiques (copie / double import suspect) ---
-COLS_CONTROLE = ["ventes","ca_export","production_reelle","charges_exploitation","frais_export"]
+# Les charges sont exclues du contrôle : une année recopiée dont seules les
+# charges ont été modifiées doit quand même être signalée.
+COLS_CONTROLE = ["ventes","ca_export","production_reelle","frais_export"]
 annees_ok = sorted(a for a,n in df.groupby("annee")["mois"].nunique().items() if n==12)
 alertes = []
 for i,a in enumerate(annees_ok):
@@ -37,7 +39,7 @@ for i,a in enumerate(annees_ok):
         xa = df[df["annee"]==a].sort_values("mois")[COLS_CONTROLE].to_numpy()
         xb = df[df["annee"]==b].sort_values("mois")[COLS_CONTROLE].to_numpy()
         if np.allclose(xa,xb,rtol=0,atol=0.01):
-            alertes.append(f"{b} est strictement identique à {a} (ventes, CA, production, charges, frais)")
+            alertes.append(f"Les ventes, le chiffre d'affaires, la production et les frais d'exportation de {b} sont identiques, mois par mois, à ceux de {a}")
 print("\nCONTROLE QUALITE")
 if alertes:
     for m in alertes: print(f"[ALERTE DONNEES] {m} -> vérifier l'import : l'apprentissage et les métriques en sont faussés.")

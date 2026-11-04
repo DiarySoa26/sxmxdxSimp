@@ -1,8 +1,8 @@
 {
-    "modele": "CE56BF02_SOMIDA_2018",
-    "version": "CE56BF02_SOMIDA_2018_V1",
+    "modele": "24D6996A_SOMIDA_2019",
+    "version": "24D6996A_SOMIDA_2019_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/ce56bf02_SOMIDA_2018.xlsx",
+    "source_excel": "/app/data/uploads/24d6996a_SOMIDA_2019.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_5/regles_metier.json",
     "statistiques": {
         "nombre_regles": 133,
@@ -2217,7 +2217,7 @@
             "operation": "SOMME",
             "periodicite_technique": "REPETEE",
             "periodicite": "REPETEE",
-            "nombre_occurrences": 85,
+            "nombre_occurrences": 90,
             "formule": "=SUM(F2:H2)",
             "dependances": [
                 {

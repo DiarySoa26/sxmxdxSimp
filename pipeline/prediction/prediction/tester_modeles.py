@@ -1,85 +1,78 @@
+"""
+SXMXDX - Test des modèles de régression (étape 3).
+
+Entraînement : toutes les années sauf N (dernière année complète).
+Test         : l'année N.
+Pour chaque indicateur, chaque fenêtre de régression est entraînée puis
+évaluée sur N ; la meilleure est comparée à la reconduction de N-1.
+Sorties : output/metriques_modeles.csv (fenêtre retenue par indicateur)
+          output/comparaison_fenetres.csv (toutes les fenêtres testées)
+"""
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from modeles import (CANDIDATS, backtest, choisir_modele, evaluer, prevoir,
-                     garder_annees_completes, MIN_ANNEES_ENTRAINEMENT)
+
+from modeles import choisir_modele, prevoir, separer_train_test
 
 BASE = Path(__file__).resolve().parent.parent
 INPUT = BASE / "output" / "dataset_ml.csv"
 OUTPUT = BASE / "output" / "metriques_modeles.csv"
+OUTPUT_FENETRES = BASE / "output" / "comparaison_fenetres.csv"
+
+CIBLES = ["ventes", "ca_export", "production_reelle", "charges_exploitation",
+          "frais_export", "masse_salariale", "amortissements"]
 
 df = pd.read_csv(INPUT).sort_values(["annee", "mois"]).reset_index(drop=True)
-ANNEE_TEST = int(df["annee"].max())
-
-CIBLES = ["ventes", "ca_export", "production_reelle", "charges_exploitation", "frais_export", "masse_salariale", "amortissements"]
-PREFIXE_LAG = {"ventes": "ventes", "ca_export": "ca_export", "production_reelle": "production",
-               "charges_exploitation": "charges", "frais_export": "frais_export",
-               "masse_salariale": "masse_salariale", "amortissements": "amortissements"}
-
-
-def plis_ancien_modele(cible):
-    """Ancien modèle (régression linéaire tendance + saisonnalité + lag 12), mêmes plis, pour comparaison."""
-    features = ["index_temps", "mois_sin", "mois_cos", f"{PREFIXE_LAG[cible]}_lag_12"]
-    data = df[["annee", "mois", cible] + features].dropna()
-    plis = []
-    for annee in sorted(garder_annees_completes(df)["annee"].unique())[MIN_ANNEES_ENTRAINEMENT:]:
-        train, test = data[data["annee"] < annee], data[data["annee"] == annee].sort_values("mois")
-        if train.empty or test.empty:
-            continue
-        pred = np.maximum(LinearRegression().fit(train[features], train[cible]).predict(test[features]), 0)
-        plis.append({"annee": int(annee), "reel": test[cible].to_numpy(), "pred": pred})
-    return plis
-
+train, test, annee_test = separer_train_test(df)
+annees_train = sorted(train["annee"].unique())
+if not annees_train:
+    raise ValueError("Au moins deux années complètes sont nécessaires (une pour entraîner, une pour tester).")
 
 print("=" * 80)
-print(f"SXMXDX - BACKTEST GLISSANT (années testées : {sorted(df['annee'].unique())[MIN_ANNEES_ENTRAINEMENT]} -> {ANNEE_TEST})")
+print("SXMXDX - TEST DES RÉGRESSIONS")
+print(f"Entraînement : {annees_train[0]} -> {annees_train[-1]} ({len(annees_train)} années)")
+print(f"Test         : {annee_test}")
 print("=" * 80)
 
-resultats = []
+resultats, fenetres = [], []
 for cible in CIBLES:
     choix = choisir_modele(df, cible)
     if choix["eval"] is None:
         print(f"[IGNORÉ] {cible} : données insuffisantes")
         continue
+    for _, ligne in choix["tableau"].iterrows():
+        fenetres.append({"cible": cible, "modele": ligne["modele"],
+                         "ecart_annuel_test_pct": ligne["ecart_annuel"], "mape_test_pct": ligne["mape"],
+                         "retenu": ligne["modele"] == choix["modele"]})
 
-    # Métriques de la dernière année (comparables à l'ancien fichier de métriques)
-    plis = backtest(df, cible, choix["alpha"])
-    dernier = plis[-1]
-    reel, pred = dernier["reel"], dernier["pred"]
-    masque = reel != 0
-    ancien = evaluer(plis_ancien_modele(cible))
-
+    reel = test[cible].to_numpy(dtype=float)
+    pred = prevoir(train, cible, test["mois"], choix["fenetre"])
+    ev, naif = choix["eval"], choix["naif"] or {}
     resultats.append({
         "cible": cible,
+        "modele": choix["modele"],
+        "annee_test": annee_test,
+        "annees_train": f"{annees_train[0]}-{annees_train[-1]}",
+        "ecart_annuel_test_pct": ev["ecart_annuel"],
+        "mape_test_pct": ev["mape"],
+        "erreur_typique_pct": ev["erreur_typique"],
+        "naif_ecart_annuel_test_pct": naif.get("ecart_annuel", np.nan),
+        "naif_mape_test_pct": naif.get("mape", np.nan),
+        "gain_vs_naif_pts": abs(naif.get("ecart_annuel", np.nan)) - abs(ev["ecart_annuel"]),
         "mae": mean_absolute_error(reel, pred),
         "rmse": float(np.sqrt(mean_squared_error(reel, pred))),
-        "mape_pct": float(np.mean(np.abs((reel[masque] - pred[masque]) / reel[masque])) * 100),
         "r2": r2_score(reel, pred),
-        "ecart_annuel_pct": (pred.sum() - reel.sum()) / reel.sum() * 100,
-        # --- nouvelles colonnes ---
-        "modele": choix["modele"],
-        "nb_plis": choix["eval"]["nb_plis"],
-        "mape_moy_plis_pct": choix["eval"]["mape_moy"],
-        "ecart_annuel_moy_plis_pct": choix["eval"]["ecart_annuel_moy"],
-        "ecart_annuel_rms_pct": choix["eval"]["ecart_annuel_rms"],
-        "ancien_mape_moy_plis_pct": ancien["mape_moy"] if ancien else np.nan,
-        "ancien_ecart_annuel_moy_plis_pct": ancien["ecart_annuel_moy"] if ancien else np.nan,
     })
 
 resultats = pd.DataFrame(resultats)
 pd.set_option("display.float_format", lambda x: f"{x:,.2f}")
 pd.set_option("display.width", 250)
-pd.set_option("display.max_columns", 30)
-
-print("\nCOMPARAISON NOUVEAU vs ANCIEN MODELE (moyenne sur tous les plis)")
-print(resultats[["cible", "modele", "nb_plis", "ecart_annuel_moy_plis_pct", "ancien_ecart_annuel_moy_plis_pct",
-                 "mape_moy_plis_pct", "ancien_mape_moy_plis_pct"]].to_string(index=False))
-print("\nDERNIERE ANNEE ({}) - modèle retenu".format(ANNEE_TEST))
-print(resultats[["cible", "mae", "rmse", "mape_pct", "ecart_annuel_pct"]].to_string(index=False))
-print("\nNote : le R2 sur 12 mois d'une seule année est peu informatif (la variance intra-annuelle "
-      "est de ~3 %) ; l'erreur annuelle et le MAPE sont les indicateurs à suivre.")
+print(f"\nERREURS SUR {annee_test} : RÉGRESSION RETENUE vs RECONDUCTION DE {annee_test - 1}")
+print(resultats[["cible", "modele", "ecart_annuel_test_pct", "mape_test_pct",
+                 "naif_ecart_annuel_test_pct", "gain_vs_naif_pts"]].to_string(index=False))
+print("\nNote : les charges du budget sont la somme des catégories ; leur test est fait à l'étape 4.")
 
 resultats.to_csv(OUTPUT, index=False)
-print(f"\n[OK] {OUTPUT}")
+pd.DataFrame(fenetres).to_csv(OUTPUT_FENETRES, index=False)
+print(f"\n[OK] {OUTPUT}\n[OK] {OUTPUT_FENETRES}")

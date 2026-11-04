@@ -1,5 +1,5 @@
 {
-    "modele": "CE56BF02_SOMIDA_2018",
+    "modele": "24D6996A_SOMIDA_2019",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
         "regles_techniques": 133,
@@ -2797,9 +2797,14 @@
                 "I83",
                 "I84",
                 "I85",
-                "I86"
+                "I86",
+                "I87",
+                "I88",
+                "I89",
+                "I90",
+                "I91"
             ],
-            "nombre_occurrences": 85
+            "nombre_occurrences": 90
         },
         {
             "id": "RG_METIER_065",

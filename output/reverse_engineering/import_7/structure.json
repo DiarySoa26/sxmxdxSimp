@@ -1,5 +1,5 @@
 {
-    "fichier": "f05ef025_SOMIDA_2020.xlsx",
+    "fichier": "8dc420c2_SOMIDA_2021.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -26,9 +26,9 @@
             "etat": "visible",
             "lignes": 11,
             "colonnes": 16,
-            "formules": 10,
+            "formules": 0,
             "textes": 34,
-            "nombres": 72,
+            "nombres": 82,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -68,9 +68,9 @@
             "etat": "visible",
             "lignes": 20,
             "colonnes": 18,
-            "formules": 16,
+            "formules": 3,
             "textes": 98,
-            "nombres": 192,
+            "nombres": 205,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -152,9 +152,9 @@
             "etat": "visible",
             "lignes": 19,
             "colonnes": 17,
-            "formules": 18,
+            "formules": 0,
             "textes": 89,
-            "nombres": 216,
+            "nombres": 234,
             "mois_detectes": [
                 "Janvier",
                 "Février",
@@ -194,9 +194,9 @@
             "etat": "visible",
             "lignes": 8,
             "colonnes": 15,
-            "formules": 91,
+            "formules": 78,
             "textes": 29,
-            "nombres": 0,
+            "nombres": 13,
             "mois_detectes": [
                 "Janvier",
                 "Février",

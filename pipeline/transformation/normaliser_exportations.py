@@ -40,7 +40,7 @@
 
 
 # # # PostgreSQL vu depuis le conteneur Spark
-# # JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx5"
+# # JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx6"
 
 
 # # JDBC_PROPERTIES = {
@@ -1622,7 +1622,7 @@
 
 #     print(
 #         "[OK] Données insérées dans "
-#         "sxmxdx5.exportation."
+#         "sxmxdx6.exportation."
 #     )
 
 

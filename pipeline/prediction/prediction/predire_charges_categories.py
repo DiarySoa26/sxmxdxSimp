@@ -1,152 +1,79 @@
-# from pathlib import Path
-# import numpy as np
-# import pandas as pd
-# from modeles import prevoir_categories
-# from database import get_connection
+"""
+SXMXDX - Prévision des charges d'exploitation par catégorie (étape 4).
 
-# BASE = Path(__file__).resolve().parent.parent
-# OUTPUT = BASE/"output"
-# dataset = pd.read_csv(OUTPUT/"dataset_ml.csv")
-# ANNEE_REFERENCE = int(dataset["annee"].max())
-# ANNEE_PREDICTION = ANNEE_REFERENCE+1
-# budget = pd.read_csv(OUTPUT/f"prediction_budget_{ANNEE_PREDICTION}_mensuel.csv").sort_values("mois")
-# SORTIE = OUTPUT/f"prediction_charges_categories_{ANNEE_PREDICTION}.csv"
+Pour chaque catégorie active en N : fenêtre de régression choisie en
+entraînant sur les années < N et en testant sur N, puis prévision de N+1
+entraînée sur toutes les années. Charges d'exploitation = somme des catégories.
 
-# connexion = get_connection()
-# sql = """
-# WITH dernier_import AS (
-#     SELECT DISTINCT ON (i.exercice_id)
-#            i.id AS import_id, i.exercice_id, e.annee
-#     FROM import_fichier i
-#     JOIN exercice e ON e.id=i.exercice_id
-#     ORDER BY i.exercice_id, i.date_import DESC, i.id DESC
-# )
-# SELECT di.annee, c.mois_id AS mois, UPPER(TRIM(c.categorie)) AS categorie,
-#        SUM(COALESCE(c.montant,0)) AS montant
-# FROM dernier_import di
-# JOIN charge c ON c.import_id=di.import_id AND c.exercice_id=di.exercice_id
-# WHERE UPPER(TRIM(COALESCE(c.categorie,''))) <> 'ADMINISTRATION'
-# GROUP BY di.annee,c.mois_id,UPPER(TRIM(c.categorie))
-# ORDER BY di.annee,c.mois_id,categorie
-# """
-# charges = pd.read_sql(sql,connexion)
-# connexion.close()
-
-# charges["montant"] = pd.to_numeric(charges["montant"],errors="coerce")
-# charges = charges.sort_values(["categorie","annee","mois"]).reset_index(drop=True)
-
-# resultat,choix = prevoir_categories(charges,budget,ANNEE_REFERENCE)
-# for cat,modele in choix.items(): print(f"[MODELE] {cat:15s} -> {modele}")
-
-# resultat.to_csv(SORTIE,index=False)
-
-# print("\nSYNTHESE PAR CATEGORIE")
-# print(resultat.groupby("categorie")["charge_prevue"].sum().to_string())
-# print(f"\n[OK] {SORTIE}")
-
-
-
-
-
-
+Entrées : output/dataset_ml.csv, output/charges_categories_historique.csv
+Sorties : prediction_charges_categories_<N+1>.csv
+          metriques_charges_categories.csv   (une ligne par catégorie)
+          test_charges_total.csv             (12 mois de N : prévu vs réel)
+"""
 from pathlib import Path
-import numpy as np
 import pandas as pd
 
-from modeles import prevoir_categories
-from database import get_connection
+from modeles import evaluer_test, prevoir_categories, tester_charges_categories
 
 BASE = Path(__file__).resolve().parent.parent
 OUTPUT = BASE / "output"
 
 dataset = pd.read_csv(OUTPUT / "dataset_ml.csv")
-
 ANNEE_REFERENCE = int(dataset["annee"].max())
 ANNEE_PREDICTION = ANNEE_REFERENCE + 1
 
-budget = (
-    dataset[dataset["annee"] == ANNEE_REFERENCE]
-    .sort_values("mois")
-    .copy()
-)
+HISTORIQUE = OUTPUT / "charges_categories_historique.csv"
+if not HISTORIQUE.is_file():
+    raise FileNotFoundError(f"Historique des charges par catégorie absent : {HISTORIQUE}. "
+                            "Relancer construire_dataset.py.")
 
-SORTIE = OUTPUT / (
-    f"prediction_charges_categories_{ANNEE_PREDICTION}.csv"
-)
+charges = pd.read_csv(HISTORIQUE)
+charges["montant"] = pd.to_numeric(charges["montant"], errors="coerce")
+charges = charges[charges["annee"].isin(dataset["annee"].unique())]
+charges = charges.sort_values(["categorie", "annee", "mois"]).reset_index(drop=True)
 
-connexion = get_connection()
+print("=" * 80)
+print(f"SXMXDX - CHARGES PAR CATÉGORIE {ANNEE_PREDICTION}")
+print(f"Entraînement : années < {ANNEE_REFERENCE} ; test : {ANNEE_REFERENCE}")
+print("=" * 80)
 
-sql = """
-WITH dernier_import AS (
-    SELECT DISTINCT ON (i.exercice_id)
-           i.id AS import_id,
-           i.exercice_id,
-           e.annee
-    FROM import_fichier i
-    JOIN exercice e
-        ON e.id = i.exercice_id
-    WHERE i.statut = 'PRET_GENERATION'
-    ORDER BY
-        i.exercice_id,
-        i.date_import DESC,
-        i.id DESC
-)
-SELECT
-    di.annee,
-    c.mois_id AS mois,
-    UPPER(TRIM(c.categorie)) AS categorie,
-    SUM(COALESCE(c.montant, 0)) AS montant
-FROM dernier_import di
-JOIN charge c
-    ON c.import_id = di.import_id
-   AND c.exercice_id = di.exercice_id
-WHERE UPPER(TRIM(COALESCE(c.categorie, ''))) <> 'ADMINISTRATION'
-GROUP BY
-    di.annee,
-    c.mois_id,
-    UPPER(TRIM(c.categorie))
-ORDER BY
-    di.annee,
-    c.mois_id,
-    categorie
-"""
+previsions, choix = prevoir_categories(charges, ANNEE_REFERENCE)
 
-try:
-    charges = pd.read_sql(sql, connexion)
-finally:
-    connexion.close()
-
-charges["montant"] = pd.to_numeric(
-    charges["montant"],
-    errors="coerce"
-)
-
-charges = (
-    charges.sort_values(
-        ["categorie", "annee", "mois"]
-    )
-    .reset_index(drop=True)
-)
-
-resultat, choix = prevoir_categories(
-    charges,
-    budget,
-    ANNEE_REFERENCE
-)
-
+lignes = []
 for categorie, modele in choix.items():
-    print(
-        f"[MODELE] {categorie:15s} -> {modele}"
-    )
+    cat = charges[charges["categorie"] == categorie]
+    reference = cat[cat["annee"] == ANNEE_REFERENCE]["montant"].sum()
+    prevu = previsions[previsions["categorie"] == categorie]["charge_prevue"].sum()
+    ev, naif = modele["eval"] or {}, modele["naif"] or {}
+    lignes.append({
+        "categorie": categorie,
+        "modele": modele["modele"],
+        "nb_annees": int(cat["annee"].nunique()),
+        "montant_reference": reference,
+        "montant_prevu": prevu,
+        "evolution_pct": (prevu - reference) / reference * 100 if reference else float("nan"),
+        "ecart_annuel_test_pct": ev.get("ecart_annuel"),
+        "naif_ecart_annuel_test_pct": naif.get("ecart_annuel"),
+    })
+    print(f"[MODELE] {categorie:18s} -> {modele['modele']}")
+metriques = pd.DataFrame(lignes)
 
-resultat.to_csv(SORTIE, index=False)
+# Test de la méthode « somme des catégories » sur l'année N
+reel = dataset[dataset["annee"] == ANNEE_REFERENCE].sort_values("mois")["charges_exploitation"].to_numpy()
+prevu_test = tester_charges_categories(charges, choix, ANNEE_REFERENCE)
+test_total = pd.DataFrame({"annee": ANNEE_REFERENCE, "mois": range(1, 13),
+                           "charges_prevues": prevu_test, "charges_reelles": reel})
+ev = evaluer_test(reel, prevu_test)
+if ev:
+    print(f"\n[TEST {ANNEE_REFERENCE}] Total des charges : écart annuel {ev['ecart_annuel']:+.2f} %, "
+          f"MAPE {ev['mape']:.2f} %")
 
+previsions.to_csv(OUTPUT / f"prediction_charges_categories_{ANNEE_PREDICTION}.csv", index=False)
+metriques.to_csv(OUTPUT / "metriques_charges_categories.csv", index=False)
+test_total.to_csv(OUTPUT / "test_charges_total.csv", index=False)
+
+pd.set_option("display.float_format", lambda x: f"{x:,.2f}")
+pd.set_option("display.width", 200)
 print("\nSYNTHESE PAR CATEGORIE")
-
-print(
-    resultat.groupby("categorie")["charge_prevue"]
-    .sum()
-    .to_string()
-)
-
-print(f"\n[OK] {SORTIE}")
+print(metriques.to_string(index=False))
+print(f"\n[OK] {OUTPUT / f'prediction_charges_categories_{ANNEE_PREDICTION}.csv'}")

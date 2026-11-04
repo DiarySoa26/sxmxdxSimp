@@ -1,8 +1,8 @@
 {
-    "modele": "AD026ED8_SOMIDA_2016",
-    "version": "AD026ED8_SOMIDA_2016_V1",
+    "modele": "D43AA7E7_SOMIDA_2017",
+    "version": "D43AA7E7_SOMIDA_2017_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/ad026ed8_SOMIDA_2016.xlsx",
+    "source_excel": "/app/data/uploads/d43aa7e7_SOMIDA_2017.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_3/regles_metier.json",
     "statistiques": {
         "nombre_regles": 133,
@@ -2217,7 +2217,7 @@
             "operation": "SOMME",
             "periodicite_technique": "REPETEE",
             "periodicite": "REPETEE",
-            "nombre_occurrences": 74,
+            "nombre_occurrences": 80,
             "formule": "=SUM(F2:H2)",
             "dependances": [
                 {

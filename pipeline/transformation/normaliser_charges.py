@@ -20,7 +20,7 @@
 #     for index, mois in enumerate(MOIS)
 # }
 
-# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx5"
+# JDBC_URL = "jdbc:postgresql://postgres:5432/sxmxdx6"
 
 # JDBC_PROPERTIES = {
 #     "user": "sxmxdx",

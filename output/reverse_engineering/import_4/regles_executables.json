@@ -1,5 +1,5 @@
 {
-    "modele": "AE5D81F3_SOMIDA_2017",
+    "modele": "4CDEE00A_SOMIDA_2018",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
         "regles_techniques": 133,
@@ -2792,9 +2792,14 @@
                 "I78",
                 "I79",
                 "I80",
-                "I81"
+                "I81",
+                "I82",
+                "I83",
+                "I84",
+                "I85",
+                "I86"
             ],
-            "nombre_occurrences": 80
+            "nombre_occurrences": 85
         },
         {
             "id": "RG_METIER_065",

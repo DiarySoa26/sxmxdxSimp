@@ -1,7 +1,7 @@
 {
-    "modele": "CB66A8B1_SOMIDA_2015",
-    "version": "CB66A8B1_SOMIDA_2015_V1",
-    "fichier_source": "cb66a8b1_SOMIDA_2015.xlsx",
+    "modele": "FF0913BB_SOMIDA_2015",
+    "version": "FF0913BB_SOMIDA_2015_V1",
+    "fichier_source": "ff0913bb_SOMIDA_2015.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_1/formules.csv",
