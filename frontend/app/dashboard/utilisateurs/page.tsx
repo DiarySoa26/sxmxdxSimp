@@ -248,6 +248,22 @@ export default function UtilisateursPage() {
                 className={inputClass} />
             </div>
 
+            {/* <div className="space-y-2">
+  <label htmlFor="password" className="text-sm font-medium">
+    {mode === "ajout" ? "Mot de passe *" : "Nouveau mot de passe"}
+  </label>
+  <input
+    id="password"
+    type="password"
+    required={mode === "ajout"}
+    autoComplete="new-password"
+    value={form.motDePasse}
+    onChange={e => changer("motDePasse", e.target.value)}
+    placeholder="admin123"
+    className={inputClass}
+  />
+</div> */}
+
             <div className="space-y-2">
               <label htmlFor="role" className="text-sm font-medium">Rôle *</label>
               <select id="role" required value={form.role}

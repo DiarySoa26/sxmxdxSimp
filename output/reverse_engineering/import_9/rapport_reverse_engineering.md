@@ -1,11 +1,11 @@
-# Reverse engineering : 11d364d0_SOMIDA_2022.xlsx
+# Reverse engineering : 34e8ff4d_SOMIDA_2023.xlsx
 
 ## Feuilles
 
 | Feuille | Formules | Mise en page temporelle |
 |---|---|---|
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
-| Employes | 93 | aucune mise en page temporelle détectée |
+| Employes | 91 | aucune mise en page temporelle détectée |
 | Production | 0 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
 | Charges | 3 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Exportations | 128 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
@@ -16,7 +16,7 @@
 
 ## Resultat
 
-- Formules Excel : 705
+- Formules Excel : 703
 - Regles uniques apres regroupement : 105
 - Regles formalisees (avec libelle metier) : 99
 - Regles a valider (libelle non identifie) : 6

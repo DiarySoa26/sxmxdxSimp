@@ -1,8 +1,8 @@
 {
-    "modele": "11D364D0_SOMIDA_2022",
-    "version": "11D364D0_SOMIDA_2022_V1",
+    "modele": "34E8FF4D_SOMIDA_2023",
+    "version": "34E8FF4D_SOMIDA_2023_V1",
     "origine": "EXTRACTION_SEMANTIQUE_EXCEL",
-    "source_excel": "/app/data/uploads/11d364d0_SOMIDA_2022.xlsx",
+    "source_excel": "/app/data/uploads/34e8ff4d_SOMIDA_2023.xlsx",
     "source_regles": "/app/output/reverse_engineering/import_9/regles_metier.json",
     "statistiques": {
         "nombre_regles": 105,
@@ -1005,11 +1005,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
+                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
             "libelle_excel": "Dotations aux amortissements",
             "identifiant_semantique": "dotations_aux_amortissements",
             "position_libelle": "GAUCHE",
@@ -1328,27 +1328,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
+            "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$E$2:$E$26)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A26"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E26"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A26",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E26",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -2181,7 +2181,7 @@
             "operation": "SOMME",
             "periodicite_technique": "REPETEE",
             "periodicite": "REPETEE",
-            "nombre_occurrences": 93,
+            "nombre_occurrences": 91,
             "formule": "=SUM(F2:H2)",
             "dependances": [
                 {
@@ -3370,27 +3370,27 @@
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
             "nombre_occurrences": 12,
-            "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$59)",
             "dependances": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E46"
+                    "cellule": "E2:E59"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G46"
+                    "cellule": "G2:G59"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E46",
+                    "cellule": "E2:E59",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G46",
+                    "cellule": "G2:G59",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 }
@@ -3835,11 +3835,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
+                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
             "libelle_excel": "Amortissements",
             "identifiant_semantique": "amortissements",
             "position_libelle": "GAUCHE",

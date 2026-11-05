@@ -1,16 +1,16 @@
 {
-    "modele": "11D364D0_SOMIDA_2022",
-    "version": "11D364D0_SOMIDA_2022_V1",
-    "fichier_source": "11d364d0_SOMIDA_2022.xlsx",
+    "modele": "34E8FF4D_SOMIDA_2023",
+    "version": "34E8FF4D_SOMIDA_2023_V1",
+    "fichier_source": "34e8ff4d_SOMIDA_2023.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_9/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_9/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 705,
+        "nombre_formules_excel": 703,
         "nombre_regles_uniques": 105,
-        "nombre_repetitions_regroupees": 600,
+        "nombre_repetitions_regroupees": 598,
         "operations": {
             "REFERENCE": 13,
             "SOMME": 63,
@@ -4000,55 +4000,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B24",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$E$2:$E$26)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[27]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[27]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[26]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[26]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$F$2:$F$26)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$G$2:$G$26)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$H$2:$H$26)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$I$2:$I$26)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$J$2:$J$26)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$K$2:$K$26)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$L$2:$L$26)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$M$2:$M$26)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$N$2:$N$26)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$O$2:$O$26)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$P$2:$P$26)"
                 }
             ],
             "cellules_excel": [
@@ -4068,179 +4068,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A26"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E26"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$E$2:$E$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E27"
+                            "cellule": "E2:E26"
                         }
                     ]
                 },
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$F$2:$F$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F27"
+                            "cellule": "F2:F26"
                         }
                     ]
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$G$2:$G$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G27"
+                            "cellule": "G2:G26"
                         }
                     ]
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$H$2:$H$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H27"
+                            "cellule": "H2:H26"
                         }
                     ]
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$I$2:$I$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I27"
+                            "cellule": "I2:I26"
                         }
                     ]
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$J$2:$J$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J27"
+                            "cellule": "J2:J26"
                         }
                     ]
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$K$2:$K$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K27"
+                            "cellule": "K2:K26"
                         }
                     ]
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$L$2:$L$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L27"
+                            "cellule": "L2:L26"
                         }
                     ]
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$M$2:$M$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M27"
+                            "cellule": "M2:M26"
                         }
                     ]
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$N$2:$N$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N27"
+                            "cellule": "N2:N26"
                         }
                     ]
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$O$2:$O$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O27"
+                            "cellule": "O2:O26"
                         }
                     ]
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$P$2:$P$26)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A27"
+                            "cellule": "A2:A26"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P27"
+                            "cellule": "P2:P26"
                         }
                     ]
                 }
@@ -6508,7 +6508,7 @@
             "formule_excel_reference": "=SUM(F2:H2)",
             "operation": "SOMME",
             "signature_structurelle": "=SUM(RANGE(COL[-3],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 93,
+            "nombre_occurrences": 91,
             "periodicite": "REPETEE",
             "anomalies_regroupement": [],
             "cellules_excel": [
@@ -6602,9 +6602,7 @@
                 "I89",
                 "I90",
                 "I91",
-                "I92",
-                "I93",
-                "I94"
+                "I92"
             ],
             "dependances_reference": [
                 {
@@ -7520,26 +7518,6 @@
                         {
                             "feuille": "Employes",
                             "cellule": "F92:H92"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I93",
-                    "formule": "=SUM(F93:H93)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F93:H93"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I94",
-                    "formule": "=SUM(F94:H94)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F94:H94"
                         }
                     ]
                 }
@@ -11097,55 +11075,55 @@
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C2",
-            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$59)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[46]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[2],ABS_COL[G],ABS_ROW[46]))",
+            "signature_structurelle": "=SUMIF(EXPORTATIONS!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[59]),\"CHIFFRED'AFFAIRESMGA\",EXPORTATIONS!RANGE(ABS_COL[G],ABS_ROW[2],ABS_COL[G],ABS_ROW[59]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$59)"
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$59)"
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$59)"
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$59)"
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$59)"
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$59)"
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$59)"
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$59)"
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$59)"
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$59)"
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$59)"
                 }
             ],
             "cellules_excel": [
@@ -11165,179 +11143,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E46"
+                    "cellule": "E2:E59"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G46"
+                    "cellule": "G2:G59"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "G2:G46"
+                            "cellule": "G2:G59"
                         }
                     ]
                 },
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "H2:H46"
+                            "cellule": "H2:H59"
                         }
                     ]
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "I2:I46"
+                            "cellule": "I2:I59"
                         }
                     ]
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "J2:J46"
+                            "cellule": "J2:J59"
                         }
                     ]
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "K2:K46"
+                            "cellule": "K2:K59"
                         }
                     ]
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "L2:L46"
+                            "cellule": "L2:L59"
                         }
                     ]
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "M2:M46"
+                            "cellule": "M2:M59"
                         }
                     ]
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "N2:N46"
+                            "cellule": "N2:N59"
                         }
                     ]
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "O2:O46"
+                            "cellule": "O2:O59"
                         }
                     ]
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "P2:P46"
+                            "cellule": "P2:P59"
                         }
                     ]
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "Q2:Q46"
+                            "cellule": "Q2:Q59"
                         }
                     ]
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)",
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$59)",
                     "dependances": [
                         {
                             "feuille": "Exportations",
-                            "cellule": "E2:E46"
+                            "cellule": "E2:E59"
                         },
                         {
                             "feuille": "Exportations",
-                            "cellule": "R2:R46"
+                            "cellule": "R2:R59"
                         }
                     ]
                 }

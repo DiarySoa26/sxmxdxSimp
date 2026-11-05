@@ -1,9 +1,3 @@
-"""
-SXMXDX - Résumé rédigé du budget prévisionnel (étape 7).
-
-Produit un texte en français, lisible par un non-spécialiste, à partir des
-fichiers des étapes précédentes. Sortie : output/resume_analyse_<N+1>.txt
-"""
 from datetime import date
 from pathlib import Path
 
@@ -139,11 +133,12 @@ def phrase_resultat(valeur):
 
 
 lignes = [
-    f"BUDGET PRÉVISIONNEL {ANNEE} — RÉSUMÉ DE L'ANALYSE",
-    f"Prévision établie le {date.today():%d/%m/%Y}. Modèle entraîné sur les exercices {PREMIERE} à {N - 1}, "
-    f"testé sur {N}, puis réentraîné sur {PREMIERE}–{N}. Comparaisons faites avec l'exercice {N}.",
+    # f"BUDGET PRÉVISIONNEL {ANNEE} — RÉSUMÉ DE L'ANALYSE",
+    f"BUDGET PRÉVISIONNEL {ANNEE}",
+    # f"Prévision établie le {date.today():%d/%m/%Y}. Modèle entraîné sur les exercices {PREMIERE} à {N - 1}, "
+    # f"testé sur {N}, puis réentraîné sur {PREMIERE}–{N}. Comparaisons faites avec l'exercice {N}.",
     "",
-    "EN BREF",
+    # "EN BREF",
     "",
     f"En {ANNEE}, le chiffre d'affaires à l'exportation atteindrait {montant(ca)}, "
     f"{tendance(variation(ca, ca_n))} par rapport à {N}. L'ensemble des dépenses d'exploitation "
@@ -153,12 +148,14 @@ lignes = [
 ]
 
 if resultat >= 0:
-    texte = (f"L'exercice {ANNEE} dégagerait {phrase_resultat(resultat)}, soit une marge de {pct(marge, False)} : "
-             f"sur 100 MGA de chiffre d'affaires, il resterait environ {fr(marge, 0)} MGA après toutes les dépenses.")
+    texte = (f"L'exercice {ANNEE} dégagerait {phrase_resultat(resultat)}, soit une marge de {pct(marge, False)} : ")
+            #  f"sur 100 MGA de chiffre d'affaires, il resterait environ {fr(marge, 0)} MGA après toutes les dépenses.")
 else:
+    # texte = (f"L'exercice {ANNEE} se solderait par {phrase_resultat(resultat)}, "
+    #          f"soit une marge de {pct(marge)} : pour 100 MGA de chiffre d'affaires, l'entreprise dépenserait "
+    #          f"environ {fr(100 - marge, 0)} MGA.")
     texte = (f"L'exercice {ANNEE} se solderait par {phrase_resultat(resultat)}, "
-             f"soit une marge de {pct(marge)} : pour 100 MGA de chiffre d'affaires, l'entreprise dépenserait "
-             f"environ {fr(100 - marge, 0)} MGA.")
+                 f"soit une marge de {pct(marge)}")
 texte += f" Pour comparaison, l'exercice {N} s'est terminé sur {phrase_resultat(resultat_n)}."
 lignes += [texte, ""]
 
@@ -212,7 +209,7 @@ lignes += [
     "",
     f"Le résultat opérationnel passe de {montant(resultat_n)} à {montant(resultat)}, "
     f"soit {'une amélioration' if delta >= 0 else 'une dégradation'} de {montant(abs(delta))}. "
-    "Contribution de chaque poste (un montant positif améliore le résultat) :",
+    # "Contribution de chaque poste (un montant positif améliore le résultat) :",
 ]
 for libelle, ecart, sens in sorted(effets, key=lambda e: -abs(e[1])):
     effet = sens * ecart
@@ -232,7 +229,7 @@ if not metriques_cat.empty:
         part = c["montant_prevu"] / total_cat * 100 if total_cat else np.nan
         lignes.append(f"- {nom_cat(c['categorie']).capitalize()} : {montant(c['montant_prevu'])} "
                       f"({fr(part, 0)} % du total ; {pct(c['evolution_pct'])} par rapport à {N})")
-    lignes += ["Le poste « administration » n'est pas inclus dans ces charges.", ""]
+    # lignes += ["Le poste « administration » n'est pas inclus dans ces charges.", ""]
 
 # ------------------------------------------------------------
 # 4. Profil mensuel
@@ -267,43 +264,45 @@ PERIODES = {"REG_LIN_3ANS": "3 dernières années", "REG_LIN_5ANS": "5 dernière
             "COMBINAISON": "combinaison des postes"}
 lignes += [
     "5. MÉTHODE ET FIABILITÉ", "",
-    "Chaque indicateur est prévu par une régression linéaire qui combine une tendance (l'évolution moyenne "
-    "d'une année sur l'autre) et un profil saisonnier (les mois habituellement plus forts ou plus faibles). "
-    "Les charges d'exploitation sont la somme de régressions établies poste par poste.",
-    "",
-    f"Pour vérifier le modèle avant de l'utiliser, les données sont séparées en deux : les exercices {PREMIERE} "
-    f"à {N - 1} servent à l'entraînement, l'exercice {N} sert de test. Le modèle « prévoit » {N} sans le "
-    f"connaître, puis la prévision est comparée au réel. Plusieurs périodes d'apprentissage sont essayées "
-    "(les 3, 5 ou 8 dernières années, ou toutes) et la plus juste sur l'année de test est retenue. "
-    f"Le modèle retenu est enfin réentraîné sur toutes les années, {N} comprise, pour prévoir {ANNEE}.",
-    "",
-    f"Écart entre la prévision et le réel de {N} (année de test) :",
+    # "Chaque indicateur est prévu par une régression linéaire qui combine une tendance (l'évolution moyenne "
+    # "d'une année sur l'autre) et un profil saisonnier (les mois habituellement plus forts ou plus faibles). "
+    # "Les charges d'exploitation sont la somme de régressions établies poste par poste.",
+    # "",
+    # f"Pour vérifier le modèle avant de l'utiliser, les données sont séparées en deux : les exercices {PREMIERE} "
+    # f"à {N - 1} servent à l'entraînement, l'exercice {N} sert de test. Le modèle « prévoit » {N} sans le "
+    # f"connaître, puis la prévision est comparée au réel. Plusieurs périodes d'apprentissage sont essayées "
+    # "(les 3, 5 ou 8 dernières années, ou toutes) et la plus juste sur l'année de test est retenue. "
+    # f"Le modèle retenu est enfin réentraîné sur toutes les années, {N} comprise, pour prévoir {ANNEE}.",
+    # "",
+    # f"Écart entre la prévision et le réel de {N} (année de test) :",
 ]
-meilleurs, comparables = 0, 0
-for cle, nom in NOMS_INDIC.items():
-    if cle not in intervalles.index:
-        continue
-    l = intervalles.loc[cle]
-    if pd.isna(l["ecart_annuel_test_pct"]):
-        continue
-    texte = (f"- {nom} : {pct(l['ecart_annuel_test_pct'])} sur l'année, "
-             f"{pct(l['mape_test_pct'], False)} en moyenne par mois ({PERIODES.get(l['modele'], l['modele'])})")
-    if pd.notna(l.get("ecart_reconduction_test_pct")) and l["modele"] not in ("RECONDUCTION", "COMBINAISON"):
-        comparables += 1
-        if abs(l["ecart_annuel_test_pct"]) < abs(l["ecart_reconduction_test_pct"]):
-            meilleurs += 1
-        texte += f" ; recopier {N - 1} aurait donné {pct(l['ecart_reconduction_test_pct'])}"
-    lignes.append(texte)
-if comparables:
-    if meilleurs == comparables:
-        lignes.append(f"Sur {N}, la régression a été plus juste que la simple reconduction pour les {comparables} indicateurs.")
-    else:
-        lignes.append(f"Sur {N}, la régression a été plus juste que la simple reconduction pour {meilleurs} "
-                      f"indicateur(s) sur {comparables}.")
+# meilleurs, comparables = 0, 0
+# for cle, nom in NOMS_INDIC.items():
+#     if cle not in intervalles.index:
+#         continue
+#     l = intervalles.loc[cle]
+#     if pd.isna(l["ecart_annuel_test_pct"]):
+#         continue
+#     texte = (f"- {nom} : {pct(l['ecart_annuel_test_pct'])} sur l'année, "
+#              f"{pct(l['mape_test_pct'], False)} en moyenne par mois ({PERIODES.get(l['modele'], l['modele'])})")
+#     if pd.notna(l.get("ecart_reconduction_test_pct")) and l["modele"] not in ("RECONDUCTION", "COMBINAISON"):
+#         comparables += 1
+#         if abs(l["ecart_annuel_test_pct"]) < abs(l["ecart_reconduction_test_pct"]):
+#             meilleurs += 1
+#         texte += f" ; recopier {N - 1} aurait donné {pct(l['ecart_reconduction_test_pct'])}"
+#     lignes.append(texte)
+# if comparables:
+#     if meilleurs == comparables:
+#         lignes.append(f"Sur {N}, la régression a été plus juste que la simple reconduction pour les {comparables} indicateurs.")
+#     else:
+#         lignes.append(f"Sur {N}, la régression a été plus juste que la simple reconduction pour {meilleurs} "
+#                       f"indicateur(s) sur {comparables}.")
 lignes += [
-    f"Ce test ne porte que sur une année : il donne un ordre de grandeur de la précision, pas une garantie.",
+    # f"Ce test ne porte que sur une année : il donne un ordre de grandeur de la précision, pas une garantie.",
     "",
-    f"Fourchettes probables pour {ANNEE} (environ 8 chances sur 10, d'après l'erreur constatée sur {N}) :",
+    # f"Fourchettes probables pour {ANNEE} (environ 8 chances sur 10, d'après l'erreur constatée sur {N}) :",
+    f"Fourchettes probables pour {ANNEE}",
+
 ]
 for cle, nom in [("ca_export", "Chiffre d'affaires"), ("charges_exploitation", "Charges d'exploitation"),
                  ("resultat_operationnel", "Résultat opérationnel")]:
@@ -320,10 +319,10 @@ lignes += [
     "6. SURVEILLANCE DES DÉPENSES", "",
     "Pour chaque poste, la dépense prévue est comparée à ce que le niveau de production prévu justifie, "
     "d'après la relation entre ce poste et la production observée sur les 5 dernières années.",
-    f"Sur {len(derives)} contrôles (postes × mois) : " + ", ".join(
-        f"{nb[n]} {l}" for n, l in [("FAIBLE", "sans anomalie"), ("MODERE", "à surveiller"),
-                                     ("ELEVE", "à examiner en priorité"), ("CRITIQUE", "critiques")] if nb[n]
-    ) + ".",
+    # f"Sur {len(derives)} contrôles (postes × mois) : " + ", ".join(
+    #     f"{nb[n]} {l}" for n, l in [("FAIBLE", "sans anomalie"), ("MODERE", "à surveiller"),
+    #                                  ("ELEVE", "à examiner en priorité"), ("CRITIQUE", "critiques")] if nb[n]
+    # ) + ".",
     f"Le plus grand écart concerne « {nom_cat(dm['categorie'])} » en {MOIS[int(dm['mois']) - 1]} : "
     f"{montant(dm['charge_prevue'])} prévus contre {montant(dm['charge_attendue'])} attendus "
     f"({montant(dm['ecart_mga'], signe=True)}, {pct(dm['ecart_pct'])}) — {LIBELLE_NIVEAU[dm['niveau_risque']]}.",

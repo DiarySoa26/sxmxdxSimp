@@ -1,5 +1,5 @@
 {
-    "modele": "11D364D0_SOMIDA_2022",
+    "modele": "34E8FF4D_SOMIDA_2023",
     "origine": "REVERSE_ENGINEERING_FORMALISE",
     "statistiques": {
         "regles_techniques": 105,
@@ -1262,11 +1262,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
+                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "B19",
@@ -1650,27 +1650,27 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$E$2:$E$26)",
             "dependances": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27"
+                    "cellule": "A2:A26"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27"
+                    "cellule": "E2:E26"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A27",
+                    "cellule": "A2:A26",
                     "libelle": "Catégorie",
                     "identifiant_semantique": "categorie"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E27",
+                    "cellule": "E2:E26",
                     "libelle": "AMPANDRANDAVA",
                     "identifiant_semantique": "ampandrandava"
                 }
@@ -1679,47 +1679,47 @@
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$F$2:$F$26)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$G$2:$G$26)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$H$2:$H$26)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$I$2:$I$26)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$J$2:$J$26)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$K$2:$K$26)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$L$2:$L$26)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$M$2:$M$26)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$N$2:$N$26)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$O$2:$O$26)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$26,\"FINANCE\",Charges!$P$2:$P$26)"
                 }
             ],
             "cellules_excel": [
@@ -2803,11 +2803,9 @@
                 "I89",
                 "I90",
                 "I91",
-                "I92",
-                "I93",
-                "I94"
+                "I92"
             ],
-            "nombre_occurrences": 93
+            "nombre_occurrences": 91
         },
         {
             "id": "RG_METIER_065",
@@ -3933,27 +3931,27 @@
             "operation": "SOMME_CONDITIONNELLE",
             "periodicite_technique": "MENSUELLE",
             "periodicite": "MENSUELLE",
-            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$46)",
+            "formule_excel_reference": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$G$2:$G$59)",
             "dependances": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E46"
+                    "cellule": "E2:E59"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G46"
+                    "cellule": "G2:G59"
                 }
             ],
             "dependances_semantiques": [
                 {
                     "feuille": "Exportations",
-                    "cellule": "E2:E46",
+                    "cellule": "E2:E59",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 },
                 {
                     "feuille": "Exportations",
-                    "cellule": "G2:G46",
+                    "cellule": "G2:G59",
                     "libelle": "Pilotage DAF • Japon / Russie / Chine • Suivi mensuel des volumes, devises et chiffre d’affaires",
                     "identifiant_semantique": "pilotage_daf_japon_russie_chine_suivi_mensuel_des_volumes_devises_et_chiffre_d_affaires"
                 }
@@ -3962,47 +3960,47 @@
             "anomalies_regroupement": [
                 {
                     "cellule": "D2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$H$2:$H$59)"
                 },
                 {
                     "cellule": "E2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$I$2:$I$59)"
                 },
                 {
                     "cellule": "F2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$J$2:$J$59)"
                 },
                 {
                     "cellule": "G2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$K$2:$K$59)"
                 },
                 {
                     "cellule": "H2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$L$2:$L$59)"
                 },
                 {
                     "cellule": "I2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$M$2:$M$59)"
                 },
                 {
                     "cellule": "J2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$N$2:$N$59)"
                 },
                 {
                     "cellule": "K2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$O$2:$O$59)"
                 },
                 {
                     "cellule": "L2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$P$2:$P$59)"
                 },
                 {
                     "cellule": "M2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$Q$2:$Q$59)"
                 },
                 {
                     "cellule": "N2",
-                    "formule": "=SUMIF(Exportations!$E$2:$E$46,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$46)"
+                    "formule": "=SUMIF(Exportations!$E$2:$E$59,\"Chiffre d'affaires MGA\",Exportations!$R$2:$R$59)"
                 }
             ],
             "cellules_excel": [
@@ -4566,11 +4564,11 @@
                 {
                     "feuille": "Amortissements",
                     "cellule": "E2:E80",
-                    "libelle": "DOT.AMORT.MAT & OUTILLAGE",
-                    "identifiant_semantique": "dot_amort_mat_outillage"
+                    "libelle": "DOT.AMORT.VEHICULE UTILITAIRE",
+                    "identifiant_semantique": "dot_amort_vehicule_utilitaire"
                 }
             ],
-            "expression_metier": "SUM(amortissements.dot_amort_mat_outillage)",
+            "expression_metier": "SUM(amortissements.dot_amort_vehicule_utilitaire)",
             "anomalies_regroupement": [],
             "cellules_excel": [
                 "C8",

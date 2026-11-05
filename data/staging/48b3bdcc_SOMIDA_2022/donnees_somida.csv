@@ -1,0 +1,16 @@
+DONNEES SOMIDA - PARAMETRES ET REFERENTIELS,,,
+Paramètre,Valeur,Unité / devise,Commentaire
+Exercice,2022,année,Exercice
+Inflation annuelle,0.065,%,Paramètre annuel
+Taux USD/MGA,4450,MGA/USD,Taux de change
+Taux JPY/MGA,30.5,MGA/JPY,Taux de change
+Augmentation salariale,0.07,%,Évolution salariale
+TVA,0.2,%,Paramètre fiscal
+Site principal,FORT DAUPHIN,,Administration / export
+Site production,AMPANDRANDAVA,,Production
+,,,
+MARCHES EXPORT,,,
+Pays,Entité représentatrice,Devise,Observation
+Japon,GOODEIS,JPY,Marché export
+Russie,ELINAR,USD,Marché export
+Chine,REPRESENTANT CHINE,USD,Marché export

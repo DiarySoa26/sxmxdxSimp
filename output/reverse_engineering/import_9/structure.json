@@ -1,5 +1,5 @@
 {
-    "fichier": "11d364d0_SOMIDA_2022.xlsx",
+    "fichier": "34e8ff4d_SOMIDA_2023.xlsx",
     "nombre_feuilles": 9,
     "feuilles": {
         "Donnees SOMIDA": {
@@ -16,9 +16,9 @@
             "etat": "visible",
             "lignes": 101,
             "colonnes": 10,
-            "formules": 93,
-            "textes": 568,
-            "nombres": 279,
+            "formules": 91,
+            "textes": 556,
+            "nombres": 273,
             "mois_detectes": [],
             "mise_en_page": null
         },
@@ -66,7 +66,7 @@
         },
         "Charges": {
             "etat": "visible",
-            "lignes": 27,
+            "lignes": 26,
             "colonnes": 18,
             "formules": 3,
             "textes": 98,
@@ -279,8 +279,8 @@
             "lignes": 70,
             "colonnes": 17,
             "formules": 0,
-            "textes": 50,
-            "nombres": 143,
+            "textes": 47,
+            "nombres": 130,
             "mois_detectes": [
                 "Janvier",
                 "Février",

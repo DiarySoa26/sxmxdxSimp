@@ -1,0 +1,71 @@
+BUDGET PRÉVISIONNEL 2024
+Prévision établie le 05/11/2026. Modèle entraîné sur les exercices 2015 à 2022, testé sur 2023, puis réentraîné sur 2015–2023. Comparaisons faites avec l'exercice 2023.
+
+
+En 2024, le chiffre d'affaires à l'exportation atteindrait 20,98 milliards MGA, en légère hausse de 1,8 % par rapport à 2023. L'ensemble des dépenses d'exploitation (charges, frais d'exportation, masse salariale et amortissements) s'élèverait à 15,65 milliards MGA, en hausse de 7,9 %.
+
+L'exercice 2024 dégagerait un bénéfice d'exploitation de 5,33 milliards MGA, soit une marge de 25,4 % :  Pour comparaison, l'exercice 2023 s'est terminé sur un bénéfice d'exploitation de 6,11 milliards MGA.
+
+Points d'attention : certains postes de dépenses s'écartent nettement de ce que l'activité prévue justifie (partie 6).
+
+1. PRÉVISIONS POUR 2024
+
+- Ventes à l'exportation : 3 233 unités (2023 : 3 256 unités ; −0,7 %)
+- Production : 3 233 unités (2023 : 3 256 unités ; −0,7 %)
+- Chiffre d'affaires à l'exportation : 20,98 milliards MGA (2023 : 20,61 milliards MGA ; +1,8 %)
+- Charges d'exploitation : 7,20 milliards MGA (2023 : 6,71 milliards MGA ; +7,3 %)
+- Frais d'exportation : 3,47 milliards MGA (2023 : 3,47 milliards MGA ; +0,2 %)
+- Masse salariale : 4,83 milliards MGA (2023 : 4,20 milliards MGA ; +15,1 %)
+- Dotations aux amortissements : 142,3 millions MGA (2023 : 122,8 millions MGA ; +15,8 %)
+- Résultat opérationnel : 5,33 milliards MGA (2023 : 6,11 milliards MGA)
+- Marge opérationnelle : +25,4 % (2023 : +29,6 %)
+
+2. CE QUI FAIT ÉVOLUER LE RÉSULTAT
+
+Le résultat opérationnel passe de 6,11 milliards MGA à 5,33 milliards MGA, soit une dégradation de 779,4 millions MGA. 
+- Hausse de la masse salariale : −632,6 millions MGA
+- Hausse des charges d'exploitation : −489,0 millions MGA
+- Hausse du chiffre d'affaires : +370,3 millions MGA
+- Hausse des amortissements : −19,4 millions MGA
+- Hausse des frais d'exportation : −8,7 millions MGA
+
+3. CHARGES D'EXPLOITATION PAR POSTE
+
+Les charges d'exploitation sont la somme de prévisions établies poste par poste (7,20 milliards MGA au total) :
+- Production : 4,99 milliards MGA (69 % du total ; +9,8 % par rapport à 2023)
+- Logistique : 863,2 millions MGA (12 % du total ; +4,9 % par rapport à 2023)
+- Achats de produits : 556,8 millions MGA (8 % du total ; −10,3 % par rapport à 2023)
+- Fiscalité : 402,8 millions MGA (6 % du total ; +10,1 % par rapport à 2023)
+- Sécurité : 227,6 millions MGA (3 % du total ; +10,4 % par rapport à 2023)
+- Finance : 158,6 millions MGA (2 % du total ; +5,3 % par rapport à 2023)
+4. MOIS PAR MOIS
+
+Le chiffre d'affaires le plus élevé est attendu en août (1,78 milliard MGA) et le plus faible en mai (1,72 milliard MGA), soit un écart de 3 % : l'activité serait assez régulière sur l'année.
+Le résultat opérationnel serait positif chaque mois.
+
+5. MÉTHODE ET FIABILITÉ
+
+
+Fourchettes probables pour 2024 (environ 8 chances sur 10, d'après l'erreur constatée sur 2023) :
+- Chiffre d'affaires : entre 19,78 milliards MGA et 22,17 milliards MGA
+- Charges d'exploitation : entre 6,43 milliards MGA et 7,98 milliards MGA
+- Résultat opérationnel : entre 4,97 milliards MGA et 5,69 milliards MGA
+
+6. SURVEILLANCE DES DÉPENSES
+
+Pour chaque poste, la dépense prévue est comparée à ce que le niveau de production prévu justifie, d'après la relation entre ce poste et la production observée sur les 5 dernières années.
+Sur 72 contrôles (postes × mois) : 12 sans anomalie, 26 à surveiller, 34 à examiner en priorité.
+Le plus grand écart concerne « sécurité » en décembre : 19,7 millions MGA prévus contre 14,3 millions MGA attendus (+5,4 millions MGA, +37,8 %) — à examiner en priorité.
+
+Poste par poste, sur l'année :
+- Production : 1,20 milliard MGA au-dessus du niveau attendu (+31,6 %) — à examiner en priorité
+- Logistique : 173,2 millions MGA au-dessus du niveau attendu (+25,1 %) — à examiner en priorité
+- Fiscalité : 91,5 millions MGA au-dessus du niveau attendu (+29,4 %) — à examiner en priorité
+- Sécurité : 55,9 millions MGA au-dessus du niveau attendu (+32,5 %) — à examiner en priorité
+- Finance : 31,9 millions MGA au-dessus du niveau attendu (+25,1 %) — à surveiller
+- Achats de produits : 17,7 millions MGA au-dessus du niveau attendu (+3,3 %) — rien d'anormal
+
+7. HYPOTHÈSES ET POINTS D'ATTENTION
+
+- Masse salariale : elle prolonge l'évolution des années passées (+15,1 %). Elle doit être remplacée par les décisions réelles d'embauche et d'augmentation dès qu'elles sont connues.
+- Les prévisions prolongent les tendances observées : elles n'anticipent pas une rupture (nouveau contrat, perte d'un client, variation brutale du taux de change).

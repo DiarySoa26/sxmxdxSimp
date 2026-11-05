@@ -1,38 +1,38 @@
-# Reverse engineering : 12dafad4_SOMIDA_2021.xlsx
+# Reverse engineering : 48b3bdcc_SOMIDA_2022.xlsx
 
 ## Feuilles
 
 | Feuille | Formules | Mise en page temporelle |
 |---|---|---|
 | Donnees SOMIDA | 0 | aucune mise en page temporelle détectée |
-| Employes | 94 | aucune mise en page temporelle détectée |
+| Employes | 93 | aucune mise en page temporelle détectée |
 | Production | 0 | mois en colonnes D:O (en-tête ligne 1), total en P [DETECTEE] |
 | Charges | 3 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 | Exportations | 128 | mois en colonnes G:R (en-tête ligne 9), total en S [DETECTEE] |
 | Frais Export | 0 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
-| Synthese | 78 | mois en colonnes C:N (en-tête ligne 1), total en O [DETECTEE] |
-| Amortissements | 11 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
-| CR | 403 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
+| Synthese | 91 | mois en colonnes C:N (en-tête ligne 1), total en O [DETECTEE] |
+| CR | 390 | mois en colonnes B:M (en-tête ligne 4), total en N [DETECTEE] |
+| Amortissements | 0 | mois en colonnes E:P (en-tête ligne 1), total en Q [DETECTEE] |
 
 ## Resultat
 
-- Formules Excel : 717
-- Regles uniques apres regroupement : 116
-- Regles formalisees (avec libelle metier) : 110
+- Formules Excel : 705
+- Regles uniques apres regroupement : 105
+- Regles formalisees (avec libelle metier) : 99
 - Regles a valider (libelle non identifie) : 6
 
 ## Exemples de regles metier detectees
 
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
-- **amortissement** (ANNUELLE) = `SUM(general)`
+- **chiffre_d_affaires** (MENSUELLE) = `IF(synthese.ca_export = "", 0, synthese.ca_export)`
+- **chiffre_d_affaires** (ANNUELLE) = `SUM(chiffre_d_affaires)`
+- **production_stockee** (MENSUELLE) = `0`
+- **production_stockee** (ANNUELLE) = `SUM(production_stockee)`
+- **production_immobilisee** (MENSUELLE) = `0`
+- **production_immobilisee** (ANNUELLE) = `SUM(production_immobilisee)`
+- **i_production_de_l_exercice** (MENSUELLE) = `SUM(chiffre_d_affaires)`
+- **i_production_de_l_exercice** (ANNUELLE) = `SUM(i_production_de_l_exercice)`
+- **achats_consommes_charges_directes_de_production** (MENSUELLE) = `SUMIF(charges.categorie, "PRODUCTION", charges.ampandrandava) + SUMIF(charges.categorie, "ACHAT PRODUITS", charges.ampandrandava)`
+- **achats_consommes_charges_directes_de_production** (ANNUELLE) = `SUM(achats_consommes_charges_directes_de_production)`
 
 ## Points d'attention : formules differentes dans un meme regroupement
 

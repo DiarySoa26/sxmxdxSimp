@@ -123,12 +123,12 @@ public class UtilisateurService {
         String nouveauMotDePasse = req.getMotDePasse();
 
         if (nouveauMotDePasse != null && !nouveauMotDePasse.isEmpty()) {
-            if (nouveauMotDePasse.length() < 12) {
-                throw erreur(
-                        HttpStatus.BAD_REQUEST,
-                        "Le nouveau mot de passe doit contenir au moins 12 caractères."
-                );
-            }
+        //     if (nouveauMotDePasse.length() < 12) {
+        //         throw erreur(
+        //                 HttpStatus.BAD_REQUEST,
+        //                 "Le nouveau mot de passe doit contenir au moins 12 caractères."
+        //         );
+        //     }
 
             u.setMotDePasse(encoder.encode(nouveauMotDePasse));
         }

@@ -1,436 +1,39 @@
 {
-    "modele": "12DAFAD4_SOMIDA_2021",
-    "version": "12DAFAD4_SOMIDA_2021_V1",
-    "fichier_source": "12dafad4_SOMIDA_2021.xlsx",
+    "modele": "48B3BDCC_SOMIDA_2022",
+    "version": "48B3BDCC_SOMIDA_2022_V1",
+    "fichier_source": "48b3bdcc_SOMIDA_2022.xlsx",
     "origine": "REVERSE_ENGINEERING_EXCEL",
     "sources": {
         "formules": "/app/output/reverse_engineering/import_8/formules.csv",
         "dependances": "/app/output/reverse_engineering/import_8/dependances.csv"
     },
     "statistiques": {
-        "nombre_formules_excel": 717,
-        "nombre_regles_uniques": 116,
-        "nombre_repetitions_regroupees": 601,
+        "nombre_formules_excel": 705,
+        "nombre_regles_uniques": 105,
+        "nombre_repetitions_regroupees": 600,
         "operations": {
-            "SOMME": 71,
             "REFERENCE": 13,
+            "SOMME": 63,
             "SOMME_CONDITIONNELLE": 8,
             "SOUSTRACTION": 7,
             "MULTIPLICATION": 10,
-            "DIVISION": 7
+            "DIVISION": 4
         },
         "domaines": {
-            "AMORTISSEMENTS": 11,
-            "CR": 62,
+            "CR": 60,
             "CHARGES": 3,
             "SALAIRES": 1,
             "EXPORTATION": 27,
-            "BUDGET": 12
+            "BUDGET": 14
         },
         "periodicites": {
-            "UNIQUE": 68,
             "MENSUELLE": 46,
+            "UNIQUE": 57,
             "REPETEE": 2
         },
         "regroupements_irreguliers": 7
     },
     "regles": [
-        {
-            "id": "RG_AMORTISSEMENTS_001",
-            "nom": "Calcul Excel Amortissements!Q2",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q2",
-            "formule_excel_reference": "=SUM(E2:P2)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q2"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E2:P2"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q2",
-                    "formule": "=SUM(E2:P2)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E2:P2"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_002",
-            "nom": "Calcul Excel Amortissements!Q3",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q3",
-            "formule_excel_reference": "=SUM(E3:P3)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q3"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E3:P3"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q3",
-                    "formule": "=SUM(E3:P3)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E3:P3"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_003",
-            "nom": "Calcul Excel Amortissements!Q4",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q4",
-            "formule_excel_reference": "=SUM(E4:P4)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q4"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E4:P4"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q4",
-                    "formule": "=SUM(E4:P4)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E4:P4"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_004",
-            "nom": "Calcul Excel Amortissements!Q5",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q5",
-            "formule_excel_reference": "=SUM(E5:P5)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q5"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E5:P5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q5",
-                    "formule": "=SUM(E5:P5)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E5:P5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_005",
-            "nom": "Calcul Excel Amortissements!Q6",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q6",
-            "formule_excel_reference": "=SUM(E6:P6)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q6"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E6:P6"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q6",
-                    "formule": "=SUM(E6:P6)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E6:P6"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_006",
-            "nom": "Calcul Excel Amortissements!Q7",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q7",
-            "formule_excel_reference": "=SUM(E7:P7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q7"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E7:P7"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q7",
-                    "formule": "=SUM(E7:P7)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E7:P7"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_007",
-            "nom": "Calcul Excel Amortissements!Q8",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q8",
-            "formule_excel_reference": "=SUM(E8:P8)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q8"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E8:P8"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q8",
-                    "formule": "=SUM(E8:P8)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E8:P8"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_008",
-            "nom": "Calcul Excel Amortissements!Q9",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q9",
-            "formule_excel_reference": "=SUM(E9:P9)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q9"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E9:P9"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q9",
-                    "formule": "=SUM(E9:P9)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E9:P9"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_009",
-            "nom": "Calcul Excel Amortissements!Q10",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q10",
-            "formule_excel_reference": "=SUM(E10:P10)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q10"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E10:P10"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q10",
-                    "formule": "=SUM(E10:P10)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E10:P10"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_010",
-            "nom": "Calcul Excel Amortissements!Q11",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q11",
-            "formule_excel_reference": "=SUM(E11:P11)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q11"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E11:P11"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q11",
-                    "formule": "=SUM(E11:P11)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E11:P11"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_AMORTISSEMENTS_011",
-            "nom": "Calcul Excel Amortissements!Q12",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "AMORTISSEMENTS",
-            "feuille": "Amortissements",
-            "cellule_cible_reference": "Q12",
-            "formule_excel_reference": "=SUM(E12:P12)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "Q12"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "Amortissements",
-                    "cellule": "E12:P12"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "Q12",
-                    "formule": "=SUM(E12:P12)",
-                    "dependances": [
-                        {
-                            "feuille": "Amortissements",
-                            "cellule": "E12:P12"
-                        }
-                    ]
-                }
-            ]
-        },
         {
             "id": "RG_CR_001",
             "nom": "Calcul Excel CR!B5",
@@ -439,9 +42,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B5",
-            "formule_excel_reference": "=Synthese!C2",
+            "formule_excel_reference": "=IF(Synthese!C2=\"\",0,Synthese!C2)",
             "operation": "REFERENCE",
-            "signature_structurelle": "=SYNTHESE!CELL(COL[1],ROW[-3])",
+            "signature_structurelle": "=IF(SYNTHESE!CELL(COL[1],ROW[-3])=\"\",0,SYNTHESE!CELL(COL[1],ROW[-3]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -468,7 +71,7 @@
             "occurrences_excel": [
                 {
                     "cellule": "B5",
-                    "formule": "=Synthese!C2",
+                    "formule": "=IF(Synthese!C2=\"\",0,Synthese!C2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -478,7 +81,7 @@
                 },
                 {
                     "cellule": "C5",
-                    "formule": "=Synthese!D2",
+                    "formule": "=IF(Synthese!D2=\"\",0,Synthese!D2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -488,7 +91,7 @@
                 },
                 {
                     "cellule": "D5",
-                    "formule": "=Synthese!E2",
+                    "formule": "=IF(Synthese!E2=\"\",0,Synthese!E2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -498,7 +101,7 @@
                 },
                 {
                     "cellule": "E5",
-                    "formule": "=Synthese!F2",
+                    "formule": "=IF(Synthese!F2=\"\",0,Synthese!F2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -508,7 +111,7 @@
                 },
                 {
                     "cellule": "F5",
-                    "formule": "=Synthese!G2",
+                    "formule": "=IF(Synthese!G2=\"\",0,Synthese!G2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -518,7 +121,7 @@
                 },
                 {
                     "cellule": "G5",
-                    "formule": "=Synthese!H2",
+                    "formule": "=IF(Synthese!H2=\"\",0,Synthese!H2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -528,7 +131,7 @@
                 },
                 {
                     "cellule": "H5",
-                    "formule": "=Synthese!I2",
+                    "formule": "=IF(Synthese!I2=\"\",0,Synthese!I2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -538,7 +141,7 @@
                 },
                 {
                     "cellule": "I5",
-                    "formule": "=Synthese!J2",
+                    "formule": "=IF(Synthese!J2=\"\",0,Synthese!J2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -548,7 +151,7 @@
                 },
                 {
                     "cellule": "J5",
-                    "formule": "=Synthese!K2",
+                    "formule": "=IF(Synthese!K2=\"\",0,Synthese!K2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -558,7 +161,7 @@
                 },
                 {
                     "cellule": "K5",
-                    "formule": "=Synthese!L2",
+                    "formule": "=IF(Synthese!L2=\"\",0,Synthese!L2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -568,7 +171,7 @@
                 },
                 {
                     "cellule": "L5",
-                    "formule": "=Synthese!M2",
+                    "formule": "=IF(Synthese!M2=\"\",0,Synthese!M2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -578,7 +181,7 @@
                 },
                 {
                     "cellule": "M5",
-                    "formule": "=Synthese!N2",
+                    "formule": "=IF(Synthese!N2=\"\",0,Synthese!N2)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2569,9 +2172,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B15",
-            "formule_excel_reference": "=Synthese!C5",
+            "formule_excel_reference": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
             "operation": "REFERENCE",
-            "signature_structurelle": "=SYNTHESE!CELL(COL[1],ROW[-10])",
+            "signature_structurelle": "=IF(SYNTHESE!CELL(COL[1],ROW[-10])=\"\",0,SYNTHESE!CELL(COL[1],ROW[-10]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -2598,7 +2201,7 @@
             "occurrences_excel": [
                 {
                     "cellule": "B15",
-                    "formule": "=Synthese!C5",
+                    "formule": "=IF(Synthese!C5=\"\",0,Synthese!C5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2608,7 +2211,7 @@
                 },
                 {
                     "cellule": "C15",
-                    "formule": "=Synthese!D5",
+                    "formule": "=IF(Synthese!D5=\"\",0,Synthese!D5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2618,7 +2221,7 @@
                 },
                 {
                     "cellule": "D15",
-                    "formule": "=Synthese!E5",
+                    "formule": "=IF(Synthese!E5=\"\",0,Synthese!E5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2628,7 +2231,7 @@
                 },
                 {
                     "cellule": "E15",
-                    "formule": "=Synthese!F5",
+                    "formule": "=IF(Synthese!F5=\"\",0,Synthese!F5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2638,7 +2241,7 @@
                 },
                 {
                     "cellule": "F15",
-                    "formule": "=Synthese!G5",
+                    "formule": "=IF(Synthese!G5=\"\",0,Synthese!G5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2648,7 +2251,7 @@
                 },
                 {
                     "cellule": "G15",
-                    "formule": "=Synthese!H5",
+                    "formule": "=IF(Synthese!H5=\"\",0,Synthese!H5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2658,7 +2261,7 @@
                 },
                 {
                     "cellule": "H15",
-                    "formule": "=Synthese!I5",
+                    "formule": "=IF(Synthese!I5=\"\",0,Synthese!I5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2668,7 +2271,7 @@
                 },
                 {
                     "cellule": "I15",
-                    "formule": "=Synthese!J5",
+                    "formule": "=IF(Synthese!J5=\"\",0,Synthese!J5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2678,7 +2281,7 @@
                 },
                 {
                     "cellule": "J15",
-                    "formule": "=Synthese!K5",
+                    "formule": "=IF(Synthese!K5=\"\",0,Synthese!K5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2688,7 +2291,7 @@
                 },
                 {
                     "cellule": "K15",
-                    "formule": "=Synthese!L5",
+                    "formule": "=IF(Synthese!L5=\"\",0,Synthese!L5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2698,7 +2301,7 @@
                 },
                 {
                     "cellule": "L15",
-                    "formule": "=Synthese!M5",
+                    "formule": "=IF(Synthese!M5=\"\",0,Synthese!M5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -2708,7 +2311,7 @@
                 },
                 {
                     "cellule": "M15",
-                    "formule": "=Synthese!N5",
+                    "formule": "=IF(Synthese!N5=\"\",0,Synthese!N5)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
@@ -3367,9 +2970,9 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B19",
-            "formule_excel_reference": "=SUM(Amortissements!E2:E40)",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
             "operation": "SOMME",
-            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[3],ROW[-17],COL[3],ROW[21]))",
+            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[3],ROW[-17],COL[3],ROW[61]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -3390,127 +2993,127 @@
             "dependances_reference": [
                 {
                     "feuille": "Amortissements",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E80"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B19",
-                    "formule": "=SUM(Amortissements!E2:E40)",
+                    "formule": "=SUM(Amortissements!E2:E80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E80"
                         }
                     ]
                 },
                 {
                     "cellule": "C19",
-                    "formule": "=SUM(Amortissements!F2:F40)",
+                    "formule": "=SUM(Amortissements!F2:F80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F80"
                         }
                     ]
                 },
                 {
                     "cellule": "D19",
-                    "formule": "=SUM(Amortissements!G2:G40)",
+                    "formule": "=SUM(Amortissements!G2:G80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G80"
                         }
                     ]
                 },
                 {
                     "cellule": "E19",
-                    "formule": "=SUM(Amortissements!H2:H40)",
+                    "formule": "=SUM(Amortissements!H2:H80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H80"
                         }
                     ]
                 },
                 {
                     "cellule": "F19",
-                    "formule": "=SUM(Amortissements!I2:I40)",
+                    "formule": "=SUM(Amortissements!I2:I80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I80"
                         }
                     ]
                 },
                 {
                     "cellule": "G19",
-                    "formule": "=SUM(Amortissements!J2:J40)",
+                    "formule": "=SUM(Amortissements!J2:J80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J80"
                         }
                     ]
                 },
                 {
                     "cellule": "H19",
-                    "formule": "=SUM(Amortissements!K2:K40)",
+                    "formule": "=SUM(Amortissements!K2:K80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K80"
                         }
                     ]
                 },
                 {
                     "cellule": "I19",
-                    "formule": "=SUM(Amortissements!L2:L40)",
+                    "formule": "=SUM(Amortissements!L2:L80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L80"
                         }
                     ]
                 },
                 {
                     "cellule": "J19",
-                    "formule": "=SUM(Amortissements!M2:M40)",
+                    "formule": "=SUM(Amortissements!M2:M80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M80"
                         }
                     ]
                 },
                 {
                     "cellule": "K19",
-                    "formule": "=SUM(Amortissements!N2:N40)",
+                    "formule": "=SUM(Amortissements!N2:N80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N80"
                         }
                     ]
                 },
                 {
                     "cellule": "L19",
-                    "formule": "=SUM(Amortissements!O2:O40)",
+                    "formule": "=SUM(Amortissements!O2:O80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O80"
                         }
                     ]
                 },
                 {
                     "cellule": "M19",
-                    "formule": "=SUM(Amortissements!P2:P40)",
+                    "formule": "=SUM(Amortissements!P2:P80)",
                     "dependances": [
                         {
                             "feuille": "Amortissements",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P80"
                         }
                     ]
                 }
@@ -4397,55 +4000,55 @@
             "domaine": "CR",
             "feuille": "CR",
             "cellule_cible_reference": "B24",
-            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$E$2:$E$40)",
+            "formule_excel_reference": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
             "operation": "SOMME_CONDITIONNELLE",
-            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[40]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[40]))",
+            "signature_structurelle": "=SUMIF(CHARGES!RANGE(ABS_COL[A],ABS_ROW[2],ABS_COL[A],ABS_ROW[27]),\"FINANCE\",CHARGES!RANGE(ABS_COL[E],ABS_ROW[2],ABS_COL[E],ABS_ROW[27]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$F$2:$F$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)"
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$G$2:$G$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)"
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$H$2:$H$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)"
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$I$2:$I$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)"
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$J$2:$J$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)"
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$K$2:$K$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)"
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$L$2:$L$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)"
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$M$2:$M$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)"
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$N$2:$N$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)"
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$O$2:$O$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)"
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$P$2:$P$40)"
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)"
                 }
             ],
             "cellules_excel": [
@@ -4465,179 +4068,179 @@
             "dependances_reference": [
                 {
                     "feuille": "Charges",
-                    "cellule": "A2:A40"
+                    "cellule": "A2:A27"
                 },
                 {
                     "feuille": "Charges",
-                    "cellule": "E2:E40"
+                    "cellule": "E2:E27"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "B24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$E$2:$E$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$E$2:$E$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "E2:E40"
+                            "cellule": "E2:E27"
                         }
                     ]
                 },
                 {
                     "cellule": "C24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$F$2:$F$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$F$2:$F$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "F2:F40"
+                            "cellule": "F2:F27"
                         }
                     ]
                 },
                 {
                     "cellule": "D24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$G$2:$G$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$G$2:$G$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "G2:G40"
+                            "cellule": "G2:G27"
                         }
                     ]
                 },
                 {
                     "cellule": "E24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$H$2:$H$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$H$2:$H$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "H2:H40"
+                            "cellule": "H2:H27"
                         }
                     ]
                 },
                 {
                     "cellule": "F24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$I$2:$I$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$I$2:$I$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "I2:I40"
+                            "cellule": "I2:I27"
                         }
                     ]
                 },
                 {
                     "cellule": "G24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$J$2:$J$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$J$2:$J$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "J2:J40"
+                            "cellule": "J2:J27"
                         }
                     ]
                 },
                 {
                     "cellule": "H24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$K$2:$K$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$K$2:$K$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "K2:K40"
+                            "cellule": "K2:K27"
                         }
                     ]
                 },
                 {
                     "cellule": "I24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$L$2:$L$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$L$2:$L$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "L2:L40"
+                            "cellule": "L2:L27"
                         }
                     ]
                 },
                 {
                     "cellule": "J24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$M$2:$M$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$M$2:$M$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "M2:M40"
+                            "cellule": "M2:M27"
                         }
                     ]
                 },
                 {
                     "cellule": "K24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$N$2:$N$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$N$2:$N$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "N2:N40"
+                            "cellule": "N2:N27"
                         }
                     ]
                 },
                 {
                     "cellule": "L24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$O$2:$O$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$O$2:$O$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "O2:O40"
+                            "cellule": "O2:O27"
                         }
                     ]
                 },
                 {
                     "cellule": "M24",
-                    "formule": "=SUMIF(Charges!$A$2:$A$40,\"FINANCE\",Charges!$P$2:$P$40)",
+                    "formule": "=SUMIF(Charges!$A$2:$A$27,\"FINANCE\",Charges!$P$2:$P$27)",
                     "dependances": [
                         {
                             "feuille": "Charges",
-                            "cellule": "A2:A40"
+                            "cellule": "A2:A27"
                         },
                         {
                             "feuille": "Charges",
-                            "cellule": "P2:P40"
+                            "cellule": "P2:P27"
                         }
                     ]
                 }
@@ -6787,259 +6390,6 @@
             ]
         },
         {
-            "id": "RG_CR_061",
-            "nom": "Calcul Excel CR!B35",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CR",
-            "feuille": "CR",
-            "cellule_cible_reference": "B35",
-            "formule_excel_reference": "=IFERROR(B22/B5,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-13])/CELL(COL[0],ROW[-30]),0)",
-            "nombre_occurrences": 12,
-            "periodicite": "MENSUELLE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "B35",
-                "C35",
-                "D35",
-                "E35",
-                "F35",
-                "G35",
-                "H35",
-                "I35",
-                "J35",
-                "K35",
-                "L35",
-                "M35"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "CR",
-                    "cellule": "B22"
-                },
-                {
-                    "feuille": "CR",
-                    "cellule": "B5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "B35",
-                    "formule": "=IFERROR(B22/B5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "B22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "B5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "C35",
-                    "formule": "=IFERROR(C22/C5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "C22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "C5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "D35",
-                    "formule": "=IFERROR(D22/D5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "D22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "D5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "E35",
-                    "formule": "=IFERROR(E22/E5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "E22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "E5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "F35",
-                    "formule": "=IFERROR(F22/F5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "F22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "F5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "G35",
-                    "formule": "=IFERROR(G22/G5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "G22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "G5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "H35",
-                    "formule": "=IFERROR(H22/H5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "H22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "H5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I35",
-                    "formule": "=IFERROR(I22/I5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "I22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "I5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "J35",
-                    "formule": "=IFERROR(J22/J5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "J22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "J5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "K35",
-                    "formule": "=IFERROR(K22/K5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "K22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "K5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "L35",
-                    "formule": "=IFERROR(L22/L5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "L22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "L5"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "M35",
-                    "formule": "=IFERROR(M22/M5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "M22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "M5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "RG_CR_062",
-            "nom": "Calcul Excel CR!N35",
-            "type": "CALCUL_EXCEL",
-            "origine": "REVERSE_ENGINEERING",
-            "domaine": "CR",
-            "feuille": "CR",
-            "cellule_cible_reference": "N35",
-            "formule_excel_reference": "=IFERROR(N22/N5,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-13])/CELL(COL[0],ROW[-30]),0)",
-            "nombre_occurrences": 1,
-            "periodicite": "UNIQUE",
-            "anomalies_regroupement": [],
-            "cellules_excel": [
-                "N35"
-            ],
-            "dependances_reference": [
-                {
-                    "feuille": "CR",
-                    "cellule": "N22"
-                },
-                {
-                    "feuille": "CR",
-                    "cellule": "N5"
-                }
-            ],
-            "occurrences_excel": [
-                {
-                    "cellule": "N35",
-                    "formule": "=IFERROR(N22/N5,0)",
-                    "dependances": [
-                        {
-                            "feuille": "CR",
-                            "cellule": "N22"
-                        },
-                        {
-                            "feuille": "CR",
-                            "cellule": "N5"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "RG_CHARGES_001",
             "nom": "Calcul Excel Charges!Q16",
             "type": "CALCUL_EXCEL",
@@ -7158,7 +6508,7 @@
             "formule_excel_reference": "=SUM(F2:H2)",
             "operation": "SOMME",
             "signature_structurelle": "=SUM(RANGE(COL[-3],ROW[0],COL[-1],ROW[0]))",
-            "nombre_occurrences": 94,
+            "nombre_occurrences": 93,
             "periodicite": "REPETEE",
             "anomalies_regroupement": [],
             "cellules_excel": [
@@ -7254,8 +6604,7 @@
                 "I91",
                 "I92",
                 "I93",
-                "I94",
-                "I95"
+                "I94"
             ],
             "dependances_reference": [
                 {
@@ -8191,16 +7540,6 @@
                         {
                             "feuille": "Employes",
                             "cellule": "F94:H94"
-                        }
-                    ]
-                },
-                {
-                    "cellule": "I95",
-                    "formule": "=SUM(F95:H95)",
-                    "dependances": [
-                        {
-                            "feuille": "Employes",
-                            "cellule": "F95:H95"
                         }
                     ]
                 }
@@ -12473,6 +11812,199 @@
         },
         {
             "id": "RG_SYNTHESE_007",
+            "nom": "Calcul Excel Synthese!C5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "C5",
+            "formule_excel_reference": "=SUM(Employes!$I$2:$I$61)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(EMPLOYES!RANGE(ABS_COL[I],ABS_ROW[2],ABS_COL[I],ABS_ROW[61]))",
+            "nombre_occurrences": 12,
+            "periodicite": "MENSUELLE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "C5",
+                "D5",
+                "E5",
+                "F5",
+                "G5",
+                "H5",
+                "I5",
+                "J5",
+                "K5",
+                "L5",
+                "M5",
+                "N5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Employes",
+                    "cellule": "I2:I61"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "C5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "D5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "E5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "F5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "G5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "H5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "I5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "J5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "K5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "L5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "M5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                },
+                {
+                    "cellule": "N5",
+                    "formule": "=SUM(Employes!$I$2:$I$61)",
+                    "dependances": [
+                        {
+                            "feuille": "Employes",
+                            "cellule": "I2:I61"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_008",
+            "nom": "Calcul Excel Synthese!O5",
+            "type": "CALCUL_EXCEL",
+            "origine": "REVERSE_ENGINEERING",
+            "domaine": "BUDGET",
+            "feuille": "Synthese",
+            "cellule_cible_reference": "O5",
+            "formule_excel_reference": "=SUM(C5:N5)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "nombre_occurrences": 1,
+            "periodicite": "UNIQUE",
+            "anomalies_regroupement": [],
+            "cellules_excel": [
+                "O5"
+            ],
+            "dependances_reference": [
+                {
+                    "feuille": "Synthese",
+                    "cellule": "C5:N5"
+                }
+            ],
+            "occurrences_excel": [
+                {
+                    "cellule": "O5",
+                    "formule": "=SUM(C5:N5)",
+                    "dependances": [
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "C5:N5"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "RG_SYNTHESE_009",
             "nom": "Calcul Excel Synthese!C6",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12837,7 +12369,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_008",
+            "id": "RG_SYNTHESE_010",
             "nom": "Calcul Excel Synthese!O6",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -12873,7 +12405,7 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_009",
+            "id": "RG_SYNTHESE_011",
             "nom": "Calcul Excel Synthese!C7",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
@@ -13082,16 +12614,16 @@
             ]
         },
         {
-            "id": "RG_SYNTHESE_010",
+            "id": "RG_SYNTHESE_012",
             "nom": "Calcul Excel Synthese!O7",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "O7",
-            "formule_excel_reference": "=SUM(C7:N7)",
-            "operation": "SOMME",
-            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
+            "formule_excel_reference": "=IFERROR(O6/O2,0)",
+            "operation": "DIVISION",
+            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-5]),0)",
             "nombre_occurrences": 1,
             "periodicite": "UNIQUE",
             "anomalies_regroupement": [],
@@ -13101,33 +12633,41 @@
             "dependances_reference": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "C7:N7"
+                    "cellule": "O6"
+                },
+                {
+                    "feuille": "Synthese",
+                    "cellule": "O2"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "O7",
-                    "formule": "=SUM(C7:N7)",
+                    "formule": "=IFERROR(O6/O2,0)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "C7:N7"
+                            "cellule": "O6"
+                        },
+                        {
+                            "feuille": "Synthese",
+                            "cellule": "O2"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "RG_SYNTHESE_011",
+            "id": "RG_SYNTHESE_013",
             "nom": "Calcul Excel Synthese!C8",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "C8",
-            "formule_excel_reference": "=IFERROR(C7/C2,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-6]),0)",
+            "formule_excel_reference": "=SUM(Amortissements!E2:E80)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(AMORTISSEMENTS!RANGE(COL[2],ROW[-6],COL[2],ROW[72]))",
             "nombre_occurrences": 12,
             "periodicite": "MENSUELLE",
             "anomalies_regroupement": [],
@@ -13147,196 +12687,144 @@
             ],
             "dependances_reference": [
                 {
-                    "feuille": "Synthese",
-                    "cellule": "C7"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "C2"
+                    "feuille": "Amortissements",
+                    "cellule": "E2:E80"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "C8",
-                    "formule": "=IFERROR(C7/C2,0)",
+                    "formule": "=SUM(Amortissements!E2:E80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "C7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "C2"
+                            "feuille": "Amortissements",
+                            "cellule": "E2:E80"
                         }
                     ]
                 },
                 {
                     "cellule": "D8",
-                    "formule": "=IFERROR(D7/D2,0)",
+                    "formule": "=SUM(Amortissements!F2:F80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "D7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "D2"
+                            "feuille": "Amortissements",
+                            "cellule": "F2:F80"
                         }
                     ]
                 },
                 {
                     "cellule": "E8",
-                    "formule": "=IFERROR(E7/E2,0)",
+                    "formule": "=SUM(Amortissements!G2:G80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "E7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "E2"
+                            "feuille": "Amortissements",
+                            "cellule": "G2:G80"
                         }
                     ]
                 },
                 {
                     "cellule": "F8",
-                    "formule": "=IFERROR(F7/F2,0)",
+                    "formule": "=SUM(Amortissements!H2:H80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "F7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "F2"
+                            "feuille": "Amortissements",
+                            "cellule": "H2:H80"
                         }
                     ]
                 },
                 {
                     "cellule": "G8",
-                    "formule": "=IFERROR(G7/G2,0)",
+                    "formule": "=SUM(Amortissements!I2:I80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "G7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "G2"
+                            "feuille": "Amortissements",
+                            "cellule": "I2:I80"
                         }
                     ]
                 },
                 {
                     "cellule": "H8",
-                    "formule": "=IFERROR(H7/H2,0)",
+                    "formule": "=SUM(Amortissements!J2:J80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "H7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "H2"
+                            "feuille": "Amortissements",
+                            "cellule": "J2:J80"
                         }
                     ]
                 },
                 {
                     "cellule": "I8",
-                    "formule": "=IFERROR(I7/I2,0)",
+                    "formule": "=SUM(Amortissements!K2:K80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "I7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "I2"
+                            "feuille": "Amortissements",
+                            "cellule": "K2:K80"
                         }
                     ]
                 },
                 {
                     "cellule": "J8",
-                    "formule": "=IFERROR(J7/J2,0)",
+                    "formule": "=SUM(Amortissements!L2:L80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "J7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "J2"
+                            "feuille": "Amortissements",
+                            "cellule": "L2:L80"
                         }
                     ]
                 },
                 {
                     "cellule": "K8",
-                    "formule": "=IFERROR(K7/K2,0)",
+                    "formule": "=SUM(Amortissements!M2:M80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "K7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "K2"
+                            "feuille": "Amortissements",
+                            "cellule": "M2:M80"
                         }
                     ]
                 },
                 {
                     "cellule": "L8",
-                    "formule": "=IFERROR(L7/L2,0)",
+                    "formule": "=SUM(Amortissements!N2:N80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "L7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "L2"
+                            "feuille": "Amortissements",
+                            "cellule": "N2:N80"
                         }
                     ]
                 },
                 {
                     "cellule": "M8",
-                    "formule": "=IFERROR(M7/M2,0)",
+                    "formule": "=SUM(Amortissements!O2:O80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "M7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "M2"
+                            "feuille": "Amortissements",
+                            "cellule": "O2:O80"
                         }
                     ]
                 },
                 {
                     "cellule": "N8",
-                    "formule": "=IFERROR(N7/N2,0)",
+                    "formule": "=SUM(Amortissements!P2:P80)",
                     "dependances": [
                         {
-                            "feuille": "Synthese",
-                            "cellule": "N7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "N2"
+                            "feuille": "Amortissements",
+                            "cellule": "P2:P80"
                         }
                     ]
                 }
             ]
         },
         {
-            "id": "RG_SYNTHESE_012",
+            "id": "RG_SYNTHESE_014",
             "nom": "Calcul Excel Synthese!O8",
             "type": "CALCUL_EXCEL",
             "origine": "REVERSE_ENGINEERING",
             "domaine": "BUDGET",
             "feuille": "Synthese",
             "cellule_cible_reference": "O8",
-            "formule_excel_reference": "=IFERROR(O7/O2,0)",
-            "operation": "DIVISION",
-            "signature_structurelle": "=IFERROR(CELL(COL[0],ROW[-1])/CELL(COL[0],ROW[-6]),0)",
+            "formule_excel_reference": "=SUM(C8:N8)",
+            "operation": "SOMME",
+            "signature_structurelle": "=SUM(RANGE(COL[-12],ROW[0],COL[-1],ROW[0]))",
             "nombre_occurrences": 1,
             "periodicite": "UNIQUE",
             "anomalies_regroupement": [],
@@ -13346,25 +12834,17 @@
             "dependances_reference": [
                 {
                     "feuille": "Synthese",
-                    "cellule": "O7"
-                },
-                {
-                    "feuille": "Synthese",
-                    "cellule": "O2"
+                    "cellule": "C8:N8"
                 }
             ],
             "occurrences_excel": [
                 {
                     "cellule": "O8",
-                    "formule": "=IFERROR(O7/O2,0)",
+                    "formule": "=SUM(C8:N8)",
                     "dependances": [
                         {
                             "feuille": "Synthese",
-                            "cellule": "O7"
-                        },
-                        {
-                            "feuille": "Synthese",
-                            "cellule": "O2"
+                            "cellule": "C8:N8"
                         }
                     ]
                 }

@@ -93,18 +93,18 @@ const data = {
       icon: <HistoryIcon />,
       roles: ["ADMIN", "DAF"],
     },
-    {
-      title: "Paramètres",
-      url: "/dashboard/parametres",
-      icon: <Settings2Icon />,
-      roles: ["ADMIN"],
-    },
-    {
-      title: "Aide",
-      url: "/dashboard/aide",
-      icon: <CircleHelpIcon />,
-      roles: ["ADMIN", "DAF", "COMPTABLE", "LECTEUR"],
-    },
+    // {
+    //   title: "Paramètres",
+    //   url: "/dashboard/parametres",
+    //   icon: <Settings2Icon />,
+    //   roles: ["ADMIN"],
+    // },
+    // {
+    //   title: "Aide",
+    //   url: "/dashboard/aide",
+    //   icon: <CircleHelpIcon />,
+    //   roles: ["ADMIN", "DAF", "COMPTABLE", "LECTEUR"],
+    // },
   ],
 }
 
